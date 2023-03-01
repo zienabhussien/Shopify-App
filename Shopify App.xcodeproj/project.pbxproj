@@ -15,6 +15,9 @@
 		33345EF929AF414F00CFAA3C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF429AF414F00CFAA3C /* Roboto-Regular.ttf */; };
 		33345EFA29AF414F00CFAA3C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF529AF414F00CFAA3C /* Roboto-Bold.ttf */; };
 		33345EFB29AF414F00CFAA3C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF629AF414F00CFAA3C /* Roboto-Black.ttf */; };
+		3363AF7029AF5F9600625BC7 /* catagoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3363AF6E29AF5F9600625BC7 /* catagoryCollectionViewCell.swift */; };
+		3363AF7129AF5F9600625BC7 /* catagoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3363AF6F29AF5F9600625BC7 /* catagoryCollectionViewCell.xib */; };
+		33C0838729AF5D08008A653A /* catagoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0838629AF5D08008A653A /* catagoryViewController.swift */; };
 		8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1E929AE777400AE390B /* AppDelegate.swift */; };
 		8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1EB29AE777400AE390B /* SceneDelegate.swift */; };
 		8C24C1F129AE777500AE390B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C24C1EF29AE777500AE390B /* Main.storyboard */; };
@@ -52,6 +55,9 @@
 		33345EF429AF414F00CFAA3C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		33345EF529AF414F00CFAA3C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		33345EF629AF414F00CFAA3C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		3363AF6E29AF5F9600625BC7 /* catagoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catagoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3363AF6F29AF5F9600625BC7 /* catagoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = catagoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		33C0838629AF5D08008A653A /* catagoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catagoryViewController.swift; sourceTree = "<group>"; };
 		8C24C1E629AE777400AE390B /* Shopify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C24C1E929AE777400AE390B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C24C1EB29AE777400AE390B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 		33345EEA29AF411C00CFAA3C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3363AF6B29AF5F4100625BC7 /* catagory */,
 				33345EEB29AF412B00CFAA3C /* Auth */,
 			);
 			path = Scenes;
@@ -152,6 +159,24 @@
 				8C24C1EB29AE777400AE390B /* SceneDelegate.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		3363AF6B29AF5F4100625BC7 /* catagory */ = {
+			isa = PBXGroup;
+			children = (
+				33C0838629AF5D08008A653A /* catagoryViewController.swift */,
+				3363AF7229AF6D4400625BC7 /* Cell */,
+			);
+			path = catagory;
+			sourceTree = "<group>";
+		};
+		3363AF7229AF6D4400625BC7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3363AF6E29AF5F9600625BC7 /* catagoryCollectionViewCell.swift */,
+				3363AF6F29AF5F9600625BC7 /* catagoryCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		8C24C1DD29AE777300AE390B = {
@@ -313,6 +338,7 @@
 			files = (
 				33345EFA29AF414F00CFAA3C /* Roboto-Bold.ttf in Resources */,
 				33345EF929AF414F00CFAA3C /* Roboto-Regular.ttf in Resources */,
+				3363AF7129AF5F9600625BC7 /* catagoryCollectionViewCell.xib in Resources */,
 				33345EF729AF414F00CFAA3C /* Roboto-Medium.ttf in Resources */,
 				33345EFB29AF414F00CFAA3C /* Roboto-Black.ttf in Resources */,
 				8C24C1F929AE77BB00AE390B /* LaunchScreen.storyboard in Resources */,
@@ -343,11 +369,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3363AF7029AF5F9600625BC7 /* catagoryCollectionViewCell.swift in Sources */,
 				8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */,
 				8C24C1F429AE777500AE390B /* Shopify_App.xcdatamodeld in Sources */,
 				33345EEF29AF412B00CFAA3C /* loginViewController.swift in Sources */,
 				33345EEE29AF412B00CFAA3C /* SingUpViewController.swift in Sources */,
 				8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */,
+				33C0838729AF5D08008A653A /* catagoryViewController.swift in Sources */,
 				33345EE929AF40E400CFAA3C /* EXUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
