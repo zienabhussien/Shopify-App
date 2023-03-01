@@ -7,6 +7,10 @@ target 'Shopify App' do
 
   # Pods for Shopify App
 pod 'lottie-ios'
+pod 'Floaty'
+pod 'Cosmos'
+pod 'Kingfisher'
+pod 'ReachabilitySwift'
 
   target 'Shopify AppTests' do
     inherit! :search_paths

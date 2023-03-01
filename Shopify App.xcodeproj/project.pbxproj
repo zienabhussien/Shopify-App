@@ -162,6 +162,7 @@
 		331BB3F129AF7F4C00466C97 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3347203129AF901600FF2F40 /* ShoppingCart */,
 				D8784BAB29AF67DC00231982 /* SplashScreen */,
 				331BB3F229AF7F4C00466C97 /* catagory */,
 				331BB3F729AF7F4C00466C97 /* Auth */,
@@ -237,7 +238,6 @@
 		8C24C1E829AE777400AE390B /* Shopify App */ = {
 			isa = PBXGroup;
 			children = (
-				3347203129AF901600FF2F40 /* ShoppingCart */,
 				8CE29A0129AF8A5E004BF111 /* View */,
 				8CE29A0029AF8A24004BF111 /* Core */,
 				331BB3E429AF7F4C00466C97 /* Helper */,
