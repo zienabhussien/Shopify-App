@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33345EE929AF40E400CFAA3C /* EXUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345EE829AF40E400CFAA3C /* EXUIView.swift */; };
+		33345EEE29AF412B00CFAA3C /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345EEC29AF412B00CFAA3C /* SingUpViewController.swift */; };
+		33345EEF29AF412B00CFAA3C /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345EED29AF412B00CFAA3C /* loginViewController.swift */; };
+		33345EF729AF414F00CFAA3C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF229AF414F00CFAA3C /* Roboto-Medium.ttf */; };
+		33345EF829AF414F00CFAA3C /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF329AF414F00CFAA3C /* Roboto-Light.ttf */; };
+		33345EF929AF414F00CFAA3C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF429AF414F00CFAA3C /* Roboto-Regular.ttf */; };
+		33345EFA29AF414F00CFAA3C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF529AF414F00CFAA3C /* Roboto-Bold.ttf */; };
+		33345EFB29AF414F00CFAA3C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33345EF629AF414F00CFAA3C /* Roboto-Black.ttf */; };
 		8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1E929AE777400AE390B /* AppDelegate.swift */; };
 		8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1EB29AE777400AE390B /* SceneDelegate.swift */; };
-		8C24C1EE29AE777400AE390B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1ED29AE777400AE390B /* ViewController.swift */; };
 		8C24C1F129AE777500AE390B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C24C1EF29AE777500AE390B /* Main.storyboard */; };
 		8C24C1F429AE777500AE390B /* Shopify_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C1F229AE777500AE390B /* Shopify_App.xcdatamodeld */; };
 		8C24C1F629AE77BB00AE390B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C24C1F529AE77BB00AE390B /* Assets.xcassets */; };
@@ -37,10 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		33345EE829AF40E400CFAA3C /* EXUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXUIView.swift; sourceTree = "<group>"; };
+		33345EEC29AF412B00CFAA3C /* SingUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		33345EED29AF412B00CFAA3C /* loginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		33345EF229AF414F00CFAA3C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		33345EF329AF414F00CFAA3C /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		33345EF429AF414F00CFAA3C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		33345EF529AF414F00CFAA3C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		33345EF629AF414F00CFAA3C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		8C24C1E629AE777400AE390B /* Shopify App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C24C1E929AE777400AE390B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C24C1EB29AE777400AE390B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C24C1ED29AE777400AE390B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C24C1F029AE777500AE390B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C24C1F329AE777500AE390B /* Shopify_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shopify_App.xcdatamodel; sourceTree = "<group>"; };
 		8C24C1F529AE77BB00AE390B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +92,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33345EE629AF40E400CFAA3C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				33345EE729AF40E400CFAA3C /* Extension */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		33345EE729AF40E400CFAA3C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				33345EE829AF40E400CFAA3C /* EXUIView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		33345EEA29AF411C00CFAA3C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				33345EEB29AF412B00CFAA3C /* Auth */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		33345EEB29AF412B00CFAA3C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				33345EEC29AF412B00CFAA3C /* SingUpViewController.swift */,
+				33345EED29AF412B00CFAA3C /* loginViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		33345EF029AF414400CFAA3C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				33345EF129AF414F00CFAA3C /* Font */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		33345EF129AF414F00CFAA3C /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				33345EF229AF414F00CFAA3C /* Roboto-Medium.ttf */,
+				33345EF329AF414F00CFAA3C /* Roboto-Light.ttf */,
+				33345EF429AF414F00CFAA3C /* Roboto-Regular.ttf */,
+				33345EF529AF414F00CFAA3C /* Roboto-Bold.ttf */,
+				33345EF629AF414F00CFAA3C /* Roboto-Black.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		33345EFC29AF41C100CFAA3C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8C24C1E929AE777400AE390B /* AppDelegate.swift */,
+				8C24C1EB29AE777400AE390B /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		8C24C1DD29AE777300AE390B = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +177,10 @@
 		8C24C1E829AE777400AE390B /* Shopify App */ = {
 			isa = PBXGroup;
 			children = (
-				8C24C1E929AE777400AE390B /* AppDelegate.swift */,
-				8C24C1EB29AE777400AE390B /* SceneDelegate.swift */,
-				8C24C1ED29AE777400AE390B /* ViewController.swift */,
+				33345EFC29AF41C100CFAA3C /* Core */,
+				33345EF029AF414400CFAA3C /* Resources */,
+				33345EEA29AF411C00CFAA3C /* Scenes */,
+				33345EE629AF40E400CFAA3C /* Helper */,
 				8C24C1EF29AE777500AE390B /* Main.storyboard */,
 				8C24C1F529AE77BB00AE390B /* Assets.xcassets */,
 				8C24C1F729AE77BB00AE390B /* LaunchScreen.storyboard */,
@@ -234,7 +311,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33345EFA29AF414F00CFAA3C /* Roboto-Bold.ttf in Resources */,
+				33345EF929AF414F00CFAA3C /* Roboto-Regular.ttf in Resources */,
+				33345EF729AF414F00CFAA3C /* Roboto-Medium.ttf in Resources */,
+				33345EFB29AF414F00CFAA3C /* Roboto-Black.ttf in Resources */,
 				8C24C1F929AE77BB00AE390B /* LaunchScreen.storyboard in Resources */,
+				33345EF829AF414F00CFAA3C /* Roboto-Light.ttf in Resources */,
 				8C24C1F629AE77BB00AE390B /* Assets.xcassets in Resources */,
 				8C24C1F129AE777500AE390B /* Main.storyboard in Resources */,
 			);
@@ -261,10 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C24C1EE29AE777400AE390B /* ViewController.swift in Sources */,
 				8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */,
 				8C24C1F429AE777500AE390B /* Shopify_App.xcdatamodeld in Sources */,
+				33345EEF29AF412B00CFAA3C /* loginViewController.swift in Sources */,
+				33345EEE29AF412B00CFAA3C /* SingUpViewController.swift in Sources */,
 				8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */,
+				33345EE929AF40E400CFAA3C /* EXUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
