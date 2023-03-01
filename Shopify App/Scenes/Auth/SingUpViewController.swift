@@ -45,7 +45,6 @@ class SingUpViewController: UIViewController {
 //        navigationController?.pushViewController(viewController, animated: true)
     }
     
-
-
+  
 }
 

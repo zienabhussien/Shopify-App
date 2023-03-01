@@ -35,6 +35,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="vCF-FG-Bnd" eventType="touchUpInside" id="wgJ-KM-ThE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXi-Re-tOJ">
                                 <rect key="frame" x="250.33333333333337" y="519.33333333333337" width="128" height="29"/>
@@ -133,9 +136,6 @@
                                 <state key="normal" title="Sing Up">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Tyk-n1-yW0" kind="show" id="BG4-6H-m60"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-J9-kbs">
                                 <rect key="frame" x="206" y="494" width="163" height="29"/>
@@ -253,7 +253,7 @@
             <objects>
                 <viewController id="6CC-pd-vmZ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4t-kL-lNm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="sXo-za-8ln"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
@@ -269,7 +269,7 @@
             <objects>
                 <viewController id="7m1-1A-Fmk" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wIb-UE-qk3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="4r9-71-dr7"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -285,7 +285,7 @@
             <objects>
                 <viewController id="wQD-oC-vUb" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lGe-xv-fcF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="VgW-K3-af9"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
@@ -301,7 +301,7 @@
             <objects>
                 <viewController id="n6s-Qd-eF4" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BOm-Zd-9Y8">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Rn0-p2-N0P"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
@@ -331,7 +331,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOb-ui-RQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472" y="46"/>
+            <point key="canvasLocation" x="3585" y="11"/>
         </scene>
     </scenes>
     <resources>
