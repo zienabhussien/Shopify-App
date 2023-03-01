@@ -34,11 +34,11 @@ class ShoppingCartCell: UITableViewCell {
       
         
         increaseQuantity.layer.borderWidth = 1
-        increaseQuantity.layer.cornerRadius = 5
+        increaseQuantity.layer.cornerRadius = 10
         increaseQuantity.layer.borderColor = UIColor.blue.cgColor
         
         decreaseQntity.layer.borderWidth = 1
-        decreaseQntity.layer.cornerRadius = 5
+        decreaseQntity.layer.cornerRadius = 10
         decreaseQntity.layer.borderColor = UIColor.blue.cgColor
         
 //        contentView.layer.cornerRadius = 20

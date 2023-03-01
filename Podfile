@@ -11,6 +11,9 @@ pod 'Floaty'
 pod 'Cosmos'
 pod 'Kingfisher'
 pod 'ReachabilitySwift'
+pod ‘MaterialComponents/TextFields’
+pod ‘MaterialComponents/TextFields+ColorThemer’
+
 
   target 'Shopify AppTests' do
     inherit! :search_paths
