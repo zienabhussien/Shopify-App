@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
             UIPasteboard.general.string = couponCode
         
         self.view.makeToast("The disscount coupon copied")
-
     }
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     
