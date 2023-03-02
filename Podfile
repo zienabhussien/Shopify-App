@@ -13,7 +13,7 @@ pod 'Kingfisher'
 #pod 'ReachabilitySwift'
 pod ‘MaterialComponents/TextFields’
 pod ‘MaterialComponents/TextFields+ColorThemer’
-
+pod 'Toast-Swift'
 
   target 'Shopify AppTests' do
     inherit! :search_paths
