@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var AddsImage: UIImageView!
     
+    @IBAction func copyCoupon(_ sender: UITapGestureRecognizer) {
+        let couponCode = "MYCOUPON123"
+            UIPasteboard.general.string = couponCode
+        
+        self.view.makeToast("The disscount coupon copied")
+
+    }
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     
     override func viewDidLoad() {

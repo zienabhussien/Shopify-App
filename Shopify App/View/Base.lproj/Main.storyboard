@@ -1365,7 +1365,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-nt-q7w">
-                                <rect key="frame" x="251.33333333333337" y="567.33333333333337" width="127" height="29"/>
+                                <rect key="frame" x="250.33333333333337" y="567.33333333333337" width="128" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create your account">
@@ -1463,7 +1463,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-LC-xCT">
-                                <rect key="frame" x="208" y="494" width="161" height="29"/>
+                                <rect key="frame" x="206" y="494" width="163" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
@@ -1726,8 +1726,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adds" translatesAutoresizingMaskIntoConstraints="NO" id="vyx-AP-4CP">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adds" translatesAutoresizingMaskIntoConstraints="NO" id="vyx-AP-4CP">
                                 <rect key="frame" x="16" y="75" width="361" height="238"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="m5I-xX-Km4" appends="YES" id="dly-yI-RQY"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ipy-jP-9A6"/>
@@ -1753,6 +1757,11 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uA6-hP-skM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="m5I-xX-Km4">
+                    <connections>
+                        <action selector="copyCoupon:" destination="1Py-oG-ejz" id="ayu-Bf-LBT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="871" y="717"/>
         </scene>
