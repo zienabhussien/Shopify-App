@@ -18,7 +18,9 @@ class PaymentOptionsVC: UIViewController {
     }
 
     
-   
+    @IBAction func continueToPayment(_ sender: Any) {
+    }
+    
 
 }
 extension PaymentOptionsVC: UITableViewDelegate, UITableViewDataSource{
