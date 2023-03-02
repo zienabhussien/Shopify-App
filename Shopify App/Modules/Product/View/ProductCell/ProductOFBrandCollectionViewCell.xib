@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductOFBrandCollectionViewCell" id="gTV-IL-0wX" customClass="ProductOFBrandCollectionViewCell" customModule="Shopify_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="224"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="224"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rg-JP-mSh" customClass="CardView" customModule="Shopify_App" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="184" height="192"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="aR4-eV-ix5">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="MSb-ha-Ni9"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kFt-FG-Uyi">
+                                <rect key="frame" x="8" y="120" width="168" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameofprouduct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-bM-af2">
+                                        <rect key="frame" x="0.0" y="0.0" width="119" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-zJ-q3Q">
+                                        <rect key="frame" x="0.0" y="15.666666666666657" width="29.333333333333332" height="12"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars 1" translatesAutoresizingMaskIntoConstraints="NO" id="kzq-27-VBq">
+                                        <rect key="frame" x="0.0" y="27.666666666666657" width="109.66666666666667" height="19.333333333333329"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eic-PW-rrp">
+                                        <rect key="frame" x="0.0" y="47" width="35" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-gK-miu">
+                                <rect key="frame" x="158" y="166" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="g2h-AI-NAC"/>
+                                    <constraint firstAttribute="height" constant="40" id="vap-BD-zQf"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="favoriteRed"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aR4-eV-ix5" firstAttribute="top" secondItem="0rg-JP-mSh" secondAttribute="top" id="5XK-F1-l7Q"/>
+                            <constraint firstAttribute="bottom" secondItem="XMu-gK-miu" secondAttribute="bottom" constant="-14" id="8Cz-vG-kRS"/>
+                            <constraint firstAttribute="trailing" secondItem="kFt-FG-Uyi" secondAttribute="trailing" constant="8" id="Epc-0z-7Fp"/>
+                            <constraint firstAttribute="trailing" secondItem="aR4-eV-ix5" secondAttribute="trailing" id="R6z-xp-xOd"/>
+                            <constraint firstItem="kFt-FG-Uyi" firstAttribute="leading" secondItem="0rg-JP-mSh" secondAttribute="leading" constant="8" id="UZp-7Z-bxW"/>
+                            <constraint firstItem="aR4-eV-ix5" firstAttribute="leading" secondItem="0rg-JP-mSh" secondAttribute="leading" id="d0R-hO-BCv"/>
+                            <constraint firstAttribute="bottom" secondItem="kFt-FG-Uyi" secondAttribute="bottom" constant="8" id="nFt-Lw-zLE"/>
+                            <constraint firstAttribute="trailing" secondItem="XMu-gK-miu" secondAttribute="trailing" constant="-14" id="rIj-Cl-YfH"/>
+                            <constraint firstItem="kFt-FG-Uyi" firstAttribute="top" secondItem="aR4-eV-ix5" secondAttribute="bottom" constant="8" id="shk-gE-hiD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="0rg-JP-mSh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="8wh-Ak-qEt"/>
+                <constraint firstAttribute="bottom" secondItem="0rg-JP-mSh" secondAttribute="bottom" constant="16" id="NPK-ll-pbG"/>
+                <constraint firstAttribute="trailing" secondItem="0rg-JP-mSh" secondAttribute="trailing" constant="16" id="Wh3-Gr-ac2"/>
+                <constraint firstItem="0rg-JP-mSh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="yrN-Ce-Otl"/>
+            </constraints>
+            <size key="customSize" width="255" height="179"/>
+            <point key="canvasLocation" x="236.64122137404578" y="64.788732394366207"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="favoriteRed" width="40" height="40"/>
+        <image name="shoes" width="612" height="408"/>
+        <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

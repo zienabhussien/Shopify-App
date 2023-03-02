@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CatagoryCollectionViewCell" id="gTV-IL-0wX" customClass="CatagoryCollectionViewCell" customModule="Shopify_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="239" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="239" height="81"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsi-Qd-dxf">
+                        <rect key="frame" x="8" y="8" width="223" height="65"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7t-zn-dm7">
+                                <rect key="frame" x="8" y="22" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l7t-zn-dm7" secondAttribute="trailing" constant="8" id="Mvk-os-NQ7"/>
+                            <constraint firstItem="l7t-zn-dm7" firstAttribute="centerY" secondItem="rsi-Qd-dxf" secondAttribute="centerY" id="S2O-Xn-1RK"/>
+                            <constraint firstItem="l7t-zn-dm7" firstAttribute="centerX" secondItem="rsi-Qd-dxf" secondAttribute="centerX" id="lra-gy-IHZ"/>
+                            <constraint firstItem="l7t-zn-dm7" firstAttribute="leading" secondItem="rsi-Qd-dxf" secondAttribute="leading" constant="8" id="wKu-wA-Rl9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rsi-Qd-dxf" secondAttribute="bottom" constant="8" id="1oa-gT-Pht"/>
+                <constraint firstItem="rsi-Qd-dxf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="O9K-oG-AHX"/>
+                <constraint firstItem="rsi-Qd-dxf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="dd4-Zq-AYb"/>
+                <constraint firstAttribute="trailing" secondItem="rsi-Qd-dxf" secondAttribute="trailing" constant="8" id="uQH-Bs-LpV"/>
+            </constraints>
+            <size key="customSize" width="239" height="81"/>
+            <connections>
+                <outlet property="cardView" destination="rsi-Qd-dxf" id="asJ-Sm-iny"/>
+                <outlet property="categoryNameLabel" destination="l7t-zn-dm7" id="gQW-5q-uGZ"/>
+            </connections>
+            <point key="canvasLocation" x="171.75572519083968" y="30.633802816901412"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

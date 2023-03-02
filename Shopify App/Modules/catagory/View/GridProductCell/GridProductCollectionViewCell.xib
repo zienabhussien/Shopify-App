@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridProductCollectionViewCell" id="gTV-IL-0wX" customClass="GridProductCollectionViewCell" customModule="Shopify_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="216" height="224"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="216" height="224"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-lH-0lC" customClass="CardView" customModule="Shopify_App" customModuleProvider="target">
+                        <rect key="frame" x="16" y="16" width="184" height="192"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="PsQ-qc-fcd">
+                                <rect key="frame" x="0.0" y="0.0" width="184" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="KGV-lA-o1w"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-Zq-Ut7">
+                                <rect key="frame" x="8" y="120" width="168" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameofprouduct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERo-rk-DZj">
+                                        <rect key="frame" x="0.0" y="0.0" width="119" height="15.666666666666666"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-P1-v38">
+                                        <rect key="frame" x="0.0" y="15.666666666666657" width="29.333333333333332" height="12"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars 1" translatesAutoresizingMaskIntoConstraints="NO" id="pcz-EO-nO0">
+                                        <rect key="frame" x="0.0" y="27.666666666666657" width="109.66666666666667" height="19.333333333333329"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-Yz-enV">
+                                        <rect key="frame" x="0.0" y="47" width="35" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57I-MQ-lQC">
+                                <rect key="frame" x="155" y="166" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="dM2-S5-t8T"/>
+                                    <constraint firstAttribute="height" constant="40" id="k4b-qM-bi6"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="favoriteRed"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PsQ-qc-fcd" firstAttribute="leading" secondItem="Zwi-lH-0lC" secondAttribute="leading" id="3oR-he-fFg"/>
+                            <constraint firstAttribute="trailing" secondItem="Wej-Zq-Ut7" secondAttribute="trailing" constant="8" id="6ua-lD-BrQ"/>
+                            <constraint firstItem="Wej-Zq-Ut7" firstAttribute="top" secondItem="PsQ-qc-fcd" secondAttribute="bottom" constant="8" id="93s-gT-ujg"/>
+                            <constraint firstAttribute="trailing" secondItem="PsQ-qc-fcd" secondAttribute="trailing" id="ESf-la-EnT"/>
+                            <constraint firstItem="PsQ-qc-fcd" firstAttribute="top" secondItem="Zwi-lH-0lC" secondAttribute="top" id="TVa-ZY-qap"/>
+                            <constraint firstItem="Wej-Zq-Ut7" firstAttribute="leading" secondItem="Zwi-lH-0lC" secondAttribute="leading" constant="8" id="bb9-D6-prV"/>
+                            <constraint firstAttribute="bottom" secondItem="57I-MQ-lQC" secondAttribute="bottom" constant="-14" id="hMY-MQ-qty"/>
+                            <constraint firstAttribute="bottom" secondItem="Wej-Zq-Ut7" secondAttribute="bottom" constant="8" id="jcZ-DT-Mlw"/>
+                            <constraint firstAttribute="trailing" secondItem="57I-MQ-lQC" secondAttribute="trailing" constant="-11" id="v6W-YI-Gkt"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Zwi-lH-0lC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="9it-wT-Cza"/>
+                <constraint firstAttribute="bottom" secondItem="Zwi-lH-0lC" secondAttribute="bottom" constant="16" id="Dzx-Zq-AHf"/>
+                <constraint firstAttribute="trailing" secondItem="Zwi-lH-0lC" secondAttribute="trailing" constant="16" id="br9-lW-32F"/>
+                <constraint firstItem="Zwi-lH-0lC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="pyN-Od-Bjw"/>
+            </constraints>
+            <size key="customSize" width="216" height="182"/>
+            <connections>
+                <outlet property="brandGrid" destination="7Tv-P1-v38" id="dgR-0f-Xte"/>
+                <outlet property="favoriteGrid" destination="57I-MQ-lQC" id="DfQ-Yv-Ybu"/>
+                <outlet property="imageGrid" destination="PsQ-qc-fcd" id="iDc-EZ-IYd"/>
+                <outlet property="nameGrid" destination="ERo-rk-DZj" id="t4O-Id-uPk"/>
+                <outlet property="priceGrid" destination="QdJ-Yz-enV" id="iuy-is-8Sd"/>
+                <outlet property="starGrid" destination="pcz-EO-nO0" id="A1E-Xv-0LM"/>
+            </connections>
+            <point key="canvasLocation" x="184.73282442748092" y="66.197183098591552"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="favoriteRed" width="40" height="40"/>
+        <image name="shoes" width="612" height="408"/>
+        <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

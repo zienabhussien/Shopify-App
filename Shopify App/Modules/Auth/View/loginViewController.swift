@@ -43,16 +43,16 @@ class loginViewController: UIViewController {
     
     func SingUp()
     {
-//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-//        navigationController?.pushViewController(viewController, animated: true)
-//        
-        
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
+        
+//
+//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.modalPresentationStyle = .fullScreen
+//        present(navigationController, animated: true)
     }
     
     
