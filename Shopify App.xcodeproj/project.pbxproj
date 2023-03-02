@@ -59,6 +59,8 @@
 		8CA6A07329AFCE87006809E9 /* PaymentOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */; };
 		8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */; };
 		CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED22B020899511829DE094C /* Pods_Shopify_App.framework */; };
+		D84335E429B11512003F7093 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D84335E329B11512003F7093 /* Alamofire */; };
+		D84335E729B11595003F7093 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = D84335E629B11595003F7093 /* Reachability */; };
 		D8784BAD29AF680300231982 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8784BAC29AF680300231982 /* SplashVC.swift */; };
 		D8784BAF29AF682E00231982 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8784BAE29AF682E00231982 /* TabBarVC.swift */; };
 		D8784BB129AF688E00231982 /* splashGIF.json in Resources */ = {isa = PBXBuildFile; fileRef = D8784BB029AF688E00231982 /* splashGIF.json */; };
@@ -169,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */,
+				D84335E729B11595003F7093 /* Reachability in Frameworks */,
+				D84335E429B11512003F7093 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +611,10 @@
 			dependencies = (
 			);
 			name = "Shopify App";
+			packageProductDependencies = (
+				D84335E329B11512003F7093 /* Alamofire */,
+				D84335E629B11595003F7093 /* Reachability */,
+			);
 			productName = "Shopify App";
 			productReference = 8C24C1E629AE777400AE390B /* Shopify App.app */;
 			productType = "com.apple.product-type.application";
@@ -682,6 +690,10 @@
 				Base,
 			);
 			mainGroup = 8C24C1DD29AE777300AE390B;
+			packageReferences = (
+				D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D84335E529B11595003F7093 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+			);
 			productRefGroup = 8C24C1E729AE777400AE390B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1222,6 +1234,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		D84335E529B11595003F7093 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D84335E329B11512003F7093 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D84335E629B11595003F7093 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D84335E529B11595003F7093 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8C24C1F229AE777500AE390B /* Shopify_App.xcdatamodeld */ = {
