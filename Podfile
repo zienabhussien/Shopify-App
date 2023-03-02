@@ -10,7 +10,7 @@ pod 'lottie-ios'
 pod 'Floaty'
 pod 'Cosmos'
 pod 'Kingfisher'
-pod 'ReachabilitySwift'
+#pod 'ReachabilitySwift'
 pod ‘MaterialComponents/TextFields’
 pod ‘MaterialComponents/TextFields+ColorThemer’
 
