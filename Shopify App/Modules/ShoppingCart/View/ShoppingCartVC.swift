@@ -70,16 +70,15 @@ extension ShoppingCartVC : UITableViewDelegate,UITableViewDataSource{
                 cell.quantityNumber.text = "\(product.quantity)"
                 cell.productPrice.text = "\(product.price) EGP"
                 
-                // Configure increase button action
                 cell.increaseQuantity.addTarget(self, action: #selector(increaseButtonTapped(_:)), for: .touchUpInside)
                 cell.increaseQuantity.tag = indexPath.row
     
-                // Configure decrease button action
                 cell.decreaseQntity.addTarget(self, action: #selector(decreaseButtonTapped(_:)), for: .touchUpInside)
                 cell.decreaseQntity.tag = indexPath.row
         
         return cell
     }
+       
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { action, view, completionHandler in
@@ -117,7 +116,6 @@ extension ShoppingCartVC : UITableViewDelegate,UITableViewDataSource{
         self.subtotal.text = "\(totalprice)"
         }
 }
-
 
 class ProductCart {
     var image: UIImage
