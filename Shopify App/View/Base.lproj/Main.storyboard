@@ -1461,6 +1461,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <state key="normal" title="Sing Up">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="beD-6P-2s9" eventType="touchUpInside" id="Kd5-3a-vsN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-LC-xCT">
                                 <rect key="frame" x="208" y="494" width="161" height="29"/>
@@ -1721,7 +1724,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7K-vX-ARx">
-                                <rect key="frame" x="131.66666666666669" y="329" width="129.66666666666669" height="48"/>
+                                <rect key="frame" x="130.66666666666669" y="329" width="131.66666666666669" height="48"/>
                                 <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
