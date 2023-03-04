@@ -10,33 +10,28 @@ import UIKit
 class ShoppingCartCell: UITableViewCell {
 
     @IBOutlet weak var productImg: UIImageView!
-    
     @IBOutlet weak var productName: UILabel!
-    
     @IBOutlet weak var productPrice: UILabel!
-    
     @IBOutlet weak var increaseQuantity: UIButton!
     @IBOutlet weak var quantityNumber: UILabel!
     @IBOutlet weak var decreaseQntity: UIButton!
+        
+ 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-      
         
         increaseQuantity.layer.borderWidth = 1
         increaseQuantity.layer.cornerRadius = 10
         increaseQuantity.layer.borderColor = UIColor.blue.cgColor
-        
         decreaseQntity.layer.borderWidth = 1
         decreaseQntity.layer.cornerRadius = 10
         decreaseQntity.layer.borderColor = UIColor.blue.cgColor

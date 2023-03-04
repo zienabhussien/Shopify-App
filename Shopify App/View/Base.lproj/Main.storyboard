@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HqV-6c-a8F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gxp-db-tkT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -196,7 +196,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgs-Nx-ytF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6503" y="-2038"/>
+            <point key="canvasLocation" x="7428.2442748091598" y="-2038.0281690140846"/>
         </scene>
         <!--FavouriteVC-->
         <scene sceneID="pGV-0Z-R4y">
@@ -272,7 +272,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFg-HN-d4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8776" y="-2038"/>
+            <point key="canvasLocation" x="9701.5267175572517" y="-2038.0281690140846"/>
         </scene>
         <!--OrderVC-->
         <scene sceneID="mob-ML-P6D">
@@ -366,7 +366,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-mM-DKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7592" y="-2038"/>
+            <point key="canvasLocation" x="8518.3206106870221" y="-2038.0281690140846"/>
         </scene>
         <!--Shopping CartVC-->
         <scene sceneID="lUd-8V-5Ca">
@@ -396,7 +396,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5wl-eO-809">
-                                <rect key="frame" x="0.0" y="154" width="393" height="481"/>
+                                <rect key="frame" x="0.0" y="198" width="393" height="437"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingCell" rowHeight="119" id="o0f-6D-pG0" customClass="ShoppingCartCell" customModule="Shopify_App" customModuleProvider="target">
@@ -424,6 +424,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                     <buttonConfiguration key="configuration" style="plain" title="+">
                                                         <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="increaseButtonTapped:" destination="JRD-ml-QgS" eventType="touchUpInside" id="GcV-GB-LNM"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="245.0 USD" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-Ut-QLY">
                                                     <rect key="frame" x="150" y="52" width="95" height="29"/>
@@ -445,6 +448,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                     <buttonConfiguration key="configuration" style="plain" title="-">
                                                         <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="21"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="decreaseButtonTapped:" destination="JRD-ml-QgS" eventType="touchUpInside" id="hba-DC-sIO"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byt-Yd-Scp">
                                                     <rect key="frame" x="300" y="52" width="33" height="26"/>
@@ -510,6 +516,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     </attributedString>
                                     <color key="baseBackgroundColor" red="0.0057746447280000003" green="0.40880440000000001" blue="0.97160921389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="proceedToCheckoutButton:" destination="JRD-ml-QgS" eventType="touchUpInside" id="1bF-o6-FLF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8al-v5-8bD"/>
@@ -530,6 +539,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="T6P-xY-7PE" firstAttribute="top" secondItem="5wl-eO-809" secondAttribute="bottom" constant="8" id="lnH-Sh-eVW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QWD-k1-ezj"/>
                     <connections>
                         <outlet property="checkOutBtn" destination="bkg-zh-eJe" id="mKP-gm-fBD"/>
                         <outlet property="subtotal" destination="q6V-mV-VqV" id="wvE-f5-ZvS"/>
@@ -538,12 +548,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ma7-Pj-Deu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="-1645"/>
+            <point key="canvasLocation" x="2078.6259541984732" y="-1645.0704225352113"/>
         </scene>
         <!--Choose AddressVC-->
         <scene sceneID="fGG-Mt-k5s">
             <objects>
-                <viewController id="1z6-Gh-xyj" customClass="ChooseAddressVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseAddressVC" id="1z6-Gh-xyj" customClass="ChooseAddressVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nqa-Sb-MBI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -640,7 +650,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1W4-ir-CUu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2019" y="-1645"/>
+            <point key="canvasLocation" x="2944.2748091603053" y="-1645.0704225352113"/>
         </scene>
         <!--Confirm PaymentVC-->
         <scene sceneID="Mtf-T2-QB0">
@@ -785,7 +795,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVy-Nu-ILW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="-1645"/>
+            <point key="canvasLocation" x="5008.3969465648852" y="-1645.0704225352113"/>
         </scene>
         <!--Payment OptionsVC-->
         <scene sceneID="zPC-be-3KB">
@@ -873,7 +883,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJT-Hq-ocR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2908" y="-1645"/>
+            <point key="canvasLocation" x="3834.3511450381679" y="-1645.0704225352113"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="VjF-zS-d6m">
@@ -1828,6 +1838,24 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rm1-VZ-EP7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="-11"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RzB-rH-Sfk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gxp-db-tkT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0fW-yC-f6A">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JRD-ml-QgS" kind="relationship" relationship="rootViewController" id="cv3-9z-kof"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfr-gQ-if2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151.9083969465648" y="-1645.0704225352113"/>
         </scene>
     </scenes>
     <resources>
