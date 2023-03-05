@@ -25,13 +25,13 @@ class loginViewController: UIViewController {
         
         loginViewModel = LoginViewModel()
         
-        loadDataFromURL { data, _ in
-            print(data ?? "null")
-        }
-        
-//        fetchFromApi { data in
+//        loadDataFromURL { data, _ in
 //            print(data ?? "null")
 //        }
+        
+        fetchFromApi { data in
+            print(data ?? "null")
+        }
 
         
     }
