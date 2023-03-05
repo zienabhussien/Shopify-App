@@ -44,36 +44,7 @@ class SingUpViewController: UIViewController {
         
     
     
-//   func taskForPOSTRequest( body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
-//
-//       let url = URL(string: "https://a546963db1d86b6cdc7f01928132e7f7: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@mad-4-ism2023.myshopify.com/admin/api/2023-01/customers.json" )
-//       let responseType = CustomerResponse(customer: <#T##Customer#>)
-//
-//
-//
-//            var request = URLRequest(url: url!)
-//            request.httpMethod = "POST"
-//            request.httpBody = try! JSONEncoder().encode(body)
-//            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//                guard let data = data else {
-//                    DispatchQueue.main.async {
-//                        completion(nil, error)
-//                    }
-//                    return
-//                }
-//                let decoder = JSONDecoder()
-//                do {
-//                    let responseObject = try decoder.decode(ResponseType.self, from: data)
-//                    DispatchQueue.main.async {
-//                        completion(responseObject, nil)
-//                    }
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//            task.resume()
-//        }
+  
 
     
     @IBAction func signUp(_ sender: Any) {

@@ -12,15 +12,18 @@ struct CustomerResponse: Codable{
 }
 // MARK: - Customer
 struct Customer: Codable {
-    let firstName, lastName, email, phone: String
-    let id: Int
+    let firstName : String?
+    let lastName : String?
+    let email : String?
+    
+    let id: Int?
     let verifiedEmail: Bool
     let addresses: [Address]
 
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last_name"
-        case email, phone,id
+        case email, id
         case verifiedEmail = "verified_email"
         case addresses
     }

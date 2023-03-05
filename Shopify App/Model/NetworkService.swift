@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Alamofire
 protocol Service{
     static func postCustomer(name: String,email: String , password: String)
 }
@@ -24,6 +24,7 @@ class NetworkService : Service{
         
         
         let url = URL(string: "https://a546963db1d86b6cdc7f01928132e7f7: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@mad-4-ism2023.myshopify.com/admin/api/2023-01/customers.json" )
+        
         var urlRequst = URLRequest(url: url!)
         urlRequst.httpMethod = "post"
         urlRequst.httpShouldHandleCookies = false
@@ -39,45 +40,39 @@ class NetworkService : Service{
         
         URLSession.shared.dataTask(with: urlRequst){ (data,response, error)  in
             
-//            let jsonData = try? JSONDecoder().decode(Customer.self, from: data!)
-//            print(jsonData?.id)
-//            debugPrint(jsonData!)
-            
-            if(data != nil && data?.count != 0){
-//                let jsonData : CustomerResponse = try! JSONDecoder().decode(CustomerResponse.self, from: data!) as! CustomerResponse
-//                print(jsonData.customer.id)
-//                debugPrint(jsonData)
-                let result = String(data: data!, encoding: .utf8)
-                debugPrint(result!)
+            if let data = data {
+                do {
+                    // Try decoding your data to your model
+                    let jsonData = try JSONDecoder().decode(CustomerResponse.self, from: data)
+                    print(jsonData)
+                   
+                }
+                catch {
+                    print(error)
+                }
             }
+     
             
         }.resume()
         
     }
     
-    static func taskForPOSTRequest<RequestType: Encodable, ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, body: RequestType, completion: @escaping (ResponseType?, Error?) -> Void) {
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.httpBody = try! JSONEncoder().encode(body)
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data else {
-                    DispatchQueue.main.async {
-                        completion(nil, error)
-                    }
-                    return
-                }
-                let decoder = JSONDecoder()
-                do {
-                    let responseObject = try decoder.decode(ResponseType.self, from: data)
-                    DispatchQueue.main.async {
-                        completion(responseObject, nil)
-                    }
-                } catch {
-                    print(error)
-                }
+    static func fetchFromApi<T: Decodable>( API_URL: String, complition: @escaping (T? ) -> Void)  {
+        AF.request(API_URL).responseJSON { response in
+            do
+            {
+                
+                guard let responseData = response.data else {return}
+                let result = try JSONDecoder().decode(T.self, from: responseData)
+                print(result)
+                complition(result)
+                
+            }catch let error {
+                complition(nil )
+                print(error.localizedDescription)
+                
             }
-            task.resume()
         }
+    }
 
 }
