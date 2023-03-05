@@ -25,60 +25,17 @@ class loginViewController: UIViewController {
         
         loginViewModel = LoginViewModel()
         
-//        loadDataFromURL { data, _ in
-//            print(data ?? "null")
+//        DispatchQueue.main.async {
+//            fetchFromApi { data in
+//                print(data?.customers ?? "null")
+//            }
 //        }
-        
-        fetchFromApi { data in
-            print(data ?? "null")
-        }
 
         
     }
     
     
-    func loadDataFromURL( completionHandeler: @escaping ((AllCustomers?), Error?) -> Void){
-              let url = URL(string: "https://a546963db1d86b6cdc7f01928132e7f7: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@mad-4-ism2023.myshopify.com/admin/api/2023-01/customers.json")
-              guard let url = url else{ return }
-              let req = URLRequest(url: url)
-              let session = URLSession(configuration: URLSessionConfiguration.default)
-              let task = session.dataTask(with: req) { data, response, error in
 
-                  if let error = error{
-                      completionHandeler(nil, error)
-                  }else{
-                      let res = try? JSONDecoder().decode(AllCustomers.self, from: data!)
-                      print(res?.customers[0])
-      //                let movieArray = res?.items
-                      completionHandeler(res, nil)
-                  }
-                      
-              }
-              task.resume()
-          }
-    
-    
-  
-   
-     func fetchFromApi(  complition: @escaping (AllCustomers? ) -> Void)  {
-         let API_URL = "https://a546963db1d86b6cdc7f01928132e7f7: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@mad-4-ism2023.myshopify.com/admin/api/2023-01/customers.json"
-        AF.request(API_URL).responseJSON { response in
-            do
-            {
-
-                guard let responseData = response.data else {return}
-                let result = try JSONDecoder().decode(AllCustomers.self, from: responseData)
-                print(result)
-                complition(result)
-
-            }catch let error {
-                complition(nil )
-                print(error.localizedDescription)
-
-            }
-        }
-    }
-    
     
     @IBAction func didPressCreatAccount(_ sender: Any) {
         SingUp()
@@ -92,14 +49,21 @@ class loginViewController: UIViewController {
         loginViewModel.bindResultToLoginView = { [weak self] customers in
             
             DispatchQueue.main.async {
-                self?.isExist = self?.loginViewModel.searchCustomer(currEmail: self?.emailTextFiled.text ?? "", allCustomers: customers)
-                print(self?.isExist)
+                self?.isExist = self?.loginViewModel.searchCustomer(currEmail: self?.emailTextFiled.text ?? "",password: self?.passwordTextFiled.text ?? "" ,  allCustomers: customers)
+                
+                print((self?.isExist)!)
+                
+                if  (self?.isExist)! {
+                    
+                    // show toast for user
+                    self?.goToTabBar()
+                }
             }
             
         }
         loginViewModel.getAllCustomers()
         
-        goToTabBar()
+       
     }
     
     
@@ -130,6 +94,19 @@ class loginViewController: UIViewController {
         let navigationController = UINavigationController(rootViewController: viewController)
         navigationController.modalPresentationStyle = .fullScreen
         present(navigationController, animated: true)
+    }
+    
+    
+    func validateData(name:String, email: String,password: String ){
+        
+    }
+    
+    
+    func showAlert(title:String,message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true)
+        
     }
     
 }

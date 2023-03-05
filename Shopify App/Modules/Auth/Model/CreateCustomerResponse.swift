@@ -8,27 +8,28 @@
 
 import Foundation
 struct CustomerResponse: Codable{
-   let customer : Customer
+   let customer : Customer?
 }
 // MARK: - Customer
 struct Customer: Codable {
     let firstName : String?
     let lastName : String?
-    let email : String?
+    let email : String
     
     let id: Int?
     let verifiedEmail: Bool
     let addresses: [Address]
+    let note: String
 
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last_name"
-        case email, id
+        case email, id, note
         case verifiedEmail = "verified_email"
         case addresses
     }
     
-   
+    
 }
 
 // MARK: - Address

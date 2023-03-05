@@ -21,21 +21,27 @@ class LoginViewModel{
         }
         
         func getAllCustomers(){
-            let strUrl = "https://a546963db1d86b6cdc7f01928132e7f7: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@mad-4-ism2023.myshopify.com/admin/api/2023-01/customers.json"
+            let strUrl = "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers.json"
             NetworkService.fetchFromApi(API_URL: strUrl) { [weak self] (data: AllCustomers?) in
                 
                 guard let data = data else{ return}
+                
                 self?.allCustomers = data
+                print(data.customers)
                 
             }
             
         }
         
-        func searchCustomer(currEmail:String , allCustomers: AllCustomers) -> Bool{
+    func searchCustomer(currEmail:String ,password: String ,allCustomers: AllCustomers) -> Bool{
             
             for i in 0 ..< (allCustomers.customers.count){
                 
-                if currEmail == allCustomers.customers[i].email  {
+                if currEmail == allCustomers.customers[i].email
+                    && allCustomers.customers[i].note == password {
+                   
+                        print("done")
+                    
                     return true
                 }
                 
