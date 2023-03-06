@@ -5,25 +5,25 @@
 //  Created by Ali Moustafa on 01/03/2023.
 //
 
-import Foundation
-import CoreData
-import UIKit
-import CoreMedia
-
-class CoreDataServices{
-}
-
-extension CoreDataServices{
-    func saveToCoreData(completion: @escaping (Bool)-> Void){
-        do{
-            try context.save()
-            completion(true)
-        }catch{
-            print("Error in saveProductToWishList", error.localizedDescription)
-            completion(false)
-        }
-    }
-}
+//import Foundation
+//import CoreData
+//import UIKit
+//import CoreMedia
+//
+//class CoreDataServices{
+//}
+//
+//extension CoreDataServices{
+//    func saveToCoreData(completion: @escaping (Bool)-> Void){
+//        do{
+//            try context.save()
+//            completion(true)
+//        }catch{
+//            print("Error in saveProductToWishList", error.localizedDescription)
+//            completion(false)
+//        }
+//    }
+//}
 
 //extension CoreDataServices{
 //    func getAllWishListProduct(completion: @escaping ([WishListModel]?, Error?)-> Void){
@@ -38,18 +38,18 @@ extension CoreDataServices{
 //    }
 //}
 
-extension CoreDataServices{
-    func getAddress(completion: @escaping (AddressModel?, Error?)-> Void){
-        do{
-            let addressModel = try context.fetch(AddressModel.fetchRequest())
-            print("fetching data.....")
-            completion(addressModel[0], nil)
-        }catch{
-            completion(nil, error)
-            print("Error in getAddress function: ", error.localizedDescription)
-        }
-    }
-}
+//extension CoreDataServices{
+//    func getAddress(completion: @escaping (AddressModel?, Error?)-> Void){
+//        do{
+//            let addressModel = try context.fetch(AddressModel.fetchRequest())
+//            print("fetching data.....")
+//            completion(addressModel[0], nil)
+//        }catch{
+//            completion(nil, error)
+//            print("Error in getAddress function: ", error.localizedDescription)
+//        }
+//    }
+//}
 
 
 //extension CoreDataServices{

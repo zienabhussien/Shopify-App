@@ -10,7 +10,7 @@ import Foundation
 class AddressViewModel{
     
     let networking = Networking()
-    let coreDataServices = CoreDataServices()
+//    let coreDataServices = CoreDataServices()
     
     var bindSuccessToView: (()->()) = {}
     var address: [Address]! {
@@ -40,13 +40,13 @@ class AddressViewModel{
         }
     }
     
-    func saveSelectedAddress(){
-        coreDataServices.saveToCoreData { saveSuccess in
-            if saveSuccess{
-                print("success to save address")
-            }else{
-                print("failed to save address")
-            }
-        }
-    }
+//    func saveSelectedAddress(){
+//        coreDataServices.saveToCoreData { saveSuccess in
+//            if saveSuccess{
+//                print("success to save address")
+//            }else{
+//                print("failed to save address")
+//            }
+//        }
+//    }
 }

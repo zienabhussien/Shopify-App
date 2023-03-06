@@ -6,10 +6,10 @@
 //
 //
 
-import Foundation
-import CoreData
-
-@objc(AddressModel)
-public class AddressModel: NSManagedObject {
-
-}
+//import Foundation
+//import CoreData
+//
+////@objc(AddressModel)
+//public class AddressModel: NSManagedObject {
+//
+//}
