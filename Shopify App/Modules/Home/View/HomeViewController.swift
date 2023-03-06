@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerBrandsCollectionView()
-       
+        self.title = "Home"
         //fetch data
         fetchData { result in
             DispatchQueue.main.async {

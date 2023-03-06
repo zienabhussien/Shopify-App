@@ -21,7 +21,7 @@ class ProductOfBrandVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerBrandCollectionView()
-        
+        self.title = "Ali"
         //fetch data
         fetchData { result in
             DispatchQueue.main.async {
@@ -39,7 +39,7 @@ class ProductOfBrandVC: UIViewController {
         
         
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "toWishlistButton")
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
         viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
         print("wish")

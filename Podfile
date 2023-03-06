@@ -12,6 +12,7 @@ pod 'Cosmos'
 pod 'Kingfisher'
 pod 'SwiftyJSON'
 pod "Mobile-Buy-SDK"
+pod 'Toast-Swift'
 
 
 #pod 'ReachabilitySwift'

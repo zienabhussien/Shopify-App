@@ -76,6 +76,7 @@ PODS:
   - MDFTextAccessibility (2.0.1)
   - Mobile-Buy-SDK (5.0.0)
   - SwiftyJSON (5.0.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Cosmos
@@ -86,6 +87,7 @@ DEPENDENCIES:
   - "MaterialComponents/TextFields+ColorThemer"
   - Mobile-Buy-SDK
   - SwiftyJSON
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -98,6 +100,7 @@ SPEC REPOS:
     - MDFTextAccessibility
     - Mobile-Buy-SDK
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
@@ -109,7 +112,8 @@ SPEC CHECKSUMS:
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   Mobile-Buy-SDK: a2d5780eadac16e9980c2702789045b701bc5d55
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 9551ae6f1b4a2c26264d87a35fef1051d4a6bc4d
+PODFILE CHECKSUM: 05572942840b3f199ac38b21e22efe0e1a66468c
 
 COCOAPODS: 1.11.3
