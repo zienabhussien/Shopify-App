@@ -22,24 +22,29 @@ struct Customer: Codable {
     let addresses: [Address]?
 }
 
-struct Address: Codable {
-    var address1, city, province, phone: String?
-    var zip, last_name, first_name, country: String?
-    let id: Int?
-}
+
 
 struct LoginResponse: Codable {
     let customers: [Customer]
 }
 
+// MARK: - address i fill it from Text Filed
+struct Address: Codable {
+    var address1, city, province, phone: String?
+    var zip, last_name, first_name, country: String?
+    let id: Int?
+}
+// MARK: - Araay of address
 struct CustomerAddress: Codable {
     var addresses: [Address]?
 }
+// MARK: - the object i will send to server
+struct PutAddress: Codable {
+    let customer: CustomerAddress?
+}
+
 
 struct UpdateAddress: Codable {
     var address: Address
 }
 
-struct PutAddress: Codable {
-    let customer: CustomerAddress?
-}
