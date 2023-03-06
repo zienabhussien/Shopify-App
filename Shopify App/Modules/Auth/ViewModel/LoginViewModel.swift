@@ -22,7 +22,7 @@ class LoginViewModel{
         
         func getAllCustomers(){
             let strUrl = "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers.json"
-            NetworkService.fetchFromApi(API_URL: strUrl) { [weak self] (data: AllCustomers?) in
+            NetworkService.fetchFromApi(endPoint: EndPoints.Customers ){ [weak self] (data: AllCustomers?) in
                 
                 guard let data = data else{ return}
                 
