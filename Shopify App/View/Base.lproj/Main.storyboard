@@ -371,7 +371,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         <!--Shopping CartVC-->
         <scene sceneID="lUd-8V-5Ca">
             <objects>
-                <viewController id="JRD-ml-QgS" customClass="ShoppingCartVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShoppingCartVC" id="JRD-ml-QgS" customClass="ShoppingCartVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XaV-qc-CLh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1365,7 +1365,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-nt-q7w">
-                                <rect key="frame" x="251.33333333333337" y="567.33333333333337" width="127" height="29"/>
+                                <rect key="frame" x="250.33333333333337" y="567.33333333333337" width="128" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create your account">
@@ -1379,10 +1379,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <rect key="frame" x="14.666666666666657" y="419.66666666666669" width="363.66666666666674" height="133.66666666666669"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-eW-dQN">
-                                        <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="52.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="65"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="631-Q3-qks">
-                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="36.666666666666664"/>
+                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="49"/>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                             </textField>
@@ -1397,10 +1397,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woq-GJ-OIP">
-                                        <rect key="frame" x="0.0" y="68.666666666666629" width="363.66666666666669" height="65"/>
+                                        <rect key="frame" x="0.0" y="81" width="363.66666666666669" height="52.666666666666657"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-x6-7nS">
-                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="49"/>
+                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="36.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -1463,7 +1463,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-LC-xCT">
-                                <rect key="frame" x="208" y="494" width="161" height="29"/>
+                                <rect key="frame" x="206" y="494" width="163" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
@@ -1585,9 +1585,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <color key="selectedImageTintColor" name="mainColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1Py-oG-ejz" kind="relationship" relationship="viewControllers" id="Ghc-u5-m8D"/>
-                        <segue destination="amV-e0-Max" kind="relationship" relationship="viewControllers" id="pjg-Co-T4J"/>
-                        <segue destination="uKv-mc-jgK" kind="relationship" relationship="viewControllers" id="aa4-PQ-Cds"/>
+                        <segue destination="1Py-oG-ejz" kind="relationship" relationship="viewControllers" id="YtO-6a-sBU"/>
+                        <segue destination="amV-e0-Max" kind="relationship" relationship="viewControllers" id="rGa-dF-5tG"/>
+                        <segue destination="uKv-mc-jgK" kind="relationship" relationship="viewControllers" id="i6t-Gs-auu"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xiL-n5-mKA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1602,7 +1602,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uij-Az-tVP">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uij-Az-tVP">
                                 <rect key="frame" x="0.0" y="91" width="393" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -1660,7 +1660,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <constraint firstAttribute="height" constant="30" id="EFJ-xi-xGc"/>
                                 </constraints>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rQu-fO-cQx">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rQu-fO-cQx">
                                 <rect key="frame" x="0.0" y="189" width="393" height="580"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fh7-5h-dhq">
@@ -1669,6 +1669,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="efm-o1-Y3l">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="580"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <cells/>
                             </collectionView>
                         </subviews>
@@ -1693,13 +1697,14 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                     </navigationItem>
                     <connections>
                         <outlet property="gridListButton" destination="EPv-PP-Yeo" id="6ec-lf-43i"/>
+                        <outlet property="laoding" destination="efm-o1-Y3l" id="j2W-Fz-YM7"/>
                         <outlet property="productsCollectionView" destination="rQu-fO-cQx" id="8Si-Uo-QA9"/>
                         <outlet property="subCategoriesCollectionViev" destination="uij-Az-tVP" id="08c-sl-mXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCN-Qv-TGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="717"/>
+            <point key="canvasLocation" x="3970.2290076335876" y="716.90140845070425"/>
         </scene>
         <!--Home-->
         <scene sceneID="R14-4v-ekH">
@@ -1709,7 +1714,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-O9-PRg">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ubj-O9-PRg">
                                 <rect key="frame" x="0.0" y="385" width="393" height="384"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ILY-p9-3L2">
@@ -1745,7 +1750,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="vyx-AP-4CP" firstAttribute="top" secondItem="Ipy-jP-9A6" secondAttribute="top" constant="16" id="p72-UZ-JNm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home-3" id="pnL-a4-41p"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-3" id="JED-ER-kei"/>
                     <navigationItem key="navigationItem" id="Y2v-CK-bhz"/>
                     <connections>
                         <outlet property="AddsImage" destination="vyx-AP-4CP" id="P7z-Gh-XYk"/>
@@ -1754,18 +1759,19 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uA6-hP-skM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="717"/>
+            <point key="canvasLocation" x="2724.4274809160306" y="716.90140845070425"/>
         </scene>
         <!--Product Of BrandVC-->
         <scene sceneID="1np-8e-ePS">
             <objects>
-                <viewController id="frX-f1-Kq4" customClass="ProductOfBrandVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductOfBrandVC" id="frX-f1-Kq4" customClass="ProductOfBrandVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b26-U5-iHt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-Wg-Mmc">
-                                <rect key="frame" x="0.0" y="109" width="393" height="677"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4mn-Wg-Mmc">
+                                <rect key="frame" x="0.0" y="275" width="393" height="543"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vp0-MJ-VPu">
                                     <size key="itemSize" width="128" height="128"/>
@@ -1784,23 +1790,51 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Vendor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOx-Vh-xd1">
+                                <rect key="frame" x="0.0" y="211" width="393" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jfn-e5-j6B">
+                                <rect key="frame" x="-1" y="59" width="393" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="All Products" id="7hg-lA-f0x">
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="love" image="favorite" id="oMm-Pg-1pV">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="toWishlistButton:" destination="frX-f1-Kq4" id="0Mx-UT-dM4"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem image="shopping-bag" id="ImZ-3g-TKD">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="toCartButton:" destination="frX-f1-Kq4" id="dkT-6J-PrE"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZLS-DW-ozj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4mn-Wg-Mmc" firstAttribute="top" secondItem="ZLS-DW-ozj" secondAttribute="top" constant="50" id="FZl-d3-jHQ"/>
-                            <constraint firstItem="ZLS-DW-ozj" firstAttribute="trailing" secondItem="4mn-Wg-Mmc" secondAttribute="trailing" id="JI2-8g-tW7"/>
-                            <constraint firstItem="ZLS-DW-ozj" firstAttribute="bottom" secondItem="4mn-Wg-Mmc" secondAttribute="bottom" constant="32" id="OjT-fw-hD3"/>
-                            <constraint firstItem="4mn-Wg-Mmc" firstAttribute="leading" secondItem="ZLS-DW-ozj" secondAttribute="leading" id="VRr-r2-0R3"/>
+                            <constraint firstItem="nOx-Vh-xd1" firstAttribute="top" secondItem="jfn-e5-j6B" secondAttribute="bottom" id="JaB-BY-JHV"/>
+                            <constraint firstItem="nOx-Vh-xd1" firstAttribute="trailing" secondItem="ZLS-DW-ozj" secondAttribute="trailing" id="WB0-JV-tsa"/>
+                            <constraint firstItem="nOx-Vh-xd1" firstAttribute="leading" secondItem="ZLS-DW-ozj" secondAttribute="leading" id="Xdv-bs-aKF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ProductOfBrandsCollection" destination="4mn-Wg-Mmc" id="bRQ-yp-6EB"/>
+                        <outlet property="vendorName" destination="nOx-Vh-xd1" id="kyQ-lL-Bsc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KP-lP-9cz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82" y="717"/>
+            <point key="canvasLocation" x="1420.6106870229007" y="744.36619718309862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MhG-4e-4Se">
@@ -1826,6 +1860,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         <image name="adds" width="696" height="365"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <image name="favorite" width="25" height="23.333333969116211"/>
         <image name="filter" width="30" height="16"/>
         <image name="grid" width="20" height="13"/>
         <image name="heart" catalog="system" width="128" height="107"/>
@@ -1835,6 +1870,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         <image name="priceSort" width="16" height="16"/>
         <image name="search" width="22" height="22"/>
         <image name="shoes" width="612" height="408"/>
+        <image name="shopping-bag" width="22.666666030883789" height="25"/>
         <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
         <namedColor name="mainColor">
             <color red="0.85882352941176465" green="0.18823529411764706" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,6 +10,10 @@ pod 'lottie-ios'
 pod 'Floaty'
 pod 'Cosmos'
 pod 'Kingfisher'
+pod 'SwiftyJSON'
+pod "Mobile-Buy-SDK"
+
+
 #pod 'ReachabilitySwift'
 pod ‘MaterialComponents/TextFields’
 pod ‘MaterialComponents/TextFields+ColorThemer’

@@ -15,6 +15,7 @@
 		331BB40829AF806F00466C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 331BB40729AF806E00466C97 /* Assets.xcassets */; };
 		3347203529AF901600FF2F40 /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3347203329AF901600FF2F40 /* ShoppingCartVC.swift */; };
 		3347203629AF901600FF2F40 /* ShoppingCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3347203429AF901600FF2F40 /* ShoppingCartCell.swift */; };
+		335D05D629B219B300D0F39D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 335D05D529B219B300D0F39D /* Kingfisher */; };
 		33A2023429B0F62200D85E41 /* EXUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023129B0F62200D85E41 /* EXUIView.swift */; };
 		33A2023529B0F62200D85E41 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023229B0F62200D85E41 /* CardView.swift */; };
 		33A2023629B0F62200D85E41 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023329B0F62200D85E41 /* Typealias.swift */; };
@@ -33,6 +34,9 @@
 		33A2025F29B0F6AF00D85E41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2025829B0F6AF00D85E41 /* HomeViewController.swift */; };
 		33A2026029B0F6AF00D85E41 /* BrandsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2025A29B0F6AF00D85E41 /* BrandsCollectionViewCell.swift */; };
 		33A2026129B0F6AF00D85E41 /* BrandsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A2025B29B0F6AF00D85E41 /* BrandsCollectionViewCell.xib */; };
+		33B205F929B16DF500AFBB17 /* BrandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B205F829B16DF500AFBB17 /* BrandResponse.swift */; };
+		33F48FDE29B22DF600611843 /* BrandProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F48FDD29B22DF600611843 /* BrandProductResponse.swift */; };
+		33F48FE129B25DFA00611843 /* subCatecoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F48FE029B25DFA00611843 /* subCatecoryResponse.swift */; };
 		3B4FCBA1192DB739F2834B78 /* Pods_Shopify_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB050D1A4B5081AEFC597C7 /* Pods_Shopify_AppTests.framework */; };
 		7BFB960029B0EB29002D5253 /* WishListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB95F629B0EB25002D5253 /* WishListTableCell.swift */; };
 		7BFB960129B0EB29002D5253 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB95F729B0EB25002D5253 /* MeVC.swift */; };
@@ -120,6 +124,9 @@
 		33A2025829B0F6AF00D85E41 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33A2025A29B0F6AF00D85E41 /* BrandsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33A2025B29B0F6AF00D85E41 /* BrandsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionViewCell.xib; sourceTree = "<group>"; };
+		33B205F829B16DF500AFBB17 /* BrandResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandResponse.swift; sourceTree = "<group>"; };
+		33F48FDD29B22DF600611843 /* BrandProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandProductResponse.swift; sourceTree = "<group>"; };
+		33F48FE029B25DFA00611843 /* subCatecoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subCatecoryResponse.swift; sourceTree = "<group>"; };
 		5ED22B020899511829DE094C /* Pods_Shopify_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CC8966D5DEB50ADAB926022 /* Pods-Shopify App-Shopify AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify App-Shopify AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Shopify App-Shopify AppUITests/Pods-Shopify App-Shopify AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7BFB95F629B0EB25002D5253 /* WishListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishListTableCell.swift; sourceTree = "<group>"; };
@@ -170,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335D05D629B219B300D0F39D /* Kingfisher in Frameworks */,
 				CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */,
 				D84335E729B11595003F7093 /* Reachability in Frameworks */,
 				D84335E429B11512003F7093 /* Alamofire in Frameworks */,
@@ -288,6 +296,7 @@
 		33A2023B29B0F69E00D85E41 /* catagory */ = {
 			isa = PBXGroup;
 			children = (
+				33F48FDF29B25DAC00611843 /* Model */,
 				33A2023C29B0F69E00D85E41 /* View */,
 			);
 			path = catagory;
@@ -334,6 +343,7 @@
 		33A2025029B0F6AF00D85E41 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				33F48FDC29B22DC400611843 /* Model */,
 				33A2025129B0F6AF00D85E41 /* View */,
 			);
 			path = Product;
@@ -360,6 +370,7 @@
 		33A2025629B0F6AF00D85E41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				33B205FA29B16E0000AFBB17 /* Model */,
 				33A2025729B0F6AF00D85E41 /* View */,
 			);
 			path = Home;
@@ -381,6 +392,30 @@
 				33A2025B29B0F6AF00D85E41 /* BrandsCollectionViewCell.xib */,
 			);
 			path = BrandsCell;
+			sourceTree = "<group>";
+		};
+		33B205FA29B16E0000AFBB17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33B205F829B16DF500AFBB17 /* BrandResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33F48FDC29B22DC400611843 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33F48FDD29B22DF600611843 /* BrandProductResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33F48FDF29B25DAC00611843 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33F48FE029B25DFA00611843 /* subCatecoryResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7BFB95F429B0EAF2002D5253 /* Me */ = {
@@ -614,6 +649,7 @@
 			packageProductDependencies = (
 				D84335E329B11512003F7093 /* Alamofire */,
 				D84335E629B11595003F7093 /* Reachability */,
+				335D05D529B219B300D0F39D /* Kingfisher */,
 			);
 			productName = "Shopify App";
 			productReference = 8C24C1E629AE777400AE390B /* Shopify App.app */;
@@ -693,6 +729,7 @@
 			packageReferences = (
 				D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				D84335E529B11595003F7093 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
+				335D05D429B219B300D0F39D /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8C24C1E729AE777400AE390B /* Products */;
 			projectDirPath = "";
@@ -869,9 +906,12 @@
 				D8784BAD29AF680300231982 /* SplashVC.swift in Sources */,
 				8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */,
 				33A2023529B0F62200D85E41 /* CardView.swift in Sources */,
+				33B205F929B16DF500AFBB17 /* BrandResponse.swift in Sources */,
 				8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */,
+				33F48FDE29B22DF600611843 /* BrandProductResponse.swift in Sources */,
 				D8E34D8129B0DC2400590317 /* ProductVC.swift in Sources */,
 				7BFB960929B0EB29002D5253 /* SettingsVC.swift in Sources */,
+				33F48FE129B25DFA00611843 /* subCatecoryResponse.swift in Sources */,
 				7BFB960029B0EB29002D5253 /* WishListTableCell.swift in Sources */,
 				8C24C1F429AE777500AE390B /* Shopify_App.xcdatamodeld in Sources */,
 				33A2024F29B0F69E00D85E41 /* CatagoryViewController.swift in Sources */,
@@ -1236,6 +1276,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		335D05D429B219B300D0F39D /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1255,6 +1303,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		335D05D529B219B300D0F39D /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 335D05D429B219B300D0F39D /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		D84335E329B11512003F7093 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D84335E229B11512003F7093 /* XCRemoteSwiftPackageReference "Alamofire" */;
