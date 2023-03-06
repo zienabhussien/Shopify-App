@@ -39,7 +39,7 @@ struct URLs{
     func allProducts()-> URL?{
         return URL(string: baseURL + "products.json")
     }
-// MARK: - addAddressToCustomer
+// MARK: - addAddressToCustomer API
     func addAddressToCustomer(id: String) -> URL? {
         return URL(string: baseURL + "customers/\(id).json")
     }

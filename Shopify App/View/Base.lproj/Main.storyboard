@@ -2057,6 +2057,59 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
             </objects>
             <point key="canvasLocation" x="9360" y="-464"/>
         </scene>
+        <!--AddressVC-->
+        <scene sceneID="CdW-nc-OZb">
+            <objects>
+                <viewController storyboardIdentifier="AddressVC" id="xku-Vd-3n0" customClass="AddressVC" customModule="Shopify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eCy-pL-aVH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2IJ-Mz-PA1">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xku-Vd-3n0" id="GhQ-Gv-NhI"/>
+                                    <outlet property="delegate" destination="xku-Vd-3n0" id="kZq-Oa-jKb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WYt-Un-GVA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2IJ-Mz-PA1" firstAttribute="leading" secondItem="WYt-Un-GVA" secondAttribute="leading" id="O5g-Vq-eEb"/>
+                            <constraint firstItem="WYt-Un-GVA" firstAttribute="trailing" secondItem="2IJ-Mz-PA1" secondAttribute="trailing" id="g3p-qu-a2P"/>
+                            <constraint firstItem="2IJ-Mz-PA1" firstAttribute="top" secondItem="WYt-Un-GVA" secondAttribute="top" id="pIg-ud-3vu"/>
+                            <constraint firstItem="WYt-Un-GVA" firstAttribute="bottom" secondItem="2IJ-Mz-PA1" secondAttribute="bottom" id="psF-kI-5fO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uk3-qj-umF"/>
+                    <connections>
+                        <outlet property="tableView" destination="2IJ-Mz-PA1" id="DTx-ZG-qlf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtA-Ra-Sh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10859" y="-452"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xz5-Jw-Hqw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NKj-mp-dfK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kkk-Oc-DlM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xku-Vd-3n0" kind="relationship" relationship="rootViewController" id="gkf-jV-cos"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5W8-fY-EjS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10218" y="-464"/>
+        </scene>
     </scenes>
     <resources>
         <image name="360_F_335919003_TH0ZtHZZ5QGT34n1NcQXzRGvz4Pthg11" width="720" height="360"/>
