@@ -50,40 +50,34 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>Mobile-Buy-SDK.xcscheme_^#shared#^_</key>
-		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>7</integer>
 		</dict>
 		<key>Pods-Shopify App-Shopify AppUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-Shopify App.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-Shopify AppTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-		</dict>
-		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
-		<dict>
 			<key>orderHint</key>
 			<integer>11</integer>
 		</dict>
@@ -92,7 +86,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>12</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>
