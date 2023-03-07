@@ -13,13 +13,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        rootViewController()
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
            
         guard let _ = (scene as? UIWindowScene) else { return }
     }
-
+    func rootViewController() {
+                    let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+            print("userDefaultToken", userDefaultToken )
+             //when log out delete value of this key
+                if userDefaultToken != 0 {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let homeViewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
+                    let navigationController = UINavigationController(rootViewController: homeViewController)
+                    window?.rootViewController = navigationController
+                    window?.makeKeyAndVisible()
+                    
+                }else {
+                       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                       let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+                       let navigationController = UINavigationController(rootViewController: loginViewController)
+                       window?.rootViewController = navigationController
+                       window?.makeKeyAndVisible()
+                    }
+        }
     
 //    func rootViewController() {
 //        let userDefaultToken = UserDefaults.standard.string(forKey: "LoginToken")
