@@ -194,6 +194,17 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     
 }
 
+// MARK: CollectionView delegate
+extension ProductOfBrandVC{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = filteredProducts?[indexPath.row]
+        let ProductVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
+//        ProductVC.product = product
+        self.navigationController?.pushViewController(ProductVC, animated: true)
+    }
+    
+}
 
 extension ProductOfBrandVC{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -41,27 +41,28 @@ class OrderViewModel{
         }
     }
     
-//    func addItemsToCart(product:Product){
-//        do {
-//            let items = try context.fetch(OrderItemModel.fetchRequest())
-//            if checkIfItemExist(itemId: product.id!,itemms: items){
-//                print("Already in cart")
-//                self.showAlreadyExist()
-//            }else{
-//                let orderItem = OrderItemModel(context: context)
-//                orderItem.itemID = Int64(product.id!)
-//                orderItem.itemName = product.title
-//                orderItem.itemPrice = product.variants![0].price
-//                orderItem.itemImage = product.image?.src
-//                orderItem.itemQuantity = 1
-//                orderItem.userID = Int64(customerID!)
-//                try? context.save()
-//                print(orderItem)
-//            }
-//        } catch let error {
-//            print(error)
-//        }
-//    }
+    // function to save item in core data
+    func addItemsToCart(product:Product){
+        do {
+            let items = try context.fetch(OrderItemModel.fetchRequest())
+            if checkIfItemExist(itemId: product.id!,itemms: items){
+                print("Already in cart")
+                self.showAlreadyExist()
+            }else{
+                let orderItem = OrderItemModel(context: context)
+                orderItem.itemID = Int64(product.id!)
+                orderItem.itemName = product.title
+                orderItem.itemPrice = product.variants![0].price
+                orderItem.itemImage = product.image?.src
+                orderItem.itemQuantity = 1
+                orderItem.userID = Int64(customerID!)
+                try? context.save()
+                print(orderItem)
+            }
+        } catch let error {
+            print(error)
+        }
+    }
     
     func checkIfItemExist(itemId: Int,itemms:[OrderItemModel]) -> Bool {
         var check : Bool = false

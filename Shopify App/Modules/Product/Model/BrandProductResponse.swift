@@ -15,7 +15,7 @@ struct ProductOfBrand: Decodable {
 // MARK: - Product
 struct ProductOfBrands: Decodable {
     var id: Int
-    var title, vendor, productType: String
+    var title, vendor, productType,body_html : String
     var tags: String
     var variants: [Variant]
     var images: [Image]
@@ -26,6 +26,7 @@ struct ProductOfBrands: Decodable {
         case productType = "product_type"
         case vendor
         case tags
+        case body_html
         case variants, images, image
     }
 }

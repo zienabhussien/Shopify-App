@@ -6,12 +6,20 @@
 //
 
 import UIKit
-
+import Toast_Swift
 class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var ProductPageControl: UIPageControl!
      
     @IBOutlet weak var ProductCV: UICollectionView!
+    
+    @IBOutlet weak var addToCart: UIBarButtonItem!
+    //add to cart
+    let orderViewModel = OrderViewModel()
+    var product : Product?
+    //add to cart
+
+    
     
    var arrProductPhotos = [UIImage(named: "1")!,UIImage(named: "download")!,UIImage(named: "download")!,UIImage(named: "download")!]
     
@@ -29,6 +37,45 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         
         startTimer()
     }
+    
+    @IBAction func addToCartButton(_ sender: Any) {
+        print("addToCartButton")
+
+//        orderViewModel.bindingAlreadyInCartToView = {
+//            self.showToast(message: "Already in Cart", font: .boldSystemFont(ofSize: 15))
+//        }
+//        orderViewModel.addItemsToCart(product: product!)
+        
+//        UIView.animate(withDuration: 0.5, delay: 0,
+//                       usingSpringWithDamping: 0.7, initialSpringVelocity: 0.1,
+//                       options: [], animations: {
+//                        self.addToCart.transform =
+//                           CGAffineTransform(scaleX: 2.0, y: 2.0)
+//                        self.addToCart.transform =
+//                           CGAffineTransform(scaleX: 1.0, y: 1.0)
+//                    }, completion: nil)
+    }
+    
+    
+    func showToast(message : String, font: UIFont) {
+
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2-100, y: self.view.frame.size.height-200, width: 200, height: 40))
+        toastLabel.backgroundColor = .label
+        toastLabel.textColor = .systemBackground
+        toastLabel.font = font
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.layer.cornerRadius = 8;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 5.0, delay: 0.5, options: .curveEaseOut, animations: {
+             toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+    
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(moveToNextIndex), userInfo: nil, repeats: true)
     }

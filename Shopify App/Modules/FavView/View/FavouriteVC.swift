@@ -18,12 +18,12 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         FavouriteTableView.delegate = self
         FavouriteTableView.dataSource = self
         FavouriteTableView.separatorStyle = .none
-
-        arr.append(Product.init(name: "pro1", img: UIImage(named: "1")!, price: 369))
-        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
-        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
-        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
-        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
+//
+//        arr.append(Product.init(name: "pro1", img: UIImage(named: "1")!, price: 369))
+//        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
+//        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
+//        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
+//        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,15 +36,15 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderWidth = 1
         let product = arr[indexPath.row]
-        cell.setUpCell(photo: product.img, name: product.name, price: product.price)
+//        cell.setUpCell(photo: product.img, name: product.name, price: product.price)
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
 }
-struct Product {
-    let name : String
-    let img : UIImage
-    let price : Double
-}
+//struct Product {
+//    let name : String
+//    let img : UIImage
+//    let price : Double
+//}
