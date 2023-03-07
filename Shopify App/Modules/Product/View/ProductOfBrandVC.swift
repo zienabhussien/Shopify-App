@@ -13,8 +13,8 @@ class ProductOfBrandVC: UIViewController {
     
 //    @IBOutlet weak var vendorName: UILabel!
     @IBOutlet weak var ProductOfBrandsCollection: UICollectionView!
-    var productOBbrandsModel : ProductOfBrand?     //variable to response data
-    var filteredProducts : [ProductOfBrands]? = [ProductOfBrands]()
+    var productOBbrandsModel : Products?     //variable to response data
+    var filteredProducts : [Product]? = [Product]()
 
     var isFavorite: Bool = false
     var SmartCollectionID: String = ""
@@ -33,7 +33,7 @@ class ProductOfBrandVC: UIViewController {
         fetchData { result in
             DispatchQueue.main.async {
                 self.productOBbrandsModel = result
-                self.title = self.productOBbrandsModel?.products.first?.vendor
+                self.title = self.productOBbrandsModel?.products?.first?.vendor
                 self.filteredProducts = result?.products
 
                 self.ProductOfBrandsCollection.reloadData()
@@ -60,10 +60,10 @@ class ProductOfBrandVC: UIViewController {
         
         print(sender.value)
         isFiltered = true
-        let filteredByPrice = self.productOBbrandsModel?.products.filter { product in
+        let filteredByPrice = self.productOBbrandsModel?.products?.filter({ product in
             maximumPrice.text = "$"+String(Int(sender.value))
-            return Float(product.variants[0].price ) ?? 0 <= sender.value
-        }
+            return Float(product.variants?[0].price ?? "" ) ?? 0 <= sender.value
+        })
             self.filteredProducts = filteredByPrice
         self.updateUi()
     }
@@ -144,46 +144,24 @@ class ProductOfBrandVC: UIViewController {
 
 extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     
-
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-    //        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-    //        navigationController?.pushViewController(viewController, animated: true)
-    //    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         filteredProducts?.count ?? 0
-//        productOBbrandsModel?.products.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
-        
-        
-//        
-//        self.productListCollectionView.isHidden = false
-//        cell.productNameLabel.text = filteredProducts[indexPath.row].title
-//        cell.productImageView.kf.setImage(with:URL(string:filteredProducts[indexPath.row].image?.src ?? ""))
-//        cell.productImageView.kf.indicatorType = .activity
-//        if  let variant = filteredProducts[indexPath.row].variants, let price = variant[0].price {
-//            cell.productPriceLabel.text = "$"+price
-//        }
-//    return cell
-        
-        
-        
         if let productOfbrand = filteredProducts?[indexPath.row] {
             cell.nameOfProductBrand.text = productOfbrand.title
-            cell.ProductType.text = productOfbrand.productType
-            if let firstPrice = productOfbrand.variants.first?.price {
+            cell.ProductType.text = productOfbrand.product_type
+            if let firstPrice = productOfbrand.variants?.first?.price {
                 cell.productPrice.text = "$\(firstPrice)"
             } else {
                 cell.productPrice.text = ""
             }
             
-            if let imageUrl = URL(string: productOfbrand.image.src) {
+            if let imageUrl = URL(string: productOfbrand.image?.src ?? "") {
                        cell.productImage.kf.setImage(with: imageUrl)
 
                    }
@@ -200,7 +178,7 @@ extension ProductOfBrandVC{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = filteredProducts?[indexPath.row]
         let ProductVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
-//        ProductVC.product = product
+        ProductVC.product = product
         self.navigationController?.pushViewController(ProductVC, animated: true)
     }
     
@@ -234,7 +212,7 @@ extension ProductOfBrandVC{
 
 
 extension ProductOfBrandVC{
-    func fetchData(compilation: @escaping (ProductOfBrand?) -> Void)
+    func fetchData(compilation: @escaping (Products?) -> Void)
     {
    
         guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/products.json?collection_id=\(SmartCollectionID)") else {return}
@@ -244,7 +222,7 @@ extension ProductOfBrandVC{
             if let data = response.data {
                 do{
                     
-                    let result = try JSONDecoder().decode(ProductOfBrand.self, from: data)
+                    let result = try JSONDecoder().decode(Products.self, from: data)
                     
                     compilation(result)
                 }

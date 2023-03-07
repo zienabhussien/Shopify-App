@@ -29,7 +29,7 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(product?.title ?? "")
         ProductCV.dataSource = self
         ProductCV.delegate = self
         
