@@ -27,6 +27,9 @@ class SignupViewModel{
         NetworkService.postData(endPoint: EndPoints.Customers, params: params) { [weak self] (data: (CustomerResponse?),error, status) in
             print("status : \(status)")
             self?.statusCode = status
+            
+            
+            
         }
     }
     

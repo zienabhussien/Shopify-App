@@ -39,8 +39,11 @@ class LoginViewModel{
                 
                 if currEmail == allCustomers.customers[i].email
                     && allCustomers.customers[i].note == password {
-                   
-                        print("done")
+                    // save customer id
+                    UserDefaults.standard.set(allCustomers.customers[i].id, forKey: "loginId")
+                                 let userDefultId =  UserDefaults.standard.integer(forKey: "loginId")
+                                   print("Customer Id IS : \(userDefultId )")
+                       // print("done")
                     
                     return true
                 }

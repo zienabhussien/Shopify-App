@@ -64,8 +64,8 @@ class SingUpViewController: UIViewController {
             signUpViewModel.bindResToSignUp = { [weak self]  in
                 DispatchQueue.main.async {
                     if self?.signUpViewModel.statusCode == 201 {
-                        self?.goToTabBar()
-                        
+                       // self?.goToTabBar()
+                        self?.gotoLogin()
                     }else{
                         // show worning alert
                         self?.showAlert(title: "⚠️", message: """
@@ -89,6 +89,11 @@ class SingUpViewController: UIViewController {
         var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
         navigationController?.pushViewController(loginVC, animated: true)
     
+    }
+    
+    func gotoLogin(){
+        var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+        navigationController?.pushViewController(loginVC, animated: true)
     }
     
     func goToTabBar()
