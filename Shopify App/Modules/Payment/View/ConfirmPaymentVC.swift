@@ -6,9 +6,14 @@
 //
 
 import UIKit
-
+import CoreData
 class ConfirmPaymentVC: UIViewController {
 
+    //order
+    var placedOrders = [OrderItemModel]()
+    var orderViewModel = OrderViewModel()
+//order
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,6 +21,14 @@ class ConfirmPaymentVC: UIViewController {
     }
     
 
+    @IBAction func placeOrder(_ sender: Any) {
+        
+        orderViewModel.postOrder(cartArray: placedOrders)
+        let doneVC = UIStoryboard(name: "Done", bundle: nil).instantiateViewController(withIdentifier: "SingUpViewController") as! SingUpViewController
+        present(doneVC, animated: true, completion: nil)
+        
+        
+    }
     /*
     // MARK: - Navigation
 

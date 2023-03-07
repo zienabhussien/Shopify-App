@@ -2,7 +2,7 @@
 //  Networking.swift
 //  Shopify
 //
-//  Created by Ali Moustafa on 01/03/2023.
+//  Created by Ali Moustafa on 07/03/2023.
 //
 
 import Foundation
@@ -165,6 +165,7 @@ extension Networking{
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
+//            make OrderToAPI asDictionary
             print(try! order.asDictionary())
         }catch let error {
             print(error.localizedDescription)
