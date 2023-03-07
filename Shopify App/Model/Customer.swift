@@ -18,6 +18,7 @@ struct Customers: Codable {
 struct Customer: Codable {
     let first_name, last_name, email, phone, tags: String?
     let id: Int?
+    let note: String?
     let verified_email: Bool?
     let addresses: [Address]?
 }

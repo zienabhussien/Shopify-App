@@ -39,24 +39,28 @@ class loginViewController: UIViewController {
     
     
     @IBAction func login(_ sender: Any) {
-        
-        loginViewModel.bindResultToLoginView = { [weak self] customers in
+        if emailTextFiled.text!.isEmpty || passwordTextFiled.text!.isEmpty {
+            self.showAlert(title: "⚠️", message: "Fields can't be empty!!")
             
-            DispatchQueue.main.async {
-                self?.isExist = self?.loginViewModel.searchCustomer(currEmail: self?.emailTextFiled.text ?? "",password: self?.passwordTextFiled.text ?? "" ,  allCustomers: customers)
+        }else{
+            loginViewModel.bindResultToLoginView = { [weak self] customers in
                 
-                print((self?.isExist)!)
-                
-                if  (self?.isExist)! {
+                DispatchQueue.main.async {
+                    self?.isExist = self?.loginViewModel.searchCustomer(currEmail: self?.emailTextFiled.text ?? "",password: self?.passwordTextFiled.text ?? "" ,  allCustomers: customers)
                     
-                    // show toast for user
-                    self?.goToTabBar()
+                    print((self?.isExist)!)
+                    
+                    if  (self?.isExist)! {
+                        // show toast for user
+                        self?.goToTabBar()
+                    }else{
+                        self?.showAlert(title: "⚠️", message: "Your email or password is wrong")
+                    }
                 }
+                
             }
-            
+            loginViewModel.getAllCustomers()
         }
-        loginViewModel.getAllCustomers()
-        
        
     }
     
@@ -71,13 +75,7 @@ class loginViewController: UIViewController {
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
         navigationController?.pushViewController(viewController, animated: true)
-        
-//
-//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        present(navigationController, animated: true)
+    
     }
     
     
