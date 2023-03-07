@@ -37,14 +37,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="kFt-FG-Uyi">
                                 <rect key="frame" x="8" y="120" width="168" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameofprouduct" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-bM-af2">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="15.666666666666666"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameofprouduct" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyt-bM-af2">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3N2-zJ-q3Q">
-                                        <rect key="frame" x="0.0" y="15.666666666666657" width="29.333333333333332" height="12"/>
+                                        <rect key="frame" x="0.0" y="15.666666666666657" width="168" height="12"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,12 +53,26 @@
                                         <rect key="frame" x="0.0" y="27.666666666666657" width="109.66666666666667" height="19.333333333333329"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eic-PW-rrp">
-                                        <rect key="frame" x="0.0" y="47" width="35" height="17"/>
+                                        <rect key="frame" x="0.0" y="47" width="168" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="eic-PW-rrp" firstAttribute="top" secondItem="kzq-27-VBq" secondAttribute="bottom" id="7aC-6s-y8R"/>
+                                    <constraint firstItem="xyt-bM-af2" firstAttribute="top" secondItem="kFt-FG-Uyi" secondAttribute="top" id="Aig-DJ-17K"/>
+                                    <constraint firstItem="3N2-zJ-q3Q" firstAttribute="leading" secondItem="kFt-FG-Uyi" secondAttribute="leading" id="MBV-Ez-dip"/>
+                                    <constraint firstAttribute="trailing" secondItem="eic-PW-rrp" secondAttribute="trailing" id="PNY-od-tFx"/>
+                                    <constraint firstItem="3N2-zJ-q3Q" firstAttribute="top" secondItem="xyt-bM-af2" secondAttribute="bottom" id="Q0M-WE-iiK"/>
+                                    <constraint firstAttribute="trailing" secondItem="3N2-zJ-q3Q" secondAttribute="trailing" id="SOZ-ti-QB4"/>
+                                    <constraint firstItem="eic-PW-rrp" firstAttribute="leading" secondItem="kFt-FG-Uyi" secondAttribute="leading" id="Ttk-MR-3Av"/>
+                                    <constraint firstItem="xyt-bM-af2" firstAttribute="leading" secondItem="kFt-FG-Uyi" secondAttribute="leading" id="WHs-eT-x1l"/>
+                                    <constraint firstAttribute="bottom" secondItem="eic-PW-rrp" secondAttribute="bottom" id="Yxq-7a-MB4"/>
+                                    <constraint firstAttribute="trailing" secondItem="xyt-bM-af2" secondAttribute="trailing" id="h0t-uE-wDN"/>
+                                    <constraint firstItem="3N2-zJ-q3Q" firstAttribute="top" secondItem="xyt-bM-af2" secondAttribute="bottom" id="lTd-tl-gij"/>
+                                    <constraint firstItem="kzq-27-VBq" firstAttribute="top" secondItem="3N2-zJ-q3Q" secondAttribute="bottom" id="pB4-Dq-11g"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMu-gK-miu">
                                 <rect key="frame" x="158" y="166" width="40" height="40"/>
@@ -68,6 +82,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="favoriteRed"/>
+                                <connections>
+                                    <action selector="didPressedOnFavBtn:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ZJ3-dQ-2zd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -93,6 +110,13 @@
                 <constraint firstItem="0rg-JP-mSh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="yrN-Ce-Otl"/>
             </constraints>
             <size key="customSize" width="255" height="179"/>
+            <connections>
+                <outlet property="ProductType" destination="3N2-zJ-q3Q" id="5PD-92-5Is"/>
+                <outlet property="favButton" destination="XMu-gK-miu" id="wjI-iH-p3o"/>
+                <outlet property="nameOfProductBrand" destination="xyt-bM-af2" id="9sk-4W-EsU"/>
+                <outlet property="productImage" destination="aR4-eV-ix5" id="eSM-cL-WOE"/>
+                <outlet property="productPrice" destination="eic-PW-rrp" id="R65-Uo-ClF"/>
+            </connections>
             <point key="canvasLocation" x="236.64122137404578" y="64.788732394366207"/>
         </collectionViewCell>
     </objects>

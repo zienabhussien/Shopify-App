@@ -22,6 +22,14 @@ class MeVC: UIViewController {
 
        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     @IBAction func moreOrdersAction(_ sender: Any) {
         

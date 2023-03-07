@@ -11,6 +11,7 @@ class BrandsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var BrandImage: UIImageView!
     
+    @IBOutlet weak var BrandName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,10 +10,15 @@ pod 'lottie-ios'
 pod 'Floaty'
 pod 'Cosmos'
 pod 'Kingfisher'
+pod 'SwiftyJSON'
+pod "Mobile-Buy-SDK"
+pod 'Toast-Swift'
+
+
 #pod 'ReachabilitySwift'
 pod ‘MaterialComponents/TextFields’
 pod ‘MaterialComponents/TextFields+ColorThemer’
-pod 'Toast-Swift'
+
 
   target 'Shopify AppTests' do
     inherit! :search_paths
