@@ -316,7 +316,6 @@
 		336C253829B62C9D00C78A98 /* Address */ = {
 			isa = PBXGroup;
 			children = (
-				33D742DC29B7B48500535E20 /* Product */,
 				336C254929B6659400C78A98 /* ViewModel */,
 				336C254529B6654700C78A98 /* AddressVC.swift */,
 				336C254629B6654700C78A98 /* AddressVC+TVC.swift */,
@@ -512,6 +511,7 @@
 				33D742D829B7B45B00535E20 /* ProductImage.swift */,
 				33D742D629B7B44A00535E20 /* Variants.swift */,
 				33D742DA29B7B47600535E20 /* Images.swift */,
+				33F48FDD29B22DF600611843 /* BrandProductResponse.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -553,7 +553,7 @@
 		33F48FDC29B22DC400611843 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				33F48FDD29B22DF600611843 /* BrandProductResponse.swift */,
+				33D742DC29B7B48500535E20 /* Product */,
 			);
 			path = Model;
 			sourceTree = "<group>";
