@@ -26,6 +26,8 @@
 		336C254829B6654700C78A98 /* AddressVC+TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254629B6654700C78A98 /* AddressVC+TVC.swift */; };
 		336C254B29B665AB00C78A98 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254A29B665AB00C78A98 /* AddressViewModel.swift */; };
 		336C254F29B6666900C78A98 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254E29B6666900C78A98 /* CoreDataServices.swift */; };
+		339159AF29B9365200036033 /* AllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339159AE29B9365200036033 /* AllOrderViewController.swift */; };
+		339159B129B936C800036033 /* AllOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339159B029B936C800036033 /* AllOrderTableViewCell.swift */; };
 		33A2023429B0F62200D85E41 /* EXUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023129B0F62200D85E41 /* EXUIView.swift */; };
 		33A2023529B0F62200D85E41 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023229B0F62200D85E41 /* CardView.swift */; };
 		33A2023629B0F62200D85E41 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023329B0F62200D85E41 /* Typealias.swift */; };
@@ -148,6 +150,8 @@
 		336C254629B6654700C78A98 /* AddressVC+TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressVC+TVC.swift"; sourceTree = "<group>"; };
 		336C254A29B665AB00C78A98 /* AddressViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		336C254E29B6666900C78A98 /* CoreDataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
+		339159AE29B9365200036033 /* AllOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrderViewController.swift; sourceTree = "<group>"; };
+		339159B029B936C800036033 /* AllOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrderTableViewCell.swift; sourceTree = "<group>"; };
 		33A2023129B0F62200D85E41 /* EXUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXUIView.swift; sourceTree = "<group>"; };
 		33A2023229B0F62200D85E41 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		33A2023329B0F62200D85E41 /* Typealias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
@@ -368,6 +372,15 @@
 			path = CoreDataServices;
 			sourceTree = "<group>";
 		};
+		339159AD29B9361D00036033 /* OrderTable */ = {
+			isa = PBXGroup;
+			children = (
+				339159AE29B9365200036033 /* AllOrderViewController.swift */,
+				339159B029B936C800036033 /* AllOrderTableViewCell.swift */,
+			);
+			path = OrderTable;
+			sourceTree = "<group>";
+		};
 		33A2022F29B0F62200D85E41 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,6 +553,7 @@
 		33E1616929B7549600A13B29 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				339159AD29B9361D00036033 /* OrderTable */,
 				33E1616D29B7625800A13B29 /* ViewModel */,
 				33E1616A29B7553300A13B29 /* Model */,
 			);
@@ -1121,6 +1135,7 @@
 				7BFB960229B0EB29002D5253 /* OrdersTableCell.swift in Sources */,
 				D8E34D8429B0DC6C00590317 /* OrderTableViewCell.swift in Sources */,
 				33A2023629B0F62200D85E41 /* Typealias.swift in Sources */,
+				339159AF29B9365200036033 /* AllOrderViewController.swift in Sources */,
 				336C254B29B665AB00C78A98 /* AddressViewModel.swift in Sources */,
 				7BFB960829B0EB29002D5253 /* AboutUsVC.swift in Sources */,
 				33A2024E29B0F69E00D85E41 /* ProductCollectionViewCell.swift in Sources */,
@@ -1170,6 +1185,7 @@
 				336C254029B632A700C78A98 /* Helper.swift in Sources */,
 				33A2024729B0F69E00D85E41 /* SingUpViewController.swift in Sources */,
 				33EDD8EB29B8C831008C815A /* OrdersTVC.swift in Sources */,
+				339159B129B936C800036033 /* AllOrderTableViewCell.swift in Sources */,
 				8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */,
 				D81CF1BA29B785830009D125 /* SignUpViewModel.swift in Sources */,
 				D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */,

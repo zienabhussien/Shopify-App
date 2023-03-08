@@ -73,8 +73,9 @@ extension CoreDataServices{
 extension CoreDataServices{
     func getCartProductForSelectedCustomer(customerID: Int, completion: @escaping ([OrderItemModel]?, Error?)-> Void){
         do{
+//            fetch all OrderItemModel objects using the context property
             let productCart = try context.fetch(OrderItemModel.fetchRequest())
-            var selectedCart: [OrderItemModel] = []
+            var selectedCart: [OrderItemModel] = [] // to get one object from core data
             for selectedCustomer in productCart{
                 if selectedCustomer.userID == customerID{
                     selectedCart.append(selectedCustomer)
