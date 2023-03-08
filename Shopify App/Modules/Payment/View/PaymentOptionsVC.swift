@@ -8,7 +8,7 @@
 import UIKit
 
 class PaymentOptionsVC: UIViewController {
-
+    var selectedPaymentOption: String?
     var index: Int?
     
     override func viewDidLoad() {
@@ -19,6 +19,22 @@ class PaymentOptionsVC: UIViewController {
 
     
     @IBAction func continueToPayment(_ sender: Any) {
+        if selectedPaymentOption == "Apple Pay" {
+                // Handle Apple Pay payment
+            } else if selectedPaymentOption == "Cash On Delivery (COD)" {
+                // Handle Cash On Delivery payment
+            } else {
+                // No payment option selected
+            }
+        
+        
+        let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
+//        confirmPaymentVC.product = product
+        self.navigationController?.pushViewController(confirmPaymentVC, animated: true)
+
+        
+
+        
     }
     
 
@@ -46,19 +62,31 @@ extension PaymentOptionsVC: UITableViewDelegate, UITableViewDataSource{
             headerView.textLabel?.textColor = .black
         }
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentOptionCell", for: indexPath) as! PaymentOptionsCell
-        if  indexPath.section == 0 {
-            cell.checkPaymentWay.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+        
+        if indexPath.section == 0 {
+            cell.checkPaymentWay.setImage(UIImage(systemName: selectedPaymentOption == "Apple Pay" ? "circle" : "circle.fill"), for: .normal)
+            cell.PaymentWayName.text = "Apple Pay"
         } else {
-            cell.checkPaymentWay.setImage(UIImage(systemName: "circle"), for: .normal)
+            cell.checkPaymentWay.setImage(UIImage(systemName: selectedPaymentOption == "Cash On Delivery (COD)" ? "circle" : "circle.fill"), for: .normal)
             cell.PaymentWayName.text = "Cash On Delivery (COD)"
         }
         
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            selectedPaymentOption = "Apple Pay"
+        } else {
+            selectedPaymentOption = "Cash On Delivery (COD)"
+        }
+        
+        tableView.reloadData()
+    }
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

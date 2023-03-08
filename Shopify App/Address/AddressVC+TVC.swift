@@ -76,7 +76,7 @@ extension AddressVC{
     }
 
     func goToPayment(){
-        let paymentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPaymentVC")
+        let paymentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PaymentOptionsVC")
         self.navigationController?.pushViewController(paymentVC, animated: true)
     }
     
