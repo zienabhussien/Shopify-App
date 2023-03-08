@@ -8,20 +8,12 @@
 import UIKit
 import Alamofire
 import Kingfisher
-class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsUpdating{
+class HomeViewController: UIViewController {
     @IBOutlet weak var AddsImage: UIImageView!
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     var brandsModel : BrandResponse?     //variable to response data
     var filteredBrands =  [SmartCollection]()
-    
-    
-  var searchController = UISearchController(searchResultsController: nil)
-    var isSearchBarEmpty: Bool{
-            return searchController.searchBar.text!.isEmpty
-        }
-    var isFiltering : Bool{
-            return searchController.isActive && !isSearchBarEmpty
-        }
+    var searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +34,12 @@ class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsU
         
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        print(filteredBrands)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
+  
     func  registerBrandsCollectionView(){
         
         brandsCollectionView.register(UINib(nibName: "BrandsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BrandsCollectionViewCell")
@@ -61,6 +48,18 @@ class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsU
         
     }
     
+
+
+}
+extension HomeViewController: UISearchBarDelegate,UISearchResultsUpdating{
+    
+      var isSearchBarEmpty: Bool{
+              return searchController.searchBar.text!.isEmpty
+          }
+      var isFiltering : Bool{
+              return searchController.isActive && !isSearchBarEmpty
+          }
+   
     func initializeSearcBar(){
 
         searchController.searchResultsUpdater = self
@@ -73,7 +72,6 @@ class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsU
                 
     }
     
-    
     func updateSearchResults(for searchController: UISearchController) {
         filteredBrands = brandsModel?.smartCollections.filter{ smartCollection in
             return smartCollection.title.lowercased().contains(searchController.searchBar.text!.lowercased())
@@ -85,7 +83,6 @@ class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsU
         
         
     }
-
 }
 
 extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
@@ -102,7 +99,6 @@ extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(filteredBrands)
         if isFiltering {
             return filteredBrands.count
         }
@@ -161,12 +157,9 @@ extension HomeViewController{
     
     
 }
-
-
+                
         
-        
-        
-        extension HomeViewController{
+extension HomeViewController{
             
             func fetchData(compilation: @escaping (BrandResponse?) -> Void)
             {
@@ -191,8 +184,7 @@ extension HomeViewController{
                 }
             }
             
-            
-        }
+}
         
         
         

@@ -1885,6 +1885,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <outlet property="maximumPrice" destination="7xx-iF-WQE" id="ei8-jK-F2Q"/>
                         <outlet property="minimumPrice" destination="Upz-RR-t0i" id="foL-eP-Z9X"/>
                         <outlet property="priceSlider" destination="qOw-h0-erf" id="G6Z-Ar-yKJ"/>
+                        <outlet property="productSearchBar" destination="0Fv-Q6-e0Y" id="7Ks-LP-xki"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KP-lP-9cz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
