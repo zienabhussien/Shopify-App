@@ -1,6 +1,6 @@
 //
 //  Networking.swift
-//  Shopify
+//  Shopify App
 //
 //  Created by Ali Moustafa on 07/03/2023.
 //

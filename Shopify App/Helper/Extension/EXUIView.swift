@@ -1,6 +1,6 @@
 //
 //  EXUIView.swift
-//  E-Commerce
+//  Shopify App
 //
 //  Created by Ali Moustafa on 01/03/2023.
 //

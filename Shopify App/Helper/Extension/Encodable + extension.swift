@@ -1,6 +1,6 @@
 //
 //  Encodable + extension.swift
-//  Shopify
+//  Shopify App
 //
 //  Created by Ali Moustafa on 01/03/2023.
 //

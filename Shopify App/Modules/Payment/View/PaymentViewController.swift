@@ -1,6 +1,6 @@
 //
 //  PaymentViewController.swift
-//  Shopify
+//  Shopify App
 //
 //  Created by Ali Moustafa on 02/03/2023.
 //

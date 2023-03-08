@@ -23,10 +23,8 @@ class ConfirmPaymentVC: UIViewController {
     @IBAction func placeOrder(_ sender: Any) {
         
         orderViewModel.postOrder(cartArray: placedOrders)
-        let doneVC = UIStoryboard(name: "Done", bundle: nil).instantiateViewController(withIdentifier: "SingUpViewController") as! SingUpViewController
+        let doneVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         present(doneVC, animated: true, completion: nil)
-        
-        
     }
    
 

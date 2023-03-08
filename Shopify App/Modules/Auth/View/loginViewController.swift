@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  E-Commerce
+//  Shopify App
 //
 //  Created by Ali Moustafa on 27/02/2023.
 //

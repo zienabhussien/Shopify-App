@@ -1,6 +1,6 @@
 //
 //  OrdersVC+TVC.swift
-//  Shopify
+//  Shopify App
 //
 //  Created by Ali Moustafa on 02/03/2023.
 //
@@ -71,12 +71,16 @@ extension OrdersVC : UITableViewDataSource
             orderViewModel.deleteFromCoreData(indexPath: indexPath, cartItems: cartArray)
             self.cartArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .left)
+            setTotalPrice()
+
             self.tableView.reloadData()
             if self.cartArray.count == 0 {
                 emptyCart.isHidden = false
                 self.tableView.isHidden = true
-                self.tableView.reloadData()
+                
                 setTotalPrice()
+
+                self.tableView.reloadData()
             }
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))

@@ -1,8 +1,8 @@
 //
 //  AddressVC+TVC.swift
-//  Shopify
+//  Shopify App
 //
-//  Created by Ali Moustafa on 01/03/2023.
+//  Created by Ali Moustafa on 05/03/2023.
 //
 
 import UIKit
@@ -60,23 +60,24 @@ extension AddressVC{
     }
     func addAddressToOrder(row: Int){
         let myAddress = arrOfAddress[row]
-//        let selectedAddress = AddressModel(context: context)
+       let selectedAddress = AddressModel(context: context)
 
         guard let customerId = Helper.shared.getUserID(), let addressID = myAddress.id , let address1 = myAddress.address1, let city = myAddress.city, let country = myAddress.country, let name = myAddress.first_name, let phone = myAddress.phone else {return}
 
-//        selectedAddress.custID = Int64(customerId)
-//        selectedAddress.addID = Int64(addressID)
-//        selectedAddress.address1 = address1
-//        selectedAddress.city = city
-//        selectedAddress.country = country
-//        selectedAddress.customerName = name
-//        selectedAddress.phoneNumber = phone
-//
-//        self.addressViewModel.saveSelectedAddress()
+        selectedAddress.custID = Int64(customerId)
+        selectedAddress.addID = Int64(addressID)
+        selectedAddress.address1 = address1
+        selectedAddress.city = city
+        selectedAddress.country = country
+        selectedAddress.customerName = name
+        selectedAddress.phoneNumber = phone
+
+        self.addressViewModel.saveSelectedAddress()
     }
 
     func goToPayment(){
-        let paymentVC = UIStoryboard(name: "Checkout", bundle: nil).instantiateViewController(withIdentifier: "PaymentViewController")
+        let paymentVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPaymentVC")
         self.navigationController?.pushViewController(paymentVC, animated: true)
     }
+    
 }
