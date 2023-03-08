@@ -111,10 +111,10 @@ class ProductOfBrandVC: UIViewController {
     
     @IBAction func toCartButton(_ sender: Any) {
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ShoppingCartVC")
+        let viewController = storyboard.instantiateViewController(withIdentifier: "OrdersVC")
         viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
-        print("ShoppingCartVC")
+        print("OrdersVC")
     }
     
     

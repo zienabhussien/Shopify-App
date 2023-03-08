@@ -32,8 +32,8 @@ extension AddressVC : UITableViewDelegate{
         setAddressDefault(customerId: customrtId, addressId: id, row: indexPath.row)
         self.showConfirmAlert(title: "are you sure!!", message: "this address added in your order!") { isConfirm in
             if isConfirm{
-//                self.addAddressToOrder(row: indexPath.row)
-//                self.goToPayment()
+                self.addAddressToOrder(row: indexPath.row)
+                self.goToPayment()
             }
         }
     }
@@ -71,7 +71,7 @@ extension AddressVC{
 //        selectedAddress.country = country
 //        selectedAddress.customerName = name
 //        selectedAddress.phoneNumber = phone
-
+//
 //        self.addressViewModel.saveSelectedAddress()
     }
 
