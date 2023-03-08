@@ -49,7 +49,9 @@ class OrderViewModel{
                 print("Already in cart")
                 self.showAlreadyExist()
             }else{
+                //make object from core data
                 let orderItem = OrderItemModel(context: context)
+                // set value from data to core data
                 orderItem.itemID = Int64(product.id!)
                 orderItem.itemName = product.title
                 orderItem.itemPrice = product.variants![0].price
