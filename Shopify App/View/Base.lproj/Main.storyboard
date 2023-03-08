@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgh-2S-qtx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-703" y="-1892"/>
+            <point key="canvasLocation" x="-602" y="-11"/>
         </scene>
         <!--ProductVC-->
         <scene sceneID="5LI-8s-SDR">
@@ -779,7 +779,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmA-g7-j0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5472.5190839694651" y="-1182.3943661971832"/>
+            <point key="canvasLocation" x="3486" y="-11"/>
         </scene>
         <!--SettingsVC-->
         <scene sceneID="VjF-zS-d6m">
@@ -989,74 +989,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
             </objects>
             <point key="canvasLocation" x="7543" y="-485"/>
         </scene>
-        <!--Add New AddressVC-->
-        <scene sceneID="hsb-or-8ur">
-            <objects>
-                <viewController id="P37-tk-Sj9" customClass="AddNewAddressVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HZB-dW-GCv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="location" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aaX-G5-MSt">
-                                <rect key="frame" x="16" y="113" width="361" height="156"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vei-j3-3PC">
-                                <rect key="frame" x="30" y="339" width="347" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lrx-UY-fhR">
-                                <rect key="frame" x="30" y="421" width="347" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1ly-yu-raQ">
-                                <rect key="frame" x="30" y="495" width="347" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xzA-6U-BbM">
-                                <rect key="frame" x="30" y="571" width="347" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVY-YJ-8Tn">
-                                <rect key="frame" x="90" y="669" width="212" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Add Address">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addAddressAction:" destination="P37-tk-Sj9" eventType="touchUpInside" id="i6f-Bx-mz8"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="yAb-sT-5Pu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="addressTF" destination="1ly-yu-raQ" id="F4a-Vm-fLk"/>
-                        <outlet property="cityTF" destination="Lrx-UY-fhR" id="xKY-Mx-6tg"/>
-                        <outlet property="countryTF" destination="Vei-j3-3PC" id="SX4-Zb-tyi"/>
-                        <outlet property="phoneTF" destination="xzA-6U-BbM" id="vIM-J5-kve"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sCJ-9o-dVR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8324" y="-482"/>
-        </scene>
         <!--About UsVC-->
         <scene sceneID="uK6-wS-FzD">
             <objects>
@@ -1249,7 +1181,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ake-3F-pXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4555" y="-489"/>
+            <point key="canvasLocation" x="2793" y="-11"/>
         </scene>
         <!--Login-->
         <scene sceneID="U7C-X3-pDN">
@@ -1613,7 +1545,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCN-Qv-TGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7289.3129770992364" y="717.6056338028169"/>
+            <point key="canvasLocation" x="2298" y="717"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="R14-4v-ekH">
@@ -1667,7 +1599,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uA6-hP-skM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4683.2061068702287" y="851.4084507042254"/>
+            <point key="canvasLocation" x="934" y="717"/>
         </scene>
         <!--Product Of BrandVC-->
         <scene sceneID="1np-8e-ePS">
@@ -1792,7 +1724,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KP-lP-9cz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2347.3282442748091" y="744.36619718309862"/>
+            <point key="canvasLocation" x="1621" y="1398"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MhG-4e-4Se">
@@ -1828,7 +1760,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1BG-pE-sFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420.6106870229007" y="744.36619718309862"/>
+            <point key="canvasLocation" x="934" y="1398"/>
         </scene>
         <!--Create AddressVC-->
         <scene sceneID="s6M-Oc-KH6">
@@ -2093,7 +2025,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etR-cq-BAY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756.4885496183206" y="851.4084507042254"/>
+            <point key="canvasLocation" x="218" y="717"/>
         </scene>
         <!--Category-->
         <scene sceneID="xv3-15-xaT">
@@ -2112,7 +2044,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWx-jL-6s7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6362.5954198473282" y="717.6056338028169"/>
+            <point key="canvasLocation" x="1621" y="717"/>
         </scene>
         <!--Cart-->
         <scene sceneID="QSN-1a-erv">
@@ -2202,189 +2134,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
             </objects>
             <point key="canvasLocation" x="219" y="-1551"/>
         </scene>
-        <!--Payment View Controller-->
-        <scene sceneID="hSv-Wb-8e9">
-            <objects>
-                <viewController storyboardIdentifier="PaymentViewController" id="TJL-Q2-o5y" customClass="PaymentViewController" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sao-19-JPa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daS-cb-K0S">
-                                <rect key="frame" x="20" y="232.33333333333337" width="353" height="236.66666666666663"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google pay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-V8-AvD">
-                                        <rect key="frame" x="8" y="52.999999999999964" width="109.66666666666667" height="26.666666666666664"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="109.5" id="gqe-HE-Aeg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USk-U2-5GG">
-                                        <rect key="frame" x="8" y="120.99999999999997" width="192" height="27"/>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCl-lt-n1U">
-                                        <rect key="frame" x="303" y="56.999999999999972" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="0an-LH-H0c"/>
-                                        </constraints>
-                                        <color key="tintColor" systemColor="linkColor"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="radiooff"/>
-                                        <state key="selected" image="radioon">
-                                            <color key="titleColor" systemColor="linkColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="GooglePayOptionSelected:" destination="TJL-Q2-o5y" eventType="touchUpInside" id="1Gm-ue-DcF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-vk-qHN">
-                                        <rect key="frame" x="303" y="118.99999999999997" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="2Wb-kl-fN0"/>
-                                        </constraints>
-                                        <color key="tintColor" systemColor="linkColor"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="radiooff"/>
-                                        <state key="selected" image="radioon">
-                                            <color key="titleColor" systemColor="linkColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cashOnDeliverySelected:" destination="TJL-Q2-o5y" eventType="touchUpInside" id="in2-nc-Rue"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copoun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTx-Ct-EPu">
-                                        <rect key="frame" x="8" y="159.66666666666666" width="84" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="5Hn-4y-k1K"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T9X-Mx-5GD">
-                                        <rect key="frame" x="131" y="159.66666666666666" width="217" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="217" id="zPl-Mh-yeY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="OCl-lt-n1U" firstAttribute="top" secondItem="daS-cb-K0S" secondAttribute="top" constant="57" id="0tL-rs-put"/>
-                                    <constraint firstAttribute="trailing" secondItem="T9X-Mx-5GD" secondAttribute="trailing" constant="26" id="2Sy-2d-bso"/>
-                                    <constraint firstItem="T9X-Mx-5GD" firstAttribute="leading" secondItem="XTx-Ct-EPu" secondAttribute="trailing" constant="39" id="7Bv-mO-fEZ"/>
-                                    <constraint firstItem="q3a-vk-qHN" firstAttribute="leading" secondItem="USk-U2-5GG" secondAttribute="trailing" constant="103" id="Cqr-tx-Zye"/>
-                                    <constraint firstAttribute="bottom" secondItem="T9X-Mx-5GD" secondAttribute="bottom" constant="43" id="EsM-PI-9Wx"/>
-                                    <constraint firstAttribute="bottom" secondItem="XTx-Ct-EPu" secondAttribute="bottom" constant="50" id="Hok-Af-Ncr"/>
-                                    <constraint firstAttribute="trailing" secondItem="OCl-lt-n1U" secondAttribute="trailing" constant="26" id="O6a-r5-8gJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="q3a-vk-qHN" secondAttribute="trailing" constant="26" id="OOw-XM-mJR"/>
-                                    <constraint firstItem="XTx-Ct-EPu" firstAttribute="leading" secondItem="daS-cb-K0S" secondAttribute="leading" constant="8" id="PYm-jT-Xa9"/>
-                                    <constraint firstItem="USk-U2-5GG" firstAttribute="leading" secondItem="daS-cb-K0S" secondAttribute="leading" constant="8" id="Qj8-qi-jwg"/>
-                                    <constraint firstItem="USk-U2-5GG" firstAttribute="top" secondItem="b8y-V8-AvD" secondAttribute="bottom" constant="41.5" id="aMr-6C-vFy"/>
-                                    <constraint firstItem="q3a-vk-qHN" firstAttribute="top" secondItem="OCl-lt-n1U" secondAttribute="bottom" constant="38" id="c54-V9-bMH"/>
-                                    <constraint firstItem="b8y-V8-AvD" firstAttribute="top" secondItem="daS-cb-K0S" secondAttribute="top" constant="53" id="mkk-dr-LAr"/>
-                                    <constraint firstItem="b8y-V8-AvD" firstAttribute="leading" secondItem="daS-cb-K0S" secondAttribute="leading" constant="8" id="qhy-7n-3Pi"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="5" height="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a payment method :-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iT-kB-GpX">
-                                <rect key="frame" x="20" y="147" width="353" height="26.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-zH-Js0">
-                                <rect key="frame" x="45" y="666" width="303" height="45"/>
-                                <color key="backgroundColor" red="0.0" green="0.67843137249999996" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="uIM-bR-yal"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Continue to Checkout">
-                                            <attributes>
-                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <font key="NSFont" size="22" name="Optima-Regular"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="continueToCheckout:" destination="TJL-Q2-o5y" eventType="touchUpInside" id="evK-Vo-ky3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="hNK-v2-T1a"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hNK-v2-T1a" firstAttribute="trailing" secondItem="daS-cb-K0S" secondAttribute="trailing" constant="20" id="8hf-Dx-cZf"/>
-                            <constraint firstItem="7iT-kB-GpX" firstAttribute="leading" secondItem="hNK-v2-T1a" secondAttribute="leading" constant="20" id="Djc-Pv-glK"/>
-                            <constraint firstItem="HeC-zH-Js0" firstAttribute="leading" secondItem="hNK-v2-T1a" secondAttribute="leading" constant="45" id="LCq-Yi-1ZK"/>
-                            <constraint firstItem="7iT-kB-GpX" firstAttribute="top" secondItem="hNK-v2-T1a" secondAttribute="top" constant="44" id="MlF-MW-lvc"/>
-                            <constraint firstItem="daS-cb-K0S" firstAttribute="top" secondItem="7iT-kB-GpX" secondAttribute="bottom" constant="58.5" id="RGm-k7-LyB"/>
-                            <constraint firstItem="hNK-v2-T1a" firstAttribute="bottom" secondItem="HeC-zH-Js0" secondAttribute="bottom" constant="107" id="avt-F0-Sd6"/>
-                            <constraint firstItem="daS-cb-K0S" firstAttribute="leading" secondItem="hNK-v2-T1a" secondAttribute="leading" constant="20" id="fgl-8F-OFg"/>
-                            <constraint firstItem="hNK-v2-T1a" firstAttribute="trailing" secondItem="7iT-kB-GpX" secondAttribute="trailing" constant="20" id="rN7-Kz-i9Z"/>
-                            <constraint firstItem="hNK-v2-T1a" firstAttribute="trailing" secondItem="HeC-zH-Js0" secondAttribute="trailing" constant="45" id="srK-hH-ihR"/>
-                            <constraint firstItem="hNK-v2-T1a" firstAttribute="bottom" secondItem="daS-cb-K0S" secondAttribute="bottom" constant="349" id="u6X-JY-qNc"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="LUM-nW-CaI"/>
-                    <connections>
-                        <outlet property="cashOnDeliveryOption" destination="q3a-vk-qHN" id="Vw4-4r-wTX"/>
-                        <outlet property="copounTextfield" destination="T9X-Mx-5GD" id="zdd-DB-BR3"/>
-                        <outlet property="googlePayOption" destination="OCl-lt-n1U" id="XyT-0n-SYM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gdT-lJ-jnl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-834" y="-830"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="z3S-9f-uGA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fc7-Dj-aWA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8yw-D6-eOO">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="TJL-Q2-o5y" kind="relationship" relationship="rootViewController" id="7Kb-hf-brZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KNN-QQ-jkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1524" y="-830"/>
-        </scene>
     </scenes>
     <resources>
         <image name="1" width="1000" height="980"/>
@@ -2398,12 +2147,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         <image name="grid" width="20" height="13"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="home-3" width="24.333333969116211" height="22"/>
-        <image name="location" catalog="system" width="128" height="121"/>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="priceSort" width="16" height="16"/>
-        <image name="radiooff" width="24" height="24"/>
-        <image name="radioon" width="24" height="24"/>
         <image name="search" width="22" height="22"/>
         <image name="shoes" width="612" height="408"/>
         <image name="shopping-bag" width="22.666666030883789" height="25"/>
@@ -2413,9 +2159,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
