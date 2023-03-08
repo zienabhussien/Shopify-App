@@ -7,8 +7,11 @@
 
 import UIKit
 import CoreData
+import Toast_Swift
+
 class ConfirmPaymentVC: UIViewController {
 
+    @IBOutlet weak var subTotalLabel: UILabel!
     //order
     var placedOrders = [OrderItemModel]()
     var orderViewModel = OrderViewModel()
@@ -16,22 +19,26 @@ class ConfirmPaymentVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setCartItems()
+        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+        subTotalLabel.text = String(totalPrice)
+        
     }
-    
+    func setCartItems(){
+        orderViewModel.getSelectedProducts { orders, error in
+            guard let orders = orders else {return}
+            self.placedOrders = orders
+        }
+    }
 
     @IBAction func placeOrder(_ sender: Any) {
         
         orderViewModel.postOrder(cartArray: placedOrders)
         
-        let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+        self.navigationController?.popToRootViewController(animated: true)
         
-        self.navigationController?.pushViewController(homeVC, animated: true)
-        
-//        let doneVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        present(doneVC, animated: true, completion: nil)
     }
-   
+  
 
 }
 

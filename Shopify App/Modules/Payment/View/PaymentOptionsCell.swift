@@ -11,6 +11,7 @@ class PaymentOptionsCell: UITableViewCell {
   
     @IBOutlet weak var PaymentWayName: UILabel!
     @IBOutlet weak var checkPaymentWay: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

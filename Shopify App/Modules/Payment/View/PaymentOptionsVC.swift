@@ -28,7 +28,7 @@ class PaymentOptionsVC: UIViewController {
         
         
         let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmPaymentVC") as! ConfirmPaymentVC
-//        confirmPaymentVC.product = product
+        
         self.navigationController?.pushViewController(confirmPaymentVC, animated: true)
 
         

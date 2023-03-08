@@ -33,7 +33,6 @@ extension OrdersVC : UITableViewDataSource
             self.tableView.reloadData()
             self.setTotalPrice()
         }
-        
         cell.subItemQuantity = {
             if self.cartArray[indexPath.row].itemQuantity > 1 {
                 self.orderViewModel.getSelectedItemInCart(productId: self.cartArray[indexPath.row].itemID) { selectedOrder, error in

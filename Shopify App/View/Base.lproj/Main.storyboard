@@ -616,10 +616,13 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="93J-bf-fac"/>
+                    <connections>
+                        <outlet property="subTotalLabel" destination="LfS-dJ-lY4" id="dw5-Rd-wgt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVy-Nu-ILW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756" y="-1645"/>
+            <point key="canvasLocation" x="3754.9618320610684" y="-1645.0704225352113"/>
         </scene>
         <!--Payment OptionsVC-->
         <scene sceneID="zPC-be-3KB">
@@ -2248,33 +2251,30 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-oa-i7f">
-                                <rect key="frame" x="32" y="690.66666666666663" width="48.333333333333343" height="14.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SupTotal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epy-oa-i7f">
+                                <rect key="frame" x="32" y="690.66666666666652" width="75" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCart" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-hq-eE9">
-                                <rect key="frame" x="0.0" y="176" width="800" height="600"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-hq-eE9">
+                                <rect key="frame" x="0.0" y="103" width="393" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-1B-Nut">
-                                <rect key="frame" x="0.0" y="103" width="800" height="540"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-1B-Nut">
+                                <rect key="frame" x="0.0" y="103" width="393" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="540" id="1Te-Rh-Fjx"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="6pt-y2-vuM" id="mmo-Qf-qC2"/>
                                     <outlet property="delegate" destination="6pt-y2-vuM" id="DJP-fn-RMy"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpZ-xR-8hJ">
-                                <rect key="frame" x="32" y="733.33333333333337" width="735" height="35.666666666666629"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpZ-xR-8hJ">
+                                <rect key="frame" x="32" y="733" width="335" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="mainColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35.670000000000002" id="35l-eh-whV"/>
-                                    <constraint firstAttribute="width" constant="325" id="3hI-gj-r6H"/>
-                                </constraints>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Procced To Checkout">
@@ -2289,33 +2289,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <action selector="proccedToCheckout:" destination="6pt-y2-vuM" eventType="touchUpInside" id="OSd-A0-4oT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daS-vy-Ho3">
-                                <rect key="frame" x="88" y="690.66666666666663" width="30.333333333333329" height="14.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daS-vy-Ho3">
+                                <rect key="frame" x="140" y="691" width="237" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SHG-3Z-Wjd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Epy-oa-i7f" firstAttribute="leading" secondItem="SHG-3Z-Wjd" secondAttribute="leading" constant="32" id="7d5-nu-CCM"/>
-                            <constraint firstItem="daS-vy-Ho3" firstAttribute="top" secondItem="gj3-1B-Nut" secondAttribute="bottom" constant="47.666666666666629" id="AnA-4k-GTe"/>
-                            <constraint firstItem="o1a-hq-eE9" firstAttribute="leading" secondItem="SHG-3Z-Wjd" secondAttribute="leading" id="BN5-WU-5bb"/>
-                            <constraint firstItem="gj3-1B-Nut" firstAttribute="top" secondItem="SHG-3Z-Wjd" secondAttribute="top" id="EBz-JU-LSA"/>
-                            <constraint firstItem="gj3-1B-Nut" firstAttribute="top" secondItem="SHG-3Z-Wjd" secondAttribute="top" id="EKv-Ba-HJy"/>
-                            <constraint firstItem="cpZ-xR-8hJ" firstAttribute="leading" secondItem="SHG-3Z-Wjd" secondAttribute="leading" constant="32" id="Gb0-wV-aYl"/>
-                            <constraint firstItem="SHG-3Z-Wjd" firstAttribute="trailing" secondItem="cpZ-xR-8hJ" secondAttribute="trailing" constant="33" id="HP2-HL-sVY"/>
-                            <constraint firstItem="daS-vy-Ho3" firstAttribute="leading" secondItem="Epy-oa-i7f" secondAttribute="trailing" constant="7.6666666666666856" id="KGB-R5-JD3"/>
-                            <constraint firstItem="Epy-oa-i7f" firstAttribute="top" secondItem="gj3-1B-Nut" secondAttribute="bottom" constant="47.666666666666629" id="O3f-Jc-jAf"/>
-                            <constraint firstItem="cpZ-xR-8hJ" firstAttribute="top" secondItem="Epy-oa-i7f" secondAttribute="bottom" constant="28" id="S7A-vR-Vgg"/>
-                            <constraint firstItem="SHG-3Z-Wjd" firstAttribute="trailing" secondItem="gj3-1B-Nut" secondAttribute="trailing" id="bFq-3Z-DAe"/>
-                            <constraint firstItem="o1a-hq-eE9" firstAttribute="top" secondItem="SHG-3Z-Wjd" secondAttribute="top" constant="73" id="cFo-fF-Hb0"/>
-                            <constraint firstItem="daS-vy-Ho3" firstAttribute="centerY" secondItem="Epy-oa-i7f" secondAttribute="centerY" id="frU-TA-mCq"/>
-                            <constraint firstItem="gj3-1B-Nut" firstAttribute="leading" secondItem="SHG-3Z-Wjd" secondAttribute="leading" id="gRn-Xa-Ybu"/>
-                            <constraint firstItem="SHG-3Z-Wjd" firstAttribute="bottom" secondItem="cpZ-xR-8hJ" secondAttribute="bottom" constant="49" id="oJ6-so-mDE"/>
-                            <constraint firstItem="SHG-3Z-Wjd" firstAttribute="trailing" secondItem="o1a-hq-eE9" secondAttribute="trailing" id="u8b-zh-4P2"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="xxf-dW-tXf"/>
                     <connections>
@@ -2326,7 +2309,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gam-qR-Rab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285" y="-935"/>
+            <point key="canvasLocation" x="1284.7328244274809" y="-935.21126760563379"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ivy-qN-AVe">
@@ -2533,12 +2516,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="1000" height="980"/>
         <image name="360_F_335919003_TH0ZtHZZ5QGT34n1NcQXzRGvz4Pthg11" width="720" height="360"/>
         <image name="adds" width="696" height="365"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="123"/>
-        <image name="emptyCart" width="800" height="600"/>
         <image name="favorite" width="25" height="23.333333969116211"/>
         <image name="filter" width="30" height="16"/>
         <image name="grid" width="20" height="13"/>
