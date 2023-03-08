@@ -14,7 +14,6 @@ class PaymentOptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     
@@ -28,11 +27,9 @@ class PaymentOptionsVC: UIViewController {
             }
         
         
-        let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
+        let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmPaymentVC") as! ConfirmPaymentVC
 //        confirmPaymentVC.product = product
         self.navigationController?.pushViewController(confirmPaymentVC, animated: true)
-
-        
 
         
     }

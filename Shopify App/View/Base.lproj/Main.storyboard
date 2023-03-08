@@ -478,7 +478,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
             <objects>
                 <viewController storyboardIdentifier="ConfirmPaymentVC" id="Iyu-cq-VMX" customClass="ConfirmPaymentVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9CZ-iZ-hg2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="10D-CW-mLG">
@@ -619,7 +619,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVy-Nu-ILW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4083" y="-1645"/>
+            <point key="canvasLocation" x="3756" y="-1645"/>
         </scene>
         <!--Payment OptionsVC-->
         <scene sceneID="zPC-be-3KB">
@@ -686,7 +686,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="continueToPayment:" destination="93e-4B-vbR" eventType="touchUpInside" id="idB-zK-kTE"/>
-                                    <segue destination="Iyu-cq-VMX" kind="show" id="6CA-ry-uX0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2256,10 +2255,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emptyCart" translatesAutoresizingMaskIntoConstraints="NO" id="o1a-hq-eE9">
-                                <rect key="frame" x="0.0" y="176" width="393" height="600"/>
+                                <rect key="frame" x="0.0" y="176" width="800" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gj3-1B-Nut">
-                                <rect key="frame" x="0.0" y="103" width="393" height="540"/>
+                                <rect key="frame" x="0.0" y="103" width="800" height="540"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="540" id="1Te-Rh-Fjx"/>
@@ -2270,7 +2269,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpZ-xR-8hJ">
-                                <rect key="frame" x="32" y="733.33333333333337" width="328" height="35.666666666666629"/>
+                                <rect key="frame" x="32" y="733.33333333333337" width="735" height="35.666666666666629"/>
                                 <color key="backgroundColor" name="mainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35.670000000000002" id="35l-eh-whV"/>
