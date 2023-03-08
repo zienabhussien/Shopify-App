@@ -14,7 +14,7 @@
 		<key>Cosmos.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Floaty.xcscheme</key>
 		<dict>
@@ -26,7 +26,7 @@
 		<key>Floaty.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
@@ -38,7 +38,7 @@
 		<key>Kingfisher.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>10</integer>
 		</dict>
 		<key>MDFInternationalization.xcscheme</key>
 		<dict>
@@ -50,7 +50,7 @@
 		<key>MDFInternationalization.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>13</integer>
 		</dict>
 		<key>MDFTextAccessibility.xcscheme</key>
 		<dict>
@@ -62,7 +62,7 @@
 		<key>MDFTextAccessibility.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>5</integer>
 		</dict>
 		<key>MaterialComponents.xcscheme</key>
 		<dict>
@@ -74,7 +74,7 @@
 		<key>MaterialComponents.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>4</integer>
 		</dict>
 		<key>Mobile-Buy-SDK.xcscheme</key>
 		<dict>
@@ -86,7 +86,7 @@
 		<key>Mobile-Buy-SDK.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>12</integer>
 		</dict>
 		<key>Pods-Shopify App-Shopify AppUITests.xcscheme</key>
 		<dict>
@@ -119,7 +119,7 @@
 		<key>SwiftyJSON.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>11</integer>
 		</dict>
 		<key>Toast-Swift.xcscheme</key>
 		<dict>
@@ -131,7 +131,7 @@
 		<key>Toast-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>9</integer>
 		</dict>
 		<key>lottie-ios.xcscheme</key>
 		<dict>

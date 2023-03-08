@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Floaty
+
 class CatagoryViewController: UIViewController {
     
     @IBOutlet weak var laoding: UIActivityIndicatorView!
@@ -17,10 +18,10 @@ class CatagoryViewController: UIViewController {
     
     @IBOutlet weak var productsCollectionView: UICollectionView!
     var subCategoriesNamesModel : subCatecoryResponse?     //variable to response data
-    var productOfbrandsCategoryModel : ProductOfBrand?     //variable to response data
+    var productOfbrandsCategoryModel : Products?     //variable to response data
     let floaty = Floaty()
     var isFiltered = false
-    var FilterdArr: [ProductOfBrands]? = [ProductOfBrands]()
+    var FilterdArr: [Product]? = [Product]()
     var id = "?collection_id=437934555426"
 
     var isList: Bool = true
@@ -64,11 +65,11 @@ class CatagoryViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func  registerCollectionView(){
@@ -110,17 +111,17 @@ class CatagoryViewController: UIViewController {
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("T-Shirts", icon: UIImage(named: "t-shirt")) { _ in
-            let filered = self.productOfbrandsCategoryModel?.products.filter { item in
-                return item.productType == "T-SHIRTS"
-            }
+            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+                return item.product_type == "T-SHIRTS"
+            })
             self.FilterdArr = filered ?? []
             self.isFiltered = true
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("Shoes", icon: UIImage(named: "shoes (2)")){ _ in
-            let filered = self.productOfbrandsCategoryModel?.products.filter { item in
-                return item.productType=="SHOES"
-            }
+            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+                return item.product_type=="SHOES"
+            })
 
             self.FilterdArr = filered ?? []
             print(self.FilterdArr)
@@ -128,9 +129,9 @@ class CatagoryViewController: UIViewController {
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("Accessories", icon: UIImage(named: "accessories")){ _ in
-            let filered = self.productOfbrandsCategoryModel?.products.filter { item in
-                return item.productType=="ACCESSORIES"
-            }
+            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+                return item.product_type=="ACCESSORIES"
+            })
             self.FilterdArr = filered ?? []
             self.isFiltered = true
             self.productsCollectionView.reloadData()
@@ -145,13 +146,7 @@ class CatagoryViewController: UIViewController {
 
 
 extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
-    
-
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-    //        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-    //        navigationController?.pushViewController(viewController, animated: true)
-    //    }
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -163,7 +158,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             if(isFiltered){
                 return FilterdArr?.count ?? 0
             }else{
-                return productOfbrandsCategoryModel?.products.count ?? 0
+                return productOfbrandsCategoryModel?.products?.count ?? 0
             }
             
         }else{
@@ -196,8 +191,8 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     
                     if let productOfbrandCategory = FilterdArr?[indexPath.row] {
                         cell.nameList.text = productOfbrandCategory.title
-                        cell.brandlist.text = productOfbrandCategory.productType
-                        if let firstPrice = productOfbrandCategory.variants.first?.price {
+                        cell.brandlist.text = productOfbrandCategory.product_type
+                        if let firstPrice = productOfbrandCategory.variants?.first?.price {
                             cell.priceList.text = "$\(firstPrice)"
                         } else {
                             cell.priceList.text = ""
@@ -205,7 +200,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         
                         cell.imageList.kf.indicatorType = .activity
                         
-                        if let imageUrl = URL(string: productOfbrandCategory.image.src) {
+                        if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
                             cell.imageList.kf.setImage(with: imageUrl)
                             
                         }
@@ -213,10 +208,10 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 
             }else
                 {
-                    if let productOfbrandCategory = productOfbrandsCategoryModel?.products[indexPath.row] {
+                if let productOfbrandCategory = productOfbrandsCategoryModel?.products?[indexPath.row] {
                         cell.nameList.text = productOfbrandCategory.title
-                        cell.brandlist.text = productOfbrandCategory.productType
-                        if let firstPrice = productOfbrandCategory.variants.first?.price {
+                        cell.brandlist.text = productOfbrandCategory.product_type
+                    if let firstPrice = productOfbrandCategory.variants?.first?.price {
                             cell.priceList.text = "$\(firstPrice)"
                         } else {
                             cell.priceList.text = ""
@@ -224,7 +219,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         
                         cell.imageList.kf.indicatorType = .activity
                         
-                        if let imageUrl = URL(string: productOfbrandCategory.image.src) {
+                    if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
                             cell.imageList.kf.setImage(with: imageUrl)
                             
                         }
@@ -249,8 +244,8 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     
                     if let productOfbrandCategory = FilterdArr?[indexPath.row] {
                         cell.nameGrid.text = productOfbrandCategory.title
-                        cell.brandGrid.text = productOfbrandCategory.productType
-                        if let firstPrice = productOfbrandCategory.variants.first?.price {
+                        cell.brandGrid.text = productOfbrandCategory.product_type
+                        if let firstPrice = productOfbrandCategory.variants?.first?.price {
                             cell.priceGrid.text = "$\(firstPrice)"
                         } else {
                             cell.priceGrid.text = ""
@@ -258,7 +253,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         
                         cell.imageGrid.kf.indicatorType = .activity
                         
-                        if let imageUrl = URL(string: productOfbrandCategory.image.src) {
+                        if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
                             cell.imageGrid.kf.setImage(with: imageUrl)
                             
                         }
@@ -266,17 +261,17 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 
             }else
                 {
-                if let productOfbrandCategory = productOfbrandsCategoryModel?.products[indexPath.row] {
+                if let productOfbrandCategory = productOfbrandsCategoryModel?.products?[indexPath.row] {
                     cell.nameGrid.text = productOfbrandCategory.title
-                    cell.brandGrid.text = productOfbrandCategory.productType
-                    if let firstPrice = productOfbrandCategory.variants.first?.price {
+                    cell.brandGrid.text = productOfbrandCategory.product_type
+                    if let firstPrice = productOfbrandCategory.variants?.first?.price {
                         cell.priceGrid.text = "$\(firstPrice)"
                     } else {
                         cell.priceGrid.text = ""
                     }
                     
                     
-                    if let imageUrl = URL(string: productOfbrandCategory.image.src) {
+                    if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
                         cell.imageGrid.kf.setImage(with: imageUrl)
                             
                         }
@@ -373,7 +368,7 @@ extension CatagoryViewController{
 
 
 extension CatagoryViewController{
-    func fetchproduct(compilation: @escaping (ProductOfBrand?) -> Void)
+    func fetchproduct(compilation: @escaping (Products?) -> Void)
     {
    
         guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/products.json\(id)") else {return}
@@ -384,7 +379,7 @@ extension CatagoryViewController{
             if let data = response.data {
                 do{
                     
-                    let result = try JSONDecoder().decode(ProductOfBrand.self, from: data)
+                    let result = try JSONDecoder().decode(Products.self, from: data)
                     
                     compilation(result)
                 }
@@ -401,21 +396,23 @@ extension CatagoryViewController{
 }
 
 
+
+
 extension CatagoryViewController {
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+
         if collectionView == subCategoriesCollectionViev {
-            
+
             // Get the selected subcategory from the model
             guard let subcategory = subCategoriesNamesModel?.customCollections[indexPath.item] else {
                 return
             }
-            
+
             // Update the id variable with the collection ID of the selected subcategory
             id = "?collection_id=\(subcategory.id)"
             print(subcategory.id)
-            
+
             // Call the fetchproduct method again to fetch the updated data
             fetchproduct { result in
                 DispatchQueue.main.async {
@@ -425,14 +422,15 @@ extension CatagoryViewController {
                     self.productsCollectionView.reloadData()
                 }
             }
+        } else if collectionView == productsCollectionView {
+            let product = productOfbrandsCategoryModel?.products?[indexPath.row]
+            let ProductVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
+            ProductVC.product = product
+            self.navigationController?.pushViewController(ProductVC, animated: true)
         }
+
     }
-    
+
 }
 
 
-
-extension CatagoryViewController {
-    
-    
-}

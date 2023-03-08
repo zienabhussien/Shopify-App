@@ -1,4 +1,9 @@
-
+//
+//  BrandProductResponse.swift
+//  Shopify App
+//
+//  Created by Ali Moustafa on 03/03/2023.
+//
 
 import Foundation
 struct Products : Codable {
