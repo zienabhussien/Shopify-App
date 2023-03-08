@@ -8,16 +8,29 @@
 import UIKit
 import Alamofire
 import Kingfisher
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController ,UISearchBarDelegate,UISearchResultsUpdating{
     @IBOutlet weak var AddsImage: UIImageView!
-    
     @IBOutlet weak var brandsCollectionView: UICollectionView!
     var brandsModel : BrandResponse?     //variable to response data
+    var filteredBrands =  [SmartCollection]()
+    
+    
+  var searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool{
+            return searchController.searchBar.text!.isEmpty
+        }
+    var isFiltering : Bool{
+            return searchController.isActive && !isSearchBarEmpty
+        }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerBrandsCollectionView()
         self.title = "Home"
+        
+        
+        initializeSearcBar()
+        navigationItem.hidesSearchBarWhenScrolling = false
         //fetch data
         fetchData { result in
             DispatchQueue.main.async {
@@ -25,22 +38,51 @@ class HomeViewController: UIViewController {
                 self.brandsCollectionView.reloadData()
             }
         }
-        //
+       
         
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        print(filteredBrands)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     func  registerBrandsCollectionView(){
         
         brandsCollectionView.register(UINib(nibName: "BrandsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BrandsCollectionViewCell")
         brandsCollectionView.delegate = self
         brandsCollectionView.dataSource = self
+        
+    }
+    
+    func initializeSearcBar(){
+
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.tintColor = .white
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Brand"
+        searchController.searchBar.tintColor = .black
+        navigationItem.searchController = searchController
+        definesPresentationContext = false
+                
+    }
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredBrands = brandsModel?.smartCollections.filter{ smartCollection in
+            return smartCollection.title.lowercased().contains(searchController.searchBar.text!.lowercased())
+            
+        } ?? []
+        
+        // reload
+        self.brandsCollectionView.reloadData()
+        
         
     }
 
@@ -60,18 +102,32 @@ extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(filteredBrands)
+        if isFiltering {
+            return filteredBrands.count
+        }
+       
         return brandsModel?.smartCollections.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandsCollectionViewCell", for: indexPath) as! BrandsCollectionViewCell
-        if let brand = brandsModel?.smartCollections[indexPath.row] {
-            cell.BrandName.text = brand.title
-                   if let imageUrl = URL(string: brand.image.src) {
-                       cell.BrandImage.kf.setImage(with: imageUrl)
-
-                   }
-               }
+        
+        if isFiltering {
+            cell.BrandName.text = filteredBrands[indexPath.row].title
+            if let imageUrl = URL(string: filteredBrands[indexPath.row].image.src) {
+                cell.BrandImage.kf.setImage(with: imageUrl)
+                
+            }
+        }else{
+            if let brand = brandsModel?.smartCollections[indexPath.row] {
+                cell.BrandName.text = brand.title
+                if let imageUrl = URL(string: brand.image.src) {
+                    cell.BrandImage.kf.setImage(with: imageUrl)
+                    
+                }
+            }
+        }
         return cell
     }
     
@@ -111,6 +167,7 @@ extension HomeViewController{
         
         
         extension HomeViewController{
+            
             func fetchData(compilation: @escaping (BrandResponse?) -> Void)
             {
            
