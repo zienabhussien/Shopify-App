@@ -14,14 +14,16 @@ class MeVC: UIViewController {
     @IBOutlet weak var wishListTable: UITableView!
     
     @IBOutlet weak var userWelcome: UILabel!
-    
+    var someWishList = [FavoriteProduct]()
+
     var reponseOrsers : [Order]?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        someWishList = CoreDataManager.fetchFromCoreData()
+
         
         //fetch data
         fetchOrders { result in
@@ -57,6 +59,8 @@ class MeVC: UIViewController {
     
     
     @IBAction func moreWishListAction(_ sender: Any) {
+        var favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+        self.navigationController?.pushViewController(favouriteVC, animated: true)
         
     }
     
@@ -74,9 +78,9 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
             return cell
         }
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "wishListCell", for: indexPath) as! WishListTableCell
-        
+        cell.productName.text = someWishList[indexPath.row].productName
+        cell.productImg.kf.setImage(with: URL(string : someWishList[indexPath.row].productImage ?? ""))
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,8 +95,10 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
                 return 0
             }
         } else {
-            //wish list
-            return 3
+            if someWishList.count > 2 {
+                return 2
+            }
+            return someWishList.count
         }
     }
 

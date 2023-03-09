@@ -26,6 +26,9 @@
 		336C254829B6654700C78A98 /* AddressVC+TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254629B6654700C78A98 /* AddressVC+TVC.swift */; };
 		336C254B29B665AB00C78A98 /* AddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254A29B665AB00C78A98 /* AddressViewModel.swift */; };
 		336C254F29B6666900C78A98 /* CoreDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C254E29B6666900C78A98 /* CoreDataServices.swift */; };
+		33714F5029BA3BC700845B9B /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33714F4F29BA3BC700845B9B /* ApiClient.swift */; };
+		33714F5329BA3D4D00845B9B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33714F5129BA3D4C00845B9B /* CoreDataManager.swift */; };
+		33714F5429BA3D4D00845B9B /* FavProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33714F5229BA3D4D00845B9B /* FavProduct.swift */; };
 		339159AF29B9365200036033 /* AllOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339159AE29B9365200036033 /* AllOrderViewController.swift */; };
 		339159B129B936C800036033 /* AllOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339159B029B936C800036033 /* AllOrderTableViewCell.swift */; };
 		33A2023429B0F62200D85E41 /* EXUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2023129B0F62200D85E41 /* EXUIView.swift */; };
@@ -148,6 +151,9 @@
 		336C254629B6654700C78A98 /* AddressVC+TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddressVC+TVC.swift"; sourceTree = "<group>"; };
 		336C254A29B665AB00C78A98 /* AddressViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressViewModel.swift; sourceTree = "<group>"; };
 		336C254E29B6666900C78A98 /* CoreDataServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataServices.swift; sourceTree = "<group>"; };
+		33714F4F29BA3BC700845B9B /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		33714F5129BA3D4C00845B9B /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		33714F5229BA3D4D00845B9B /* FavProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavProduct.swift; sourceTree = "<group>"; };
 		339159AE29B9365200036033 /* AllOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrderViewController.swift; sourceTree = "<group>"; };
 		339159B029B936C800036033 /* AllOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrderTableViewCell.swift; sourceTree = "<group>"; };
 		33A2023129B0F62200D85E41 /* EXUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXUIView.swift; sourceTree = "<group>"; };
@@ -364,6 +370,8 @@
 			isa = PBXGroup;
 			children = (
 				336C254E29B6666900C78A98 /* CoreDataServices.swift */,
+				33714F5129BA3D4C00845B9B /* CoreDataManager.swift */,
+				33714F5229BA3D4D00845B9B /* FavProduct.swift */,
 			);
 			path = CoreDataServices;
 			sourceTree = "<group>";
@@ -749,6 +757,7 @@
 		D81CF1AA29B785260009D125 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				33714F4F29BA3BC700845B9B /* ApiClient.swift */,
 				D81CF1AD29B7853E0009D125 /* EndPoints.swift */,
 				336C253D29B6318D00C78A98 /* URLs.swift */,
 			);
@@ -1149,10 +1158,12 @@
 				336C254B29B665AB00C78A98 /* AddressViewModel.swift in Sources */,
 				7BFB960829B0EB29002D5253 /* AboutUsVC.swift in Sources */,
 				33A2024E29B0F69E00D85E41 /* ProductCollectionViewCell.swift in Sources */,
+				33714F5429BA3D4D00845B9B /* FavProduct.swift in Sources */,
 				D8784BAD29AF680300231982 /* SplashVC.swift in Sources */,
 				8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */,
 				336C254829B6654700C78A98 /* AddressVC+TVC.swift in Sources */,
 				336C253E29B6318D00C78A98 /* URLs.swift in Sources */,
+				33714F5029BA3BC700845B9B /* ApiClient.swift in Sources */,
 				33A2023529B0F62200D85E41 /* CardView.swift in Sources */,
 				33EDD8E229B8C392008C815A /* ShoppingCartVC.swift in Sources */,
 				33B205F929B16DF500AFBB17 /* BrandResponse.swift in Sources */,
@@ -1175,6 +1186,7 @@
 				33E1616829B6750400A13B29 /* AddressTVCell.swift in Sources */,
 				33A2026029B0F6AF00D85E41 /* BrandsCollectionViewCell.swift in Sources */,
 				7BFB960329B0EB29002D5253 /* SettingCell.swift in Sources */,
+				33714F5329BA3D4D00845B9B /* CoreDataManager.swift in Sources */,
 				336C254729B6654700C78A98 /* AddressVC.swift in Sources */,
 				33D742E229B7B50700535E20 /* Products.swift in Sources */,
 				33A2025D29B0F6AF00D85E41 /* ProductOFBrandCollectionViewCell.swift in Sources */,
