@@ -157,7 +157,7 @@ extension ProductOfBrandVC : UISearchBarDelegate{
             isFiltering = true
         }
         searchedProducts =  productOBbrandsModel?.products?.filter({ product in
-            return (product.title?.lowercased().contains(searchText.lowercased()) != nil)
+            return (product.title.lowercased().contains(searchText.lowercased()))
         }) ?? []
         
         self.ProductOfBrandsCollection.reloadData()
