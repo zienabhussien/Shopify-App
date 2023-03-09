@@ -22,7 +22,6 @@ class MeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        someWishList = CoreDataManager.fetchFromCoreData()
 
         
         //fetch data
@@ -31,6 +30,7 @@ class MeVC: UIViewController {
                 self.reponseOrsers = result
                 print(self.reponseOrsers ?? "no order")
                 self.ordersTable.reloadData()
+
             }
         }
         //
@@ -42,7 +42,14 @@ class MeVC: UIViewController {
     @IBAction func moreOrder(_ sender: Any) {
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        someWishList = CoreDataManager.fetchFromCoreData()
+       wishListTable.reloadData()
+
+    }
     override func viewWillAppear(_ animated: Bool) {
+        wishListTable.reloadData()
+
         navigationController?.setNavigationBarHidden(true, animated: false)
 
     }
@@ -50,14 +57,6 @@ class MeVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
-//    @IBAction func moreOrdersAction(_ sender: Any) {
-//        
-//        
-//        let AllOrderViewController = storyboard.self?.instantiateViewController(withIdentifier: "AllOrderViewController")
-//        
-//    }
-    
-    
     @IBAction func moreWishListAction(_ sender: Any) {
         var favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
         self.navigationController?.pushViewController(favouriteVC, animated: true)
@@ -95,8 +94,8 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
                 return 0
             }
         } else {
-            if someWishList.count > 2 {
-                return 2
+            if someWishList.count > 3 {
+                return 3
             }
             return someWishList.count
         }

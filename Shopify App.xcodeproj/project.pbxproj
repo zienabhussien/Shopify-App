@@ -344,7 +344,6 @@
 				336C254129B632E500C78A98 /* Networking.swift */,
 				336C253F29B632A700C78A98 /* Helper.swift */,
 				336C253629B62B6100C78A98 /* CreateAddressVC.swift */,
-				336C253929B62DA000C78A98 /* Customer.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -360,6 +359,7 @@
 		336C254C29B6664700C78A98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				336C253929B62DA000C78A98 /* Customer.swift */,
 				D81CF1AA29B785260009D125 /* Network */,
 				336C254D29B6665800C78A98 /* CoreDataServices */,
 			);

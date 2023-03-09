@@ -15,13 +15,16 @@ class ProductOfBrandVC: UIViewController {
     @IBOutlet weak var ProductOfBrandsCollection: UICollectionView!
     var productOBbrandsModel : Products?     //variable to response data
     var filteredProducts : [Product]? = [Product]()
-
+    
+    var  searchedProducts  = [Product]()
     var isFavorite: Bool = false
     var SmartCollectionID: String = ""
     var isFiltered = false //for slider
     var filterIsPressed = true
+    var isFiltering : Bool = false
 
 
+    @IBOutlet weak var productSearchBar: UISearchBar!
     @IBOutlet weak var priceSlider: UISlider!
     @IBOutlet weak var minimumPrice: UILabel!
     
@@ -30,6 +33,8 @@ class ProductOfBrandVC: UIViewController {
         super.viewDidLoad()
         registerBrandCollectionView()
         //fetch data
+        productSearchBar.delegate = self
+
         fetchData { result in
             DispatchQueue.main.async {
                 self.productOBbrandsModel = result
@@ -54,8 +59,9 @@ class ProductOfBrandVC: UIViewController {
     }
     
     
-    
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.ProductOfBrandsCollection.reloadData()
+    }
     @IBAction func filterSlider(_ sender: UISlider) {
         
         print(sender.value)
@@ -95,19 +101,22 @@ class ProductOfBrandVC: UIViewController {
             priceSlider.isHidden = true
         }
     }
-    
-    
     @IBAction func toWishlistButton(_ sender: Any) {
         
-        
-        
-        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-        viewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(viewController, animated: true)
-        print("wish")
+        let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
 
-    }
+            if userDefaultToken != 0 {
+                var wishListVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+                self.navigationController?.pushViewController(wishListVC, animated: true)
+                
+            }else{
+                var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+                
+            }
+            
+
+        }
     
     @IBAction func toCartButton(_ sender: Any) {
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
@@ -134,38 +143,108 @@ class ProductOfBrandVC: UIViewController {
         
       
     }
-    
-   
 }
 
 
+extension ProductOfBrandVC : UISearchBarDelegate{
+    var isSearchBarEmpty : Bool {
+        return productSearchBar.text!.isEmpty
+    }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        if !searchText.isEmpty {
+            isFiltering = true
+        }
+        searchedProducts =  productOBbrandsModel?.products?.filter({ product in
+            return (product.title?.lowercased().contains(searchText.lowercased()) != nil)
+        }) ?? []
+        
+        self.ProductOfBrandsCollection.reloadData()
+        if isSearchBarEmpty {
+            isFiltering = false
+            self.ProductOfBrandsCollection.reloadData()
+        }
+    }
+}
 
 
 extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        filteredProducts?.count ?? 0
+        if isFiltering {
+            return searchedProducts.count
+            
+        }
+      return  filteredProducts?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
-        if let productOfbrand = filteredProducts?[indexPath.row] {
-            cell.nameOfProductBrand.text = productOfbrand.title
-            cell.ProductType.text = productOfbrand.product_type
-            if let firstPrice = productOfbrand.variants?.first?.price {
-                cell.productPrice.text = "$\(firstPrice)"
-            } else {
-                cell.productPrice.text = ""
-            }
-            
-            if let imageUrl = URL(string: productOfbrand.image?.src ?? "") {
-                       cell.productImage.kf.setImage(with: imageUrl)
+        var productKey = "\((filteredProducts?[indexPath.row].id)!)"
+        print(productKey)
+        if UserDefaults.standard.bool(forKey: productKey){
+            cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            print("add Fav")
+          }else{
+              cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                print("not fav")
+        }
+        cell.addToWishList = { [unowned self] in
+            var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
 
-                   }
-               }
+               cell.favButton.isSelected =   UserDefaults.standard.bool(forKey: productKey)
+         
+            cell.favButton.isSelected = !cell.favButton.isSelected
+            
+            if  cell.favButton.isSelected {
+                
+             cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            // save to core data
+                CoreDataManager.saveProductToCoreData(productName:filteredProducts?[indexPath.row].title ?? ""      , productPrice: filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage:        filteredProducts?[indexPath.row].image?.src ?? "", productId: filteredProducts?[indexPath.row].id ?? 0)
+                
+            UserDefaults.standard.set(true, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+
+            }else{
+                
+                cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                CoreDataManager.deleteFromCoreData(productName: filteredProducts?[indexPath.row].title ?? "" )
+                UserDefaults.standard.set(false, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+            }
+    }
+        if isFiltering {
+            cell.nameOfProductBrand.text = searchedProducts[indexPath.row].title
+            cell.ProductType.text = searchedProducts[indexPath.row].product_type
+            if let firstPrice = searchedProducts[indexPath.row].variants?.first?.price {
+                    cell.productPrice.text = "$\(firstPrice)"
+                } else {
+                    cell.productPrice.text = ""
+                }
+                
+            if let imageUrl = URL(string: searchedProducts[indexPath.row].image?.src ?? "") {
+                           cell.productImage.kf.setImage(with: imageUrl)
+
+                }
+
+            
+        } else{
+                    if let productOfbrand = filteredProducts?[indexPath.row] {
+                        cell.nameOfProductBrand.text = productOfbrand.title
+                        cell.ProductType.text = productOfbrand.product_type
+                        if let firstPrice = productOfbrand.variants?.first?.price {
+                            cell.productPrice.text = "$\(firstPrice)"
+                        } else {
+                            cell.productPrice.text = ""
+                        }
+            
+                        if let imageUrl = URL(string: productOfbrand.image?.src ?? "") {
+                                   cell.productImage.kf.setImage(with: imageUrl)
+            
+                               }
+                           }
+        }
+        
         return cell
         
     }

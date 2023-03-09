@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+
 protocol Service{    
     static  func postData<T: Codable>(endPoint : EndPoints,
                                       params: [String: Any],

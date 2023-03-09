@@ -12,22 +12,36 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var FavouriteTableView: UITableView!
     
-    var arr = [Product]()
+    var wishList = [FavoriteProduct]()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.FavouriteTableView.reloadData()
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         FavouriteTableView.delegate = self
         FavouriteTableView.dataSource = self
         FavouriteTableView.separatorStyle = .none
-//
-//        arr.append(Product.init(name: "pro1", img: UIImage(named: "1")!, price: 369))
-//        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
-//        arr.append(Product.init(name: "pro2", img: UIImage(named: "download")!, price: 875))
-//        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
-//        arr.append(Product.init(name: "pro3", img: UIImage(named: "1")!, price: 965))
+
+        
+        
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        wishList = CoreDataManager.fetchFromCoreData()
+        FavouriteTableView.reloadData()
+        
+    }
+   
+  override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arr.count
+        return wishList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,16 +49,59 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderWidth = 1
-        let product = arr[indexPath.row]
-//        cell.setUpCell(photo: product.img, name: product.name, price: product.price)
+        let product = wishList[indexPath.row]
+        cell.setUpCell(photo: product.productImage ?? "" , name: product.productName ?? "", price: product.productPrice ?? "")
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 150
     }
+    
+    
+    
+    // Override to support editing the table view.
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            showAlert(indexPath: indexPath)
+            
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    
+    func showAlert(indexPath: IndexPath){
+        // declare Alert
+        let alert = UIAlertController(title: "Delete", message: "Are you sure about deletion?", preferredStyle: .alert)
+        
+        //AddAction
+        alert.addAction(UIAlertAction(title: "OK", style: .default , handler: { [self] action in
+            print("ok clicked")
+//            guard let key = favoriteTeams[indexPath.row].team_key else
+//            { return  }
+//            UserDefaults.standard.set(false, forKey:"\(key)")
+            print("wish list id   \(wishList[indexPath.row].productId ?? 0)")
+            UserDefaults.standard.set(false, forKey: "\((wishList[indexPath.row].productId)!)")
+            CoreDataManager.deleteFromCoreData(productName: wishList[indexPath.row].productName ?? "")
+            wishList.remove(at: indexPath.row)
+            FavouriteTableView.deleteRows(at: [indexPath], with: .fade)
+            
+            self.FavouriteTableView.reloadData()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel , handler: { action in
+            print("Cancel clicked")
+        }))
+        
+
+        //showAlert
+        self.present(alert, animated: true) {
+            print("alert done")
+        }
+    }
+    
 }
-//struct Product {
-//    let name : String
-//    let img : UIImage
-//    let price : Double
-//}
+

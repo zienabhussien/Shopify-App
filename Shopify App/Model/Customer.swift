@@ -23,8 +23,6 @@ struct Customer: Codable {
     let addresses: [Address]?
 }
 
-
-
 struct LoginResponse: Codable {
     let customers: [Customer]
 }
