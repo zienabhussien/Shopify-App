@@ -77,6 +77,8 @@
 		8CA6A06F29AFB4E4006809E9 /* CouponTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */; };
 		8CA6A07329AFCE87006809E9 /* PaymentOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */; };
 		8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */; };
+		8CB8143529B8F64B0045B3D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8143429B8F64B0045B3D5 /* CoreDataManager.swift */; };
+		8CB8143729B8FBC60045B3D5 /* FavProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8143629B8FBC60045B3D5 /* FavProduct.swift */; };
 		CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED22B020899511829DE094C /* Pods_Shopify_App.framework */; };
 		D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AB29B785340009D125 /* ApiClient.swift */; };
 		D81CF1AE29B7853E0009D125 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AD29B7853E0009D125 /* EndPoints.swift */; };
@@ -191,6 +193,8 @@
 		8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTextField.swift; sourceTree = "<group>"; };
 		8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsVC.swift; sourceTree = "<group>"; };
 		8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsCell.swift; sourceTree = "<group>"; };
+		8CB8143429B8F64B0045B3D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		8CB8143629B8FBC60045B3D5 /* FavProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavProduct.swift; sourceTree = "<group>"; };
 		9093B40DFEA4B6BEA0BAF393 /* Pods_Shopify_App_Shopify_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_App_Shopify_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D942107A9CDA19A0AD03FB /* Pods-Shopify AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Shopify AppTests/Pods-Shopify AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D81CF1AB29B785340009D125 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 			isa = PBXGroup;
 			children = (
 				336C254E29B6666900C78A98 /* CoreDataServices.swift */,
+				8CB8143429B8F64B0045B3D5 /* CoreDataManager.swift */,
+				8CB8143629B8FBC60045B3D5 /* FavProduct.swift */,
 			);
 			path = CoreDataServices;
 			sourceTree = "<group>";
@@ -1061,6 +1067,7 @@
 				336C253E29B6318D00C78A98 /* URLs.swift in Sources */,
 				33A2023529B0F62200D85E41 /* CardView.swift in Sources */,
 				33B205F929B16DF500AFBB17 /* BrandResponse.swift in Sources */,
+				8CB8143729B8FBC60045B3D5 /* FavProduct.swift in Sources */,
 				8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */,
 				33F48FDE29B22DF600611843 /* BrandProductResponse.swift in Sources */,
 				D8E34D8129B0DC2400590317 /* ProductVC.swift in Sources */,
@@ -1080,6 +1087,7 @@
 				336C254729B6654700C78A98 /* AddressVC.swift in Sources */,
 				33A2025D29B0F6AF00D85E41 /* ProductOFBrandCollectionViewCell.swift in Sources */,
 				33A2024929B0F69E00D85E41 /* GridProductCollectionViewCell.swift in Sources */,
+				8CB8143529B8F64B0045B3D5 /* CoreDataManager.swift in Sources */,
 				336C254229B632E500C78A98 /* Networking.swift in Sources */,
 				336C253A29B62DA000C78A98 /* Customer.swift in Sources */,
 				D8E34D8029B0DC2400590317 /* ProductCVC.swift in Sources */,

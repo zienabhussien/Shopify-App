@@ -1,9 +1,7 @@
 //
 //  ProductOfBrandVC.swift
 //  Shopify App
-//
 //  Created by Ali Moustafa on 02/03/2023.
-//
 
 import UIKit
 import Alamofire
@@ -59,7 +57,9 @@ class ProductOfBrandVC: UIViewController {
         
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.ProductOfBrandsCollection.reloadData()
+    }
     
     
     @IBAction func filterSlider(_ sender: UISlider) {
@@ -105,13 +105,18 @@ class ProductOfBrandVC: UIViewController {
     
     @IBAction func toWishlistButton(_ sender: Any) {
         
+    let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+
+        if userDefaultToken != 0 {
+            var wishListVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+            self.navigationController?.pushViewController(wishListVC, animated: true)
+            
+        }else{
+            var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+            
+        }
         
-        
-        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-        viewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(viewController, animated: true)
-        print("wish")
 
     }
     
@@ -189,7 +194,43 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
+       
+        var productKey = "\((filteredProducts?[indexPath.row].id)!)"
+        print(productKey)
+        if UserDefaults.standard.bool(forKey: productKey){
+            cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            print("add Fav")
+          }else{
+              cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                print("not fav")
+        }
+        
+        
+        cell.addToWishList = { [unowned self] in
+            var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
+
+               cell.favButton.isSelected =   UserDefaults.standard.bool(forKey: productKey)
+         
+            cell.favButton.isSelected = !cell.favButton.isSelected
+            
+            if  cell.favButton.isSelected {
+                
+             cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            // save to core data
+            CoreDataManager.saveProductToCoreData(productName:filteredProducts?[indexPath.row].title ?? ""      , productPrice: filteredProducts?[indexPath.row].variants.first?.price ?? "", productImage:        filteredProducts?[indexPath.row].image.src ?? "", productId: filteredProducts?[indexPath.row].id ?? 0)
+                
+            UserDefaults.standard.set(true, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+
+            }else{
+                
+                cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                CoreDataManager.deleteFromCoreData(productName: filteredProducts?[indexPath.row].title ?? "" )
+                UserDefaults.standard.set(false, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+            }
+    }
+
+        
         
         
         

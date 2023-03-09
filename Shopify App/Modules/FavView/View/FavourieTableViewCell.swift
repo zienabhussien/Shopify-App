@@ -14,10 +14,11 @@ class FavourieTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    func setUpCell(photo:UIImage,name:String,price: Double){
-        favoriteImage.image = photo
+    func setUpCell(photo: String,name:String,price: String){
+        
+        favoriteImage.kf.setImage(with: URL(string: photo))
         FavProuctName.text = name
-        FavProductPrice.text = "\(price) EGP"
+        FavProductPrice.text = "\(price) $"
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -26,5 +27,7 @@ class FavourieTableViewCell: UITableViewCell {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20))
     }
+
+    
 
 }

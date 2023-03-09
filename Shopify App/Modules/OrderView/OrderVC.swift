@@ -11,7 +11,8 @@ class OrderVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var OrderTable: UITableView!
     
-//    var arr = [Order]()
+    @IBOutlet weak var tableView: UITableView!
+    //    var arr = [Order]()
     override func viewDidLoad() {
         super.viewDidLoad()
         OrderTable.delegate = self
