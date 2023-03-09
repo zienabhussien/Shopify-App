@@ -80,7 +80,6 @@
 		8CB8143529B8F64B0045B3D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8143429B8F64B0045B3D5 /* CoreDataManager.swift */; };
 		8CB8143729B8FBC60045B3D5 /* FavProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8143629B8FBC60045B3D5 /* FavProduct.swift */; };
 		CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED22B020899511829DE094C /* Pods_Shopify_App.framework */; };
-		D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AB29B785340009D125 /* ApiClient.swift */; };
 		D81CF1AE29B7853E0009D125 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AD29B7853E0009D125 /* EndPoints.swift */; };
 		D81CF1B929B785830009D125 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1B729B785830009D125 /* LoginViewModel.swift */; };
 		D81CF1BA29B785830009D125 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1B829B785830009D125 /* SignUpViewModel.swift */; };
@@ -197,7 +196,6 @@
 		8CB8143629B8FBC60045B3D5 /* FavProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavProduct.swift; sourceTree = "<group>"; };
 		9093B40DFEA4B6BEA0BAF393 /* Pods_Shopify_App_Shopify_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_App_Shopify_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D942107A9CDA19A0AD03FB /* Pods-Shopify AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Shopify AppTests/Pods-Shopify AppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D81CF1AB29B785340009D125 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D81CF1AD29B7853E0009D125 /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		D81CF1B729B785830009D125 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D81CF1B829B785830009D125 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -684,7 +682,6 @@
 		D81CF1AA29B785260009D125 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				D81CF1AB29B785340009D125 /* ApiClient.swift */,
 				D81CF1AD29B7853E0009D125 /* EndPoints.swift */,
 			);
 			path = Network;
@@ -1104,7 +1101,6 @@
 				33A2024729B0F69E00D85E41 /* SingUpViewController.swift in Sources */,
 				8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */,
 				D81CF1BA29B785830009D125 /* SignUpViewModel.swift in Sources */,
-				D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
