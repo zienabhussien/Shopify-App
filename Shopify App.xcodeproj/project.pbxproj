@@ -90,7 +90,6 @@
 		8CA6A07329AFCE87006809E9 /* PaymentOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */; };
 		8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */; };
 		CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED22B020899511829DE094C /* Pods_Shopify_App.framework */; };
-		D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AB29B785340009D125 /* ApiClient.swift */; };
 		D81CF1AE29B7853E0009D125 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1AD29B7853E0009D125 /* EndPoints.swift */; };
 		D81CF1B529B7857C0009D125 /* CreateCustomerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1B229B7857B0009D125 /* CreateCustomerResponse.swift */; };
 		D81CF1B629B7857C0009D125 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CF1B329B7857C0009D125 /* Errors.swift */; };
@@ -101,7 +100,6 @@
 		D8784BAD29AF680300231982 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8784BAC29AF680300231982 /* SplashVC.swift */; };
 		D8784BAF29AF682E00231982 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8784BAE29AF682E00231982 /* TabBarVC.swift */; };
 		D8784BB129AF688E00231982 /* splashGIF.json in Resources */ = {isa = PBXBuildFile; fileRef = D8784BB029AF688E00231982 /* splashGIF.json */; };
-		D8B283B529B78D780065F160 /* AllCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B283B429B78D780065F160 /* AllCustomer.swift */; };
 		D8E34D8029B0DC2400590317 /* ProductCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E34D7E29B0DC2400590317 /* ProductCVC.swift */; };
 		D8E34D8129B0DC2400590317 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E34D7F29B0DC2400590317 /* ProductVC.swift */; };
 		D8E34D8429B0DC6C00590317 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E34D8329B0DC6C00590317 /* OrderTableViewCell.swift */; };
@@ -220,7 +218,6 @@
 		8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsCell.swift; sourceTree = "<group>"; };
 		9093B40DFEA4B6BEA0BAF393 /* Pods_Shopify_App_Shopify_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_App_Shopify_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D942107A9CDA19A0AD03FB /* Pods-Shopify AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Shopify AppTests/Pods-Shopify AppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D81CF1AB29B785340009D125 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D81CF1AD29B7853E0009D125 /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		D81CF1B229B7857B0009D125 /* CreateCustomerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCustomerResponse.swift; sourceTree = "<group>"; };
 		D81CF1B329B7857C0009D125 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
@@ -229,7 +226,6 @@
 		D8784BAC29AF680300231982 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		D8784BAE29AF682E00231982 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		D8784BB029AF688E00231982 /* splashGIF.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splashGIF.json; sourceTree = "<group>"; };
-		D8B283B429B78D780065F160 /* AllCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCustomer.swift; sourceTree = "<group>"; };
 		D8E34D7E29B0DC2400590317 /* ProductCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCVC.swift; sourceTree = "<group>"; };
 		D8E34D7F29B0DC2400590317 /* ProductVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		D8E34D8329B0DC6C00590317 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
@@ -358,7 +354,6 @@
 		336C254C29B6664700C78A98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D81CF1AB29B785340009D125 /* ApiClient.swift */,
 				D81CF1AA29B785260009D125 /* Network */,
 				336C254D29B6665800C78A98 /* CoreDataServices */,
 			);
@@ -765,7 +760,6 @@
 			children = (
 				D81CF1B229B7857B0009D125 /* CreateCustomerResponse.swift */,
 				D81CF1B329B7857C0009D125 /* Errors.swift */,
-				D8B283B429B78D780065F160 /* AllCustomer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1156,7 +1150,6 @@
 				7BFB960829B0EB29002D5253 /* AboutUsVC.swift in Sources */,
 				33A2024E29B0F69E00D85E41 /* ProductCollectionViewCell.swift in Sources */,
 				D8784BAD29AF680300231982 /* SplashVC.swift in Sources */,
-				D8B283B529B78D780065F160 /* AllCustomer.swift in Sources */,
 				8C24C1EA29AE777400AE390B /* AppDelegate.swift in Sources */,
 				336C254829B6654700C78A98 /* AddressVC+TVC.swift in Sources */,
 				336C253E29B6318D00C78A98 /* URLs.swift in Sources */,
@@ -1204,7 +1197,6 @@
 				339159B129B936C800036033 /* AllOrderTableViewCell.swift in Sources */,
 				8C24C1EC29AE777400AE390B /* SceneDelegate.swift in Sources */,
 				D81CF1BA29B785830009D125 /* SignUpViewModel.swift in Sources */,
-				D81CF1AC29B785340009D125 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
