@@ -30,7 +30,6 @@ class LoginViewModel{
                 print(data.customers)
                 
             }
-            
         }
         
     func searchCustomer(currEmail:String ,password: String ,allCustomers: AllCustomers) -> Bool{

@@ -17,6 +17,5 @@ struct CustomerLogin: Decodable {
     let email: String
     let note: String?
     
-   // let password: String?
     
 }

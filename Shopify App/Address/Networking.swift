@@ -14,7 +14,6 @@ class Networking{
     static var shared = Networking()
 }
 
-
 extension Networking{
     func register(newCustomer:NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->()){
         guard let url = URLs.shared.customersURl() else {return}
@@ -22,7 +21,6 @@ extension Networking{
         request.httpMethod = "POST"
         let session = URLSession.shared
         request.httpShouldHandleCookies = false
-        
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: newCustomer.asDictionary(), options: .prettyPrinted)
             print(try! newCustomer.asDictionary())
@@ -61,8 +59,6 @@ extension Networking{
             }
         }
     }
-    
-    
 }
 
 
@@ -97,7 +93,6 @@ extension Networking{
 }
 
 extension Networking{
-    
     func setDefaultAddress(customerId: Int, addressId: Int, address: Address, completion: @escaping(Data?, URLResponse?, Error?)->()){
         let customer = CustomerAddress(addresses: [address])
         let putObject = PutAddress(customer: customer)
@@ -124,8 +119,6 @@ extension Networking{
 }
 
 extension Networking{
-    
-    
     func createAddress(customerId: Int, address: Address, completion: @escaping(Data?, URLResponse?, Error?)->()){
         let customer = CustomerAddress(addresses: [address])
         let putObject = PutAddress(customer: customer)
@@ -155,7 +148,6 @@ extension Networking{
 
 //MARK: - POST an order
 extension Networking{
-    
     func SubmitOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
         guard let url = URLs.shared.ordersURL() else {return}
         var request = URLRequest(url: url)
@@ -171,7 +163,6 @@ extension Networking{
             print(error.localizedDescription)
         }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         session.dataTask(with: request) { (data,response,error) in
             completion(data, response, error)

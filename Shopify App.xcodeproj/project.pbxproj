@@ -332,6 +332,8 @@
 		336C253829B62C9D00C78A98 /* Address */ = {
 			isa = PBXGroup;
 			children = (
+				D8C2545E29B95C380032C88F /* View */,
+				D8C2545D29B95C2C0032C88F /* Model */,
 				336C254929B6659400C78A98 /* ViewModel */,
 				336C254529B6654700C78A98 /* AddressVC.swift */,
 				336C254629B6654700C78A98 /* AddressVC+TVC.swift */,
@@ -341,7 +343,6 @@
 				336C253F29B632A700C78A98 /* Helper.swift */,
 				336C253629B62B6100C78A98 /* CreateAddressVC.swift */,
 				336C253929B62DA000C78A98 /* Customer.swift */,
-				336C253D29B6318D00C78A98 /* URLs.swift */,
 			);
 			path = Address;
 			sourceTree = "<group>";
@@ -754,6 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				D81CF1AD29B7853E0009D125 /* EndPoints.swift */,
+				336C253D29B6318D00C78A98 /* URLs.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -784,6 +786,20 @@
 				D8784BB029AF688E00231982 /* splashGIF.json */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		D8C2545D29B95C2C0032C88F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8C2545E29B95C380032C88F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D8E34D7D29B0DC0B00590317 /* ProductView */ = {

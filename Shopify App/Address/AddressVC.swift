@@ -28,7 +28,7 @@ class AddressVC: UIViewController {
         }
         
         addressViewModel.bindFailedToView = {
-            print("erro when get address")
+            print("error when get address")
         }
     }
 }

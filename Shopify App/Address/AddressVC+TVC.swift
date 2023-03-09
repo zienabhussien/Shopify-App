@@ -30,7 +30,7 @@ extension AddressVC : UITableViewDelegate{
         guard let customrtId = Helper.shared.getUserID(), let id = self.arrOfAddress[indexPath.row].id else {return}
         
         setAddressDefault(customerId: customrtId, addressId: id, row: indexPath.row)
-        self.showConfirmAlert(title: "are you sure!!", message: "this address added in your order!") { isConfirm in
+        self.showConfirmAlert(title: "Choose address", message: "Orders will be delivered to this address!") { isConfirm in
             if isConfirm{
                 self.addAddressToOrder(row: indexPath.row)
                 self.goToPayment()
@@ -43,7 +43,7 @@ extension AddressVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Please,Select an address from the following :"
+        return "Please select an address to deliver your order."
     }
 }
 
@@ -52,7 +52,6 @@ extension AddressVC{
         networking.setDefaultAddress(customerId: customerId, addressId: addressId, address: self.arrOfAddress[row]) { data, res, error in
             if error == nil {
                 print("set def success")
-               
             }else{
                 print("set def falied")
             }

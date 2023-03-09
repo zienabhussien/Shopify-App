@@ -17,15 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBl-id-41k">
-                        <rect key="frame" x="16" y="14" width="42.5" height="21.5"/>
-                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
+                        <rect key="frame" x="10" y="15" width="349" height="55"/>
+                        <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="LBl-id-41k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="I4E-0m-I0F"/>
-                    <constraint firstItem="LBl-id-41k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="vbS-4S-xLS"/>
+                    <constraint firstAttribute="trailing" secondItem="LBl-id-41k" secondAttribute="trailing" constant="10" id="DAe-6H-L2j"/>
+                    <constraint firstAttribute="bottom" secondItem="LBl-id-41k" secondAttribute="bottom" constant="15" id="IYw-SE-6Ep"/>
+                    <constraint firstItem="LBl-id-41k" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Pk1-XP-eFZ"/>
+                    <constraint firstItem="LBl-id-41k" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="349:85" id="dWt-5O-N1J"/>
+                    <constraint firstItem="LBl-id-41k" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="mzw-jn-RWk"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

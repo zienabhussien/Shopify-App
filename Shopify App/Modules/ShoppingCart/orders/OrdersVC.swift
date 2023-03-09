@@ -12,8 +12,8 @@ class OrdersVC: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var emptyCart: UIImageView!
-    var noInternetimageView = UIImageView()
     
+    var noInternetimageView = UIImageView()
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
     var orderProduct : [OrderItem] = []
@@ -37,12 +37,10 @@ class OrdersVC: UIViewController{
     @IBAction func proccedToCheckout(_ sender: Any) {
         
         if cartArray.count == 0 {
-            self.showAlertError(title: "No Items!", message: "There is no items to checkout, please go and select items you love")
-
+            self.showAlertError(title: "Cart empty!", message: "There are no items to checkout.")
         }else{
             checkIsFoundAddress()
         }
-        
     }
     
     func checkCartIsEmpty(){

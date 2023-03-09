@@ -8,6 +8,7 @@
 import UIKit
 
 class PaymentOptionsVC: UIViewController {
+    
     var selectedPaymentOption: String?
     var index: Int?
     
@@ -15,8 +16,6 @@ class PaymentOptionsVC: UIViewController {
         super.viewDidLoad()
 
     }
-
-    
     @IBAction func continueToPayment(_ sender: Any) {
         if selectedPaymentOption == "Apple Pay" {
                 // Handle Apple Pay payment
@@ -25,18 +24,16 @@ class PaymentOptionsVC: UIViewController {
             } else {
                 // No payment option selected
             }
-        
-        
         let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmPaymentVC") as! ConfirmPaymentVC
         
         self.navigationController?.pushViewController(confirmPaymentVC, animated: true)
-
-        
     }
-    
-
 }
 extension PaymentOptionsVC: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 1
     }
@@ -51,7 +48,6 @@ extension PaymentOptionsVC: UITableViewDelegate, UITableViewDataSource{
         title = "More payment options"
         return title
     }
-    
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
         view.tintColor = .opaqueSeparator
@@ -76,20 +72,13 @@ extension PaymentOptionsVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            selectedPaymentOption = "Apple Pay"
-        } else {
             selectedPaymentOption = "Cash On Delivery (COD)"
+        } else {
+            selectedPaymentOption = "Apple Pay"
         }
-        
         tableView.reloadData()
     }
 
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

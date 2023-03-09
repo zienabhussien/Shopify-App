@@ -22,10 +22,10 @@ class CreateAddressVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.hideKeyboardWhenTappedAround()
+        
        custmoizeTextField()
-        countryTxt.text = "Egypt"
-//       custmoizeBtn()
+        //countryTxt.text = "Egypt"
+        
     }
     
     func custmoizeTextField()
