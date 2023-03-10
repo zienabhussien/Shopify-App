@@ -34,7 +34,7 @@ class ProductOfBrandVC: UIViewController {
     @IBOutlet weak var maximumPrice: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = ProductViewModel()
+//        viewModel = ProductViewModel()
         viewModel.viewDidLoad()
         productSearchBar.delegate = self
         bindViewModel()

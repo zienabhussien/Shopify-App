@@ -44,10 +44,9 @@ class CatagoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CategoryViewModel()
+        viewModel.viewDidLoad()
         bindViewModelgategory()
         bindViewModelproduct()
-        viewModel.viewDidLoad()
-        
         
         // Float Action button animation style
         makeFloatyStyleButton()
@@ -289,47 +288,13 @@ extension CatagoryViewController {
             guard let subcategory = viewModel.subCategoriesNamesModel?.customCollections[indexPath.item] else {
                 return
             }
-            let productViewModel = CategoryViewModel()
+//            let productViewModel = CategoryViewModel()
 
 
             // Update the id variable with the collection ID of the selected subcategory
-            productViewModel.id = "?collection_id=\(subcategory.id)"
-            print(subcategory.id)
-
-
-           //***
-            DispatchQueue.main.async {
-                self.viewModel.viewDidLoad()
-                self.bindViewModelproduct()
-
-            }
-            
-        
-        
-                viewModel.didFetchDatapro = {[weak self] in
-                    guard let self = self else {return}
-                    self.productsCollectionView.reloadData()
-                    self.laoding.stopAnimating()
-                }
-            
-            
-//
-            viewModel.fetchproduct()
-//            bindViewModelproductsq()
-//
-//
-           
-            
-//             Call the fetchproduct method again to fetch the updated data
-//                        fetchproduct { result in
-//                            DispatchQueue.main.async {
-//                                self.productOfbrandsCategoryModel = result
-//                                self.laoding.stopAnimating()
-////                                 Reload the productsCollectionView to show products in the selected subcategory
-//                                self.productsCollectionView.reloadData()
-//                            }
-//                        }
-
+            viewModel.fetchProduct(id: String(subcategory.id))
+//            viewModel. = "?collection_id=\(subcategory.id)"
+//            print(subcategory.id)
 
         } else if collectionView == productsCollectionView {
             let product = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row]
@@ -343,4 +308,15 @@ extension CatagoryViewController {
     
 }
 
+
+
+//             Call the fetchProduct method again to fetch the updated data
+//                        fetchproduct { result in
+//                            DispatchQueue.main.async {
+//                                self.productOfbrandsCategoryModel = result
+//                                self.laoding.stopAnimating()
+////                                 Reload the productsCollectionView to show products in the selected subcategory
+//                                self.productsCollectionView.reloadData()
+//                            }
+//                        }
 

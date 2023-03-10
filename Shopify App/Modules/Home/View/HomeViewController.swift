@@ -101,10 +101,11 @@ extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "ProductOfBrandVC") as! ProductOfBrandVC
-        let productViewModel = ProductViewModel()
-
+//        storyBoard.viewModel.SmartCollectionID
+//        let productViewModel = ProductViewModel()
+        storyBoard.viewModel = ProductViewModel()
         if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
-            productViewModel.SmartCollectionID = String(brand.id)
+            storyBoard.viewModel.SmartCollectionID = String(brand.id)
         }
 
         navigationController?.pushViewController(storyBoard, animated: true)
