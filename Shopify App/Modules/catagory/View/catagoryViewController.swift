@@ -10,7 +10,8 @@ import Alamofire
 import Floaty
 
 class CatagoryViewController: UIViewController {
-    
+    var viewModel: CategoryViewModel!
+
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
         didSet{
@@ -34,40 +35,18 @@ class CatagoryViewController: UIViewController {
             productsCollectionView.dataSource = self
         }
     }
-    var subCategoriesNamesModel : subCatecoryResponse?     //variable .to response data
-    var productOfbrandsCategoryModel : Products?     //variable to response data
     let floaty = Floaty()
     var isFiltered = false
-    var FilterdArr: [Product]? = [Product]()
-    var id = "?collection_id=437934555426"
-
     var isList: Bool = true
     var isFavorite: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //fetch data
-        fetchData { result in
-            DispatchQueue.main.async {
-                self.subCategoriesNamesModel = result
-                self.subCategoriesCollectionViev.reloadData()
-            }
-        }
-        //
-        
-        
-        //fetch data
-        fetchproduct { result in
-            DispatchQueue.main.async {
-                self.productOfbrandsCategoryModel = result
-                self.laoding.stopAnimating()
-                self.productsCollectionView.reloadData()
-            }
-        }
-        //
+        viewModel = CategoryViewModel()
+        viewModel.viewDidLoad()
+        bindViewModelgategory()
+        bindViewModelproduct()
         
         
         // Float Action button animation style
@@ -80,6 +59,19 @@ class CatagoryViewController: UIViewController {
 
     }
     
+    private func bindViewModelgategory(){
+        viewModel.didFetchData = {[weak self] in
+            guard let self = self else {return}
+            self.subCategoriesCollectionViev.reloadData()
+        }
+    }
+    private func bindViewModelproduct(){
+        viewModel.didFetchDatapro = {[weak self] in
+            guard let self = self else {return}
+            self.productsCollectionView.reloadData()
+            self.laoding.stopAnimating()
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
 
@@ -115,28 +107,28 @@ class CatagoryViewController: UIViewController {
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("T-Shirts", icon: UIImage(named: "t-shirt")) { _ in
-            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+            let filered = self.viewModel.productOfbrandsCategoryModel?.products?.filter({ item in
                 return item.product_type == "T-SHIRTS"
             })
-            self.FilterdArr = filered ?? []
+            self.viewModel.FilterdArr = filered ?? []
             self.isFiltered = true
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("Shoes", icon: UIImage(named: "shoes (2)")){ _ in
-            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+            let filered = self.viewModel.productOfbrandsCategoryModel?.products?.filter({ item in
                 return item.product_type=="SHOES"
             })
 
-            self.FilterdArr = filered ?? []
-            print(self.FilterdArr)
+            self.viewModel.FilterdArr = filered ?? []
+            print(self.viewModel.FilterdArr)
             self.isFiltered = true
             self.productsCollectionView.reloadData()
         }
         floaty.addItem("Accessories", icon: UIImage(named: "accessories")){ _ in
-            let filered = self.productOfbrandsCategoryModel?.products?.filter({ item in
+            let filered = self.viewModel.productOfbrandsCategoryModel?.products?.filter({ item in
                 return item.product_type=="ACCESSORIES"
             })
-            self.FilterdArr = filered ?? []
+            self.viewModel.FilterdArr = filered ?? []
             self.isFiltered = true
             self.productsCollectionView.reloadData()
         }
@@ -155,14 +147,14 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == subCategoriesCollectionViev {
-            return subCategoriesNamesModel?.customCollections.count ?? 0
+            return viewModel.subCategoriesNamesModel?.customCollections.count ?? 0
         }else if collectionView == productsCollectionView{
             
             
             if(isFiltered){
-                return FilterdArr?.count ?? 0
+                return viewModel.FilterdArr?.count ?? 0
             }else{
-                return productOfbrandsCategoryModel?.products?.count ?? 0
+                return viewModel.productOfbrandsCategoryModel?.products?.count ?? 0
             }
             
         }else{
@@ -177,7 +169,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
         case subCategoriesCollectionViev:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatagoryCollectionViewCell", for: indexPath) as! CatagoryCollectionViewCell
             
-            if let subcategory = subCategoriesNamesModel?.customCollections[indexPath.row] {
+            if let subcategory = viewModel.subCategoriesNamesModel?.customCollections[indexPath.row] {
                 cell.categoryNameLabel.text = subcategory.title
             }
             return cell
@@ -193,7 +185,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 
                 if(isFiltered){
                     
-                    if let productOfbrandCategory = FilterdArr?[indexPath.row] {
+                    if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
                         if let firstPrice = productOfbrandCategory.variants?.first?.price {
@@ -212,7 +204,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 
             }else
                 {
-                if let productOfbrandCategory = productOfbrandsCategoryModel?.products?[indexPath.row] {
+                if let productOfbrandCategory = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row] {
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
                     if let firstPrice = productOfbrandCategory.variants?.first?.price {
@@ -241,7 +233,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 
                 if(isFiltered){
                     
-                    if let productOfbrandCategory = FilterdArr?[indexPath.row] {
+                    if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
                         cell.nameGrid.text = productOfbrandCategory.title
                         cell.brandGrid.text = productOfbrandCategory.product_type
                         if let firstPrice = productOfbrandCategory.variants?.first?.price {
@@ -259,7 +251,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     }
             }else
                 {
-                if let productOfbrandCategory = productOfbrandsCategoryModel?.products?[indexPath.row] {
+                if let productOfbrandCategory = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row] {
                     cell.nameGrid.text = productOfbrandCategory.title
                     cell.brandGrid.text = productOfbrandCategory.product_type
                     if let firstPrice = productOfbrandCategory.variants?.first?.price {
@@ -283,61 +275,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
 
 
 
-extension CatagoryViewController{
-    func fetchData(compilation: @escaping (subCatecoryResponse?) -> Void)
-    {
-   
-        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/custom_collections.json") else {return}
-        
-        AF.request(url).response
-        { response in
-            if let data = response.data {
-                do{
-                    
-                    let result = try JSONDecoder().decode(subCatecoryResponse.self, from: data)
-                    
-                    compilation(result)
-                }
-                catch{
-                    compilation(nil)
-                }
-            } else {
-                compilation(nil)
-            }
-        }
-    }
-    
-    
-}
-
-
-extension CatagoryViewController{
-    func fetchproduct(compilation: @escaping (Products?) -> Void)
-    {
-   
-        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/products.json\(id)") else {return}
-        
-    
-        AF.request(url).response
-        { response in
-            if let data = response.data {
-                do{
-                    
-                    let result = try JSONDecoder().decode(Products.self, from: data)
-                    
-                    compilation(result)
-                }
-                catch{
-                    compilation(nil)
-                }
-            } else {
-                compilation(nil)
-            }
-        }
-    }
-    
-    
-}
 
 
 
@@ -349,25 +286,49 @@ extension CatagoryViewController {
         if collectionView == subCategoriesCollectionViev {
 
             // Get the selected subcategory from the model
-            guard let subcategory = subCategoriesNamesModel?.customCollections[indexPath.item] else {
+            guard let subcategory = viewModel.subCategoriesNamesModel?.customCollections[indexPath.item] else {
                 return
             }
+            let productViewModel = CategoryViewModel()
+
 
             // Update the id variable with the collection ID of the selected subcategory
-            id = "?collection_id=\(subcategory.id)"
+            productViewModel.id = "?collection_id=\(subcategory.id)"
             print(subcategory.id)
 
-            // Call the fetchproduct method again to fetch the updated data
-            fetchproduct { result in
-                DispatchQueue.main.async {
-                    self.productOfbrandsCategoryModel = result
-                    self.laoding.stopAnimating()
-                    // Reload the productsCollectionView to show products in the selected subcategory
-                    self.productsCollectionView.reloadData()
-                }
+
+           //***
+            DispatchQueue.main.async {
+                self.viewModel.viewDidLoad()
+                self.bindViewModelproduct()
+
             }
+//
+//            viewModel.fetchproduct()
+//            bindViewModelproductsq()
+//
+//
+//            func bindViewModelproductsq(){
+//                viewModel.didFetchDatapro = {[weak self] in
+//                    guard let self = self else {return}
+//                    self.productsCollectionView.reloadData()
+//                    self.laoding.stopAnimating()
+//                }
+//            }
+            
+//             Call the fetchproduct method again to fetch the updated data
+//                        fetchproduct { result in
+//                            DispatchQueue.main.async {
+//                                self.productOfbrandsCategoryModel = result
+//                                self.laoding.stopAnimating()
+////                                 Reload the productsCollectionView to show products in the selected subcategory
+//                                self.productsCollectionView.reloadData()
+//                            }
+//                        }
+
+
         } else if collectionView == productsCollectionView {
-            let product = productOfbrandsCategoryModel?.products?[indexPath.row]
+            let product = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row]
             let ProductVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
             ProductVC.product = product
             self.navigationController?.pushViewController(ProductVC, animated: true)
