@@ -12,6 +12,7 @@ import Floaty
 class CatagoryViewController: UIViewController {
     var viewModel: CategoryViewModel!
 
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
         didSet{
@@ -43,6 +44,7 @@ class CatagoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = searchBar
         viewModel = CategoryViewModel()
         viewModel.viewDidLoad()
         bindViewModelgategory()
