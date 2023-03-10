@@ -25,8 +25,8 @@ class Helper{
     }
     
     func getUserID()-> Int?{
-        return 6810028835106
-//        return UserDefaults.standard.integer(forKey: "User_ID")
+        //return 6810028835106
+        return UserDefaults.standard.integer(forKey: "loginId")
     }
     
     func setUserName(userName: String?){

@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import Toast_Swift
 class HomeViewController: UIViewController {
     @IBOutlet weak var AddsImage: UIImageView!
     
@@ -36,6 +37,12 @@ class HomeViewController: UIViewController {
         
     }
     
+    @IBAction func copyCoupon(_ sender: UITapGestureRecognizer) {
+        let couponCode = "iOS_iti"
+            UIPasteboard.general.string = couponCode
+        
+        self.view.makeToast("The disscount coupon copied")
+    }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
 

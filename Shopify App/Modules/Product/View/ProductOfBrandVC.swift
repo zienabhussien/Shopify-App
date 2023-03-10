@@ -106,24 +106,27 @@ class ProductOfBrandVC: UIViewController {
         let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
 
             if userDefaultToken != 0 {
-                var wishListVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+                let wishListVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
                 self.navigationController?.pushViewController(wishListVC, animated: true)
-                
             }else{
-                var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
                 self.navigationController?.pushViewController(loginVC, animated: true)
-                
             }
-            
-
         }
     
     @IBAction func toCartButton(_ sender: Any) {
-        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "OrdersVC")
-        viewController.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(viewController, animated: true)
-        print("OrdersVC")
+        let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+
+            if userDefaultToken != 0 {
+                let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "OrdersVC")
+                viewController.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(viewController, animated: true)
+            }else{
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+        
     }
     
     
