@@ -102,7 +102,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="360_F_335919003_TH0ZtHZZ5QGT34n1NcQXzRGvz4Pthg11" translatesAutoresizingMaskIntoConstraints="NO" id="axl-8r-tb7">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars 1" translatesAutoresizingMaskIntoConstraints="NO" id="axl-8r-tb7">
                                         <rect key="frame" x="200" y="59.666666666666686" width="168" height="38"/>
                                     </imageView>
                                 </subviews>
@@ -2075,7 +2075,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
     </scenes>
     <resources>
         <image name="1" width="1000" height="980"/>
-        <image name="360_F_335919003_TH0ZtHZZ5QGT34n1NcQXzRGvz4Pthg11" width="720" height="360"/>
         <image name="adds" width="696" height="365"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
@@ -2092,6 +2091,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         <image name="shoes" width="612" height="408"/>
         <image name="shopping-bag" width="22.666666030883789" height="25"/>
         <image name="square.grid.2x2.fill" catalog="system" width="128" height="114"/>
+        <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
         <namedColor name="mainColor">
             <color red="0.85882352941176465" green="0.18823529411764706" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
