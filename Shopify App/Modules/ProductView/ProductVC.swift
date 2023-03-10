@@ -8,9 +8,12 @@
 import UIKit
 import Toast_Swift
 class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
-
+    @IBOutlet weak var productName: UILabel!
+    
     @IBOutlet weak var ProductPageControl: UIPageControl!
      
+    @IBOutlet weak var productDescription: UILabel!
+    @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var ProductCV: UICollectionView!
     
     @IBOutlet weak var addToCart: UIBarButtonItem!
@@ -18,10 +21,10 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     let orderViewModel = OrderViewModel()
     var product : Product?
     //add to cart
-
+    //var productImgs =                        //[Product.images]
     
     
-   var arrProductPhotos = [UIImage(named: "1")!,UIImage(named: "download")!,UIImage(named: "download")!,UIImage(named: "download")!]
+//   var arrProductPhotos = [UIImage(named: "1")!,UIImage(named: "download")!,UIImage(named: "download")!,UIImage(named: "download")!]
     
     var timer : Timer?
     
@@ -33,7 +36,11 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         ProductCV.dataSource = self
         ProductCV.delegate = self
         
-        ProductPageControl.numberOfPages = arrProductPhotos.count
+        ProductPageControl.numberOfPages =  product?.images?.count ?? 0
+        productName.text = product?.title
+        guard let price = product?.variants?.first?.price else {return}
+        productPrice.text = "$\(price)"
+        productDescription.text = product?.body_html
         
         startTimer()
     }
@@ -73,7 +80,7 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     }
     @objc func moveToNextIndex(){
         
-        if currentCellIndex < arrProductPhotos.count - 1 {
+        if currentCellIndex < (product?.images?.count ?? 0) - 1 {
             currentCellIndex += 1
         }else{
             currentCellIndex = 0
@@ -84,12 +91,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrProductPhotos.count
+        return product?.images?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCVC
         
-        cell.ProductPhoto.image = arrProductPhotos[indexPath.row]
+        cell.ProductPhoto.kf.setImage(with: URL(string: product?.images?[indexPath.row].src ?? ""))
         
         return cell
     }

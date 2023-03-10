@@ -44,9 +44,9 @@ class CatagoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = CategoryViewModel()
-        viewModel.viewDidLoad()
         bindViewModelgategory()
         bindViewModelproduct()
+        viewModel.viewDidLoad()
         
         
         // Float Action button animation style
@@ -303,18 +303,22 @@ extension CatagoryViewController {
                 self.bindViewModelproduct()
 
             }
+            
+        
+        
+                viewModel.didFetchDatapro = {[weak self] in
+                    guard let self = self else {return}
+                    self.productsCollectionView.reloadData()
+                    self.laoding.stopAnimating()
+                }
+            
+            
 //
-//            viewModel.fetchproduct()
+            viewModel.fetchproduct()
 //            bindViewModelproductsq()
 //
 //
-//            func bindViewModelproductsq(){
-//                viewModel.didFetchDatapro = {[weak self] in
-//                    guard let self = self else {return}
-//                    self.productsCollectionView.reloadData()
-//                    self.laoding.stopAnimating()
-//                }
-//            }
+           
             
 //             Call the fetchproduct method again to fetch the updated data
 //                        fetchproduct { result in
@@ -335,5 +339,8 @@ extension CatagoryViewController {
         }
 
     }
-
+    
+    
 }
+
+
