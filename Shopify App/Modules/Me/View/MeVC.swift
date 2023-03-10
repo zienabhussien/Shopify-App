@@ -14,6 +14,7 @@ class MeVC: UIViewController {
     @IBOutlet weak var wishListTable: UITableView!
     
     @IBOutlet weak var userWelcome: UILabel!
+    
     var someWishList = [FavoriteProduct]()
 
     var reponseOrsers : [Order]?
@@ -21,9 +22,6 @@ class MeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        
         //fetch data
         fetchOrders { result in
             DispatchQueue.main.async {
@@ -34,12 +32,37 @@ class MeVC: UIViewController {
             }
         }
         //
-        
-        
        
     }
     
+    @IBAction func settingButton(_ sender: Any) {
+        
+        let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+            if userDefaultToken != 0 {
+                let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "SettingsVC")
+                viewController.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(viewController, animated: true)
+            }else{
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+    }
+    @IBAction func cartButton(_ sender: Any) {
+            let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+                if userDefaultToken != 0 {
+                    let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+                    let viewController = storyboard.instantiateViewController(withIdentifier: "OrdersVC")
+                    viewController.hidesBottomBarWhenPushed = true
+                    navigationController?.pushViewController(viewController, animated: true)
+                }else{
+                    let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                    self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+    }
+
     @IBAction func moreOrder(_ sender: Any) {
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -50,20 +73,17 @@ class MeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         wishListTable.reloadData()
 
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     @IBAction func moreWishListAction(_ sender: Any) {
         var favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
         self.navigationController?.pushViewController(favouriteVC, animated: true)
-        
     }
-    
-    
 }
 
 

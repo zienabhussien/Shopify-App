@@ -25,10 +25,8 @@ class AllOrderViewController: UIViewController {
                     }
                 }
                 //
-     
     }
     
-
 }
 
 
@@ -42,10 +40,6 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
         cell.createdAt.text = reponseOrsers?[indexPath.row].created_at
         cell.orderPrice.text = reponseOrsers?[indexPath.row].current_total_price
             return cell
-        
-        
-        
-      
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reponseOrsers?.count ?? 0
@@ -62,15 +56,9 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-
-
-
-
-
 extension AllOrderViewController{
     func fetchOrders(compilation: @escaping ([Order]?) -> Void)
     {
-   
         guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/6810028835106/orders.json") else {return}
         
 //        \(customerId)

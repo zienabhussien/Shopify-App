@@ -24,7 +24,7 @@ class CreateAddressVC: UIViewController {
         super.viewDidLoad()
         
        custmoizeTextField()
-        countryTxt.text = "Egypt"
+        //countryTxt.text = "Egypt"
         
     }
     
