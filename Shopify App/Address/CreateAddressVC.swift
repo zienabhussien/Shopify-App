@@ -24,7 +24,7 @@ class CreateAddressVC: UIViewController {
         super.viewDidLoad()
         
        custmoizeTextField()
-        //countryTxt.text = "Egypt"
+        countryTxt.text = "Egypt"
         
     }
     
@@ -42,20 +42,17 @@ class CreateAddressVC: UIViewController {
         cityTxt.borderStyle = UITextField.BorderStyle.none
         cityTxt.layer.addSublayer(bottomLine2)
         
-        
         let bottomLine3 = CALayer()
         bottomLine3.frame = CGRect(x: 0.0, y: countryTxt.frame.height - 1, width: countryTxt.frame.width - 30, height: 1.0)
         bottomLine3.backgroundColor = UIColor.gray.cgColor
         AddressTxt.borderStyle = UITextField.BorderStyle.none
         AddressTxt.layer.addSublayer(bottomLine3)
         
-        
         let bottomLine1 = CALayer()
         bottomLine1.frame = CGRect(x: 0.0, y: countryTxt.frame.height - 1, width: countryTxt.frame.width - 30, height: 1.0)
         bottomLine1.backgroundColor = UIColor.gray.cgColor
         phoneTxt.borderStyle = UITextField.BorderStyle.none
         phoneTxt.layer.addSublayer(bottomLine1)
-        
         
     }
     

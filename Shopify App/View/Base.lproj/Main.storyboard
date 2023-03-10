@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Iyu-cq-VMX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rCe-Bh-W4T">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -370,109 +370,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-mM-DKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7592" y="-2038"/>
-        </scene>
-        <!--Choose AddressVC-->
-        <scene sceneID="fGG-Mt-k5s">
-            <objects>
-                <viewController id="1z6-Gh-xyj" customClass="ChooseAddressVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Nqa-Sb-MBI">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5E3-55-aWR">
-                                <rect key="frame" x="0.0" y="121" width="393" height="556"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChooseAddressCell" rowHeight="92" id="N3k-Pn-93W" customClass="ChooseAddressCell" customModule="Shopify_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="92"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N3k-Pn-93W" id="UA6-Pe-wep">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="92"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="g4h-VB-UPA">
-                                                    <rect key="frame" x="60.333333333333343" y="11" width="130" height="60"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egypt" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOU-wD-HwS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57.666666666666664" height="34.666666666666664"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ismailia, ismilia" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqs-p6-U42">
-                                                            <rect key="frame" x="0.0" y="39.666666666666664" width="112.33333333333333" height="20.333333333333336"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20.333333333333336" id="X56-Es-W0H"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="XAi-FE-E9Q"/>
-                                                        <constraint firstAttribute="width" constant="130" id="s0m-rg-xgQ"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6DP-9E-CdK">
-                                                    <rect key="frame" x="20" y="31" width="32" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule"/>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.98562781109999997" green="0.98562781109999997" blue="0.98562781109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="6DP-9E-CdK" firstAttribute="centerY" secondItem="UA6-Pe-wep" secondAttribute="centerY" id="20n-Cl-pE8"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="g4h-VB-UPA" secondAttribute="trailing" constant="182.66999999999999" id="4ux-eX-DZ6"/>
-                                                <constraint firstItem="6DP-9E-CdK" firstAttribute="leading" secondItem="UA6-Pe-wep" secondAttribute="leading" constant="20" symbolic="YES" id="5UE-aw-NN4"/>
-                                                <constraint firstItem="6DP-9E-CdK" firstAttribute="top" secondItem="UA6-Pe-wep" secondAttribute="top" constant="31" id="ATp-LY-odW"/>
-                                                <constraint firstItem="g4h-VB-UPA" firstAttribute="top" secondItem="UA6-Pe-wep" secondAttribute="topMargin" id="SKD-k8-g7u"/>
-                                                <constraint firstItem="g4h-VB-UPA" firstAttribute="leading" secondItem="6DP-9E-CdK" secondAttribute="trailing" constant="8.3300000000000001" id="VgN-eV-Are"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="checkAddressBtn" destination="6DP-9E-CdK" id="dCG-DJ-EXA"/>
-                                            <outlet property="cityAddress" destination="yqs-p6-U42" id="Z59-Wu-17Z"/>
-                                            <outlet property="countryAddress" destination="vOU-wD-HwS" id="zb0-0d-zgO"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="1z6-Gh-xyj" id="Dd9-yY-7Jn"/>
-                                    <outlet property="delegate" destination="1z6-Gh-xyj" id="6fR-1q-NL0"/>
-                                </connections>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUb-dm-ApL">
-                                <rect key="frame" x="51" y="721" width="291" height="47"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Continue to payment" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
-                                    <color key="baseBackgroundColor" name="mainColor"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="edN-dW-h7f"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="xUb-dm-ApL" firstAttribute="leading" secondItem="edN-dW-h7f" secondAttribute="leading" constant="51" id="7Rg-L0-1mB"/>
-                            <constraint firstItem="5E3-55-aWR" firstAttribute="leading" secondItem="edN-dW-h7f" secondAttribute="leading" id="IKH-yf-wPs"/>
-                            <constraint firstItem="xUb-dm-ApL" firstAttribute="height" secondItem="Nqa-Sb-MBI" secondAttribute="height" multiplier="0.0551643" id="Kbk-VM-imx"/>
-                            <constraint firstItem="xUb-dm-ApL" firstAttribute="top" secondItem="edN-dW-h7f" secondAttribute="top" constant="662" id="MIY-0U-W3O"/>
-                            <constraint firstItem="5E3-55-aWR" firstAttribute="height" secondItem="Nqa-Sb-MBI" secondAttribute="height" multiplier="0.652582" id="YPe-U8-dor"/>
-                            <constraint firstItem="xUb-dm-ApL" firstAttribute="width" secondItem="Nqa-Sb-MBI" secondAttribute="width" multiplier="0.740458" id="ahh-ya-KOQ"/>
-                            <constraint firstItem="5E3-55-aWR" firstAttribute="trailing" secondItem="edN-dW-h7f" secondAttribute="trailing" id="dcd-wb-IS2"/>
-                            <constraint firstItem="5E3-55-aWR" firstAttribute="top" secondItem="edN-dW-h7f" secondAttribute="top" constant="62" id="gxf-bJ-cbQ"/>
-                            <constraint firstItem="edN-dW-h7f" firstAttribute="trailing" secondItem="xUb-dm-ApL" secondAttribute="trailing" constant="51" id="rO0-E6-tCd"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="continueToPaymentBtn" destination="xUb-dm-ApL" id="9EV-fm-enx"/>
-                        <outlet property="tableView" destination="5E3-55-aWR" id="6Xk-Bn-ZWb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1W4-ir-CUu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2117" y="-2762"/>
         </scene>
         <!--Confirm PaymentVC-->
         <scene sceneID="Mtf-T2-QB0">
@@ -1975,7 +1872,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zsf-H5-j2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="GSm-xD-BLr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="10286.259541984733" y="-464.08450704225356"/>
+            <point key="canvasLocation" x="9274" y="-464"/>
         </scene>
         <!--AddressVC-->
         <scene sceneID="CdW-nc-OZb">
