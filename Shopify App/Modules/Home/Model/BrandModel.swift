@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - BrandResponse
-struct BrandResponse: Decodable {
+struct BrandModel: Decodable {
     var smartCollections: [SmartCollection]
 
     enum CodingKeys: String, CodingKey {
