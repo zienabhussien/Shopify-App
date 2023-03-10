@@ -12,12 +12,29 @@ import Floaty
 class CatagoryViewController: UIViewController {
     
     @IBOutlet weak var laoding: UIActivityIndicatorView!
-    @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!
+    @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
+        didSet{
+            subCategoriesCollectionViev.register(UINib(nibName: "CatagoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CatagoryCollectionViewCell")
+            subCategoriesCollectionViev.delegate = self
+            subCategoriesCollectionViev.dataSource = self
+
+        }
+    }
     
     @IBOutlet weak var gridListButton: UIButton!
     
-    @IBOutlet weak var productsCollectionView: UICollectionView!
-    var subCategoriesNamesModel : subCatecoryResponse?     //variable to response data
+    @IBOutlet weak var productsCollectionView: UICollectionView!{
+        didSet{
+            
+            productsCollectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
+            
+            productsCollectionView.register(UINib(nibName: "GridProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridProductCollectionViewCell")
+            
+            productsCollectionView.delegate = self
+            productsCollectionView.dataSource = self
+        }
+    }
+    var subCategoriesNamesModel : subCatecoryResponse?     //variable .to response data
     var productOfbrandsCategoryModel : Products?     //variable to response data
     let floaty = Floaty()
     var isFiltered = false
@@ -30,7 +47,6 @@ class CatagoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCollectionView()
         
         
         //fetch data
@@ -72,19 +88,7 @@ class CatagoryViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    func  registerCollectionView(){
-        
-        subCategoriesCollectionViev.register(UINib(nibName: "CatagoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CatagoryCollectionViewCell")
-        subCategoriesCollectionViev.delegate = self
-        subCategoriesCollectionViev.dataSource = self
-        
-        productsCollectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
-        
-        productsCollectionView.register(UINib(nibName: "GridProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GridProductCollectionViewCell")
-        
-        productsCollectionView.delegate = self
-        productsCollectionView.dataSource = self
-    }
+   
     
     @IBAction func didTapedGrid_ListButton(_ sender: UIButton) {
         
@@ -235,11 +239,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 let setimagefav = isFavorite == true ? imageUnFav : imagefav
                 cell.favoriteGrid.setImage(setimagefav, for: .normal)
                 
-                
-                
-                
-                
-                
                 if(isFiltered){
                     
                     if let productOfbrandCategory = FilterdArr?[indexPath.row] {
@@ -258,7 +257,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                             
                         }
                     }
-                
             }else
                 {
                 if let productOfbrandCategory = productOfbrandsCategoryModel?.products?[indexPath.row] {
@@ -269,8 +267,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     } else {
                         cell.priceGrid.text = ""
                     }
-                    
-                    
                     if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
                         cell.imageGrid.kf.setImage(with: imageUrl)
                             
@@ -278,64 +274,12 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     }
                 }
                
-                
-                
-            
                 return cell
             }
-            
-            
-            
-          
         }
-        
-       
     }
-    
 }
 
-
-extension CatagoryViewController{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        
-        switch collectionView{
-        case subCategoriesCollectionViev:
-            
-            let width = collectionView.frame.width
-            let height =  collectionView.frame.height
-            return CGSize(width: width / 3, height: height)
-            
-        default:
-            if isList == true {
-                let width = collectionView.frame.width
-                return CGSize(width: width, height: 150)
-            }else{
-                let width = collectionView.frame.width
-                return CGSize(width: width / 2, height: 236)
-            }
-            
-        }
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    
-    
-    
-}
 
 
 
@@ -432,5 +376,3 @@ extension CatagoryViewController {
     }
 
 }
-
-
