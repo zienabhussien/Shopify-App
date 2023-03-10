@@ -10,15 +10,18 @@ import Alamofire
 import Kingfisher
 
 class ProductOfBrandVC: UIViewController {
-    
-//    @IBOutlet weak var vendorName: UILabel!
-    @IBOutlet weak var ProductOfBrandsCollection: UICollectionView!
-    var productOBbrandsModel : Products?     //variable to response data
-    var filteredProducts : [Product]? = [Product]()
+    var viewModel: ProductViewModel!
+    @IBOutlet weak var ProductOfBrandsCollection: UICollectionView!{
+        didSet{
+            ProductOfBrandsCollection.register(UINib(nibName: "ProductOFBrandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductOFBrandCollectionViewCell")
+            ProductOfBrandsCollection.delegate = self
+            ProductOfBrandsCollection.dataSource = self
+        }
+    }
+   
     
     var  searchedProducts  = [Product]()
     var isFavorite: Bool = false
-    var SmartCollectionID: String = ""
     var isFiltered = false //for slider
     var filterIsPressed = true
     var isFiltering : Bool = false
@@ -31,49 +34,39 @@ class ProductOfBrandVC: UIViewController {
     @IBOutlet weak var maximumPrice: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerBrandCollectionView()
-        //fetch data
+        viewModel = ProductViewModel()
+        viewModel.viewDidLoad()
         productSearchBar.delegate = self
-
-        fetchData { result in
-            DispatchQueue.main.async {
-                self.productOBbrandsModel = result
-                self.title = self.productOBbrandsModel?.products?.first?.vendor
-                self.filteredProducts = result?.products
-
-                self.ProductOfBrandsCollection.reloadData()
-            }
-        }
-        //
-        
+        bindViewModel()
         //slider
         maximumPrice.isHidden = true
         minimumPrice.isHidden = true
         priceSlider.isHidden = true
-//        notFoundImage.isHidden = true
-//        setupProductCollection()
-        //slider
-        
-        
-        
     }
     
+    private func bindViewModel(){
+        viewModel.didFetchData = {[weak self] in
+            guard let self = self else {return}
+            self.title = self.viewModel.productOBbrandsModel?.products?.first?.vendor
+            self.ProductOfBrandsCollection.reloadData()
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         self.ProductOfBrandsCollection.reloadData()
     }
+    
     @IBAction func filterSlider(_ sender: UISlider) {
         
         print(sender.value)
         isFiltered = true
-        let filteredByPrice = self.productOBbrandsModel?.products?.filter({ product in
+        let filteredByPrice = self.viewModel.productOBbrandsModel?.products?.filter({ product in
             maximumPrice.text = "$"+String(Int(sender.value))
             return Float(product.variants?[0].price ?? "" ) ?? 0 <= sender.value
         })
-            self.filteredProducts = filteredByPrice
+        self.viewModel.filteredProducts = filteredByPrice
         self.updateUi()
     }
-    
     
     private func updateUi(){
         DispatchQueue.main.async {
@@ -137,15 +130,6 @@ class ProductOfBrandVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-    
-    func  registerBrandCollectionView(){
-        
-        ProductOfBrandsCollection.register(UINib(nibName: "ProductOFBrandCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductOFBrandCollectionViewCell")
-        ProductOfBrandsCollection.delegate = self
-        ProductOfBrandsCollection.dataSource = self
-        
-      
-    }
 }
 
 
@@ -159,7 +143,7 @@ extension ProductOfBrandVC : UISearchBarDelegate{
         if !searchText.isEmpty {
             isFiltering = true
         }
-        searchedProducts =  productOBbrandsModel?.products?.filter({ product in
+        searchedProducts =  viewModel.productOBbrandsModel?.products?.filter({ product in
             return (product.title.lowercased().contains(searchText.lowercased()))
         }) ?? []
         
@@ -179,13 +163,13 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             return searchedProducts.count
             
         }
-      return  filteredProducts?.count ?? 0
+        return  viewModel.filteredProducts?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
-        var productKey = "\((filteredProducts?[indexPath.row].id)!)"
+        var productKey = "\((viewModel.filteredProducts?[indexPath.row].id)!)"
         print(productKey)
         if UserDefaults.standard.bool(forKey: productKey){
             cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -205,15 +189,15 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                 
              cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             // save to core data
-                CoreDataManager.saveProductToCoreData(productName:filteredProducts?[indexPath.row].title ?? ""      , productPrice: filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage:        filteredProducts?[indexPath.row].image?.src ?? "", productId: filteredProducts?[indexPath.row].id ?? 0)
+                CoreDataManager.saveProductToCoreData(productName:viewModel.filteredProducts?[indexPath.row].title ?? ""      , productPrice: viewModel.filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage:        viewModel.filteredProducts?[indexPath.row].image?.src ?? "", productId: viewModel.filteredProducts?[indexPath.row].id ?? 0)
                 
-            UserDefaults.standard.set(true, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+                UserDefaults.standard.set(true, forKey: "\(viewModel.filteredProducts?[indexPath.row].id ?? 0)")
 
             }else{
                 
                 cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                CoreDataManager.deleteFromCoreData(productName: filteredProducts?[indexPath.row].title ?? "" )
-                UserDefaults.standard.set(false, forKey: "\(filteredProducts?[indexPath.row].id ?? 0)")
+                CoreDataManager.deleteFromCoreData(productName: viewModel.filteredProducts?[indexPath.row].title ?? "" )
+                UserDefaults.standard.set(false, forKey: "\(viewModel.filteredProducts?[indexPath.row].id ?? 0)")
             }
     }
         if isFiltering {
@@ -227,12 +211,9 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                 
             if let imageUrl = URL(string: searchedProducts[indexPath.row].image?.src ?? "") {
                            cell.productImage.kf.setImage(with: imageUrl)
-
                 }
-
-            
         } else{
-                    if let productOfbrand = filteredProducts?[indexPath.row] {
+            if let productOfbrand = viewModel.filteredProducts?[indexPath.row] {
                         cell.nameOfProductBrand.text = productOfbrand.title
                         cell.ProductType.text = productOfbrand.product_type
                         if let firstPrice = productOfbrand.variants?.first?.price {
@@ -240,105 +221,25 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                         } else {
                             cell.productPrice.text = ""
                         }
-            
                         if let imageUrl = URL(string: productOfbrand.image?.src ?? "") {
                                    cell.productImage.kf.setImage(with: imageUrl)
             
                                }
                            }
         }
-        
         return cell
-        
     }
-    
 }
 
 // MARK: CollectionView delegate
 extension ProductOfBrandVC{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = filteredProducts?[indexPath.row]
+        let product = viewModel.filteredProducts?[indexPath.row]
         let ProductVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
         ProductVC.product = product
         self.navigationController?.pushViewController(ProductVC, animated: true)
     }
     
 }
-
-extension ProductOfBrandVC{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-                let width = collectionView.frame.width
-                return CGSize(width: width / 2, height: 236)
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-
-    
-    
-    
-}
-
-
-
-extension ProductOfBrandVC{
-    func fetchData(compilation: @escaping (Products?) -> Void)
-    {
-   
-        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/products.json?collection_id=\(SmartCollectionID)") else {return}
-        
-        AF.request(url).response
-        { response in
-            if let data = response.data {
-                do{
-                    
-                    let result = try JSONDecoder().decode(Products.self, from: data)
-                    
-                    compilation(result)
-                }
-                catch{
-                    compilation(nil)
-                }
-            } else {
-                compilation(nil)
-            }
-        }
-    }
-    
-    
-}
-
-
-
-//
-//extension ProductOfBrandVC{
-//    func checkIsProductSelected(row: Int, sender: UIButton){
-//        if !sender.isSelected {
-//             //button selected
-//            sender.isSelected = true
-//            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//            self.addToWishList(row: row)
-//         }
-//         else{
-//             //button non selected
-//             sender.isSelected = false
-//             sender.setImage(UIImage(systemName: "heart"), for: .normal)
-//             self.nonSelectedProduct(row: row)
-//         }
-//    }
-//}
-
-
 
