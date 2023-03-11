@@ -13,7 +13,7 @@ class OrdersVC: UIViewController{
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var emptyCart: UIImageView!
     
-    var noInternetimageView = UIImageView()
+    //var noInternetimageView = UIImageView()
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
     var orderProduct : [OrderItem] = []
@@ -24,7 +24,7 @@ class OrdersVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
-        createNoInterNetConnectImage()
+        //createNoInterNetConnectImage()
         setCartItems()
         setTotalPrice()
         checkCartIsEmpty()
@@ -77,15 +77,15 @@ class OrdersVC: UIViewController{
     }
 }
 
-extension OrdersVC{
-    func createNoInterNetConnectImage(){
-        let image = UIImage(named: "network")
-//        noInternetimageView = UIImageView(image: image!)
-        noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-        noInternetimageView.center = self.view.center
-        view.addSubview(noInternetimageView)
-    }
-}
+//extension OrdersVC{
+//    func createNoInterNetConnectImage(){
+//        let image = UIImage(named: "network")
+//       // noInternetimageView = UIImageView(image: image!)
+//       // noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+//       // noInternetimageView.center = self.view.center
+//       // view.addSubview(noInternetimageView)
+//    }
+//}
 
 extension OrdersVC{
     func checkNetworking(){
@@ -93,12 +93,12 @@ extension OrdersVC{
             if !isConnected{
                 self.tableView.isHidden = true
                 self.emptyCart.isHidden = true
-                self.noInternetimageView.isHidden = false
+                //self.noInternetimageView.isHidden = false
                 self.showAlertForInterNetConnection()
             }else{
                 self.emptyCart.isHidden = false
                 self.tableView.isHidden = false
-                self.noInternetimageView.isHidden = true
+                //self.noInternetimageView.isHidden = true
                 self.setCartItems()
                 self.setTotalPrice()
                 self.checkCartIsEmpty()

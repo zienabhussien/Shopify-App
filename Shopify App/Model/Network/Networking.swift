@@ -101,13 +101,11 @@ extension Networking{
         request.httpMethod = "PUT"
         let session = URLSession.shared
         request.httpShouldHandleCookies = false
-        
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: putObject.asDictionary(), options: .prettyPrinted)
         } catch let error {
             print(error.localizedDescription)
         }
-        
         //HTTP Headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")

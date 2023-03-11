@@ -26,7 +26,6 @@ class AddressVC: UIViewController {
             self.arrOfAddress = self.addressViewModel.address
             self.tableView.reloadData()
         }
-        
         addressViewModel.bindFailedToView = {
             print("error when get address")
         }

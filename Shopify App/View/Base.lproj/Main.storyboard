@@ -384,7 +384,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="10D-CW-mLG">
-                                <rect key="frame" x="20" y="139" width="353" height="35"/>
+                                <rect key="frame" x="20" y="139" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Sub Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-wi-JT2">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
@@ -393,7 +393,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfS-dJ-lY4">
-                                        <rect key="frame" x="280" y="0.0" width="73" height="35"/>
+                                        <rect key="frame" x="278" y="0.0" width="73" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -404,7 +404,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="LTc-tv-0Sp">
-                                <rect key="frame" x="20" y="204" width="353" height="35"/>
+                                <rect key="frame" x="20" y="204" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Shipping Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-Mj-qM5">
                                         <rect key="frame" x="0.0" y="4.9999999999999982" width="129.33333333333334" height="25.333333333333329"/>
@@ -413,7 +413,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 USD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fql-mP-uxA">
-                                        <rect key="frame" x="284" y="5.6666666666666572" width="69" height="24"/>
+                                        <rect key="frame" x="282" y="5.6666666666666572" width="69" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -424,7 +424,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cst-qK-BW1">
-                                <rect key="frame" x="281" y="269" width="92" height="36"/>
+                                <rect key="frame" x="279.66666666666669" y="269" width="91.333333333333314" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Validate">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
@@ -434,7 +434,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-pb-eMi" customClass="CouponTextField" customModule="Shopify_App">
-                                <rect key="frame" x="20" y="269" width="231" height="36"/>
+                                <rect key="frame" x="19.999999999999986" y="269" width="229.66666666666663" height="36"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-sX-twX">
                                 <rect key="frame" x="19.999999999999993" y="405" width="108.33333333333331" height="60"/>
@@ -457,16 +457,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-bf-3vk">
-                                <rect key="frame" x="20" y="335" width="353" height="35"/>
+                                <rect key="frame" x="20" y="335" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-Qw-iuT">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2z-Js-lA9">
-                                        <rect key="frame" x="283" y="0.0" width="70" height="35"/>
+                                        <rect key="frame" x="281" y="0.0" width="70" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.87405364050000001" green="0.084309356200000005" blue="0.1000488019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -477,7 +477,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nG-sz-hED">
-                                <rect key="frame" x="20" y="515" width="353" height="47"/>
+                                <rect key="frame" x="20" y="515" width="351" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="C9f-9c-YCO"/>
                                     <constraint firstAttribute="height" constant="47" id="Kyw-u2-F3w"/>
@@ -703,7 +703,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6W-Pi-C6E">
-                                <rect key="frame" x="14.666666666666657" y="612.33333333333337" width="363.66666666666674" height="42.666666666666629"/>
+                                <rect key="frame" x="14.666666666666657" y="658.66666666666663" width="363.66666666666674" height="46.333333333333371"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -715,7 +715,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-nt-q7w">
-                                <rect key="frame" x="250.33333333333337" y="541.33333333333337" width="128" height="29"/>
+                                <rect key="frame" x="251.33333333333337" y="587.66666666666663" width="127" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create your account">
@@ -726,7 +726,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eQn-MC-MNT">
-                                <rect key="frame" x="14.666666666666657" y="393.66666666666669" width="363.66666666666674" height="133.66666666666669"/>
+                                <rect key="frame" x="14.666666666666657" y="427.66666666666669" width="363.66666666666674" height="146.00000000000006"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-eW-dQN">
                                         <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="65"/>
@@ -747,10 +747,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woq-GJ-OIP">
-                                        <rect key="frame" x="0.0" y="81" width="363.66666666666669" height="52.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="81" width="363.66666666666669" height="65"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-x6-7nS">
-                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="36.666666666666664"/>
+                                                <rect key="frame" x="8" y="7.9999999999999432" width="347.66666666666669" height="49"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -816,7 +816,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-LC-xCT">
-                                <rect key="frame" x="206" y="494" width="163" height="29"/>
+                                <rect key="frame" x="208" y="494" width="161" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
@@ -1654,6 +1654,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wu4-AG-07x">
+                                <rect key="frame" x="148" y="211" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KJY-hh-ls1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1677,25 +1683,23 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding Your Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-B1-kuQ">
-                                <rect key="frame" x="16" y="144" width="361" height="25"/>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="21"/>
-                                <color key="textColor" systemColor="systemGrayColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-pD-Uao">
-                                <rect key="frame" x="16" y="210" width="361" height="63.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-pD-Uao">
+                                <rect key="frame" x="16" y="210" width="361" height="75.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcg-CB-ivw">
-                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qM1-Wb-Uhl">
-                                        <rect key="frame" x="0.0" y="42.666666666666657" width="361" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qM1-Wb-Uhl">
+                                        <rect key="frame" x="0.0" y="37.333333333333343" width="361" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="0xT-1m-JV8"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="uCk-Fg-7ff"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
                                                 <color key="value" systemColor="tintColor"/>
@@ -1706,26 +1710,30 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="xcg-CB-ivw" firstAttribute="top" secondItem="KX5-pD-Uao" secondAttribute="top" id="8v1-et-K2I"/>
-                                    <constraint firstItem="qM1-Wb-Uhl" firstAttribute="leading" secondItem="KX5-pD-Uao" secondAttribute="leading" id="cN3-zq-OhV"/>
-                                    <constraint firstAttribute="trailing" secondItem="qM1-Wb-Uhl" secondAttribute="trailing" id="ecZ-xP-Dvb"/>
+                                    <constraint firstAttribute="trailing" secondItem="qM1-Wb-Uhl" secondAttribute="trailing" id="Jtu-ft-SQf"/>
+                                    <constraint firstItem="qM1-Wb-Uhl" firstAttribute="leading" secondItem="KX5-pD-Uao" secondAttribute="leading" id="liD-5t-Daq"/>
                                     <constraint firstItem="xcg-CB-ivw" firstAttribute="leading" secondItem="KX5-pD-Uao" secondAttribute="leading" id="nj8-qM-a16"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1LX-U6-6WL">
-                                <rect key="frame" x="16" y="308.66666666666669" width="361" height="62.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1LX-U6-6WL">
+                                <rect key="frame" x="16" y="320.33333333333331" width="361" height="75.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFN-xA-OW5">
-                                        <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="31.333333333333332" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UK2-IM-YRO">
-                                        <rect key="frame" x="0.0" y="41.666666666666629" width="361" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UK2-IM-YRO">
+                                        <rect key="frame" x="0.0" y="37.333333333333371" width="361" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="mAc-tt-1o8"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
                                                 <color key="value" systemColor="tintColor"/>
@@ -1736,6 +1744,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="qFN-xA-OW5" firstAttribute="top" secondItem="1LX-U6-6WL" secondAttribute="top" id="IWB-lK-dIq"/>
                                     <constraint firstItem="UK2-IM-YRO" firstAttribute="leading" secondItem="1LX-U6-6WL" secondAttribute="leading" id="g4o-Eb-ppY"/>
@@ -1743,19 +1752,22 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <constraint firstItem="qFN-xA-OW5" firstAttribute="leading" secondItem="1LX-U6-6WL" secondAttribute="leading" id="oJN-ui-8g8"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ogw-J0-2vq">
-                                <rect key="frame" x="16" y="406.33333333333331" width="361" height="62.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ogw-J0-2vq">
+                                <rect key="frame" x="16" y="430.66666666666669" width="361" height="75.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe3-HY-WGt">
-                                        <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="61.333333333333336" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CwU-5D-Z5p">
-                                        <rect key="frame" x="0.0" y="41.666666666666686" width="361" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CwU-5D-Z5p">
+                                        <rect key="frame" x="0.0" y="37.333333333333314" width="361" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="BsY-pe-Mqe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
                                                 <color key="value" systemColor="tintColor"/>
@@ -1766,6 +1778,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="CwU-5D-Z5p" firstAttribute="leading" secondItem="Ogw-J0-2vq" secondAttribute="leading" id="56a-MA-51W"/>
                                     <constraint firstAttribute="trailing" secondItem="CwU-5D-Z5p" secondAttribute="trailing" id="7R5-V1-rPO"/>
@@ -1774,19 +1787,22 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <constraint firstAttribute="bottom" secondItem="CwU-5D-Z5p" secondAttribute="bottom" id="O8u-k9-UvB"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-6q-QOI">
-                                <rect key="frame" x="16" y="504.00000000000006" width="361" height="62.666666666666686"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7m7-6q-QOI">
+                                <rect key="frame" x="16" y="541" width="361" height="75.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwV-QT-g7o">
-                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="21.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="49.333333333333336" height="29.333333333333332"/>
                                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afY-aK-Mof">
-                                        <rect key="frame" x="0.0" y="41.666666666666629" width="361" height="21"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="afY-aK-Mof">
+                                        <rect key="frame" x="0.0" y="37.333333333333371" width="361" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="YlO-ZA-797"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelColor">
                                                 <color key="value" systemColor="tintColor"/>
@@ -1797,6 +1813,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="afY-aK-Mof" secondAttribute="bottom" id="DDG-EP-63J"/>
                                     <constraint firstItem="afY-aK-Mof" firstAttribute="leading" secondItem="7m7-6q-QOI" secondAttribute="leading" id="ICG-hq-Ec0"/>
@@ -1805,25 +1822,33 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <constraint firstAttribute="trailing" secondItem="afY-aK-Mof" secondAttribute="trailing" id="zRZ-wA-SJb"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-LW-xlt">
-                                <rect key="frame" x="94" y="44" width="222" height="92"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-LW-xlt">
+                                <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333343"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-28-5oj">
-                                <rect key="frame" x="16" y="677.33333333333337" width="361" height="35.666666666666629"/>
-                                <color key="backgroundColor" name="mainColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-28-5oj">
+                                <rect key="frame" x="16" y="673" width="361" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RUF-4c-4dx"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Add Address">
+                                <buttonConfiguration key="configuration" style="filled" title="Add Address" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" name="mainColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didPressedOnAddAddress:" destination="xyx-Dq-syG" eventType="touchUpInside" id="h0B-EW-rRm"/>
                                     <action selector="didPressedOnAddAdress:" destination="cFS-rK-vTZ" eventType="touchUpInside" id="QbO-jl-fnC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adding Your Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-B1-kuQ">
+                                <rect key="frame" x="16" y="144" width="361" height="25"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="21"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bfc-n1-qH8"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="bfc-n1-qH8" firstAttribute="trailing" secondItem="7m7-6q-QOI" secondAttribute="trailing" constant="16" id="01e-w2-m6m"/>
                             <constraint firstItem="7m7-6q-QOI" firstAttribute="top" secondItem="Ogw-J0-2vq" secondAttribute="bottom" constant="35" id="208-D4-y4J"/>
@@ -2074,7 +2099,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="1000" height="980"/>
+        <image name="1" width="1303" height="942"/>
         <image name="adds" width="696" height="365"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
