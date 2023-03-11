@@ -4,7 +4,7 @@
 //
 //  Created by Ali Moustafa on 06/03/2023.
 //
-
+//MARK: - use in addresses
 import Foundation
 
 struct NewCustomer: Codable {

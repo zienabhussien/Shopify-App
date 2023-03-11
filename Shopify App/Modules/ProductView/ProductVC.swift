@@ -20,19 +20,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     //add to cart
     let orderViewModel = OrderViewModel()
     var product : Product?
-    //add to cart
-    //var productImgs =                        //[Product.images]
-    
-    
-//   var arrProductPhotos = [UIImage(named: "1")!,UIImage(named: "download")!,UIImage(named: "download")!,UIImage(named: "download")!]
-    
     var timer : Timer?
     
     var currentCellIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(product?.title ?? "")
         ProductCV.dataSource = self
         ProductCV.delegate = self
         
@@ -41,7 +34,6 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         guard let price = product?.variants?.first?.price else {return}
         productPrice.text = "$\(price)"
         productDescription.text = product?.body_html
-        
         startTimer()
     }
     
@@ -85,8 +77,6 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         }else{
             currentCellIndex = 0
         }
-        //ProductCV.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
-
         ProductPageControl.currentPage = currentCellIndex
 
     }

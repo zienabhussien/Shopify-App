@@ -47,7 +47,7 @@ class NetworkService : Service{
                 do {
                     let decoder = JSONDecoder()
                     let myData = try decoder.decode(T.self , from: data)
-                   // print(myData)
+                    // print(myData)
                     if let httpResponse = response as? HTTPURLResponse {
                         completionHandeler(myData, nil, httpResponse.statusCode)
                     }
@@ -81,6 +81,6 @@ class NetworkService : Service{
         }
     }
     
-
+    
     
 }
