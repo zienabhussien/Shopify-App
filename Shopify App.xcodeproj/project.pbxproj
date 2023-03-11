@@ -287,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				336C253829B62C9D00C78A98 /* Address */,
-				33E1616929B7549600A13B29 /* Order */,
+				33E1616929B7549600A13B29 /* AllOrder */,
 				33A2023729B0F69E00D85E41 /* Auth */,
 				33A2023B29B0F69E00D85E41 /* catagory */,
 				33A2025629B0F6AF00D85E41 /* Home */,
@@ -561,14 +561,14 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
-		33E1616929B7549600A13B29 /* Order */ = {
+		33E1616929B7549600A13B29 /* AllOrder */ = {
 			isa = PBXGroup;
 			children = (
 				33E1616D29B7625800A13B29 /* ViewModel */,
 				33E1616A29B7553300A13B29 /* Model */,
 				339159AD29B9361D00036033 /* View */,
 			);
-			path = Order;
+			path = AllOrder;
 			sourceTree = "<group>";
 		};
 		33E1616A29B7553300A13B29 /* Model */ = {
