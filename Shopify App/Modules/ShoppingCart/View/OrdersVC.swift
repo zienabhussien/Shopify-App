@@ -13,7 +13,6 @@ class OrdersVC: UIViewController{
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var emptyCart: UIImageView!
     
-    //var noInternetimageView = UIImageView()
     var cartArray : [OrderItemModel] = []
     let orderViewModel = OrderViewModel()
     var orderProduct : [OrderItem] = []
@@ -24,7 +23,6 @@ class OrdersVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(OrdersTVC.nib(), forCellReuseIdentifier: OrdersTVC.identifier)
-        //createNoInterNetConnectImage()
         setCartItems()
         setTotalPrice()
         checkCartIsEmpty()
@@ -72,20 +70,11 @@ class OrdersVC: UIViewController{
         orderViewModel.calcTotalPrice { totalPrice in
             guard let totalPrice = totalPrice else { return }
             Helper.shared.setTotalPrice(totalPrice:totalPrice)
-            self.totalPriceLabel.text = String(totalPrice) + " USD"
+            self.totalPriceLabel.text = "$" + String(totalPrice) 
         }
     }
 }
 
-//extension OrdersVC{
-//    func createNoInterNetConnectImage(){
-//        let image = UIImage(named: "network")
-//       // noInternetimageView = UIImageView(image: image!)
-//       // noInternetimageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
-//       // noInternetimageView.center = self.view.center
-//       // view.addSubview(noInternetimageView)
-//    }
-//}
 
 extension OrdersVC{
     func checkNetworking(){

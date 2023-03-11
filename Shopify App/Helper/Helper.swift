@@ -13,8 +13,16 @@ class Helper{
     
     var reachability: Reachability?
     
+    
+    func setFoundAdress(isFoundAddress: Bool){
+        UserDefaults.standard.set(isFoundAddress, forKey: "Address_Found")
+    }
+    
+    func checkFoundAdress()-> Bool{
+        return UserDefaults.standard.bool(forKey: "Address_Found")
+    }
+    
     func getUserID()-> Int?{
-//        return 6812182446370
         return UserDefaults.standard.integer(forKey: "loginId")
     }
     
@@ -32,13 +40,6 @@ class Helper{
         return UserDefaults.standard.double(forKey: "Total_Price")
     }
     
-    func setFoundAdress(isFoundAddress: Bool){
-        UserDefaults.standard.set(isFoundAddress, forKey: "Address_Found")
-    }
-    
-    func checkFoundAdress()-> Bool{
-        return UserDefaults.standard.bool(forKey: "Address_Found")
-    }
 }
 
 extension Helper{

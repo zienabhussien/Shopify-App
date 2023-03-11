@@ -56,8 +56,8 @@ class loginViewController: UIViewController {
             
         }
         loginViewModel.getAllCustomers()
-        
-       
+
+//        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
     }
     
     
@@ -71,23 +71,18 @@ class loginViewController: UIViewController {
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
         navigationController?.pushViewController(viewController, animated: true)
-        
-//
-//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "SingUpViewController")
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        present(navigationController, animated: true)
     }
     
     
     func goToTabBar()
     {
-        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true)
+//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        navigationController.modalPresentationStyle = .fullScreen
+////        self.navigationController?.pushViewController(navigationController, animated: true)
+//        present(navigationController, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     

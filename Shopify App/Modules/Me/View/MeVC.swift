@@ -15,7 +15,12 @@ class MeVC: UIViewController {
     @IBOutlet weak var wishListTable: UITableView!
         
     var someWishList = [FavoriteProduct]()
+    override func viewDidDisappear(_ animated: Bool) {
+        self.ordersTable.reloadData()
 
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MeViewModel()

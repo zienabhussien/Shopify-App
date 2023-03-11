@@ -21,49 +21,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-eb-hWk">
                         <rect key="frame" x="8" y="8" width="351" height="134"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placedOrder" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoes" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-43-poD">
                                 <rect key="frame" x="0.0" y="5" width="117" height="129"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="wEi-gm-nVn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="T-Shirt Polo" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-JL-Em5">
-                                <rect key="frame" x="119" y="25" width="85.5" height="20.5"/>
-                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="189 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-aQ-fN3">
-                                <rect key="frame" x="133" y="61.5" width="88" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="$0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-aQ-fN3">
+                                <rect key="frame" x="133" y="60.5" width="18" height="19.5"/>
                                 <color key="tintColor" red="0.094089172780513763" green="0.6210511326789856" blue="0.64091527462005615" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="88" id="EvW-ko-hOu"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQc-87-hIV">
-                                <rect key="frame" x="166" y="105" width="73" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="73" id="ofW-8M-6jN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="product title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuv-JL-Em5">
+                                <rect key="frame" x="133" y="24" width="93" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Xcq-aQ-fN3" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="16" id="0KG-QO-Qhy"/>
+                            <constraint firstItem="Cuv-JL-Em5" firstAttribute="top" secondItem="IxS-eb-hWk" secondAttribute="top" constant="24" id="0sR-Pd-ueY"/>
                             <constraint firstItem="Kcc-43-poD" firstAttribute="top" secondItem="IxS-eb-hWk" secondAttribute="top" constant="5" id="6eh-nQ-Li2"/>
                             <constraint firstItem="Kcc-43-poD" firstAttribute="leading" secondItem="IxS-eb-hWk" secondAttribute="leading" id="72k-LG-ZSF"/>
-                            <constraint firstItem="cQc-87-hIV" firstAttribute="top" secondItem="Xcq-aQ-fN3" secondAttribute="bottom" constant="10" id="K1m-Z4-fL0"/>
-                            <constraint firstAttribute="bottom" secondItem="cQc-87-hIV" secondAttribute="bottom" constant="8" id="Oy5-55-LVp"/>
-                            <constraint firstItem="cQc-87-hIV" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="49" id="QAc-yY-80l"/>
                             <constraint firstAttribute="bottom" secondItem="Kcc-43-poD" secondAttribute="bottom" id="TDz-pY-6iR"/>
-                            <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="2" id="W4C-Wl-f11"/>
-                            <constraint firstItem="Cuv-JL-Em5" firstAttribute="top" secondItem="IxS-eb-hWk" secondAttribute="top" constant="25" id="eL5-3N-wb2"/>
-                            <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Xcq-aQ-fN3" secondAttribute="leading" constant="-14" id="jbe-Fq-BJS"/>
-                            <constraint firstItem="Xcq-aQ-fN3" firstAttribute="top" secondItem="Cuv-JL-Em5" secondAttribute="bottom" constant="16" id="na3-U7-Z6Y"/>
+                            <constraint firstItem="Cuv-JL-Em5" firstAttribute="leading" secondItem="Kcc-43-poD" secondAttribute="trailing" constant="16" id="UTL-fd-OGT"/>
+                            <constraint firstItem="Xcq-aQ-fN3" firstAttribute="top" secondItem="Cuv-JL-Em5" secondAttribute="bottom" constant="16" id="cEd-a3-rp2"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -81,7 +66,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSv-xL-toY">
-                        <rect key="frame" x="249.5" y="104" width="31" height="34"/>
+                        <rect key="frame" x="259.5" y="104" width="31" height="34"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="0.30694610389999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="31" id="xLV-DT-1KZ"/>
@@ -120,8 +105,8 @@
                             <action selector="addQuantity:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gyS-h2-sTi"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-95-TMk">
-                        <rect key="frame" x="288.5" y="114" width="20.5" height="21.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdW-95-TMk">
+                        <rect key="frame" x="298.5" y="114" width="10.5" height="21.5"/>
                         <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -146,7 +131,6 @@
                 <outlet property="imgView" destination="Kcc-43-poD" id="hEd-fB-prq"/>
                 <outlet property="priceLabel" destination="Xcq-aQ-fN3" id="h66-A9-89O"/>
                 <outlet property="quantityLabel" destination="tdW-95-TMk" id="C3X-F2-X6d"/>
-                <outlet property="quantityLbl" destination="cQc-87-hIV" id="rFq-o6-N3V"/>
                 <outlet property="subButton" destination="bSv-xL-toY" id="W5Q-cr-zJW"/>
                 <outlet property="titleLabel" destination="Cuv-JL-Em5" id="ykM-7u-dgd"/>
             </connections>
@@ -155,8 +139,8 @@
     </objects>
     <resources>
         <image name="minus" catalog="system" width="128" height="26"/>
-        <image name="placedOrder" width="715" height="1072"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="shoes" width="612" height="408"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

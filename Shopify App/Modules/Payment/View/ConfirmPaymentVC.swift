@@ -25,19 +25,19 @@ class ConfirmPaymentVC: UIViewController {
         super.viewDidLoad()
         setCartItems()
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
-        subTotalLabel.text = String(totalPrice)
+        subTotalLabel.text = "$" + String(totalPrice)
         calcGrandTotal()
     }
     
     @IBAction func validateCoupon(_ sender: Any) {
         if couponTF.textField.text == "iOS_iTi" {
             self.view.makeToast("Coupon applied")
-            discountLabel.text = "20.0 USD"
-            grandTotal.text = String(Total - 20.0)
+            discountLabel.text = "$20.0"
+            grandTotal.text = "$" + String(Total - 20.0)
         }else {
             self.view.makeToast("Coupon not valied")
-            discountLabel.text = "0.0 USD"
-            grandTotal.text = String(Total)
+            discountLabel.text = "$0.0"
+            grandTotal.text = "$" + String(Total)
         }
     }
     func setCartItems(){
@@ -56,7 +56,7 @@ class ConfirmPaymentVC: UIViewController {
     func calcGrandTotal(){
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
         Total = totalPrice + 30
-        grandTotal.text = String(Total)
+        grandTotal.text = "$" + String(Total)
     }
 }
 

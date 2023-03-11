@@ -16,7 +16,6 @@ class OrdersTVC : UITableViewCell {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var subButton: UIButton!
     
-    @IBOutlet weak var quantityLbl: UILabel!
     
     
     
