@@ -14,6 +14,7 @@ class Helper{
     var reachability: Reachability?
     
     func getUserID()-> Int?{
+//        return 6812182446370
         return UserDefaults.standard.integer(forKey: "loginId")
     }
     

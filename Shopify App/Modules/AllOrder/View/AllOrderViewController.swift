@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 class AllOrderViewController: UIViewController {
+    let userID = Helper.shared.getUserID()!
 
     @IBOutlet weak var allOrderTable: UITableView!
     var reponseOrsers : [Order]?
@@ -59,7 +60,7 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
 extension AllOrderViewController{
     func fetchOrders(compilation: @escaping ([Order]?) -> Void)
     {
-        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/6810028835106/orders.json") else {return}
+        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/\(userID)/orders.json") else {return}
         
 //        \(customerId)
     

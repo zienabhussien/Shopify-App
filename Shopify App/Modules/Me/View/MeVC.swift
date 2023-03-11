@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 
 class MeVC: UIViewController {
+    let userID = Helper.shared.getUserID()!
 
     @IBOutlet weak var ordersTable: UITableView!
     @IBOutlet weak var wishListTable: UITableView!
@@ -137,12 +138,12 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
 
 //MARK: - order in me
 extension MeVC{
+
     func fetchOrders(compilation: @escaping ([Order]?) -> Void)
     {
-        let userID = Helper.shared.getUserID()
 
         guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/\(userID)/orders.json") else {return}
-        
+        print(url)
 //        \(customerId)
     
         AF.request(url).response
