@@ -2,40 +2,33 @@
 //  MeVC.swift
 //  Shopify App
 //
-//  Created by Sohila on 02/03/2023.
+//  Created by Dragon on 02/03/2023.
 //
 
 import UIKit
 import Alamofire
 
 class MeVC: UIViewController {
-    let userID = Helper.shared.getUserID()!
+    var viewModel: MeViewModel!
 
     @IBOutlet weak var ordersTable: UITableView!
     @IBOutlet weak var wishListTable: UITableView!
-    
-    @IBOutlet weak var userWelcome: UILabel!
-    
+        
     var someWishList = [FavoriteProduct]()
 
-    var reponseOrsers : [Order]?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetch data
-        fetchOrders { result in
-            DispatchQueue.main.async {
-                self.reponseOrsers = result
-                print(self.reponseOrsers ?? "no order")
-                self.ordersTable.reloadData()
-
-            }
-        }
-        //
-       
+        viewModel = MeViewModel()
+        viewModel.viewDidLoad()
+        bindViewModelgategory()
     }
     
+    private func bindViewModelgategory(){
+        viewModel.didFetchData = {[weak self] in
+            guard let self = self else {return}
+            self.ordersTable.reloadData()
+        }
+    }
     @IBAction func settingButton(_ sender: Any) {
         
         let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
@@ -93,8 +86,8 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == ordersTable){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as! OrdersTableCell
-            cell.createdAtProduct.text = reponseOrsers?[indexPath.row].created_at
-            cell.priceProduct.text = reponseOrsers?[indexPath.row].current_total_price
+            cell.createdAtProduct.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
+            cell.priceProduct.text = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price
             return cell
         }
         
@@ -105,7 +98,7 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == ordersTable {
-            if let orders = reponseOrsers {
+            if let orders = viewModel.reponseOrsers?.orders {
                 if orders.count < 3 {
                     return orders.count
                 } else {
@@ -122,7 +115,6 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
         }
     }
 
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -136,36 +128,7 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
 
 
 
-//MARK: - order in me
-extension MeVC{
 
-    func fetchOrders(compilation: @escaping ([Order]?) -> Void)
-    {
-
-        guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/\(userID)/orders.json") else {return}
-        print(url)
-//        \(customerId)
-    
-        AF.request(url).response
-        { response in
-            if let data = response.data {
-                do{
-                    
-                    let result = try JSONDecoder().decode(OrdersFromAPI.self, from: data)
-                    
-                    compilation(result.orders)
-                }
-                catch{
-                    compilation(nil)
-                }
-            } else {
-                compilation(nil)
-            }
-        }
-    }
-    
-    
-}
 
 
 

@@ -18,6 +18,7 @@
 		3340090D29BAD1FE00BFE845 /* ProductCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340090C29BAD1FE00BFE845 /* ProductCollectionViewDataSource.swift */; };
 		3340091029BAD26500BFE845 /* ProductViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340090F29BAD26500BFE845 /* ProductViewModel .swift */; };
 		335D05D629B219B300D0F39D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 335D05D529B219B300D0F39D /* Kingfisher */; };
+		3364396029BCD18C0080CCE2 /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3364395F29BCD18C0080CCE2 /* MeViewModel.swift */; };
 		336C253729B62B6200C78A98 /* CreateAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C253629B62B6100C78A98 /* CreateAddressVC.swift */; };
 		336C253A29B62DA000C78A98 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C253929B62DA000C78A98 /* Customer.swift */; };
 		336C253C29B62FF100C78A98 /* Encodable + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336C253B29B62FF100C78A98 /* Encodable + extension.swift */; };
@@ -138,6 +139,7 @@
 		3340090A29BAC6B500BFE845 /* HomeViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewModel .swift"; sourceTree = "<group>"; };
 		3340090C29BAD1FE00BFE845 /* ProductCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		3340090F29BAD26500BFE845 /* ProductViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductViewModel .swift"; sourceTree = "<group>"; };
+		3364395F29BCD18C0080CCE2 /* MeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
 		336C253629B62B6100C78A98 /* CreateAddressVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAddressVC.swift; sourceTree = "<group>"; };
 		336C253929B62DA000C78A98 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		336C253B29B62FF100C78A98 /* Encodable + extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encodable + extension.swift"; sourceTree = "<group>"; };
@@ -294,7 +296,7 @@
 				33A2025029B0F6AF00D85E41 /* Product */,
 				7BFB95F429B0EAF2002D5253 /* Me */,
 				D8E34D8829B0DC8900590317 /* FavView */,
-				D8E34D7D29B0DC0B00590317 /* ProductView */,
+				D8E34D7D29B0DC0B00590317 /* ProductInfo */,
 				8CA6A06A29AFB3A0006809E9 /* Payment */,
 				3347203129AF901600FF2F40 /* ShoppingCart */,
 				D8784BAB29AF67DC00231982 /* SplashScreen */,
@@ -345,6 +347,14 @@
 				33EDD8E829B8C831008C815A /* ordersCell */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3364395E29BCD13D0080CCE2 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3364395F29BCD18C0080CCE2 /* MeViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		336C253829B62C9D00C78A98 /* Address */ = {
@@ -623,6 +633,7 @@
 		7BFB95F429B0EAF2002D5253 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				3364395E29BCD13D0080CCE2 /* viewModel */,
 				7BFB95F529B0EAF9002D5253 /* View */,
 			);
 			path = Me;
@@ -800,13 +811,13 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
-		D8E34D7D29B0DC0B00590317 /* ProductView */ = {
+		D8E34D7D29B0DC0B00590317 /* ProductInfo */ = {
 			isa = PBXGroup;
 			children = (
 				D8E34D7E29B0DC2400590317 /* ProductCVC.swift */,
 				D8E34D7F29B0DC2400590317 /* ProductVC.swift */,
 			);
-			path = ProductView;
+			path = ProductInfo;
 			sourceTree = "<group>";
 		};
 		D8E34D8829B0DC8900590317 /* FavView */ = {
@@ -1102,6 +1113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				336C254F29B6666900C78A98 /* CoreDataServices.swift in Sources */,
+				3364396029BCD18C0080CCE2 /* MeViewModel.swift in Sources */,
 				33EDD8E629B8C68E008C815A /* OrdersVC.swift in Sources */,
 				7BFB960629B0EB29002D5253 /* ContactUsVC.swift in Sources */,
 				33A2025C29B0F6AF00D85E41 /* ProductOfBrandVC.swift in Sources */,
