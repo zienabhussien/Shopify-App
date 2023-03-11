@@ -6,14 +6,11 @@
 //
 
 import Foundation
-import CoreMedia
-import Toast_Swift
 class OrderViewModel{
     
     let coreDataServices = CoreDataServices()
     var bindingAlreadyInCartToView : (()->()) = {}
     var bindingDeleteCartToView : (()->()) = {}
-    var bindingEmptyCartAlert : (()->()) = {}
     var order : OrderItem?
     let customerID = Helper.shared.getUserID()
     var orderProduct : [OrderItem] = []
@@ -26,9 +23,7 @@ class OrderViewModel{
     var showDeleteAlert : (()->()) {
         self.bindingDeleteCartToView
     }
-    var showEmptyCartAlert : (()->()) {
-        self.bindingEmptyCartAlert
-    }
+
     
     
     func getItemsInCart(complition: @escaping (([OrderItemModel]?,Error?)->Void)){
@@ -173,10 +168,7 @@ extension OrderViewModel{
 extension OrderViewModel{
     //    takes an array of OrderItemModel objects as a parameter.
     func postOrder(cartArray:[OrderItemModel]){
-        if cartArray.count == 0 {
-            self.showEmptyCartAlert()
-        }
-        else{
+
         for item in cartArray {
             orderProduct.append(OrderItem(variant_id: Int(item.itemID), quantity: Int(item.itemQuantity), name: item.itemName, price: item.itemPrice,title:item.itemName))
         }        
@@ -193,7 +185,8 @@ extension OrderViewModel{
             let order = Order(customer: customer, line_items: self.orderProduct, current_total_price: self.totalOrder.current_total_price)
             let ordertoAPI = OrderToAPI(order: order)
             //net work
-            self.networking.SubmitOrder(order: ordertoAPI) { data, urlResponse, error in
+            self.networking.SubmitOrder(order: ordertoAPI)
+            { data, urlResponse, error in
                 if error == nil {
                     print("Post order success")
                     if let data = data{
@@ -201,10 +194,6 @@ extension OrderViewModel{
                                     let returnedOrder = json["order"] as? Dictionary<String,Any>
                                     let returnedCustomer = returnedOrder?["customer"] as? Dictionary<String,Any>
                                     let id = returnedCustomer?["id"] as? Int ?? 0
-                        print(json)
-                        print("----------")
-                        print(id)
-                        
                         for i in cartArray {
                             context.delete(i)
                         }
@@ -212,11 +201,10 @@ extension OrderViewModel{
                         
                                 }
                 }else{
-                    print(error?.localizedDescription)
+                    print(error?.localizedDescription ?? "")
                 }
             }
         }
-    }
     }
     
     
