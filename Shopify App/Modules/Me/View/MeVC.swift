@@ -15,12 +15,10 @@ class MeVC: UIViewController {
     @IBOutlet weak var wishListTable: UITableView!
         
     var someWishList = [FavoriteProduct]()
-    override func viewDidDisappear(_ animated: Bool) {
-        self.ordersTable.reloadData()
+    
+    
+  
 
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = MeViewModel()
@@ -65,19 +63,30 @@ class MeVC: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
+
         someWishList = CoreDataManager.fetchFromCoreData()
        wishListTable.reloadData()
+        self.ordersTable.reloadData()
+
 
     }
     override func viewWillAppear(_ animated: Bool) {
+        
+
+        self.ordersTable.reloadData()
+
         wishListTable.reloadData()
 
         navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
     override func viewWillDisappear(_ animated: Bool) {
+       
+
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
+   
+
 
     @IBAction func moreWishListAction(_ sender: Any) {
         var favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC

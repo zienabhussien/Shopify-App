@@ -12,8 +12,6 @@ class CategoryViewModel {
     var subCategoriesNamesModel : subCatecoryResponse?     //variable .to response data
     var productOfbrandsCategoryModel : Products?     //variable to response data
     var FilterdArr: [Product]? = [Product]()
-    //    var id = "?collection_id=437934555426"
-    
     
     func viewDidLoad(){
         fetchCollections()
