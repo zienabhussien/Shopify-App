@@ -102,8 +102,11 @@ extension OrderViewModel{
 }
 
 extension OrderViewModel{
+    //func to product of customer from core data
     func getSelectedProducts(completion: @escaping ([OrderItemModel]?, Error?) -> Void){
+        //get id of customer
         guard let customerID = Helper.shared.getUserID() else {return}
+        //get product of customer from core data
         coreDataServices.getCartProductForSelectedCustomer(customerID: customerID) { orders, error in
             guard let orders = orders, error == nil else {
                 completion(nil, error)
@@ -168,6 +171,7 @@ extension OrderViewModel{
 
 //MARK: - post an order
 extension OrderViewModel{
+    //    takes an array of OrderItemModel objects as a parameter.
     func postOrder(cartArray:[OrderItemModel]){
         if cartArray.count == 0 {
             self.showEmptyCartAlert()

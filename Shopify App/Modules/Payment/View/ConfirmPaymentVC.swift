@@ -16,8 +16,7 @@ class ConfirmPaymentVC: UIViewController {
     @IBOutlet weak var discountLabel: UILabel!
     @IBOutlet weak var subTotalLabel: UILabel!
     @IBOutlet weak var couponTF: CouponTextField!
-    //order
-    var placedOrders = [OrderItemModel]()
+    var placedOrders = [OrderItemModel]()    //variable to response product in cart from core data
     var orderViewModel = OrderViewModel()
     var Total = 0.0
 //order
@@ -40,12 +39,23 @@ class ConfirmPaymentVC: UIViewController {
             grandTotal.text = "$" + String(Total)
         }
     }
+    func calcGrandTotal(){
+        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
+        Total = totalPrice + 30
+        grandTotal.text = "$" + String(Total)
+    }
+    
+    //    MARK: - place Order
+
     func setCartItems(){
         orderViewModel.getSelectedProducts { orders, error in
+            // return product
             guard let orders = orders else {return}
             self.placedOrders = orders
         }
     }
+    //MARK: - post in server
+
     @IBAction func placeOrder(_ sender: Any) {
         
         orderViewModel.postOrder(cartArray: placedOrders)
@@ -53,11 +63,7 @@ class ConfirmPaymentVC: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
         
     }
-    func calcGrandTotal(){
-        guard let totalPrice = Helper.shared.getTotalPrice() else{return}
-        Total = totalPrice + 30
-        grandTotal.text = "$" + String(Total)
-    }
+   
 }
 
 
