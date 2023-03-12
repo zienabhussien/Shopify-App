@@ -23,9 +23,9 @@ extension Networking{
         request.httpShouldHandleCookies = false
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: newCustomer.asDictionary(), options: .prettyPrinted)
-            print(try! newCustomer.asDictionary())
+           // print(try! newCustomer.asDictionary())
         } catch let error {
-            print(error.localizedDescription)
+           // print(error.localizedDescription)
         }
         
         //HTTP Headers
@@ -44,16 +44,16 @@ extension Networking{
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { res in
             switch res.result{
             case .failure(let error):
-                print("error")
+               // print("error")
                 complition(nil, error)
             case .success(_):
                 guard let data = res.data else { return }
                 do{
                     let json = try JSONDecoder().decode(Customers.self, from: data)
                     complition(json, nil)
-                    print("success to get customers")
+                    //print("success to get customers")
                 }catch let error{
-                    print("error when get customers")
+                   // print("error when get customers")
                     complition(nil, error)
                 }
             }
@@ -71,7 +71,7 @@ extension Networking{
         AF.request(url, method: .get,parameters: nil,encoding: JSONEncoding.default,headers: nil).response { res in
             switch res.result{
             case.failure(let error):
-                print(error.localizedDescription)
+               // print(error.localizedDescription)
                 completion(nil,error)
             case .success(_):
                 guard let data = res.data else { return }
@@ -82,9 +82,9 @@ extension Networking{
                             completion(selectedCustomer.addresses, nil)
                         }
                     }
-                    print("success to get address for a customers")
+                    //print("success to get address for a customers")
                 }catch let error{
-                    print("error when get address for a customers")
+                    //print("error when get address for a customers")
                     completion(nil, error)
                 }
             }
@@ -104,7 +104,7 @@ extension Networking{
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: putObject.asDictionary(), options: .prettyPrinted)
         } catch let error {
-            print(error.localizedDescription)
+           // print(error.localizedDescription)
         }
         //HTTP Headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -156,9 +156,9 @@ extension Networking{
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
 //            make OrderToAPI asDictionary
-            print(try! order.asDictionary())
+           // print(try! order.asDictionary())
         }catch let error {
-            print(error.localizedDescription)
+           // print(error.localizedDescription)
         }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")

@@ -39,7 +39,7 @@ class CreateAddressVC: UIViewController {
             // method to send Address to API
             networking.createAddress(customerId: customerID, address: add) { data , res, error in
                 if error == nil{
-                    print("success to create address")
+                    //print("success to create address")
                     // save state of Adress in UserDefaults
                     Helper.shared.setFoundAdress(isFoundAddress: true)
                     DispatchQueue.main.async {
@@ -50,7 +50,7 @@ class CreateAddressVC: UIViewController {
                     DispatchQueue.main.async {
                         self.view.makeToast("falied to create address")
                     }
-                    print("falied to create address")
+                    //print("falied to create address")
 
                 }
             }
@@ -89,7 +89,7 @@ class CreateAddressVC: UIViewController {
         let PHONE_REGEX = "^\\d{11}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result = phoneTest.evaluate(with: value)
-        print("RESULT \(result)")
+        //print("RESULT \(result)")
         return result
     }
 }

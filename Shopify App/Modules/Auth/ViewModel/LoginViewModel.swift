@@ -41,7 +41,7 @@ class LoginViewModel{
 
                 UserDefaults.standard.set(allCustomers.customers[i].id, forKey: "loginId")
                 let userDefultId =  UserDefaults.standard.integer(forKey: "loginId")
-                print("Customer Id IS : \(userDefultId )")
+              //  print("Customer Id IS : \(userDefultId )")
                 
                 
                 return true

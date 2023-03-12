@@ -58,7 +58,7 @@ class ProductOfBrandVC: UIViewController {
     
     @IBAction func filterSlider(_ sender: UISlider) {
         
-        print(sender.value)
+        //print(sender.value)
         isFiltered = true
         let filteredByPrice = self.viewModel.productOBbrandsModel?.products?.filter({ product in
             maximumPrice.text = "$"+String(Int(sender.value))
@@ -139,7 +139,7 @@ extension ProductOfBrandVC : UISearchBarDelegate{
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        //print(searchText)
         if !searchText.isEmpty {
             isFiltering = true
         }
@@ -170,13 +170,13 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
         var productKey = "\((viewModel.filteredProducts?[indexPath.row].id)!)"
-        print(productKey)
+       // print(productKey)
         if UserDefaults.standard.bool(forKey: productKey){
             cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            print("add Fav")
+            //print("add Fav")
           }else{
               cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                print("not fav")
+               // print("not fav")
         }
         cell.addToWishList = { [unowned self] in
             var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)

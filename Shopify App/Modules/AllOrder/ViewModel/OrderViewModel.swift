@@ -41,7 +41,7 @@ class OrderViewModel{
         do {
             let items = try context.fetch(OrderItemModel.fetchRequest())
             if checkIfItemExist(itemId: product.id!,itemms: items){
-                print("Already in cart")
+                //print("Already in cart")
                 self.showAlreadyExist()
             }else{
                 //make object from core data
@@ -116,9 +116,9 @@ extension OrderViewModel{
     func saveProductToCart(){
         coreDataServices.saveToCoreData { saveSuccess in
             if saveSuccess{
-                print("success to save product in cart")
+                //print("success to save product in cart")
             }else{
-                print("failed to save product in cart")
+                //print("failed to save product in cart")
             }
         }
     }
@@ -155,7 +155,7 @@ extension OrderViewModel{
                 return selectedCustomer.id == customerID
             }
             if filetr.count != 0{
-                print(filetr.count)
+               // print(filetr.count)
                 completion(filetr[0])
             }else{
                 completion(nil)
@@ -188,7 +188,7 @@ extension OrderViewModel{
             self.networking.SubmitOrder(order: ordertoAPI)
             { data, urlResponse, error in
                 if error == nil {
-                    print("Post order success")
+                   // print("Post order success")
                     if let data = data{
                                     let json = try! JSONSerialization.jsonObject(with: data, options: .allowFragments) as! Dictionary<String,Any>
                                     let returnedOrder = json["order"] as? Dictionary<String,Any>

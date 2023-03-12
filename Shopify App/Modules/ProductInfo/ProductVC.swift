@@ -40,7 +40,7 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     
     @IBAction func addToCart(_ sender: UIButton) {
-        print("addToCartButton")
+       // print("addToCartButton")
                 orderViewModel.bindingAlreadyInCartToView = {
                     self.showToast(message: "Already in Cart", font: .boldSystemFont(ofSize: 15))
                 }

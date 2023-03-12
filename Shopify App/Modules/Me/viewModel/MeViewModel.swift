@@ -25,7 +25,7 @@ class MeViewModel {
     func fetchOrders(){
 
         guard let url = URL(string: "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/customers/\(userID)/orders.json") else {return}
-        print(url)
+       // print(url)
     
         AF.request(url).response {[weak self] response in
             guard let self = self  else {return}

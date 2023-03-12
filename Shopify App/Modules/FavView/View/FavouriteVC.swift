@@ -78,11 +78,11 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         //AddAction
         alert.addAction(UIAlertAction(title: "OK", style: .default , handler: { [self] action in
-            print("ok clicked")
+            //print("ok clicked")
 //            guard let key = favoriteTeams[indexPath.row].team_key else
 //            { return  }
 //            UserDefaults.standard.set(false, forKey:"\(key)")
-            print("wish list id   \(wishList[indexPath.row].productId ?? 0)")
+           // print("wish list id   \(wishList[indexPath.row].productId ?? 0)")
             UserDefaults.standard.set(false, forKey: "\((wishList[indexPath.row].productId)!)")
             CoreDataManager.deleteFromCoreData(productName: wishList[indexPath.row].productName ?? "")
             wishList.remove(at: indexPath.row)
@@ -93,13 +93,13 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel , handler: { action in
-            print("Cancel clicked")
+          //  print("Cancel clicked")
         }))
         
 
         //showAlert
         self.present(alert, animated: true) {
-            print("alert done")
+          //  print("alert done")
         }
     }
     

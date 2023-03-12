@@ -65,7 +65,7 @@ class SingUpViewController: UIViewController {
         • Email format: "name@gmail.com"
         • Try another email
         """)
-                                print("signup error")
+                               // print("signup error")
                             }
                         }
                         

@@ -52,7 +52,7 @@ class NetworkService : Service{
                         completionHandeler(myData, nil, httpResponse.statusCode)
                     }
                 } catch {
-                    print("Error decoding JSON: \(error)")
+                    //print("Error decoding JSON: \(error)")
                     completionHandeler(nil, error, 0)
                 }
             }
@@ -75,7 +75,7 @@ class NetworkService : Service{
                 
             }catch let error {
                 complition(nil )
-                print(error.localizedDescription)
+               // print(error.localizedDescription)
                 
             }
         }

@@ -15,16 +15,15 @@ class CatagoryViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
+        
         didSet{
             subCategoriesCollectionViev.register(UINib(nibName: "CatagoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CatagoryCollectionViewCell")
             subCategoriesCollectionViev.delegate = self
             subCategoriesCollectionViev.dataSource = self
-
         }
     }
     
     @IBOutlet weak var gridListButton: UIButton!
-    
     @IBOutlet weak var productsCollectionView: UICollectionView!{
         didSet{
             
@@ -121,7 +120,7 @@ class CatagoryViewController: UIViewController {
             })
 
             self.viewModel.FilterdArr = filered ?? []
-            print(self.viewModel.FilterdArr)
+            //print(self.viewModel.FilterdArr)
             self.isFiltered = true
             self.productsCollectionView.reloadData()
         }

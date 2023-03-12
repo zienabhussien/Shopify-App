@@ -48,21 +48,21 @@ extension Helper{
         guard let reachability = reachability else {return}
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
-                print("Reachable via WiFi")
+                //print("Reachable via WiFi")
                 complition(true)
             } else {
-                print("Reachable via Cellular")
+                //print("Reachable via Cellular")
                 complition(true)
             }
         }
         reachability.whenUnreachable = { _ in
-            print("Not reachable")
+            //print("Not reachable")
             complition(false)
         }
         do {
             try reachability.startNotifier()
         } catch {
-            print("Unable to start notifier")
+            //print("Unable to start notifier")
         }
     }
 }

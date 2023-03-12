@@ -51,9 +51,9 @@ extension AddressVC{
     func setAddressDefault(customerId: Int, addressId: Int, row: Int){
         networking.setDefaultAddress(customerId: customerId, addressId: addressId, address: self.arrOfAddress[row]) { data, res, error in
             if error == nil {
-                print("set def success")
+               // print("set def success")
             }else{
-                print("set def falied")
+                //print("set def falied")
             }
         }
     }

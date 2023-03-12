@@ -43,9 +43,9 @@ class AddressViewModel{
     func saveSelectedAddress(){
         coreDataServices.saveToCoreData { saveSuccess in
             if saveSuccess{
-                print("success to save address")
+                //print("success to save address")
             }else{
-                print("failed to save address")
+               // print("failed to save address")
             }
         }
     }

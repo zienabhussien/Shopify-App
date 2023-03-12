@@ -27,7 +27,7 @@ class AddressVC: UIViewController {
             self.tableView.reloadData()
         }
         addressViewModel.bindFailedToView = {
-            print("error when get address")
+           // print("error when get address")
         }
     }
 }

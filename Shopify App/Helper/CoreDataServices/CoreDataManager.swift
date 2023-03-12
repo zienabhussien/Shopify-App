@@ -37,7 +37,7 @@ class CoreDataManager
             favProduct.setValue(productPrice, forKey: "productPrice")
             favProduct.setValue(productImage, forKey: "productImage")
             
-            print("Saved Successfully")
+           // print("Saved Successfully")
             
             
             try myContext.save()
@@ -69,7 +69,7 @@ class CoreDataManager
             
             try context?.save()
             
-            print("Deleted Succussfully")
+            //print("Deleted Succussfully")
             
         }catch let error
         {
