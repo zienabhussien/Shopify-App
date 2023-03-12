@@ -11,11 +11,13 @@ class PaymentOptionsVC: UIViewController {
     
     var selectedPaymentOption: String?
     var index: Int?
-    var totalprice = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
-    var price :NSDecimalNumber = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
-    var tot:NSDecimalNumber = 20
+    var total = Helper.shared.getTotalPrice()
+    lazy var totalPay = NSDecimalNumber(string: "\(total ?? 1.1)")
+    //var totalprice = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
+    //var price :NSDecimalNumber = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
+
     //MARK: - LOCAL PROPERTIES
-    private var paymentRequest : PKPaymentRequest = {
+    private lazy var paymentRequest : PKPaymentRequest = {
         let request = PKPaymentRequest ()
         request.merchantIdentifier = "merchant.com.pushpendra.pay"
         request.supportedNetworks = [.quicPay, .masterCard, .visa]
@@ -23,7 +25,7 @@ class PaymentOptionsVC: UIViewController {
         request.merchantCapabilities = .capability3DS
         request.countryCode = "EG"
         request.currencyCode = "EGP"
-        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: 123000)]
+        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: totalPay)]
         return request}()
     
     
@@ -32,13 +34,8 @@ class PaymentOptionsVC: UIViewController {
 
     }
     @IBAction func continueToPayment(_ sender: Any) {
-        if selectedPaymentOption == "Apple Pay" {
-                // Handle Apple Pay payment
-            } else if selectedPaymentOption == "Cash On Delivery (COD)" {
-                // Handle Cash On Delivery payment
-            } else {
-                // No payment option selected
-            }
+        
+
         let confirmPaymentVC = self.storyboard?.instantiateViewController(withIdentifier: "ConfirmPaymentVC") as! ConfirmPaymentVC
         
         self.navigationController?.pushViewController(confirmPaymentVC, animated: true)
