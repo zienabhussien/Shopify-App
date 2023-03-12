@@ -7,13 +7,8 @@
 
 import Foundation
 import CoreData
-import UIKit
-import CoreMedia
 
 class CoreDataServices{
-}
-
-extension CoreDataServices{
     func saveToCoreData(completion: @escaping (Bool)-> Void){
         do{
             try context.save()

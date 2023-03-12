@@ -63,9 +63,6 @@ class loginViewController: UIViewController {
     
     
     
-    
-    
-    
     func SingUp()
     {
         let storyboard =  UIStoryboard(name: "Main", bundle: nil)
@@ -76,12 +73,6 @@ class loginViewController: UIViewController {
     
     func goToTabBar()
     {
-//        let storyboard =  UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-////        self.navigationController?.pushViewController(navigationController, animated: true)
-//        present(navigationController, animated: true)
         self.navigationController?.popToRootViewController(animated: true)
     }
     

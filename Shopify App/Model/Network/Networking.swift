@@ -15,30 +15,6 @@ class Networking{
 }
 
 extension Networking{
-    func register(newCustomer:NewCustomer, completion:@escaping (Data?, URLResponse? , Error?)->()){
-        guard let url = URLs.shared.customersURl() else {return}
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        let session = URLSession.shared
-        request.httpShouldHandleCookies = false
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: newCustomer.asDictionary(), options: .prettyPrinted)
-           // print(try! newCustomer.asDictionary())
-        } catch let error {
-           // print(error.localizedDescription)
-        }
-        
-        //HTTP Headers
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        session.dataTask(with: request) { (data, response, error) in
-            completion(data, response, error)
-        }.resume()
-    }
-}
-
-extension Networking{
     func getAllCustomers(complition: @escaping (Customers?, Error?)->Void){
         guard let url = URLs.shared.customersURl() else {return}
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).response { res in
@@ -60,8 +36,6 @@ extension Networking{
         }
     }
 }
-
-
 
 extension Networking{
     func getAllAddresses(completion: @escaping ([Address]?, Error?)-> Void){
@@ -104,7 +78,7 @@ extension Networking{
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: putObject.asDictionary(), options: .prettyPrinted)
         } catch let error {
-           // print(error.localizedDescription)
+           print(error.localizedDescription)
         }
         //HTTP Headers
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -143,7 +117,6 @@ extension Networking{
 
 }
 
-
 //MARK: - POST an order
 extension Networking{
     func SubmitOrder(order:OrderToAPI,completion: @escaping (Data?,URLResponse?,Error?)->Void){
@@ -156,9 +129,9 @@ extension Networking{
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: order.asDictionary(), options: .prettyPrinted)
 //            make OrderToAPI asDictionary
-           // print(try! order.asDictionary())
+            print(try! order.asDictionary())
         }catch let error {
-           // print(error.localizedDescription)
+            print(error.localizedDescription)
         }
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")

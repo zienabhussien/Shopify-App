@@ -238,6 +238,7 @@
 		D8E34D8A29B0DCA100590317 /* FavouriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteVC.swift; sourceTree = "<group>"; };
 		D8EBCDDC29BD8AE800D26347 /* CustomerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerExtension.swift; sourceTree = "<group>"; };
 		D8EBCDDE29BD8BEC00D26347 /* CustomerModelTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerModelTestCase.swift; sourceTree = "<group>"; };
+		D8FA7D1B29BE209200DE2F20 /* Shopify App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Shopify App.entitlements"; sourceTree = "<group>"; };
 		F7657BACE5A5502BC4F1A3C8 /* Pods-Shopify AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify AppTests.release.xcconfig"; path = "Target Support Files/Pods-Shopify AppTests/Pods-Shopify AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		FBB050D1A4B5081AEFC597C7 /* Pods_Shopify_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -685,6 +686,7 @@
 		8C24C1E829AE777400AE390B /* Shopify App */ = {
 			isa = PBXGroup;
 			children = (
+				D8FA7D1B29BE209200DE2F20 /* Shopify App.entitlements */,
 				336C254C29B6664700C78A98 /* Model */,
 				8CE29A0129AF8A5E004BF111 /* View */,
 				33A2022F29B0F62200D85E41 /* Helper */,
@@ -1377,6 +1379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Shopify App/Shopify App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1406,6 +1409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Shopify App/Shopify App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
