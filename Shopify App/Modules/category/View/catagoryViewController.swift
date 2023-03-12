@@ -178,14 +178,48 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             if isList == true{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as!ProductCollectionViewCell
                 
-                let imagefav = UIImage(named: "favoriteRed")
-                let imageUnFav = UIImage(named: "unFavorite")
-                let setimagefav = isFavorite == true ? imageUnFav : imagefav
-                cell.favoritelist.setImage(setimagefav, for: .normal)
+//                let imagefav = UIImage(named: "favoriteRed")
+//                let imageUnFav = UIImage(named: "unFavorite")
+//                let setimagefav = isFavorite == true ? imageUnFav : imagefav
+//                cell.favoritelist.setImage(setimagefav, for: .normal)
+                var productsArr = viewModel.productOfbrandsCategoryModel?.products
+                var productKey = "\((productsArr?[indexPath.row].id)!)"
                 
-                if(isFiltered){
+                if UserDefaults.standard.bool(forKey: productKey){
+                    cell.favoritelist.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                        //print("add Fav")
+                      }else{
+                          cell.favoritelist.setImage(UIImage(systemName: "heart"), for: .normal)
+                           // print("not fav")
+                    }
                     
-                    if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
+             var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
+             cell.favoritelist.isSelected =   UserDefaults.standard.bool(forKey: productKey)
+             cell.favoritelist.isSelected = !cell.favoritelist.isSelected
+             
+         cell.addToWishList = { [unowned self] in
+                 
+            if  cell.favoritelist.isSelected {
+                cell.favoritelist.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                 // save to core data
+                CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0)
+                     
+                  UserDefaults.standard.set(true,
+                                          forKey: "\(productsArr?[indexPath.row].id ?? 0)")
+
+                 }else{
+                     // delete from core data and change state
+                     cell.favoritelist.setImage(UIImage(systemName: "heart"), for: .normal)
+                     CoreDataManager.deleteFromCoreData(productName: productsArr?[indexPath.row].title ?? "" )
+                     UserDefaults.standard.set(false,
+                                               forKey: "\(productsArr?[indexPath.row].id ?? 0)")
+                 }
+         }
+               
+         if(isFiltered){
+                    
+            if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
+                        print("any thing")
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
                         if let firstPrice = productOfbrandCategory.variants?.first?.price {
@@ -226,11 +260,11 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             }else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridProductCollectionViewCell", for: indexPath) as!GridProductCollectionViewCell
                 
-                let imagefav = UIImage(named: "favoriteRed")
-                let imageUnFav = UIImage(named: "unFavorite")
-                let setimagefav = isFavorite == true ? imageUnFav : imagefav
-                cell.favoriteGrid.setImage(setimagefav, for: .normal)
-                
+                //let imagefav = UIImage(named: "favoriteRed")
+                //let imageUnFav = UIImage(named: "unFavorite")
+                //let setimagefav = isFavorite == true ? imageUnFav : imagefav
+                //cell.favoriteGrid.setImage(setimagefav, for: .normal)
+
                 if(isFiltered){
                     
                     if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {

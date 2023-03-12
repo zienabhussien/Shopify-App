@@ -77,7 +77,7 @@
                             <constraint firstAttribute="height" constant="40" id="pZ5-Yb-6MH"/>
                         </constraints>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="favoriteRed"/>
+                        <state key="normal" image="favorite"/>
                         <connections>
                             <action selector="favriteListTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DAR-cT-QwA"/>
                         </connections>
@@ -106,7 +106,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="favoriteRed" width="40" height="40"/>
+        <image name="favorite" width="25" height="23.333333969116211"/>
         <image name="shoes" width="612" height="408"/>
         <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
         <systemColor name="systemBackgroundColor">

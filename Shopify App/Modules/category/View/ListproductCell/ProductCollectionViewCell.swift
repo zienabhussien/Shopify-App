@@ -13,12 +13,13 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameList: UILabel!
     
     @IBOutlet weak var brandlist: UILabel!
-    
+    var addToWishList: (()->())?
     
     @IBOutlet weak var starList: UIImageView!
     
     
     @IBAction func favriteListTapped(_ sender: UIButton) {
+        addToWishList?()
     }
     
     @IBOutlet weak var priceList: UILabel!

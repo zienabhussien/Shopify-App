@@ -179,10 +179,9 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                // print("not fav")
         }
         cell.addToWishList = { [unowned self] in
+            
             var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
-
                cell.favButton.isSelected =   UserDefaults.standard.bool(forKey: productKey)
-         
             cell.favButton.isSelected = !cell.favButton.isSelected
             
             if  cell.favButton.isSelected {
