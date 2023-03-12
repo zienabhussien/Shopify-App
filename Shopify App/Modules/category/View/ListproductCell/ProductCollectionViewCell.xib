@@ -73,11 +73,14 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3e-44-FTL">
                         <rect key="frame" x="510" y="163" width="40" height="40"/>
                         <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="1ko-NX-mfB"/>
                             <constraint firstAttribute="width" constant="40" id="UDe-hY-ihC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="XM3-82-dlr"/>
                             <constraint firstAttribute="height" constant="40" id="pZ5-Yb-6MH"/>
                         </constraints>
+                        <color key="tintColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="favorite"/>
+                        <state key="normal" image="heart" catalog="system"/>
                         <connections>
                             <action selector="favriteListTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DAR-cT-QwA"/>
                         </connections>
@@ -106,7 +109,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="favorite" width="25" height="23.333333969116211"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="shoes" width="612" height="408"/>
         <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
         <systemColor name="systemBackgroundColor">

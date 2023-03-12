@@ -834,10 +834,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <rect key="frame" x="16" y="256" width="361" height="64"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbY-7R-lVM">
-                                        <rect key="frame" x="8" y="8" width="345" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="hcM-D9-AVR"/>
-                                        </constraints>
+                                        <rect key="frame" x="8" y="8" width="345" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -855,9 +852,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <rect key="frame" x="16" y="416" width="361" height="64"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tpY-5j-rOn">
-                                        <rect key="frame" x="8" y="8" width="345" height="64"/>
+                                        <rect key="frame" x="8" y="8" width="345" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="k3g-wR-Inf"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="aXg-zy-EPN"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="rVs-3c-brB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -865,7 +863,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="A3v-J7-vRe"/>
                                     <constraint firstAttribute="bottom" secondItem="tpY-5j-rOn" secondAttribute="bottom" constant="8" id="CAY-uM-BE2"/>
                                     <constraint firstItem="tpY-5j-rOn" firstAttribute="leading" secondItem="O9Q-9w-0Dk" secondAttribute="leading" constant="8" id="Mq7-48-OxY"/>
                                     <constraint firstAttribute="trailing" secondItem="tpY-5j-rOn" secondAttribute="trailing" constant="8" id="S96-AV-hlc"/>
@@ -876,9 +873,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <rect key="frame" x="16" y="336" width="361" height="64"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kUo-jy-4mF">
-                                        <rect key="frame" x="8" y="8" width="345" height="64"/>
+                                        <rect key="frame" x="8" y="8" width="345" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="WDD-et-Cmk"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="5Z1-y8-gkP"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="AtZ-XX-Pqh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -889,7 +887,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <constraint firstAttribute="trailing" secondItem="kUo-jy-4mF" secondAttribute="trailing" constant="8" id="A7G-aZ-PVr"/>
                                     <constraint firstItem="kUo-jy-4mF" firstAttribute="top" secondItem="7aO-XD-62J" secondAttribute="top" constant="8" id="HV0-qI-7ox"/>
                                     <constraint firstAttribute="bottom" secondItem="kUo-jy-4mF" secondAttribute="bottom" constant="8" id="Naj-xs-cFv"/>
-                                    <constraint firstAttribute="height" constant="64" id="ktr-tZ-mks"/>
                                     <constraint firstItem="kUo-jy-4mF" firstAttribute="leading" secondItem="7aO-XD-62J" secondAttribute="leading" constant="8" id="tJv-cW-eZG"/>
                                 </constraints>
                             </view>

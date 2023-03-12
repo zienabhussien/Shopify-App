@@ -147,20 +147,20 @@ extension CatagoryViewController : UISearchBarDelegate{
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+       
         if !searchText.isEmpty {
             isFiltering = true
         }
-       
-//        self.searchBar =  self.viewModel.productOfbrandsCategoryModel?.products?.filter({ product in
-//            return (product.title.lowercased().contains(searchText.lowercased()))
-//        }) ?? []
+        print("from search func : \(isFiltering)")
+        self.searchedProducts =  self.viewModel.productOfbrandsCategoryModel?.products?.filter({ product in
+            return (product.title.lowercased().contains(searchText.lowercased()))
+        }) ?? []
 //
-//        self.subCategoriesCollectionViev.reloadData()
-//        if isSearchBarEmpty {
-//            isFiltering = false
-//            self.subCategoriesCollectionViev.reloadData()
-//        }
+      self.subCategoriesCollectionViev.reloadData()
+        if isSearchBarEmpty {
+            isFiltering = false
+            self.subCategoriesCollectionViev.reloadData()
+        }
     }
 
 }
@@ -203,11 +203,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             
             if isList == true{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as!ProductCollectionViewCell
-                
-//                let imagefav = UIImage(named: "favoriteRed")
-//                let imageUnFav = UIImage(named: "unFavorite")
-//                let setimagefav = isFavorite == true ? imageUnFav : imagefav
-//                cell.favoritelist.setImage(setimagefav, for: .normal)
+            
                 var productsArr = viewModel.productOfbrandsCategoryModel?.products
                 var productKey = "\((productsArr?[indexPath.row].id)!)"
                 
@@ -241,6 +237,26 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                                                forKey: "\(productsArr?[indexPath.row].id ?? 0)")
                  }
          }
+                
+      print(isFiltering)
+      if isFiltering {  // search filter
+          print("Iam serach")
+          cell.nameList.text = self.searchedProducts[indexPath.row].title
+          cell.brandlist.text = self.searchedProducts[indexPath.row].product_type
+            if let firstPrice = self.searchedProducts[indexPath.row].variants?.first?.price {
+                cell.priceList.text = "$\(firstPrice)"
+            } else {
+                cell.priceList.text = ""
+            }
+            
+            cell.imageList.kf.indicatorType = .activity
+            
+            if let imageUrl = URL(string: self.searchedProducts[indexPath.row].image?.src ?? "") {
+                cell.imageList.kf.setImage(with: imageUrl)
+                
+            }
+                    
+        }
                
          if(isFiltered){
                     
@@ -285,11 +301,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 return cell
             }else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridProductCollectionViewCell", for: indexPath) as!GridProductCollectionViewCell
-                
-                //let imagefav = UIImage(named: "favoriteRed")
-                //let imageUnFav = UIImage(named: "unFavorite")
-                //let setimagefav = isFavorite == true ? imageUnFav : imagefav
-                //cell.favoriteGrid.setImage(setimagefav, for: .normal)
+             
 
                 if(isFiltered){
                     
