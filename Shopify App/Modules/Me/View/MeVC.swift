@@ -29,7 +29,7 @@ class MeVC: UIViewController {
         
         
         viewModel = MeViewModel()
-        viewModel.viewDidLoad()
+//        viewModel.viewDidLoad()
         bindViewModelgategory()
     }
     
@@ -38,7 +38,9 @@ class MeVC: UIViewController {
             guard let self = self else {return}
             self.ordersTable.reloadData()
         }
+        viewModel.viewDidLoad()
     }
+    
     @IBAction func settingButton(_ sender: Any) {
         
         let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
@@ -70,6 +72,7 @@ class MeVC: UIViewController {
         
     }
     override func viewDidAppear(_ animated: Bool) {
+        bindViewModelgategory()
 
         someWishList = CoreDataManager.fetchFromCoreData()
        wishListTable.reloadData()
@@ -78,7 +81,6 @@ class MeVC: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        viewModel.viewDidLoad()
         bindViewModelgategory()
 
         self.ordersTable.reloadData()
@@ -89,7 +91,8 @@ class MeVC: UIViewController {
 
     }
     override func viewWillDisappear(_ animated: Bool) {
-       
+        bindViewModelgategory()
+
 
         navigationController?.setNavigationBarHidden(false, animated: false)
     }

@@ -13,14 +13,20 @@ import Foundation
 
 class MeViewModel {
     let userID = Helper.shared.getUserID()!
-    var reponseOrsers : OrdersFromAPI?
+    var reponseOrsers : OrdersFromAPI!{
+        didSet{
+            didFetchData()
+        }
+    }
 
     
     func viewDidLoad(){
         fetchOrders()
     }
     
-    var didFetchData: (()->())?
+    var didFetchData: (()->()) = {
+        
+    }
     
     func fetchOrders(){
 
@@ -35,7 +41,6 @@ class MeViewModel {
                     let result = try JSONDecoder().decode(OrdersFromAPI.self, from: data)
                     
                     self.reponseOrsers = result
-                    self.didFetchData?()
                     
                 }
                 catch let error{
