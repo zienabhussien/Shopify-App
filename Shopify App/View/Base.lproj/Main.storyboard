@@ -633,7 +633,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
             <objects>
                 <viewController storyboardIdentifier="AllOrderViewController" id="ojc-g6-y3n" customClass="AllOrderViewController" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nrt-mM-cvo">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1KL-yi-X8A">
@@ -1593,17 +1593,17 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5w-Dy-Jgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JcV-pj-7DD">
                     <connections>
-                        <segue destination="xyx-Dq-syG" kind="show" id="c9Y-uO-gbP"/>
+                        <segue destination="xyx-Dq-syG" kind="presentation" id="BXu-Ho-0oV"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="xy1-Ja-cZO">
                     <connections>
-                        <segue destination="lHL-Vu-lwo" kind="show" id="OIO-wh-dJc"/>
+                        <segue destination="lHL-Vu-lwo" kind="presentation" id="xVW-lC-Xhj"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="PlO-ZN-HPq">
                     <connections>
-                        <segue destination="pU5-db-RFW" kind="show" id="rV2-vJ-BtU"/>
+                        <segue destination="pU5-db-RFW" kind="presentation" id="wha-gD-akn"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1897,7 +1897,7 @@ Abdullah Mohamed</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulN-oe-NZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="cFS-rK-vTZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8199.2366412213742" y="-1203.5211267605634"/>
+            <point key="canvasLocation" x="8199" y="-1247"/>
         </scene>
         <!--MeVC-->
         <scene sceneID="b5I-Uh-vYa">
@@ -1983,7 +1983,9 @@ Abdullah Mohamed</string>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="moreOrder:" destination="55X-4v-B8P" eventType="touchUpInside" id="6tL-vZ-xaz"/>
-                                    <segue destination="ojc-g6-y3n" kind="show" id="pAE-Ab-qjX"/>
+                                    <segue destination="ojc-g6-y3n" kind="popoverPresentation" popoverAnchorView="TpN-o1-2Fx" id="q8q-O6-FTY">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NGT-iZ-v4q">
