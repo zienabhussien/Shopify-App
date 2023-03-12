@@ -11,7 +11,6 @@ import Floaty
 
 class CatagoryViewController: UIViewController {
     var viewModel: CategoryViewModel!
-
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
@@ -40,6 +39,8 @@ class CatagoryViewController: UIViewController {
     var isList: Bool = true
     var isFavorite: Bool = false
     
+    var isFiltering : Bool = false // for search bar
+    var  searchedProducts  = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,8 @@ class CatagoryViewController: UIViewController {
         viewModel.viewDidLoad()
         bindViewModelgategory()
         bindViewModelproduct()
+        
+        searchBar.delegate = self
         
         // Float Action button animation style
         makeFloatyStyleButton()
@@ -137,7 +140,30 @@ class CatagoryViewController: UIViewController {
     //
 }
 
+extension CatagoryViewController : UISearchBarDelegate{
 
+    var isSearchBarEmpty : Bool {
+        return searchBar.text!.isEmpty
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        if !searchText.isEmpty {
+            isFiltering = true
+        }
+       
+//        self.searchBar =  self.viewModel.productOfbrandsCategoryModel?.products?.filter({ product in
+//            return (product.title.lowercased().contains(searchText.lowercased()))
+//        }) ?? []
+//
+//        self.subCategoriesCollectionViev.reloadData()
+//        if isSearchBarEmpty {
+//            isFiltering = false
+//            self.subCategoriesCollectionViev.reloadData()
+//        }
+    }
+
+}
 
 
 
