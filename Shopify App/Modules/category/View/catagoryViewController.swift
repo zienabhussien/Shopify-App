@@ -217,11 +217,13 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     
              var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
              cell.favoritelist.isSelected =   UserDefaults.standard.bool(forKey: productKey)
-             cell.favoritelist.isSelected = !cell.favoritelist.isSelected
              
          cell.addToWishList = { [unowned self] in
-                 
+             
+             cell.favoritelist.isSelected = !cell.favoritelist.isSelected
+
             if  cell.favoritelist.isSelected {
+
                 cell.favoritelist.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                  // save to core data
                 CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0)
