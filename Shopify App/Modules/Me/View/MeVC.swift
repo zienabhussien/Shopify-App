@@ -21,6 +21,13 @@ class MeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if Helper.shared.getUserID() == 0 {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+
+        }
+        
+        
         viewModel = MeViewModel()
         viewModel.viewDidLoad()
         bindViewModelgategory()
@@ -71,7 +78,8 @@ class MeVC: UIViewController {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        
+        viewModel.viewDidLoad()
+        bindViewModelgategory()
 
         self.ordersTable.reloadData()
 

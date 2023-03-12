@@ -11,8 +11,9 @@ class PaymentOptionsVC: UIViewController {
     
     var selectedPaymentOption: String?
     var index: Int?
-    
-    
+    var totalprice = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
+    var price :NSDecimalNumber = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
+    var tot:NSDecimalNumber = 20
     //MARK: - LOCAL PROPERTIES
     private var paymentRequest : PKPaymentRequest = {
         let request = PKPaymentRequest ()
