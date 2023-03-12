@@ -89,9 +89,10 @@ class SingUpViewController: UIViewController {
     }
     func goToTabBar()
     {
-        let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
-        navigationController?.pushViewController(tabVC, animated: true)
-        
+//        let tabVC = self.storyboard?.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
+//        navigationController?.pushViewController(tabVC, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
+
     }
   
 }

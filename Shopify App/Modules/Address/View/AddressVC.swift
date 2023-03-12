@@ -21,13 +21,17 @@ class AddressVC: UIViewController {
         setAddress()
     }
     
+    @IBAction func createAddressButton(_ sender: Any) {
+        let address =  self.storyboard?.instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+        
+        self.navigationController?.pushViewController(address, animated: true)
+    }
     func setAddress(){
         addressViewModel.bindSuccessToView = {
             self.arrOfAddress = self.addressViewModel.address
             self.tableView.reloadData()
         }
         addressViewModel.bindFailedToView = {
-           // print("error when get address")
         }
     }
 }
