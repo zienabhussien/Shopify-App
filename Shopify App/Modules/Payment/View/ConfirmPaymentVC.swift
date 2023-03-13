@@ -28,11 +28,11 @@ class ConfirmPaymentVC: UIViewController {
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
             subTotalLabel.text = String(totalPrice) + " EGP"
             shippingFess.text = "30.0 EGP"
-            discountLabel.text = "0.0 EGP"
+            discountLabel.text = "-0.0 EGP"
          } else {
              subTotalLabel.text = "$" + String(totalPrice)
              shippingFess.text = "$30.0"
-             discountLabel.text = "$0.0"
+             discountLabel.text = "$-0.0"
          }
         calcGrandTotal()
     }
@@ -41,19 +41,19 @@ class ConfirmPaymentVC: UIViewController {
         if couponTF.textField.text == "IOS_ITI" {
             self.view.makeToast("Coupon applied")
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                discountLabel.text = "20.0 EGP"
+                discountLabel.text = "-20.0 EGP"
                 grandTotal.text = String(Total - 20.0) + " EGP"
              } else {
-                 discountLabel.text = "$20.0 "
+                 discountLabel.text = "$-20.0 "
                  grandTotal.text =  "$" + String(Total - 20.0)
              }
         }else {
             self.view.makeToast("Coupon not valied")
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                discountLabel.text = "0.0 EGP"
+                discountLabel.text = "-0.0 EGP"
                 grandTotal.text =  String(Total) + " EGP"
              } else {
-                 discountLabel.text = "$0.0"
+                 discountLabel.text = "$-0.0"
                  grandTotal.text = "$" + String(Total)
              }
         }
@@ -82,11 +82,9 @@ class ConfirmPaymentVC: UIViewController {
     @IBAction func placeOrder(_ sender: Any) {
         
         orderViewModel.postOrder(cartArray: placedOrders)
-        
         self.navigationController?.popToRootViewController(animated: true)
         
     }
-   
 }
 
 

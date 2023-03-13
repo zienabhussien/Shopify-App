@@ -68,7 +68,7 @@ extension OrdersVC : UITableViewDataSource
     
     
     func showDeleteAlert(indexPath:IndexPath){
-        let alert = UIAlertController(title: "Are you sure?", message: "You will remove this item from the cart", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure?", message: "You will remove this item from bag", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { [self] UIAlertAction in
             orderViewModel.deleteFromCoreData(indexPath: indexPath, cartItems: cartArray)
             self.cartArray.remove(at: indexPath.row)
