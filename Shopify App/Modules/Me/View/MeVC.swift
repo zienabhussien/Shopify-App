@@ -66,16 +66,10 @@ class MeVC: UIViewController {
     
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        bindViewModelgategory()
-//
-//        someWishList = CoreDataManager.fetchFromCoreData()
-//       wishListTable.reloadData()
-//        self.ordersTable.reloadData()
-//    }
+   
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        someWishList = CoreDataManager.fetchFromCoreData()
         viewModel.userID = Helper.shared.getUserID()!
         viewModel.fetchOrders()
         
