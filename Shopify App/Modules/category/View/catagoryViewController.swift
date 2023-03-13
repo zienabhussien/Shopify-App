@@ -178,10 +178,10 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 var productKey = "\((productsArr?[indexPath.row].id)!)"
                 
                 if UserDefaults.standard.bool(forKey: productKey){
-                    cell.favoritelist.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                    cell.favoritelist.setImage(UIImage(named: "favoriteRed"), for: .normal)
                         //print("add Fav")
                       }else{
-                          cell.favoritelist.setImage(UIImage(systemName: "heart"), for: .normal)
+                          cell.favoritelist.setImage(UIImage(named: "unFavorite"), for: .normal)
                            // print("not fav")
                     }
                     
@@ -194,7 +194,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
 
             if  cell.favoritelist.isSelected {
 
-                cell.favoritelist.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                cell.favoritelist.setImage(UIImage(named: "favoriteRed"), for: .normal)
                  // save to core data
                 CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0)
                      
@@ -203,7 +203,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
 
                  }else{
                      // delete from core data and change state
-                     cell.favoritelist.setImage(UIImage(systemName: "heart"), for: .normal)
+                     cell.favoritelist.setImage(UIImage(named: "unFavorite"), for: .normal)
                      CoreDataManager.deleteFromCoreData(productName: productsArr?[indexPath.row].title ?? "" )
                      UserDefaults.standard.set(false,
                                                forKey: "\(productsArr?[indexPath.row].id ?? 0)")
