@@ -41,8 +41,7 @@ class SingUpViewController: UIViewController {
 
     @IBAction func signUp(_ sender: Any) {
         
-        //        signUpViewModel.createCustomer(name: nameTextFiled.text ?? "", email: emailTextFiled.text ?? "", password: passwordTextFiled.text ?? "")
-                if nameTextFiled.text!.isEmpty || emailTextFiled.text!.isEmpty || passwordTextFiled.text!.isEmpty {
+        if nameTextFiled.text!.isEmpty || emailTextFiled.text!.isEmpty || passwordTextFiled.text!.isEmpty {
                     self.showAlert(title: "⚠️", message: "Fields can't be empty!!")
                     
                 }else{
@@ -55,17 +54,16 @@ class SingUpViewController: UIViewController {
                         ]]
                     signUpViewModel.bindResToSignUp = { [weak self]  in
                         DispatchQueue.main.async {
-                            if self?.signUpViewModel.statusCode == 201 {
-                                self?.goToTabBar()
+                            if self?.signUpViewModel.statusCode == 201 && (self?.passwordTextFiled.text!.count)! >= 5{
+                                self?.goToLoginView()
                                 
                             }else{
                                 // show worning alert
                                 self?.showAlert(title: "⚠️", message: """
-        • Enter password more than 5 characters
-        • Email format: "name@gmail.com"
-        • Try another email
-        """)
-                               // print("signup error")
+                • Enter password more than 5 characters
+                • Email format: "name@gmail.com"
+                • Try another email
+                """)
                             }
                         }
                         
@@ -74,6 +72,7 @@ class SingUpViewController: UIViewController {
                     signUpViewModel.postCustomer(params: params)
                 }
                 
+            
             }
     
     @IBAction func goToLogin(_ sender: Any) {
@@ -94,6 +93,12 @@ class SingUpViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
 
     }
+    func goToLoginView()
+        {
+            var loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+            navigationController?.pushViewController(loginVC, animated: true)
+            
+        }
   
 }
 
