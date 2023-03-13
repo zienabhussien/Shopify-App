@@ -1070,19 +1070,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <outlet property="gridListButton" destination="EPv-PP-Yeo" id="6ec-lf-43i"/>
                         <outlet property="laoding" destination="efm-o1-Y3l" id="j2W-Fz-YM7"/>
                         <outlet property="productsCollectionView" destination="rQu-fO-cQx" id="8Si-Uo-QA9"/>
-                        <outlet property="searchBar" destination="s78-rh-WbD" id="Qrd-CW-pts"/>
                         <outlet property="subCategoriesCollectionViev" destination="uij-Az-tVP" id="08c-sl-mXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GCN-Qv-TGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchBar contentMode="redraw" id="s78-rh-WbD">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="amV-e0-Max" id="14t-nt-iaZ"/>
-                    </connections>
-                </searchBar>
             </objects>
             <point key="canvasLocation" x="2298" y="717"/>
         </scene>

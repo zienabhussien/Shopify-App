@@ -11,7 +11,8 @@ import Floaty
 
 class CatagoryViewController: UIViewController {
     var viewModel: CategoryViewModel!
-    @IBOutlet var searchBar: UISearchBar!
+    
+    
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
         
@@ -39,19 +40,14 @@ class CatagoryViewController: UIViewController {
     var isList: Bool = true
     var isFavorite: Bool = false
     
-    var isFiltering : Bool = false // for search bar
-    var  searchedProducts  = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = searchBar
         viewModel = CategoryViewModel()
         viewModel.viewDidLoad()
         bindViewModelgategory()
         bindViewModelproduct()
-        
-        searchBar.delegate = self
-        
+                
         // Float Action button animation style
         makeFloatyStyleButton()
         DispatchQueue.main.async {
@@ -140,32 +136,6 @@ class CatagoryViewController: UIViewController {
     //
 }
 
-extension CatagoryViewController : UISearchBarDelegate{
-
-    var isSearchBarEmpty : Bool {
-        return searchBar.text!.isEmpty
-    }
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       
-        if !searchText.isEmpty {
-            isFiltering = true
-        }
-        print("from search func : \(isFiltering)")
-        self.searchedProducts =  self.viewModel.productOfbrandsCategoryModel?.products?.filter({ product in
-            return (product.title.lowercased().contains(searchText.lowercased()))
-        }) ?? []
-//
-      self.subCategoriesCollectionViev.reloadData()
-        if isSearchBarEmpty {
-            isFiltering = false
-            self.subCategoriesCollectionViev.reloadData()
-        }
-    }
-
-}
-
-
 
 extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
    
@@ -240,23 +210,8 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                  }
          }
                 
-      print(isFiltering)
-      if isFiltering {  // search filter
-          print("Iam serach")
-          cell.nameList.text = self.searchedProducts[indexPath.row].title
-          cell.brandlist.text = self.searchedProducts[indexPath.row].product_type
-            if let firstPrice = self.searchedProducts[indexPath.row].variants?.first?.price {
-                cell.priceList.text = "$\(firstPrice)"
-            } else {
-                cell.priceList.text = ""
-            }
-            cell.imageList.kf.indicatorType = .activity
+
             
-            if let imageUrl = URL(string: self.searchedProducts[indexPath.row].image?.src ?? "") {
-                cell.imageList.kf.setImage(with: imageUrl)
-                
-            }
-        }
          if(isFiltered){
                     
             if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
@@ -360,13 +315,11 @@ extension CatagoryViewController {
             guard let subcategory = viewModel.subCategoriesNamesModel?.customCollections[indexPath.item] else {
                 return
             }
-//            let productViewModel = CategoryViewModel()
 
 
             // Update the id variable with the collection ID of the selected subcategory
             viewModel.fetchProduct(id: String(subcategory.id))
-//            viewModel. = "?collection_id=\(subcategory.id)"
-//            print(subcategory.id)
+
 
         } else if collectionView == productsCollectionView {
             let product = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row]
@@ -380,15 +333,4 @@ extension CatagoryViewController {
     
 }
 
-
-
-//             Call the fetchProduct method again to fetch the updated data
-//                        fetchproduct { result in
-//                            DispatchQueue.main.async {
-//                                self.productOfbrandsCategoryModel = result
-//                                self.laoding.stopAnimating()
-////                                 Reload the productsCollectionView to show products in the selected subcategory
-//                                self.productsCollectionView.reloadData()
-//                            }
-//                        }
 
