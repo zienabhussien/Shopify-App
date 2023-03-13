@@ -55,7 +55,6 @@
 		33A2025F29B0F6AF00D85E41 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2025829B0F6AF00D85E41 /* HomeViewController.swift */; };
 		33A2026029B0F6AF00D85E41 /* BrandsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A2025A29B0F6AF00D85E41 /* BrandsCollectionViewCell.swift */; };
 		33A2026129B0F6AF00D85E41 /* BrandsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33A2025B29B0F6AF00D85E41 /* BrandsCollectionViewCell.xib */; };
-		33AD294529BE52F900F759E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 33AD294429BE52F900F759E5 /* README.md */; };
 		33B205F929B16DF500AFBB17 /* BrandModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B205F829B16DF500AFBB17 /* BrandModel.swift */; };
 		33D742D529B7B42B00535E20 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D742D429B7B42B00535E20 /* Product.swift */; };
 		33D742D729B7B44A00535E20 /* Variants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D742D629B7B44A00535E20 /* Variants.swift */; };
@@ -181,7 +180,6 @@
 		33A2025829B0F6AF00D85E41 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		33A2025A29B0F6AF00D85E41 /* BrandsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrandsCollectionViewCell.swift; sourceTree = "<group>"; };
 		33A2025B29B0F6AF00D85E41 /* BrandsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrandsCollectionViewCell.xib; sourceTree = "<group>"; };
-		33AD294429BE52F900F759E5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33B205F829B16DF500AFBB17 /* BrandModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandModel.swift; sourceTree = "<group>"; };
 		33D742D429B7B42B00535E20 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		33D742D629B7B44A00535E20 /* Variants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variants.swift; sourceTree = "<group>"; };
@@ -666,7 +664,6 @@
 		8C24C1DD29AE777300AE390B = {
 			isa = PBXGroup;
 			children = (
-				33AD294429BE52F900F759E5 /* README.md */,
 				8C24C1E829AE777400AE390B /* Shopify App */,
 				8C24C20229AE77BD00AE390B /* Shopify AppTests */,
 				8C24C20C29AE77BD00AE390B /* Shopify AppUITests */,
@@ -997,7 +994,6 @@
 				33A2024A29B0F69E00D85E41 /* GridProductCollectionViewCell.xib in Resources */,
 				331BB3FC29AF7F4C00466C97 /* Roboto-Light.ttf in Resources */,
 				331BB3FF29AF7F4C00466C97 /* Roboto-Black.ttf in Resources */,
-				33AD294529BE52F900F759E5 /* README.md in Resources */,
 				33EDD8EC29B8C831008C815A /* OrdersTVC.xib in Resources */,
 				33A2026129B0F6AF00D85E41 /* BrandsCollectionViewCell.xib in Resources */,
 				8C24C1F129AE777500AE390B /* Main.storyboard in Resources */,
