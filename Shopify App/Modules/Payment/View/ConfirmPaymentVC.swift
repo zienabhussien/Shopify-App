@@ -29,7 +29,7 @@ class ConfirmPaymentVC: UIViewController {
     }
     
     @IBAction func validateCoupon(_ sender: Any) {
-        if couponTF.textField.text == "iOS_iTi" {
+        if couponTF.textField.text == "IOS_ITI" {
             self.view.makeToast("Coupon applied")
             discountLabel.text = "$20.0"
             grandTotal.text = "$" + String(Total - 20.0)

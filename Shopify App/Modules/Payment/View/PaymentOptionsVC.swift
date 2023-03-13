@@ -21,8 +21,8 @@ class PaymentOptionsVC: UIViewController {
         request.supportedNetworks = [.quicPay, .masterCard, .visa]
         request.supportedCountries = ["EG", "US" ]
         request.merchantCapabilities = .capability3DS
-        request.countryCode = "EG"
-        request.currencyCode = "EGP"
+        request.countryCode = "US"
+        request.currencyCode = "USD"
         request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: totalPay)]
         return request}()
     
@@ -30,6 +30,7 @@ class PaymentOptionsVC: UIViewController {
         super.viewDidLoad()
 
     }
+    
     @IBAction func continueToPayment(_ sender: Any) {
         
 

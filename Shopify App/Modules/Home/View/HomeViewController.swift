@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func copyCoupon(_ sender: UITapGestureRecognizer) {
-        let couponCode = "iOS_iTi"
+        let couponCode = "IOS_ITI"
             UIPasteboard.general.string = couponCode
         
         self.view.makeToast("The disscount coupon copied")
