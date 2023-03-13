@@ -150,7 +150,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="O8E-gr-9cA"/>
                                             <barButtonItem style="plain" id="URc-ox-0Nx">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MW5-YZ-eUS">
-                                                    <rect key="frame" x="20" y="16.333333333333332" width="75" height="37.333333333333343"/>
+                                                    <rect key="frame" x="11.333333333333336" y="16" width="75" height="38"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.87405364050000001" green="0.084309356200000005" blue="0.1000488019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Button"/>
@@ -164,7 +164,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="iH5-sE-fQU"/>
                                             <barButtonItem style="plain" id="0NH-bW-2Nu">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gIk-Tr-fXR">
-                                                    <rect key="frame" x="135" y="14" width="242" height="42"/>
+                                                    <rect key="frame" x="109" y="14" width="242" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="ADD TO BAG" cornerStyle="capsule">
@@ -179,6 +179,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 </button>
                                                 <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                             </barButtonItem>
+                                            <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="hwi-Pr-I4a"/>
                                         </items>
                                     </toolbar>
                                 </subviews>
@@ -248,7 +249,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Eb-6P-l6a">
                                                     <rect key="frame" x="8" y="8" width="119" height="114"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ay 7agaaaaaaaa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkg-OW-6h8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wihslist" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkg-OW-6h8">
                                                     <rect key="frame" x="147" y="21" width="206" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -300,101 +301,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFg-HN-d4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8776" y="-2038"/>
-        </scene>
-        <!--OrderVC-->
-        <scene sceneID="mob-ML-P6D">
-            <objects>
-                <viewController storyboardIdentifier="OrderVC" id="8Et-Y2-ya0" customClass="OrderVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tS8-dP-Meu">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NRh-DO-Noz">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="OrderCell" rowHeight="130" id="N0c-sR-aiv" customClass="OrderTableViewCell" customModule="Shopify_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="130"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0c-sR-aiv" id="PFG-Gc-MGe">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="130"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ay 7agaaaaaaaa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKg-CT-aw9">
-                                                    <rect key="frame" x="99" y="23" width="286" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="24" id="X80-Vf-7SA"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsF-xT-o3m">
-                                                    <rect key="frame" x="32" y="23" width="55" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="SQ5-ZA-cAm"/>
-                                                        <constraint firstAttribute="height" constant="24" id="rqa-s3-tPq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQq-A8-xXt">
-                                                    <rect key="frame" x="32" y="59" width="102" height="24"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="102" id="9Du-Vb-cTn"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500.22 EGP" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo9-5F-879">
-                                                    <rect key="frame" x="145" y="58.999999999999993" width="236" height="21.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="uKg-CT-aw9" firstAttribute="top" secondItem="PFG-Gc-MGe" secondAttribute="topMargin" constant="12" id="31c-KF-N9g"/>
-                                                <constraint firstAttribute="trailing" secondItem="Uo9-5F-879" secondAttribute="trailing" constant="12" id="EN0-zs-FuS"/>
-                                                <constraint firstItem="Uo9-5F-879" firstAttribute="top" secondItem="uKg-CT-aw9" secondAttribute="bottom" constant="12" id="EXW-ga-YCk"/>
-                                                <constraint firstItem="rQq-A8-xXt" firstAttribute="top" secondItem="uKg-CT-aw9" secondAttribute="bottom" constant="12" id="HFu-C6-amh"/>
-                                                <constraint firstItem="rQq-A8-xXt" firstAttribute="leading" secondItem="PFG-Gc-MGe" secondAttribute="leadingMargin" constant="12" id="O6B-e5-9nO"/>
-                                                <constraint firstItem="Uo9-5F-879" firstAttribute="leading" secondItem="rQq-A8-xXt" secondAttribute="trailing" constant="11" id="Pf9-A7-nZn"/>
-                                                <constraint firstItem="vsF-xT-o3m" firstAttribute="top" secondItem="PFG-Gc-MGe" secondAttribute="topMargin" constant="12" id="Pfg-JZ-4je"/>
-                                                <constraint firstItem="vsF-xT-o3m" firstAttribute="leading" secondItem="PFG-Gc-MGe" secondAttribute="leadingMargin" constant="12" id="VKg-g2-uwy"/>
-                                                <constraint firstItem="uKg-CT-aw9" firstAttribute="leading" secondItem="vsF-xT-o3m" secondAttribute="trailing" constant="12" id="mY1-cs-OLk"/>
-                                                <constraint firstItem="uKg-CT-aw9" firstAttribute="trailing" secondItem="PFG-Gc-MGe" secondAttribute="trailingMargin" constant="12" id="wdx-8J-Pqa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <connections>
-                                            <outlet property="OderPrice" destination="uKg-CT-aw9" id="5Nu-OU-aLw"/>
-                                            <outlet property="OrderDate" destination="Uo9-5F-879" id="Acg-uO-4wu"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="PSW-aW-CGI"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                        <constraints>
-                            <constraint firstItem="PSW-aW-CGI" firstAttribute="bottom" secondItem="NRh-DO-Noz" secondAttribute="bottom" id="6je-uq-fEq"/>
-                            <constraint firstItem="NRh-DO-Noz" firstAttribute="leading" secondItem="PSW-aW-CGI" secondAttribute="leading" id="ZSg-B0-hX9"/>
-                            <constraint firstItem="PSW-aW-CGI" firstAttribute="trailing" secondItem="NRh-DO-Noz" secondAttribute="trailing" id="gWb-eL-BeL"/>
-                            <constraint firstItem="NRh-DO-Noz" firstAttribute="top" secondItem="PSW-aW-CGI" secondAttribute="top" id="wxD-jk-kTs"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="OrderTable" destination="NRh-DO-Noz" id="c5a-fw-jkN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmh-mM-DKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7592" y="-2038"/>
+            <point key="canvasLocation" x="7273" y="-2038"/>
         </scene>
         <!--Confirm PaymentVC-->
         <scene sceneID="Mtf-T2-QB0">
@@ -405,7 +312,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="10D-CW-mLG">
-                                <rect key="frame" x="20" y="139" width="353" height="35"/>
+                                <rect key="frame" x="20" y="139" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Sub Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOp-wi-JT2">
                                         <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
@@ -414,7 +321,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfS-dJ-lY4">
-                                        <rect key="frame" x="280" y="0.0" width="73" height="35"/>
+                                        <rect key="frame" x="278" y="0.0" width="73" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -425,7 +332,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="LTc-tv-0Sp">
-                                <rect key="frame" x="20" y="204" width="353" height="35"/>
+                                <rect key="frame" x="20" y="204" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Shipping Fees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-Mj-qM5">
                                         <rect key="frame" x="0.0" y="4.9999999999999982" width="129.33333333333334" height="25.333333333333329"/>
@@ -434,7 +341,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fql-mP-uxA">
-                                        <rect key="frame" x="301" y="5.6666666666666572" width="52" height="24"/>
+                                        <rect key="frame" x="299" y="5.6666666666666572" width="52" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -445,7 +352,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cst-qK-BW1">
-                                <rect key="frame" x="281" y="269" width="92" height="36"/>
+                                <rect key="frame" x="279.66666666666669" y="269" width="91.333333333333314" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Validate">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
@@ -455,7 +362,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-pb-eMi" customClass="CouponTextField" customModule="Shopify_App">
-                                <rect key="frame" x="20" y="269" width="231" height="36"/>
+                                <rect key="frame" x="19.999999999999986" y="269" width="229.66666666666663" height="36"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-sX-twX">
                                 <rect key="frame" x="19.999999999999993" y="405" width="108.33333333333331" height="60"/>
@@ -478,16 +385,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="148" translatesAutoresizingMaskIntoConstraints="NO" id="CvM-bf-3vk">
-                                <rect key="frame" x="20" y="335" width="353" height="35"/>
+                                <rect key="frame" x="20" y="335" width="351" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Discount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-Qw-iuT">
-                                        <rect key="frame" x="0.0" y="0.0" width="166.66666666666666" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="164.66666666666666" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2z-Js-lA9">
-                                        <rect key="frame" x="314.66666666666669" y="0.0" width="38.333333333333314" height="35"/>
+                                        <rect key="frame" x="312.66666666666669" y="0.0" width="38.333333333333314" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.87405364050000001" green="0.084309356200000005" blue="0.1000488019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -498,7 +405,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3nG-sz-hED">
-                                <rect key="frame" x="20" y="515" width="353" height="47"/>
+                                <rect key="frame" x="20" y="515" width="351" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="C9f-9c-YCO"/>
                                     <constraint firstAttribute="height" constant="47" id="Kyw-u2-F3w"/>
@@ -727,7 +634,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6W-Pi-C6E">
-                                <rect key="frame" x="14.666666666666657" y="612.33333333333337" width="363.66666666666674" height="42.666666666666629"/>
+                                <rect key="frame" x="14.666666666666657" y="658.66666666666663" width="363.66666666666674" height="46.333333333333371"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -739,7 +646,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-nt-q7w">
-                                <rect key="frame" x="251.33333333333337" y="541.33333333333337" width="127" height="29"/>
+                                <rect key="frame" x="251.33333333333337" y="587.66666666666663" width="127" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create your account">
@@ -750,7 +657,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eQn-MC-MNT">
-                                <rect key="frame" x="14.666666666666657" y="393.66666666666669" width="363.66666666666674" height="133.66666666666669"/>
+                                <rect key="frame" x="14.666666666666657" y="427.66666666666669" width="363.66666666666674" height="146.00000000000006"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSz-eW-dQN">
                                         <rect key="frame" x="0.0" y="0.0" width="363.66666666666669" height="65"/>
@@ -771,10 +678,10 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woq-GJ-OIP">
-                                        <rect key="frame" x="0.0" y="81" width="363.66666666666669" height="52.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="81" width="363.66666666666669" height="65"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYN-x6-7nS">
-                                                <rect key="frame" x="8" y="8" width="347.66666666666669" height="36.666666666666664"/>
+                                                <rect key="frame" x="8" y="7.9999999999999432" width="347.66666666666669" height="49"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -1862,7 +1769,7 @@ Abdullah Mohamed</string>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-LW-xlt">
-                                <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333343"/>
+                                <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333329"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-28-5oj">
                                 <rect key="frame" x="16" y="673" width="361" height="40"/>
@@ -2093,10 +2000,11 @@ Abdullah Mohamed</string>
                                         <action selector="settingButton:" destination="55X-4v-B8P" eventType="touchUpInside" id="lZN-ol-KQi"/>
                                     </connections>
                                 </button>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                             <barButtonItem style="plain" id="geT-gI-3dt">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="CGZ-jR-t0k">
-                                    <rect key="frame" x="277.33333333333331" y="2.6666666666666679" width="46.666666666666686" height="39"/>
+                                    <rect key="frame" x="277" y="2.6666666666666679" width="47" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="shopping-bag"/>
@@ -2104,6 +2012,7 @@ Abdullah Mohamed</string>
                                         <action selector="cartButton:" destination="55X-4v-B8P" eventType="touchUpInside" id="TtU-ev-Ne7"/>
                                     </connections>
                                 </button>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="cartButton:" destination="55X-4v-B8P" id="Tsg-cm-cGw"/>
                                 </connections>

@@ -313,6 +313,15 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		332144E529BF1B5700B3E46E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D81CF1AA29B785260009D125 /* Network */,
+				336C254D29B6665800C78A98 /* CoreDataServices */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		3324B4E829BC038200FED746 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,8 +395,8 @@
 		336C254C29B6664700C78A98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				332144E529BF1B5700B3E46E /* Services */,
 				336C253929B62DA000C78A98 /* Customer.swift */,
-				D81CF1AA29B785260009D125 /* Network */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -414,7 +423,6 @@
 		33A2022F29B0F62200D85E41 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				336C254D29B6665800C78A98 /* CoreDataServices */,
 				336C253F29B632A700C78A98 /* Helper.swift */,
 				33A2023029B0F62200D85E41 /* Extension */,
 			);
