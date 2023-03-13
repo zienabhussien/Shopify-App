@@ -27,7 +27,6 @@ class AddressViewModel{
     }
     
     init(){
-        self.getAllAddressForCustomer()
     }
     
     func getAllAddressForCustomer(){

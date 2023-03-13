@@ -16,6 +16,9 @@ extension AddressVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddressTVCell.identifier, for: indexPath) as! AddressTVCell
+        cell.contentView.layer.cornerRadius = 20
+        cell.contentView.layer.masksToBounds = true
+        cell.contentView.layer.borderWidth = 1
        let address = self.arrOfAddress[indexPath.row]
         if let addres1 = address.address1, let city = address.city, let country = address.country{
             cell.addressLabel.text = "\(addres1), \(city), \(country)"
@@ -39,7 +42,7 @@ extension AddressVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 100
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -17,15 +17,22 @@ class AddressVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(AddressTVCell.nib(), forCellReuseIdentifier: AddressTVCell.identifier)
+        
         setAddress()
+        tableView.separatorStyle = .none
+
+        tableView.register(AddressTVCell.nib(), forCellReuseIdentifier: AddressTVCell.identifier)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addressViewModel.getAllAddressForCustomer()
+    }
     @IBAction func createAddressButton(_ sender: Any) {
         let address =  self.storyboard?.instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
         
         self.navigationController?.pushViewController(address, animated: true)
     }
+    
     func setAddress(){
         addressViewModel.bindSuccessToView = {
             self.arrOfAddress = self.addressViewModel.address

@@ -12,14 +12,12 @@ import Foundation
 
 
 class MeViewModel {
-    let userID = Helper.shared.getUserID()!
+    var userID = Helper.shared.getUserID()!
     var reponseOrsers : OrdersFromAPI!{
         didSet{
             didFetchData()
         }
     }
-
-    
     func viewDidLoad(){
         fetchOrders()
     }

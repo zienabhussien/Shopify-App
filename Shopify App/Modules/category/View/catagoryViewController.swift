@@ -250,16 +250,13 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             } else {
                 cell.priceList.text = ""
             }
-            
             cell.imageList.kf.indicatorType = .activity
             
             if let imageUrl = URL(string: self.searchedProducts[indexPath.row].image?.src ?? "") {
                 cell.imageList.kf.setImage(with: imageUrl)
                 
             }
-                    
         }
-               
          if(isFiltered){
                     
             if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {

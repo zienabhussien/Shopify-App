@@ -644,11 +644,11 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AllOrderTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllOrderTableViewCell" rowHeight="169" id="FaW-94-aT6" customClass="AllOrderTableViewCell" customModule="Shopify_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="169"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AllOrderTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllOrderTableViewCell" rowHeight="156" id="FaW-94-aT6" customClass="AllOrderTableViewCell" customModule="Shopify_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FaW-94-aT6" id="QLj-eE-BWe">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="169"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="156"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Order Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfc-rP-dc7">
@@ -690,7 +690,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="t16-QS-zaF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="Hox-1C-BfC"/>
                     <connections>
@@ -1325,7 +1325,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WYt-Un-GVA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="2IJ-Mz-PA1" firstAttribute="trailing" secondItem="WYt-Un-GVA" secondAttribute="trailing" id="AZK-qb-EHl"/>
                             <constraint firstItem="Kad-Ii-IzM" firstAttribute="leading" secondItem="WYt-Un-GVA" secondAttribute="leading" constant="50" id="IOB-UH-cSd"/>

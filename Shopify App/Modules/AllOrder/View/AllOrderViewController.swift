@@ -17,6 +17,8 @@ class AllOrderViewController: UIViewController {
     var reponseOrsers : [Order]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        allOrderTable.separatorStyle = .none
+
         allOrderTable.dataSource = self
         allOrderTable.delegate = self
         viewModel = MeViewModel()
@@ -42,6 +44,9 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
             let cell = tableView.dequeueReusableCell(withIdentifier: "AllOrderTableViewCell", for: indexPath) as! AllOrderTableViewCell
+        cell.contentView.layer.cornerRadius = 20
+        cell.contentView.layer.masksToBounds = true
+        cell.contentView.layer.borderWidth = 1
         cell.createdAt.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
         cell.orderPrice.text = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price
             return cell
@@ -60,7 +65,7 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 92
+        return 130
     }
     
 }

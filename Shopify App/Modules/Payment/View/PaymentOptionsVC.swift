@@ -13,9 +13,7 @@ class PaymentOptionsVC: UIViewController {
     var index: Int?
     var total = Helper.shared.getTotalPrice()
     lazy var totalPay = NSDecimalNumber(string: "\(total ?? 1.1)")
-    //var totalprice = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
-    //var price :NSDecimalNumber = NSDecimalNumber(nonretainedObject: Helper.shared.getTotalPrice())
-
+    
     //MARK: - LOCAL PROPERTIES
     private lazy var paymentRequest : PKPaymentRequest = {
         let request = PKPaymentRequest ()
@@ -27,7 +25,6 @@ class PaymentOptionsVC: UIViewController {
         request.currencyCode = "EGP"
         request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: totalPay)]
         return request}()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

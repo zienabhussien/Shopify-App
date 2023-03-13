@@ -15,23 +15,18 @@ class MeVC: UIViewController {
     @IBOutlet weak var wishListTable: UITableView!
         
     var someWishList = [FavoriteProduct]()
-    
-    
-  
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if Helper.shared.getUserID() == 0 {
             let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
             self.navigationController?.pushViewController(loginVC, animated: true)
-
         }
-        
-        
         viewModel = MeViewModel()
-//        viewModel.viewDidLoad()
-        bindViewModelgategory()
     }
+    
     
     private func bindViewModelgategory(){
         viewModel.didFetchData = {[weak self] in
@@ -68,32 +63,29 @@ class MeVC: UIViewController {
     }
 
     @IBAction func moreOrder(_ sender: Any) {
-        
-        
+    
     }
-    override func viewDidAppear(_ animated: Bool) {
-        bindViewModelgategory()
-
-        someWishList = CoreDataManager.fetchFromCoreData()
-       wishListTable.reloadData()
-        self.ordersTable.reloadData()
-
-
-    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        bindViewModelgategory()
+//
+//        someWishList = CoreDataManager.fetchFromCoreData()
+//       wishListTable.reloadData()
+//        self.ordersTable.reloadData()
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
+        
+        viewModel.userID = Helper.shared.getUserID()!
+        viewModel.fetchOrders()
+        
         bindViewModelgategory()
-
         self.ordersTable.reloadData()
-
         wishListTable.reloadData()
-
         navigationController?.setNavigationBarHidden(false, animated: false)
-
     }
     override func viewWillDisappear(_ animated: Bool) {
         bindViewModelgategory()
-
-
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
    
