@@ -172,10 +172,10 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
         var productKey = "\((viewModel.filteredProducts?[indexPath.row].id)!)"
        // print(productKey)
         if UserDefaults.standard.bool(forKey: productKey){
-            cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            cell.favButton.setImage(UIImage(named: "favoriteRed"), for: .normal)
             //print("add Fav")
           }else{
-              cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+              cell.favButton.setImage(UIImage(named: "unFavorite"), for: .normal)
                // print("not fav")
         }
         cell.addToWishList = { [unowned self] in
@@ -186,7 +186,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             
             if  cell.favButton.isSelected {
                 
-             cell.favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+             cell.favButton.setImage(UIImage(named: "favoriteRed"), for: .normal)
             // save to core data
                 CoreDataManager.saveProductToCoreData(productName:viewModel.filteredProducts?[indexPath.row].title ?? ""      , productPrice: viewModel.filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage:        viewModel.filteredProducts?[indexPath.row].image?.src ?? "", productId: viewModel.filteredProducts?[indexPath.row].id ?? 0)
                 
@@ -194,7 +194,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
 
             }else{
                 
-                cell.favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                cell.favButton.setImage(UIImage(named: "unFavorite"), for: .normal)
                 CoreDataManager.deleteFromCoreData(productName: viewModel.filteredProducts?[indexPath.row].title ?? "" )
                 UserDefaults.standard.set(false, forKey: "\(viewModel.filteredProducts?[indexPath.row].id ?? 0)")
             }

@@ -43,9 +43,9 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
           var favIsSelected =  UserDefaults.standard.bool(forKey: "\((product?.id)!)")
           favourite.isSelected =  favIsSelected
           if favIsSelected {
-              favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+              favourite.setImage(UIImage(named: "favoriteRed"), for: .normal)
           }else{
-              favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+              favourite.setImage(UIImage(named: "unFavorite"), for: .normal)
           }
       }
     
@@ -57,12 +57,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
      // favourite.isSelected = !favourite.isSelected
 
         if favourite.isSelected {
-            favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favourite.setImage(UIImage(named: "favoriteRed"), for: .normal)
             CoreDataManager.saveProductToCoreData(productName: product?.title ?? "", productPrice: product?.variants?.first?.price ?? "", productImage: product?.image?.src ?? "", productId: product?.id ?? 0)
             UserDefaults.standard.set(true, forKey: "\((product?.id)!)")
 
         }else{
-            favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+            favourite.setImage(UIImage(named: "unFavorite"), for: .normal)
             CoreDataManager.deleteFromCoreData(productName: product?.title ?? "")
             UserDefaults.standard.set(false, forKey: "\((product?.id)!)")
         }
