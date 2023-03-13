@@ -18,6 +18,18 @@ class SettingsVC: UIViewController {
 
     }
   
+    @IBAction func currency(_ sender: Any) {
+        let alert = UIAlertController(title: "Currency", message: "Choose the currency", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "EGP", style: .default ,handler: {  [weak self] _ in
+            UserDefaults.standard.set("EGP", forKey: "Currency")
+        }))
+       alert.addAction(UIAlertAction(title: "USD", style: .cancel ,handler: {  [weak self] _ in
+           UserDefaults.standard.set("USD", forKey: "Currency")
+       }))
+        present(alert, animated: true)
+    }
+    
     @IBAction func logOut(_ sender: Any) {
      
         UserDefaults.standard.set(0, forKey: "loginId")

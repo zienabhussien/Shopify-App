@@ -219,7 +219,11 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
                         if let firstPrice = productOfbrandCategory.variants?.first?.price {
-                            cell.priceList.text = "$\(firstPrice)"
+                            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                                cell.priceList.text = "\(firstPrice) EGP"
+                             } else {
+                                 cell.priceList.text = "$\(firstPrice)"
+                             }
                         } else {
                             cell.priceList.text = ""
                         }
@@ -238,7 +242,11 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
                     if let firstPrice = productOfbrandCategory.variants?.first?.price {
-                            cell.priceList.text = "$\(firstPrice)"
+                        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                            cell.priceList.text = "\(firstPrice) EGP"
+                         } else {
+                             cell.priceList.text = "$\(firstPrice)"
+                         }
                         } else {
                             cell.priceList.text = ""
                         }
@@ -262,8 +270,13 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
                         cell.nameGrid.text = productOfbrandCategory.title
                         cell.brandGrid.text = productOfbrandCategory.product_type
+                        
                         if let firstPrice = productOfbrandCategory.variants?.first?.price {
-                            cell.priceGrid.text = "$\(firstPrice)"
+                            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                                cell.priceGrid.text = "\(firstPrice) EGP"
+                             } else {
+                                 cell.priceGrid.text = "$\(firstPrice)"
+                             }
                         } else {
                             cell.priceGrid.text = ""
                         }
@@ -281,7 +294,11 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     cell.nameGrid.text = productOfbrandCategory.title
                     cell.brandGrid.text = productOfbrandCategory.product_type
                     if let firstPrice = productOfbrandCategory.variants?.first?.price {
-                        cell.priceGrid.text = "$\(firstPrice)"
+                        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                            cell.priceGrid.text = "\(firstPrice) EGP"
+                         } else {
+                             cell.priceGrid.text = "$\(firstPrice)"
+                         }
                     } else {
                         cell.priceGrid.text = ""
                     }

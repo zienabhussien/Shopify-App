@@ -33,7 +33,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         ProductPageControl.numberOfPages =  product?.images?.count ?? 0
         productName.text = product?.title
         guard let price = product?.variants?.first?.price else {return}
+        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+            productPrice.text = "\(price) EGP"
+         } else {
         productPrice.text = "$\(price)"
+         }
+        
         productDescription.text = product?.body_html
         startTimer()
     }

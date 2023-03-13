@@ -34,11 +34,17 @@ class ProductOfBrandVC: UIViewController {
     @IBOutlet weak var maximumPrice: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel = ProductViewModel()
         viewModel.viewDidLoad()
         productSearchBar.delegate = self
         bindViewModel()
         //slider
+        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+            maximumPrice.text = "300 EGP"
+            minimumPrice.text = "0 EGP"
+         } else {
+             maximumPrice.text = "$300"
+             minimumPrice.text = "$0"
+         }
         maximumPrice.isHidden = true
         minimumPrice.isHidden = true
         priceSlider.isHidden = true
@@ -61,7 +67,11 @@ class ProductOfBrandVC: UIViewController {
         //print(sender.value)
         isFiltered = true
         let filteredByPrice = self.viewModel.productOBbrandsModel?.products?.filter({ product in
-            maximumPrice.text = "$"+String(Int(sender.value))
+            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                maximumPrice.text = String(Int(sender.value)) + " EGP"
+             } else {
+                 maximumPrice.text = "$"+String(Int(sender.value))
+             }
             return Float(product.variants?[0].price ?? "" ) ?? 0 <= sender.value
         })
         self.viewModel.filteredProducts = filteredByPrice
@@ -170,13 +180,10 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
         var productKey = "\((viewModel.filteredProducts?[indexPath.row].id)!)"
-       // print(productKey)
         if UserDefaults.standard.bool(forKey: productKey){
             cell.favButton.setImage(UIImage(named: "favoriteRed"), for: .normal)
-            //print("add Fav")
           }else{
               cell.favButton.setImage(UIImage(named: "unFavorite"), for: .normal)
-               // print("not fav")
         }
         cell.addToWishList = { [unowned self] in
             
@@ -203,7 +210,11 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             cell.nameOfProductBrand.text = searchedProducts[indexPath.row].title
             cell.ProductType.text = searchedProducts[indexPath.row].product_type
             if let firstPrice = searchedProducts[indexPath.row].variants?.first?.price {
-                    cell.productPrice.text = "$\(firstPrice)"
+                if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                    cell.productPrice.text = "\(firstPrice) EGP"
+                 } else {
+                     cell.productPrice.text = "$\(firstPrice)"
+                 }
                 } else {
                     cell.productPrice.text = ""
                 }
@@ -216,7 +227,11 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                         cell.nameOfProductBrand.text = productOfbrand.title
                         cell.ProductType.text = productOfbrand.product_type
                         if let firstPrice = productOfbrand.variants?.first?.price {
-                            cell.productPrice.text = "$\(firstPrice)"
+                            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                                cell.productPrice.text = "\(firstPrice) EGP"
+                             } else {
+                                 cell.productPrice.text = "$\(firstPrice)"
+                             }
                         } else {
                             cell.productPrice.text = ""
                         }
