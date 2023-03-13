@@ -44,20 +44,19 @@ class loginViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self?.isExist = self?.loginViewModel.searchCustomer(currEmail: self?.emailTextFiled.text ?? "",password: self?.passwordTextFiled.text ?? "" ,  allCustomers: customers)
-                
-                print((self?.isExist)!)
-                
+            
                 if  (self?.isExist)! {
-                    
                     // show toast for user
                     self?.goToTabBar()
+                    
+                }else{
+                    self?.showAlert(title: "⚠️", message: "check your data please!")
                 }
             }
             
         }
         loginViewModel.getAllCustomers()
 
-//        UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
     }
     
     

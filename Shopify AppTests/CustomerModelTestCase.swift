@@ -13,7 +13,7 @@ final class CustomerModelTestCase: XCTestCase {
     let firstName = "Zienab"
     let lastName = "Hussien"
     let email = "zienab@gmail.com"
-    let password = "123"
+    let password = "12345"
     
     override func setUpWithError() throws {
         customer = Customer(first_name: firstName, last_name: lastName,
