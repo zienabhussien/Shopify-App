@@ -144,10 +144,22 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qN3-YG-wJ9">
                                         <rect key="frame" x="0.0" y="343" width="393" height="44"/>
                                         <items>
-                                            <barButtonItem title="Item" image="heart" catalog="system" width="73.333335876464844" id="NbZ-e1-YS2"/>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="O8E-gr-9cA"/>
+                                            <barButtonItem style="plain" id="URc-ox-0Nx">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="MW5-YZ-eUS">
+                                                    <rect key="frame" x="38" y="3.3333333333333321" width="75" height="37.333333333333343"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.87405364050000001" green="0.084309356200000005" blue="0.1000488019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="favorite"/>
+                                                    <connections>
+                                                        <action selector="addToWishList:" destination="DdB-S0-7HZ" eventType="touchUpInside" id="gwb-u9-8Xb"/>
+                                                    </connections>
+                                                </button>
+                                            </barButtonItem>
                                             <barButtonItem style="plain" id="0NH-bW-2Nu">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gIk-Tr-fXR">
-                                                    <rect key="frame" x="73.333333333333314" y="5" width="272" height="34"/>
+                                                    <rect key="frame" x="113" y="7" width="242" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="ADD TO BAG" cornerStyle="capsule">
@@ -162,7 +174,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 </button>
                                                 <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                             </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="O8E-gr-9cA"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="iH5-sE-fQU"/>
                                         </items>
                                     </toolbar>
@@ -200,6 +211,8 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                     <connections>
                         <outlet property="ProductCV" destination="x2K-O4-uvb" id="qWN-Ib-A03"/>
                         <outlet property="ProductPageControl" destination="5Wl-HY-NbU" id="HjZ-de-Nr5"/>
+                        <outlet property="addToCart" destination="0NH-bW-2Nu" id="aAb-nW-pjm"/>
+                        <outlet property="favourite" destination="MW5-YZ-eUS" id="ZD9-od-bqS"/>
                         <outlet property="productDescription" destination="qLK-vx-ASR" id="jhq-UK-sXx"/>
                         <outlet property="productName" destination="3N2-2w-omK" id="cEq-Lo-SYI"/>
                         <outlet property="productPrice" destination="eoJ-Re-Nby" id="KEP-Dp-nG9"/>
@@ -207,7 +220,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgs-Nx-ytF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6503" y="-2038"/>
+            <point key="canvasLocation" x="6501.5267175572517" y="-2038.0281690140846"/>
         </scene>
         <!--FavouriteVC-->
         <scene sceneID="pGV-0Z-R4y">
@@ -549,7 +562,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YDD-Tu-M8I">
-                                <rect key="frame" x="0.0" y="59" width="393" height="482"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="340.33333333333331"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentOptionCell" rowHeight="90" id="R1b-1p-jaO" customClass="PaymentOptionsCell" customModule="Shopify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="90"/>
@@ -598,7 +611,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnR-f3-PlB">
-                                <rect key="frame" x="36.666666666666657" y="706" width="320" height="51"/>
+                                <rect key="frame" x="36.666666666666657" y="470.33333333333331" width="320" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="qvP-XG-EQ6"/>
                                 </constraints>
@@ -2141,7 +2154,6 @@ Abdullah Mohamed</string>
         <image name="favorite" width="25" height="23.333333969116211"/>
         <image name="filter" width="30" height="16"/>
         <image name="grid" width="20" height="13"/>
-        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="home-3" width="24.333333969116211" height="22"/>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="person" catalog="system" width="128" height="121"/>

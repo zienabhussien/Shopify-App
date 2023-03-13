@@ -24,6 +24,7 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     var currentCellIndex = 0
     
+    @IBOutlet weak var favourite: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         ProductCV.dataSource = self
@@ -38,7 +39,34 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     }
     
     
+      override func viewWillAppear(_ animated: Bool) {
+          var favIsSelected =  UserDefaults.standard.bool(forKey: "\((product?.id)!)")
+          favourite.isSelected =  favIsSelected
+          if favIsSelected {
+              favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+          }else{
+              favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+          }
+      }
     
+    @IBAction func addToWishList(_ sender: UIButton) {
+        var favIsSelected =  UserDefaults.standard.bool(forKey: "\((product?.id)!)")
+        print("\((product?.id)!)")
+          
+        favourite.isSelected = !favourite.isSelected
+     // favourite.isSelected = !favourite.isSelected
+
+        if favourite.isSelected {
+            favourite.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            CoreDataManager.saveProductToCoreData(productName: product?.title ?? "", productPrice: product?.variants?.first?.price ?? "", productImage: product?.image?.src ?? "", productId: product?.id ?? 0)
+            UserDefaults.standard.set(true, forKey: "\((product?.id)!)")
+
+        }else{
+            favourite.setImage(UIImage(systemName: "heart"), for: .normal)
+            CoreDataManager.deleteFromCoreData(productName: product?.title ?? "")
+            UserDefaults.standard.set(false, forKey: "\((product?.id)!)")
+        }
+    }
     @IBAction func addToCart(_ sender: UIButton) {
        // print("addToCartButton")
                 orderViewModel.bindingAlreadyInCartToView = {
