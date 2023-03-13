@@ -17,7 +17,11 @@ class FavourieTableViewCell: UITableViewCell {
     func setUpCell(photo: String,name:String,price: String){
         favoriteImage.kf.setImage(with: URL(string: photo))
         FavProuctName.text = name
-        FavProductPrice.text = "\(price) $"
+        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+            FavProductPrice.text = "\(price) EGP"
+         } else {
+             FavProductPrice.text = "$\(price)"
+         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

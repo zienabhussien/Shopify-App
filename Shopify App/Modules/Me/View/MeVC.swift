@@ -11,6 +11,7 @@ import Alamofire
 class MeVC: UIViewController {
     var viewModel: MeViewModel!
 
+    @IBOutlet weak var userNameLabel: UITextField!
     @IBOutlet weak var ordersTable: UITableView!
     @IBOutlet weak var wishListTable: UITableView!
         
