@@ -11,7 +11,8 @@ import Alamofire
 class MeVC: UIViewController {
     var viewModel: MeViewModel!
 
-    @IBOutlet weak var userNameLabel: UITextField!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var ordersTable: UITableView!
     @IBOutlet weak var wishListTable: UITableView!
         
@@ -70,6 +71,7 @@ class MeVC: UIViewController {
    
     
     override func viewWillAppear(_ animated: Bool) {
+        userNameLabel.text = "Welcome " + (UserDefaults.standard.string(forKey: "userName") ?? "Ali")
         someWishList = CoreDataManager.fetchFromCoreData()
         viewModel.userID = Helper.shared.getUserID()!
         viewModel.fetchOrders()

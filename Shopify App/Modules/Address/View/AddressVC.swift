@@ -10,6 +10,7 @@ import SwiftUI
 
 class AddressVC: UIViewController {
 
+    @IBOutlet weak var emptyImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     var arrOfAddress: [Address] = []
     let addressViewModel = AddressViewModel()
@@ -20,19 +21,31 @@ class AddressVC: UIViewController {
         
         setAddress()
         tableView.separatorStyle = .none
-
         tableView.register(AddressTVCell.nib(), forCellReuseIdentifier: AddressTVCell.identifier)
     }
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        addressViewModel.getAllAddressForCustomer()
-    }
-    @IBAction func createAddressButton(_ sender: Any) {
-        let address =  self.storyboard?.instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
         
-        self.navigationController?.pushViewController(address, animated: true)
+        addressViewModel.getAllAddressForCustomer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.checkCartIsEmpty()
+        }
+    }
+
+    func checkCartIsEmpty(){
+        if arrOfAddress.count == 0 {
+            tableView.isHidden = true
+            emptyImage.isHidden = false
+        }
     }
     
+    @IBAction func createAddressButton(_ sender: Any) {
+        let address =  self.storyboard?.instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+        self.navigationController?.pushViewController(address, animated: true)
+    }
     func setAddress(){
         addressViewModel.bindSuccessToView = {
             self.arrOfAddress = self.addressViewModel.address

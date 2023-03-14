@@ -1025,6 +1025,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qsa-hb-p7T">
+                                <rect key="frame" x="0.0" y="188" width="393" height="392"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="392" id="P61-pW-dQB"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2IJ-Mz-PA1">
                                 <rect key="frame" x="0.0" y="59" width="393" height="668"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1050,9 +1056,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <viewLayoutGuide key="safeArea" id="WYt-Un-GVA"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="Qsa-hb-p7T" firstAttribute="leading" secondItem="2IJ-Mz-PA1" secondAttribute="leading" id="94m-gN-AEW"/>
                             <constraint firstItem="2IJ-Mz-PA1" firstAttribute="trailing" secondItem="WYt-Un-GVA" secondAttribute="trailing" id="AZK-qb-EHl"/>
+                            <constraint firstItem="Qsa-hb-p7T" firstAttribute="top" secondItem="WYt-Un-GVA" secondAttribute="top" constant="129" id="C7f-1g-Ovm"/>
                             <constraint firstItem="Kad-Ii-IzM" firstAttribute="leading" secondItem="WYt-Un-GVA" secondAttribute="leading" constant="50" id="IOB-UH-cSd"/>
                             <constraint firstItem="Kad-Ii-IzM" firstAttribute="top" secondItem="2IJ-Mz-PA1" secondAttribute="bottom" constant="30" id="W4P-Ko-AJY"/>
+                            <constraint firstAttribute="trailing" secondItem="Qsa-hb-p7T" secondAttribute="trailing" id="fbe-wP-IiL"/>
                             <constraint firstItem="2IJ-Mz-PA1" firstAttribute="top" secondItem="WYt-Un-GVA" secondAttribute="top" id="gvJ-WR-OPE"/>
                             <constraint firstItem="WYt-Un-GVA" firstAttribute="trailing" secondItem="Kad-Ii-IzM" secondAttribute="trailing" constant="50" id="il8-sR-6es"/>
                             <constraint firstItem="2IJ-Mz-PA1" firstAttribute="leading" secondItem="WYt-Un-GVA" secondAttribute="leading" id="y7m-cz-dDh"/>
@@ -1061,6 +1070,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                     </view>
                     <navigationItem key="navigationItem" id="Uk3-qj-umF"/>
                     <connections>
+                        <outlet property="emptyImage" destination="Qsa-hb-p7T" id="nmg-v8-Yh2"/>
                         <outlet property="tableView" destination="2IJ-Mz-PA1" id="DTx-ZG-qlf"/>
                     </connections>
                 </viewController>
@@ -1737,7 +1747,7 @@ Abdullah Mohamed</string>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9T-w2-pUJ">
-                                <rect key="frame" x="16" y="175" width="70.666666666666671" height="26.333333333333343"/>
+                                <rect key="frame" x="16" y="173.33333333333334" width="70.666666666666671" height="26.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1833,39 +1843,36 @@ Abdullah Mohamed</string>
                                     <action selector="moreWishListAction:" destination="55X-4v-B8P" eventType="touchUpInside" id="i1W-Sc-5JJ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Welcome Ali" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xsy-Cf-z5d">
-                                <rect key="frame" x="16" y="118" width="361" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="okE-AT-aZp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Ali" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRp-ps-WLS">
+                                <rect key="frame" x="16" y="127.99999999999999" width="361" height="25.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Jg-3h-Sub"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="D9T-w2-pUJ" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="9Du-f4-gqp"/>
                             <constraint firstItem="RSP-Mg-xRf" firstAttribute="top" secondItem="959-7u-Ek3" secondAttribute="bottom" constant="17" id="DSa-kn-Zad"/>
                             <constraint firstItem="959-7u-Ek3" firstAttribute="top" secondItem="JyM-VL-sqk" secondAttribute="top" constant="223" id="E7t-X1-sug"/>
                             <constraint firstItem="RSP-Mg-xRf" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="EMR-PW-8FF"/>
                             <constraint firstItem="959-7u-Ek3" firstAttribute="top" secondItem="TpN-o1-2Fx" secondAttribute="bottom" constant="14" id="Fa9-Al-Zxc"/>
                             <constraint firstItem="NGT-iZ-v4q" firstAttribute="top" secondItem="B6y-dj-Evh" secondAttribute="bottom" constant="14" id="HVL-ph-RWx"/>
+                            <constraint firstItem="D9T-w2-pUJ" firstAttribute="top" secondItem="XRp-ps-WLS" secondAttribute="bottom" constant="20" id="HcD-CS-UuM"/>
                             <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="959-7u-Ek3" secondAttribute="trailing" constant="16" id="I4D-VD-pXL"/>
+                            <constraint firstItem="D9T-w2-pUJ" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="Kn4-Rp-RWA"/>
                             <constraint firstItem="959-7u-Ek3" firstAttribute="trailing" secondItem="B6y-dj-Evh" secondAttribute="trailing" id="MQI-Ub-y1N"/>
                             <constraint firstItem="1Jg-3h-Sub" firstAttribute="bottom" secondItem="NGT-iZ-v4q" secondAttribute="bottom" constant="21" id="Q4Z-NT-sMT"/>
-                            <constraint firstItem="Xsy-Cf-z5d" firstAttribute="top" secondItem="1Jg-3h-Sub" secondAttribute="top" constant="15" id="Rhf-5G-b8x"/>
+                            <constraint firstItem="XRp-ps-WLS" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="RoY-YQ-0OB"/>
                             <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="NGT-iZ-v4q" secondAttribute="trailing" constant="16" id="SGe-HV-d5q"/>
                             <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="B6y-dj-Evh" secondAttribute="trailing" constant="16" id="SHQ-4Z-0AJ"/>
-                            <constraint firstItem="Xsy-Cf-z5d" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="bf4-er-l2c"/>
+                            <constraint firstItem="XRp-ps-WLS" firstAttribute="top" secondItem="1Jg-3h-Sub" secondAttribute="top" constant="25" id="duV-64-vEm"/>
                             <constraint firstItem="959-7u-Ek3" firstAttribute="leading" secondItem="RSP-Mg-xRf" secondAttribute="leading" id="lM2-Fh-T4A"/>
                             <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="TpN-o1-2Fx" secondAttribute="trailing" constant="16" id="mFJ-Jr-ltt"/>
                             <constraint firstItem="B6y-dj-Evh" firstAttribute="top" secondItem="959-7u-Ek3" secondAttribute="bottom" constant="17" id="o75-mW-C1U"/>
+                            <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="XRp-ps-WLS" secondAttribute="trailing" constant="16" id="o9A-h0-qNO"/>
                             <constraint firstItem="959-7u-Ek3" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="uVE-J7-evy"/>
-                            <constraint firstItem="D9T-w2-pUJ" firstAttribute="top" secondItem="Xsy-Cf-z5d" secondAttribute="bottom" constant="17" id="v29-XS-WkL"/>
-                            <constraint firstItem="TpN-o1-2Fx" firstAttribute="top" secondItem="Xsy-Cf-z5d" secondAttribute="bottom" constant="17" id="vK7-tj-VMC"/>
                             <constraint firstItem="NGT-iZ-v4q" firstAttribute="leading" secondItem="1Jg-3h-Sub" secondAttribute="leading" constant="16" id="whB-MS-Vr4"/>
-                            <constraint firstItem="1Jg-3h-Sub" firstAttribute="trailing" secondItem="Xsy-Cf-z5d" secondAttribute="trailing" constant="16" id="yVY-uL-THi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="89v-E9-ZOS">
@@ -1903,7 +1910,7 @@ Abdullah Mohamed</string>
                     </navigationItem>
                     <connections>
                         <outlet property="ordersTable" destination="959-7u-Ek3" id="IMu-x2-9dQ"/>
-                        <outlet property="userNameLabel" destination="Xsy-Cf-z5d" id="Udn-Jt-cFJ"/>
+                        <outlet property="userNameLabel" destination="XRp-ps-WLS" id="u6h-bV-bQd"/>
                         <outlet property="wishListTable" destination="NGT-iZ-v4q" id="q2R-Ay-HIU"/>
                     </connections>
                 </viewController>

@@ -40,6 +40,7 @@ class LoginViewModel{
                 && allCustomers.customers[i].note == password {
 
                 UserDefaults.standard.set(allCustomers.customers[i].id, forKey: "loginId")
+                UserDefaults.standard.set(allCustomers.customers[i].first_name, forKey: "userName")
                 let userDefultId =  UserDefaults.standard.integer(forKey: "loginId")
               //  print("Customer Id IS : \(userDefultId )")
                 
