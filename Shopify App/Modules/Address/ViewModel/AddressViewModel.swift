@@ -40,7 +40,7 @@ class AddressViewModel{
     }
     
       func deleteFromApi(addressId : Int){
-        if let path = URLs.shared.deleteAddress(customerID: userID, addressID: addressId){
+        if let path = URLs.shared.deleteOrEditAddress(customerID: userID, addressID: addressId){
             print(path)
             var urlRequst = URLRequest(url: path)
             urlRequst.httpMethod = "DELETE"

@@ -41,6 +41,10 @@ extension AddressVC : UITableViewDelegate{
                 }
             }
         } else {
+            let editAddress = self.storyboard?.instantiateViewController(withIdentifier: "CreateAddressVC") as! CreateAddressVC
+            editAddress.fromMeTitle = true
+            editAddress.address = arrOfAddress[indexPath.row]
+            self.navigationController?.pushViewController(editAddress, animated: true)
           }
     }
     

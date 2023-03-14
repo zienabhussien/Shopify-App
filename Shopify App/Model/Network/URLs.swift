@@ -29,7 +29,7 @@ struct URLs{
     func setDefaultAddress (customerID: Int, addressID: Int) -> URL?{
         return URL(string: baseURL + "customers/\(customerID)/addresses/\(addressID)/default.json")
     }
-    func deleteAddress (customerID: Int, addressID: Int) -> URL?{
+    func deleteOrEditAddress (customerID: Int, addressID: Int) -> URL?{
         return URL(string: baseURL + "customers/\(customerID)/addresses/\(addressID).json")
     }
     

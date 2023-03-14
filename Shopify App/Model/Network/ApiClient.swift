@@ -15,13 +15,17 @@ protocol Service{
     
     static func fetchFromApi<T: Decodable>( endPoint : EndPoints, complition: @escaping (T? ) -> Void)
     
+    
+    static  func updateApi<T: Codable>(adrressID: Int, params: [String: Any], completionHandeler: @escaping ((T?), Error?) -> Void)
+    
 }
 
 
 private let Base_Url = "https://b24cfe7f0d5cba8ddb793790aaefa12a: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@mad-ios-2.myshopify.com/admin/api/2023-01/"
 
 class NetworkService : Service{
-    
+   static var userID = Helper.shared.getUserID()!
+
     static  func postData<T: Codable>(endPoint : EndPoints, params: [String: Any], completionHandeler: @escaping ((T?), Error?,Int) -> Void){
         
         
@@ -80,6 +84,45 @@ class NetworkService : Service{
             }
         }
     }
+    
+    
+    
+    
+    
+    static  func updateApi<T: Codable>(adrressID: Int, params: [String: Any], completionHandeler: @escaping ((T?), Error?) -> Void){
+        let url = URLs.shared.deleteOrEditAddress(customerID: userID, addressID: adrressID)
+        print(url!)
+        var urlRequst = URLRequest(url: url!)
+            urlRequst.httpMethod = "PUT"
+            urlRequst.httpShouldHandleCookies = false
+            
+            do{
+                let requestBody = try JSONSerialization.data(withJSONObject: params,options: .prettyPrinted)
+                urlRequst.httpBody = requestBody
+                urlRequst.addValue("application/Json", forHTTPHeaderField: "content-type")
+                
+            }catch let error{
+                debugPrint(error.localizedDescription)
+            }
+            
+            URLSession.shared.dataTask(with: urlRequst){ (data,response, error)  in
+                
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let myData = try decoder.decode(T.self , from: data)
+                                            print(myData)
+                        completionHandeler(myData, nil)
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                        completionHandeler(nil, error)
+                    }
+                }
+                
+            }.resume()
+            
+        }
+    
     
     
     
