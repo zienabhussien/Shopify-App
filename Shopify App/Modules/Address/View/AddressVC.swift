@@ -16,6 +16,9 @@ class AddressVC: UIViewController {
     let addressViewModel = AddressViewModel()
     let networking = Networking()
     
+    var isPresentedFromCart: Bool = false
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +27,11 @@ class AddressVC: UIViewController {
         tableView.register(AddressTVCell.nib(), forCellReuseIdentifier: AddressTVCell.identifier)
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        addressViewModel.userID = Helper.shared.getUserID()!
+
         addressViewModel.getAllAddressForCustomer()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.checkCartIsEmpty()

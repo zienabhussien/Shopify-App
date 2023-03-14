@@ -37,6 +37,7 @@ class OrdersVC: UIViewController{
         if cartArray.count == 0 {
             self.showAlertError(title: "Cart empty!", message: "There are no items to checkout.")
         }else{
+            
             checkIsFoundAddress()
         }
     }
@@ -119,6 +120,9 @@ extension OrdersVC{
     
     func goToSelectedAddress(){
         let addressVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVC") as! AddressVC
+        
+        addressVC.isPresentedFromCart = true
+        
         addressVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(addressVC, animated: true)
     }

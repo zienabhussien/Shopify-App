@@ -8,7 +8,7 @@
 import Foundation
 
 class AddressViewModel{
-    
+    var userID = Helper.shared.getUserID()!
     let networking = Networking()
     let coreDataServices = CoreDataServices()
     
@@ -38,6 +38,21 @@ class AddressViewModel{
             self.address = arrOfAdderess
         }
     }
+    
+      func deleteFromApi(addressId : Int){
+        if let path = URLs.shared.deleteAddress(customerID: userID, addressID: addressId){
+            print(path)
+            var urlRequst = URLRequest(url: path)
+            urlRequst.httpMethod = "DELETE"
+            urlRequst.httpShouldHandleCookies = false
+            URLSession.shared.dataTask(with: urlRequst){ (data,response, error)  in
+                if let data = data {
+                    let result = String(data: data, encoding: .utf8)
+                    debugPrint(result!)
+                }
+           }.resume()
+         }
+        }
     
     func saveSelectedAddress(){
         coreDataServices.saveToCoreData { saveSuccess in

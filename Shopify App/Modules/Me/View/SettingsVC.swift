@@ -18,6 +18,11 @@ class SettingsVC: UIViewController {
 
     }
   
+    @IBAction func goToAddress(_ sender: Any) {
+        let addressVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddressVC") as! AddressVC
+        addressVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(addressVC, animated: true)
+    }
     @IBAction func currency(_ sender: Any) {
         let alert = UIAlertController(title: "Currency", message: "Choose the currency", preferredStyle: .alert)
         

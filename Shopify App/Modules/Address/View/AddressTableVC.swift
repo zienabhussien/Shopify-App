@@ -28,17 +28,33 @@ extension AddressVC : UITableViewDataSource{
 }
 
 extension AddressVC : UITableViewDelegate{
-    
+   
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let customrtId = Helper.shared.getUserID(), let id = self.arrOfAddress[indexPath.row].id else {return}
         
-        setAddressDefault(customerId: customrtId, addressId: id, row: indexPath.row)
-        self.showConfirmAlert(title: "Choose address", message: "Orders will be delivered to this address!") { isConfirm in
-            if isConfirm{
-                self.addAddressToOrder(row: indexPath.row)
-                self.goToPayment()
+        if isPresentedFromCart {
+            guard let customrtId = Helper.shared.getUserID(), let id = self.arrOfAddress[indexPath.row].id else {return}
+            setAddressDefault(customerId: customrtId, addressId: id, row: indexPath.row)
+            self.showConfirmAlert(title: "Choose address", message: "Orders will be delivered to this address!") { isConfirm in
+                if isConfirm{
+                    self.addAddressToOrder(row: indexPath.row)
+                    self.goToPayment()
+                }
             }
-        }
+        } else {
+          }
+    }
+    
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+         
+         if editingStyle == .delete {
+             // Delete the row from the data source
+             showAlert(indexPath: indexPath)
+             
+             
+         } else if editingStyle == .insert {
+             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+         }
+         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -49,7 +65,31 @@ extension AddressVC : UITableViewDelegate{
         return "Please select an address to deliver your order."
     }
 }
+extension AddressVC {
+    func showAlert(indexPath: IndexPath){
+        // declare Alert
+        let alert = UIAlertController(title: "Delete", message: "Are you sure about deletion?", preferredStyle: .alert)
+        
+        //AddAction
+        alert.addAction(UIAlertAction(title: "OK", style: .default , handler: { [self] action in
+            addressViewModel.deleteFromApi(addressId: self.arrOfAddress[indexPath.row].id ?? 0)
 
+            arrOfAddress.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+           
+            self.tableView.reloadData()
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel , handler: { action in
+        }))
+        
+
+        //showAlert
+        self.present(alert, animated: true) {
+        }
+    }
+}
 extension AddressVC{
     func setAddressDefault(customerId: Int, addressId: Int, row: Int){
         networking.setDefaultAddress(customerId: customerId, addressId: addressId, address: self.arrOfAddress[row]) { data, res, error in

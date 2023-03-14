@@ -1372,7 +1372,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5w-Dy-Jgw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JcV-pj-7DD">
                     <connections>
-                        <segue destination="xyx-Dq-syG" kind="presentation" id="BXu-Ho-0oV"/>
+                        <action selector="goToAddress:" destination="D8n-8e-s80" id="xTy-CH-xu9"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="xy1-Ja-cZO">
@@ -1433,7 +1433,7 @@ Abdullah.moahmed99@gmail.com
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qN-Py-1th" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7272.5190839694651" y="237.32394366197184"/>
+            <point key="canvasLocation" x="8418" y="-11"/>
         </scene>
         <!--About UsVC-->
         <scene sceneID="rHb-E4-tcE">
@@ -1468,14 +1468,14 @@ Abdullah Mohamed</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYd-24-B5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8199.2366412213742" y="-485.21126760563385"/>
+            <point key="canvasLocation" x="9315" y="-479"/>
         </scene>
         <!--Create AddressVC-->
         <scene sceneID="W46-rG-Kug">
             <objects>
                 <viewController storyboardIdentifier="CreateAddressVC" id="xyx-Dq-syG" customClass="CreateAddressVC" customModule="Shopify_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fNU-XU-68b">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KX5-pD-Uao">
@@ -1621,7 +1621,7 @@ Abdullah Mohamed</string>
                                 <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333343"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-28-5oj">
-                                <rect key="frame" x="16" y="673" width="361" height="40"/>
+                                <rect key="frame" x="16" y="708" width="361" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RUF-4c-4dx"/>
                                 </constraints>
@@ -1681,7 +1681,7 @@ Abdullah Mohamed</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ulN-oe-NZE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="cFS-rK-vTZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8199" y="-1247"/>
+            <point key="canvasLocation" x="8418" y="-835"/>
         </scene>
         <!--MeVC-->
         <scene sceneID="b5I-Uh-vYa">
