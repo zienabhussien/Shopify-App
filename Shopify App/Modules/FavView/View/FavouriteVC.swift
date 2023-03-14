@@ -46,9 +46,11 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "FavCell") as! FavourieTableViewCell
+        
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderWidth = 1
+        
         let product = wishList[indexPath.row]
         cell.setUpCell(photo: product.productImage ?? "" , name: product.productName ?? "", price: product.productPrice ?? "")
         return cell
@@ -69,6 +71,17 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var productInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
+        
+          productInfoVC.favProduct = wishList[indexPath.row]
+        productInfoVC.fromFavouriteVC = true
+        
+        self.navigationController?.pushViewController(productInfoVC, animated: true)
+        
     }
     
     

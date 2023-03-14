@@ -7,10 +7,10 @@
 
 import Foundation
 struct Variants : Codable {
-	let id : Int?
-	let product_id : Int?
-	let title : String?
-	let price : String?
+	var id : Int?
+	var product_id : Int?
+	var title : String?
+	var price : String?
 
 
 	enum CodingKeys: String, CodingKey {

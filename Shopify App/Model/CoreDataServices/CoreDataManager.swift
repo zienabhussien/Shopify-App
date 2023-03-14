@@ -15,7 +15,7 @@ class CoreDataManager
     static var appDelegate : AppDelegate?
     
     
-    static func saveProductToCoreData(productName : String , productPrice : String, productImage: String , productId : Int)
+    static func saveProductToCoreData(productName : String , productPrice : String, productImage: String , productId : Int, productDesc : String)
     {
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         
@@ -29,16 +29,15 @@ class CoreDataManager
         
         do{
             
-            
             let favProduct = NSManagedObject(entity: myEntity, insertInto: myContext)
-               
+            
+            favProduct.setValue(productDesc, forKey: "productDesc")
             favProduct.setValue(productId, forKey: "productID")
             favProduct.setValue(productName, forKey: "productName")
             favProduct.setValue(productPrice, forKey: "productPrice")
             favProduct.setValue(productImage, forKey: "productImage")
             
            // print("Saved Successfully")
-            
             
             try myContext.save()
             
@@ -98,12 +97,13 @@ class CoreDataManager
             
             for item in favItems
             {
-                var productName = item.value(forKey: "productName")
-                var productPrice = item.value(forKey: "productPrice")
-                var productImage = item.value(forKey: "productImage")
-                var productId = item.value(forKey: "productID")
-
-                var product = FavoriteProduct(productId: productId as? Int, productImage: productImage as? String, productName: productName as? String, productPrice: productPrice as? String)
+                let productName = item.value(forKey: "productName")
+                let productPrice = item.value(forKey: "productPrice")
+                let productImage = item.value(forKey: "productImage")
+                let productId = item.value(forKey: "productID")
+                let productDesc = item.value(forKey: "productDesc")
+                
+                let product = FavoriteProduct(productId: productId as? Int, productImage: productImage as? String, productName: productName as? String, productPrice: productPrice as? String ,productDesc: productDesc as? String)
             
                 arrayOfFavProduct.append(product)
             }

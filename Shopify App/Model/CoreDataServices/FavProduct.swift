@@ -13,4 +13,5 @@ struct FavoriteProduct {
     var productImage: String?
     var productName: String?
     var productPrice : String?
+    var productDesc : String?
 }

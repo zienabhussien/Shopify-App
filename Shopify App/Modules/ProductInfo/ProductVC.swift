@@ -20,9 +20,15 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     //add to cart
     let orderViewModel = OrderViewModel()
     var product : Product?
+    var favProduct : FavoriteProduct?
+    var fromFavouriteVC : Bool = false
     var timer : Timer?
     
     var currentCellIndex = 0
+    var productId :Int?
+    var productTitle: String?
+    var productPriceVal: String?
+    var productDesc: String?
     
     @IBOutlet weak var favourite: UIButton!
     override func viewDidLoad() {
@@ -30,22 +36,28 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         ProductCV.dataSource = self
         ProductCV.delegate = self
         
-        ProductPageControl.numberOfPages =  product?.images?.count ?? 0
-        productName.text = product?.title
-        guard let price = product?.variants?.first?.price else {return}
+        productId = fromFavouriteVC ? favProduct?.productId : product?.id
+        productTitle = fromFavouriteVC ? favProduct?.productName : product?.title
+        productPriceVal = fromFavouriteVC ? favProduct?.productPrice : product?.variants?.first?.price
+        productDesc =  fromFavouriteVC ? favProduct?.productDesc  : product?.body_html
+        
+        ProductPageControl.numberOfPages = fromFavouriteVC ? 1 : product?.images?.count ?? 0
+        productName.text = productTitle
+        guard let price = productPriceVal else {return}
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
             productPrice.text = "\(price) EGP"
          } else {
         productPrice.text = "$\(price)"
          }
         
-        productDescription.text = product?.body_html
+        productDescription.text = productDesc
         startTimer()
     }
     
     
       override func viewWillAppear(_ animated: Bool) {
-          var favIsSelected =  UserDefaults.standard.bool(forKey: "\((product?.id)!)")
+          
+          let favIsSelected =  UserDefaults.standard.bool(forKey: "\((productId) ?? 0)")
           favourite.isSelected =  favIsSelected
           if favIsSelected {
               favourite.setImage(UIImage(named: "favoriteRed"), for: .normal)
@@ -55,21 +67,18 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
       }
     
     @IBAction func addToWishList(_ sender: UIButton) {
-        var favIsSelected =  UserDefaults.standard.bool(forKey: "\((product?.id)!)")
-        print("\((product?.id)!)")
-          
+       
         favourite.isSelected = !favourite.isSelected
-     // favourite.isSelected = !favourite.isSelected
 
         if favourite.isSelected {
             favourite.setImage(UIImage(named: "favoriteRed"), for: .normal)
-            CoreDataManager.saveProductToCoreData(productName: product?.title ?? "", productPrice: product?.variants?.first?.price ?? "", productImage: product?.image?.src ?? "", productId: product?.id ?? 0)
-            UserDefaults.standard.set(true, forKey: "\((product?.id)!)")
+            CoreDataManager.saveProductToCoreData(productName: productTitle ?? "", productPrice: productPriceVal ?? "", productImage: fromFavouriteVC ? favProduct?.productImage ?? "" : product?.image?.src ?? "", productId: productId ?? 0,productDesc: productDesc ?? "")
+            UserDefaults.standard.set(true, forKey: "\((productId) ?? 0)")
 
         }else{
             favourite.setImage(UIImage(named: "unFavorite"), for: .normal)
-            CoreDataManager.deleteFromCoreData(productName: product?.title ?? "")
-            UserDefaults.standard.set(false, forKey: "\((product?.id)!)")
+            CoreDataManager.deleteFromCoreData(productName: productTitle ?? "")
+            UserDefaults.standard.set(false, forKey: "\((productId) ?? 0)")
         }
     }
     @IBAction func addToCart(_ sender: UIButton) {
@@ -114,12 +123,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
 
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return product?.images?.count ?? 0
+        return fromFavouriteVC ? 1 :  product?.images?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCVC
-        
-        cell.ProductPhoto.kf.setImage(with: URL(string: product?.images?[indexPath.row].src ?? ""))
+        var  imageStr = (fromFavouriteVC ? favProduct?.productImage : product?.images?[indexPath.row].src ) ?? ""
+        cell.ProductPhoto.kf.setImage(with: URL(string: imageStr))
         
         return cell
     }

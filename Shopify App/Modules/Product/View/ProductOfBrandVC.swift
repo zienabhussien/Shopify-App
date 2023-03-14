@@ -179,7 +179,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductOFBrandCollectionViewCell", for: indexPath) as! ProductOFBrandCollectionViewCell
         
-        var productKey = "\((viewModel.filteredProducts?[indexPath.row].id)!)"
+        var productKey = "\((viewModel.filteredProducts?[indexPath.row].id) ?? 0)"
         if UserDefaults.standard.bool(forKey: productKey){
             cell.favButton.setImage(UIImage(named: "favoriteRed"), for: .normal)
           }else{
@@ -195,7 +195,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
                 
              cell.favButton.setImage(UIImage(named: "favoriteRed"), for: .normal)
             // save to core data
-                CoreDataManager.saveProductToCoreData(productName:viewModel.filteredProducts?[indexPath.row].title ?? ""      , productPrice: viewModel.filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage:        viewModel.filteredProducts?[indexPath.row].image?.src ?? "", productId: viewModel.filteredProducts?[indexPath.row].id ?? 0)
+                CoreDataManager.saveProductToCoreData(productName:viewModel.filteredProducts?[indexPath.row].title ?? ""      , productPrice: viewModel.filteredProducts?[indexPath.row].variants?.first?.price ?? "", productImage: viewModel.filteredProducts?[indexPath.row].image?.src ?? "", productId: viewModel.filteredProducts?[indexPath.row].id ?? 0, productDesc: viewModel.filteredProducts?[indexPath.row].body_html ?? "")
                 
                 UserDefaults.standard.set(true, forKey: "\(viewModel.filteredProducts?[indexPath.row].id ?? 0)")
 
