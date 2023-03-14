@@ -88,8 +88,8 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         
         var productInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductVC") as! ProductVC
         
-          productInfoVC.favProduct = wishList[indexPath.row]
-        productInfoVC.fromFavouriteVC = true
+         productInfoVC.favProduct = wishList[indexPath.row]
+         productInfoVC.fromFavouriteVC = true
         
         self.navigationController?.pushViewController(productInfoVC, animated: true)
         

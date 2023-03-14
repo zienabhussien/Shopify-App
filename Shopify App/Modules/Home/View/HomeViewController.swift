@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet var searchHome: UISearchBar!
     var viewModel: HomeViewModel!
+    var isFiltering : Bool = false
     @IBOutlet weak var AddsImage: UIImageView!
     @IBOutlet weak var brandsCollectionView: UICollectionView!{
         didSet{
@@ -35,7 +36,7 @@ class HomeViewController: UIViewController {
     
     func setUpUI(){
         self.title = "Home"
-        initializeSearcBar()
+       // initializeSearcBar()
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
@@ -63,39 +64,66 @@ class HomeViewController: UIViewController {
 
 }
 //MARK: - SearchDelegate
-extension HomeViewController: UISearchBarDelegate,UISearchResultsUpdating{
-    
-      var isSearchBarEmpty: Bool{
-              return searchController.searchBar.text!.isEmpty
-          }
-      var isFiltering : Bool{
-              return searchController.isActive && !isSearchBarEmpty
-          }
-   
-    func initializeSearcBar(){
-
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.tintColor = .white
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Brand"
-        searchController.searchBar.tintColor = .black
-        navigationItem.searchController = searchController
-        definesPresentationContext = false
-                
+extension HomeViewController : UISearchBarDelegate{
+    var isSearchBarEmpty : Bool {
+        return searchHome.text!.isEmpty
     }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
-            return smartCollection.title.lowercased().contains(searchController.searchBar.text!.lowercased())
-            
-        } ?? []
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //print(searchText)
+        if !searchText.isEmpty {
+            isFiltering = true
+        }
         
-        // reload
+        viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
+                    return smartCollection.title.lowercased().contains(searchText.lowercased())
+        
+                } ?? []
+        
+                // reload
         self.brandsCollectionView.reloadData()
         
+        if isSearchBarEmpty {
+            isFiltering = false
+            self.brandsCollectionView.reloadData()
+        }
         
     }
+    
 }
+//extension HomeViewController: UISearchBarDelegate,UISearchResultsUpdating{
+//
+//      var isSearchBarEmpty: Bool{
+//              return searchController.searchBar.text!.isEmpty
+//          }
+//      var isFiltering : Bool{
+//              return searchController.isActive && !isSearchBarEmpty
+//          }
+//
+//    func initializeSearcBar(){
+//
+//        searchController.searchResultsUpdater = self
+//        searchController.searchBar.tintColor = .white
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.placeholder = "Search Brand"
+//        searchController.searchBar.tintColor = .black
+//        navigationItem.searchController = searchController
+//        definesPresentationContext = false
+//
+//    }
+//
+//    func updateSearchResults(for searchController: UISearchController) {
+//        viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
+//            return smartCollection.title.lowercased().contains(searchController.searchBar.text!.lowercased())
+//
+//        } ?? []
+//
+//        // reload
+//        self.brandsCollectionView.reloadData()
+//
+//
+//    }
+//}
 
 //MARK: - CollectionView_Delegate
 
@@ -105,12 +133,17 @@ extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "ProductOfBrandVC") as! ProductOfBrandVC
-//        storyBoard.viewModel.SmartCollectionID
-//        let productViewModel = ProductViewModel()
         storyBoard.viewModel = ProductViewModel()
-        if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
-            storyBoard.viewModel.SmartCollectionID = String(brand.id)
+        if isFiltering {
+          let brand = viewModel.filteredBrands[indexPath.row]
+                storyBoard.viewModel.SmartCollectionID = String(brand.id)
+            
+         }else {
+            if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
+                storyBoard.viewModel.SmartCollectionID = String(brand.id)
+            }
         }
+        
 
         navigationController?.pushViewController(storyBoard, animated: true)
     }

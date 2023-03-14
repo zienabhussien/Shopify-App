@@ -86,7 +86,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
                 orderViewModel.bindingAlreadyInCartToView = {
                     self.showToast(message: "Already in Cart", font: .boldSystemFont(ofSize: 15))
                 }
-                orderViewModel.addItemsToCart(product: product!)
+        if fromFavouriteVC {
+           // orderViewModel.addItemsToCart(product: favProduct)
+        }else{
+            orderViewModel.addItemsToCart(product: product!)
+        }
+                
     }
     
     
