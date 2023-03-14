@@ -10,6 +10,7 @@ import UIKit
 class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
    
 
+    @IBOutlet weak var placeholder: UIImageView!
     @IBOutlet weak var FavouriteTableView: UITableView!
     
     var wishList = [FavoriteProduct]()
@@ -25,9 +26,19 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         FavouriteTableView.dataSource = self
         FavouriteTableView.separatorStyle = .none
 
+        //checkIfTableEmty()
         
         
-        
+    }
+    func checkIfTableEmty(){
+        if wishList.count == 0 {
+            FavouriteTableView.isHidden = true
+            placeholder.isHidden = false
+        }
+       else{
+            FavouriteTableView.isHidden = false
+            placeholder.isHidden = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

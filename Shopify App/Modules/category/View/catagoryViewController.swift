@@ -175,7 +175,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as!ProductCollectionViewCell
             
                 var productsArr = viewModel.productOfbrandsCategoryModel?.products
-                var productKey = "\((productsArr?[indexPath.row].id)!)"
+                let productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
                 
                 if UserDefaults.standard.bool(forKey: productKey){
                     cell.favoritelist.setImage(UIImage(named: "favoriteRed"), for: .normal)
@@ -188,7 +188,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
              var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
              cell.favoritelist.isSelected =   UserDefaults.standard.bool(forKey: productKey)
              
-         cell.addToWishList = { [unowned self] in
+          cell.addToWishList = { [unowned self] in
              
              cell.favoritelist.isSelected = !cell.favoritelist.isSelected
 
@@ -198,8 +198,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                  // save to core data
                 CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0, productDesc: productsArr?[indexPath.row].body_html ?? "")
                      
-                  UserDefaults.standard.set(true,
-                                          forKey: "\(productsArr?[indexPath.row].id ?? 0)")
+                  UserDefaults.standard.set(true,forKey: "\(productsArr?[indexPath.row].id ?? 0)")
 
                  }else{
                      // delete from core data and change state
