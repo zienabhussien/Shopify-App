@@ -40,7 +40,7 @@ class CreateAddressVC: UIViewController {
         
         if fromMeTitle{
             titleOfEditOrAdd.text = "Edit Your Address"
-            
+            titleOfbuttonEditOrAdd.setTitle("Done", for: .normal)
             
             countryTxt.text = address?.country
             cityTxt.text = address?.city
@@ -58,7 +58,6 @@ class CreateAddressVC: UIViewController {
             }
             
             
-            //          phoneTxt: UIT  titleOfbuttonEditOrAdd.setTitle(<#T##title: String?##String?#>, for: <#T##UIControl.State#>)
         }else{
             countrymenu(otherState: .on, USAState: .off, Egypttate: .off, SyriaState: .off)
 
