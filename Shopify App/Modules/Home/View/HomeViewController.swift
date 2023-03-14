@@ -8,6 +8,8 @@
 import UIKit
 import Kingfisher
 class HomeViewController: UIViewController {
+    
+    @IBOutlet var searchHome: UISearchBar!
     var viewModel: HomeViewModel!
     @IBOutlet weak var AddsImage: UIImageView!
     @IBOutlet weak var brandsCollectionView: UICollectionView!{
@@ -22,6 +24,7 @@ class HomeViewController: UIViewController {
     var searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
+        self.navigationItem.titleView = searchHome
         super.viewDidLoad()
         viewModel = HomeViewModel()
         viewModel.viewDidLoad()
