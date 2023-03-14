@@ -196,7 +196,7 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
 
                 cell.favoritelist.setImage(UIImage(named: "favoriteRed"), for: .normal)
                  // save to core data
-                CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0)
+                CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0, productDesc: "")
                      
                   UserDefaults.standard.set(true,
                                           forKey: "\(productsArr?[indexPath.row].id ?? 0)")
