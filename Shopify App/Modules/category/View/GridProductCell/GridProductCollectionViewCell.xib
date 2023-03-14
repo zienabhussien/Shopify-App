@@ -38,27 +38,33 @@
                                 <rect key="frame" x="8" y="120" width="168" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameofprouduct" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERo-rk-DZj">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="15.666666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="22.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tv-P1-v38">
-                                        <rect key="frame" x="0.0" y="15.666666666666657" width="29.333333333333332" height="12"/>
+                                        <rect key="frame" x="0.0" y="22.666666666666657" width="29.333333333333332" height="17"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars 1" translatesAutoresizingMaskIntoConstraints="NO" id="pcz-EO-nO0">
-                                        <rect key="frame" x="0.0" y="27.666666666666657" width="109.66666666666667" height="19.333333333333329"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-Yz-enV">
-                                        <rect key="frame" x="0.0" y="47" width="35" height="17"/>
+                                        <rect key="frame" x="0.0" y="39.666666666666657" width="35" height="24.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="QdJ-Yz-enV" firstAttribute="leading" secondItem="Wej-Zq-Ut7" secondAttribute="leading" id="Eua-8K-TON"/>
+                                    <constraint firstAttribute="bottom" secondItem="QdJ-Yz-enV" secondAttribute="bottom" id="XVm-3L-FYn"/>
+                                    <constraint firstItem="ERo-rk-DZj" firstAttribute="leading" secondItem="Wej-Zq-Ut7" secondAttribute="leading" id="bow-uz-fqb"/>
+                                    <constraint firstItem="ERo-rk-DZj" firstAttribute="top" secondItem="Wej-Zq-Ut7" secondAttribute="top" id="hQa-nu-Qxt"/>
+                                    <constraint firstItem="7Tv-P1-v38" firstAttribute="leading" secondItem="Wej-Zq-Ut7" secondAttribute="leading" id="iEN-nh-anm"/>
+                                    <constraint firstAttribute="trailing" secondItem="ERo-rk-DZj" secondAttribute="trailing" id="r30-ub-7bv"/>
+                                    <constraint firstItem="QdJ-Yz-enV" firstAttribute="top" secondItem="7Tv-P1-v38" secondAttribute="bottom" id="zHp-jS-8IJ"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57I-MQ-lQC">
                                 <rect key="frame" x="155" y="166" width="40" height="40"/>
@@ -99,7 +105,6 @@
                 <outlet property="imageGrid" destination="PsQ-qc-fcd" id="iDc-EZ-IYd"/>
                 <outlet property="nameGrid" destination="ERo-rk-DZj" id="t4O-Id-uPk"/>
                 <outlet property="priceGrid" destination="QdJ-Yz-enV" id="iuy-is-8Sd"/>
-                <outlet property="starGrid" destination="pcz-EO-nO0" id="A1E-Xv-0LM"/>
             </connections>
             <point key="canvasLocation" x="184.73282442748092" y="66.197183098591552"/>
         </collectionViewCell>
@@ -107,7 +112,6 @@
     <resources>
         <image name="favoriteRed" width="40" height="40"/>
         <image name="shoes" width="612" height="408"/>
-        <image name="stars 1" width="109.66666412353516" height="23.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -57,7 +57,32 @@ class CatagoryViewController: UIViewController {
         //
 
     }
-    
+    @IBAction func goToCart(_ sender: Any) {
+        let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+
+            if userDefaultToken != 0 {
+                let storyboard =  UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "OrdersVC")
+                viewController.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(viewController, animated: true)
+            }else{
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+
+    }
+    @IBAction func goToWishList(_ sender: Any) {
+        let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
+
+            if userDefaultToken != 0 {
+                let wishListVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+                self.navigationController?.pushViewController(wishListVC, animated: true)
+            }else{
+                let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+                self.navigationController?.pushViewController(loginVC, animated: true)
+            }
+
+    }
     private func bindViewModelgategory(){
         viewModel.didFetchData = {[weak self] in
             guard let self = self else {return}

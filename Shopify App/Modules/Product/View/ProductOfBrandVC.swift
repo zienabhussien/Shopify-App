@@ -225,7 +225,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
         } else{
             if let productOfbrand = viewModel.filteredProducts?[indexPath.row] {
                         cell.nameOfProductBrand.text = productOfbrand.title
-                        cell.ProductType.text = productOfbrand.product_type
+                       // cell.ProductType.text = productOfbrand.product_type
                         if let firstPrice = productOfbrand.variants?.first?.price {
                             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
                                 cell.productPrice.text = "\(firstPrice) EGP"

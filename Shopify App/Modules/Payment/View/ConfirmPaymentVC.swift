@@ -81,9 +81,14 @@ class ConfirmPaymentVC: UIViewController {
 
     @IBAction func placeOrder(_ sender: Any) {
         
-        orderViewModel.postOrder(cartArray: placedOrders)
-        self.navigationController?.popToRootViewController(animated: true)
+        let alert = UIAlertController(title: "Order done", message: "Thank you for your order!", preferredStyle: .actionSheet)
         
+        let okAction = UIAlertAction(title: "OK", style: .destructive) { UIAlertAction in
+            self.orderViewModel.postOrder(cartArray: self.placedOrders)
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

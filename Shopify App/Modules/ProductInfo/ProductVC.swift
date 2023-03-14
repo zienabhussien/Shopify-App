@@ -82,16 +82,16 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         }
     }
     @IBAction func addToCart(_ sender: UIButton) {
-       // print("addToCartButton")
-                orderViewModel.bindingAlreadyInCartToView = {
-                    self.showToast(message: "Already in Cart", font: .boldSystemFont(ofSize: 15))
-                }
+        
+        orderViewModel.bindingAlreadyInCartToView = {
+        self.showToast(message: "Already in bag", font: .boldSystemFont(ofSize: 15))
+        }
         if fromFavouriteVC {
            // orderViewModel.addItemsToCart(product: favProduct)
         }else{
             orderViewModel.addItemsToCart(product: product!)
         }
-                
+
     }
     
     
