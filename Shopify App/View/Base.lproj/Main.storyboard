@@ -489,7 +489,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YDD-Tu-M8I">
-                                <rect key="frame" x="0.0" y="59" width="393" height="482"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="340.33333333333331"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PaymentOptionCell" rowHeight="90" id="R1b-1p-jaO" customClass="PaymentOptionsCell" customModule="Shopify_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="90"/>
@@ -538,7 +538,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnR-f3-PlB">
-                                <rect key="frame" x="36.666666666666657" y="706" width="320" height="51"/>
+                                <rect key="frame" x="36.666666666666657" y="470.33333333333331" width="320" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="qvP-XG-EQ6"/>
                                 </constraints>
@@ -806,7 +806,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7K-vX-ARx">
-                                <rect key="frame" x="130.66666666666669" y="373" width="131.66666666666669" height="48"/>
+                                <rect key="frame" x="131.66666666666669" y="373" width="129.66666666666669" height="48"/>
                                 <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="41"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2060,10 +2060,12 @@ Abdullah Mohamed</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-dj-3uv">
-                                <rect key="frame" x="24" y="617" width="345" height="42.666666666666629"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEk-dj-3uv">
+                                <rect key="frame" x="24" y="601" width="345" height="45"/>
                                 <color key="backgroundColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7cv-Pe-DQa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Sign Up">
@@ -2073,9 +2075,8 @@ Abdullah Mohamed</string>
                                     <action selector="signUp:" destination="waq-j5-72L" eventType="touchUpInside" id="SFK-Id-66t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6e-qb-a04">
-                                <rect key="frame" x="116" y="704" width="161" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6e-qb-a04">
+                                <rect key="frame" x="24" y="681" width="345" height="52"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
@@ -2085,9 +2086,8 @@ Abdullah Mohamed</string>
                                     <action selector="goToLogin:" destination="waq-j5-72L" eventType="touchUpInside" id="5ER-qx-K3J"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQq-Po-VuQ">
-                                <rect key="frame" x="16" y="340" width="361" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQq-Po-VuQ">
+                                <rect key="frame" x="16" y="337" width="361" height="64"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TIp-eC-od0">
                                         <rect key="frame" x="8" y="8" width="345" height="48"/>
@@ -2097,12 +2097,14 @@ Abdullah Mohamed</string>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="t6O-2p-b0i"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-GV-JOH">
-                                <rect key="frame" x="16" y="500" width="361" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-GV-JOH">
+                                <rect key="frame" x="16" y="497" width="361" height="64"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5sl-pQ-5x1">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5sl-pQ-5x1">
                                         <rect key="frame" x="8" y="8" width="345" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Tbt-k4-haZ"/>
@@ -2113,12 +2115,17 @@ Abdullah Mohamed</string>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Neo-kL-D5D"/>
+                                    <constraint firstItem="5sl-pQ-5x1" firstAttribute="trailing" secondItem="Sa6-GV-JOH" secondAttribute="trailingMargin" id="YzX-FG-Hpp"/>
+                                    <constraint firstItem="5sl-pQ-5x1" firstAttribute="leading" secondItem="Sa6-GV-JOH" secondAttribute="leadingMargin" id="nkq-l9-b1G"/>
+                                    <constraint firstItem="5sl-pQ-5x1" firstAttribute="top" secondItem="Sa6-GV-JOH" secondAttribute="topMargin" id="rZM-pn-xHd"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-Vq-COh">
-                                <rect key="frame" x="16" y="420" width="361" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XdI-Vq-COh">
+                                <rect key="frame" x="16" y="417" width="361" height="64"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR6-3e-Cpu">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oR6-3e-Cpu">
                                         <rect key="frame" x="8" y="8" width="345" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="1zs-e1-xS3"/>
@@ -2129,14 +2136,43 @@ Abdullah Mohamed</string>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="oR6-3e-Cpu" firstAttribute="leading" secondItem="XdI-Vq-COh" secondAttribute="leadingMargin" id="IWq-sx-UWl"/>
+                                    <constraint firstItem="oR6-3e-Cpu" firstAttribute="trailing" secondItem="XdI-Vq-COh" secondAttribute="trailingMargin" id="Sbb-Jr-Q9u"/>
+                                    <constraint firstAttribute="height" constant="64" id="ctg-ba-ueT"/>
+                                    <constraint firstItem="oR6-3e-Cpu" firstAttribute="top" secondItem="XdI-Vq-COh" secondAttribute="topMargin" id="mIU-PE-Igl"/>
+                                </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAb-Rc-0ZW">
-                                <rect key="frame" x="121" y="136" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="mAb-Rc-0ZW">
+                                <rect key="frame" x="116.66666666666669" y="117" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="O7C-c0-thG"/>
+                                    <constraint firstAttribute="height" constant="160" id="q3X-nq-Tvu"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4hT-TW-GeK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zQq-Po-VuQ" firstAttribute="top" secondItem="mAb-Rc-0ZW" secondAttribute="bottom" constant="60" id="4XV-EY-ODv"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="trailing" secondItem="x6e-qb-a04" secondAttribute="trailing" constant="24" id="4lO-CX-bpi"/>
+                            <constraint firstItem="kEk-dj-3uv" firstAttribute="top" secondItem="Sa6-GV-JOH" secondAttribute="bottom" constant="40" id="ECB-Ug-dXz"/>
+                            <constraint firstItem="Sa6-GV-JOH" firstAttribute="leading" secondItem="4hT-TW-GeK" secondAttribute="leading" constant="16" id="HfH-Ty-eM9"/>
+                            <constraint firstItem="x6e-qb-a04" firstAttribute="top" secondItem="kEk-dj-3uv" secondAttribute="bottom" constant="35" id="KXk-Fi-01U"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="trailing" secondItem="XdI-Vq-COh" secondAttribute="trailing" constant="16" id="Ntz-Wh-jgj"/>
+                            <constraint firstItem="kEk-dj-3uv" firstAttribute="leading" secondItem="4hT-TW-GeK" secondAttribute="leading" constant="24" id="PYo-Do-Yil"/>
+                            <constraint firstItem="Sa6-GV-JOH" firstAttribute="top" secondItem="XdI-Vq-COh" secondAttribute="bottom" constant="16" id="UC6-Hv-rkg"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="trailing" secondItem="kEk-dj-3uv" secondAttribute="trailing" constant="24" id="WGc-ig-ddj"/>
+                            <constraint firstItem="mAb-Rc-0ZW" firstAttribute="centerX" secondItem="L0v-EH-6xk" secondAttribute="centerX" id="WSN-sP-OqI"/>
+                            <constraint firstItem="XdI-Vq-COh" firstAttribute="leading" secondItem="4hT-TW-GeK" secondAttribute="leading" constant="16" id="Z3F-1b-ZrE"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="trailing" secondItem="Sa6-GV-JOH" secondAttribute="trailing" constant="16" id="ZBL-uG-paq"/>
+                            <constraint firstItem="mAb-Rc-0ZW" firstAttribute="top" secondItem="4hT-TW-GeK" secondAttribute="top" constant="58" id="cWu-ys-kc1"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="trailing" secondItem="zQq-Po-VuQ" secondAttribute="trailing" constant="16" id="g5h-df-R0E"/>
+                            <constraint firstItem="XdI-Vq-COh" firstAttribute="top" secondItem="zQq-Po-VuQ" secondAttribute="bottom" constant="16" id="q1D-c8-Lls"/>
+                            <constraint firstItem="x6e-qb-a04" firstAttribute="leading" secondItem="4hT-TW-GeK" secondAttribute="leading" constant="24" id="tx4-Kl-iF4"/>
+                            <constraint firstItem="zQq-Po-VuQ" firstAttribute="leading" secondItem="4hT-TW-GeK" secondAttribute="leading" constant="16" id="wBD-8F-MMd"/>
+                            <constraint firstItem="4hT-TW-GeK" firstAttribute="bottom" secondItem="x6e-qb-a04" secondAttribute="bottom" constant="85" id="zgd-pa-gAX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign up" largeTitleDisplayMode="always" id="tKA-Os-x3i"/>
                     <connections>
@@ -2152,7 +2188,7 @@ Abdullah Mohamed</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6Q-kM-SMf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="-11"/>
+            <point key="canvasLocation" x="1420.6106870229007" y="-11.267605633802818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sfb-yw-5Il">
