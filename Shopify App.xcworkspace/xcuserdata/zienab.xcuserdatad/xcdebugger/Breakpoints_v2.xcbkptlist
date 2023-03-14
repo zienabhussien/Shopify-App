@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F1AC1938-417A-44EF-B563-FCB55BDF3E12"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A7438BB-486F-43F5-A46E-3EA8E45CD16C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopify App/Modules/ProductInfo/ViewModel/ProductInfoViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "getSingleProduct(productId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3A7438BB-486F-43F5-A46E-3EA8E45CD16C - 805cca9486e23b02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Shopify_App.ProductInfoViewModel.getSingleProduct(productId: Swift.Int) -&gt; ()"
+                  moduleName = "Shopify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zienab/Desktop/Graduation%20Project/Shopify-App/Shopify%20App/Modules/ProductInfo/ViewModel/ProductInfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "49">
+               </Location>
+               <Location
+                  uuid = "3A7438BB-486F-43F5-A46E-3EA8E45CD16C - e32d6b62073a021f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Shopify_App.ProductInfo&gt;) -&gt; () in Shopify_App.ProductInfoViewModel.getSingleProduct(productId: Swift.Int) -&gt; ()"
+                  moduleName = "Shopify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zienab/Desktop/Graduation%20Project/Shopify-App/Shopify%20App/Modules/ProductInfo/ViewModel/ProductInfoViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "903">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD01BA34-8FD6-4435-9343-547B5056C8B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopify App/Model/Network/ApiClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetchFromApi(endPoint:complition:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C26A8C2F-F960-4E77-9BDE-92B7961A809C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopify App/Model/Network/ApiClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "fetchFromApi(endPoint:complition:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73834E76-C3BA-464E-A80D-A215F9731B2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shopify App/Modules/ProductInfo/View/ProductVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "fetchSingleProduct()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73834E76-C3BA-464E-A80D-A215F9731B2A - 8b7ec3bda98548e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Shopify_App.ProductVC.fetchSingleProduct() -&gt; ()"
+                  moduleName = "Shopify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zienab/Desktop/Graduation%20Project/Shopify-App/Shopify%20App/Modules/ProductInfo/View/ProductVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "73834E76-C3BA-464E-A80D-A215F9731B2A - 3bca131958e2ccc6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Shopify_App.ProductVC.fetchSingleProduct() -&gt; ()"
+                  moduleName = "Shopify App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zienab/Desktop/Graduation%20Project/Shopify-App/Shopify%20App/Modules/ProductInfo/View/ProductVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "75">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

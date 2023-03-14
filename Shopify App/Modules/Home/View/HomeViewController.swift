@@ -97,18 +97,19 @@ extension HomeViewController : UISearchBarDelegate{
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //print(searchText)
+       
         if !searchText.isEmpty {
             isFiltering = true
         }
-        
-        viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
-                    return smartCollection.title.lowercased().contains(searchText.lowercased())
-        
-                } ?? []
-        
-                // reload
-        self.brandsCollectionView.reloadData()
+        if !searchText.trimmingCharacters(in: .whitespaces).isEmpty  {
+            // string contains non-whitespace characters
+            viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
+                return smartCollection.title.lowercased().contains(searchText.lowercased())
+                
+            } ?? []
+            self.brandsCollectionView.reloadData()
+       }         // reload
+       
         
         if isSearchBarEmpty {
             isFiltering = false
@@ -118,39 +119,7 @@ extension HomeViewController : UISearchBarDelegate{
     }
     
 }
-//extension HomeViewController: UISearchBarDelegate,UISearchResultsUpdating{
-//
-//      var isSearchBarEmpty: Bool{
-//              return searchController.searchBar.text!.isEmpty
-//          }
-//      var isFiltering : Bool{
-//              return searchController.isActive && !isSearchBarEmpty
-//          }
-//
-//    func initializeSearcBar(){
-//
-//        searchController.searchResultsUpdater = self
-//        searchController.searchBar.tintColor = .white
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.placeholder = "Search Brand"
-//        searchController.searchBar.tintColor = .black
-//        navigationItem.searchController = searchController
-//        definesPresentationContext = false
-//
-//    }
-//
-//    func updateSearchResults(for searchController: UISearchController) {
-//        viewModel.filteredBrands = viewModel.brandsModel?.smartCollections.filter{ smartCollection in
-//            return smartCollection.title.lowercased().contains(searchController.searchBar.text!.lowercased())
-//
-//        } ?? []
-//
-//        // reload
-//        self.brandsCollectionView.reloadData()
-//
-//
-//    }
-//}
+
 
 //MARK: - CollectionView_Delegate
 

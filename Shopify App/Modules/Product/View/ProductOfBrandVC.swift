@@ -153,11 +153,13 @@ extension ProductOfBrandVC : UISearchBarDelegate{
         if !searchText.isEmpty {
             isFiltering = true
         }
-        searchedProducts =  viewModel.productOBbrandsModel?.products?.filter({ product in
-            return (product.title.lowercased().contains(searchText.lowercased()))
-        }) ?? []
-        
-        self.ProductOfBrandsCollection.reloadData()
+        if !searchText.trimmingCharacters(in: .whitespaces).isEmpty  {
+            searchedProducts =  viewModel.productOBbrandsModel?.products?.filter({ product in
+                return (product.title.lowercased().contains(searchText.lowercased()))
+            }) ?? []
+            self.ProductOfBrandsCollection.reloadData()
+        }
+       
         if isSearchBarEmpty {
             isFiltering = false
             self.ProductOfBrandsCollection.reloadData()
