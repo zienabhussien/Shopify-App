@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         self.navigationItem.titleView = searchHome
+        searchHome.placeholder = "Search Brand"
         super.viewDidLoad()
         viewModel = HomeViewModel()
         viewModel.viewDidLoad()

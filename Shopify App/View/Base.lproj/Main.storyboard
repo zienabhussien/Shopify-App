@@ -1040,7 +1040,12 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="vyx-AP-4CP" firstAttribute="top" secondItem="Ipy-jP-9A6" secondAttribute="top" constant="16" id="p72-UZ-JNm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Y2v-CK-bhz"/>
+                    <navigationItem key="navigationItem" id="Y2v-CK-bhz">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="favorite" id="5k6-tl-bSM"/>
+                            <barButtonItem title="Item" image="shopping-bag" id="d3R-Qc-GRy"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="AddsImage" destination="vyx-AP-4CP" id="P7z-Gh-XYk"/>
                         <outlet property="brandsCollectionView" destination="Ubj-O9-PRg" id="QCM-sw-g7r"/>
