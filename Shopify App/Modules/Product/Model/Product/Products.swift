@@ -20,3 +20,7 @@ struct Products : Codable {
 	}
 
 }
+
+struct ProductInfo: Codable {
+    var product: Product
+}

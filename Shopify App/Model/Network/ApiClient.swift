@@ -70,12 +70,12 @@ class NetworkService : Service{
                 
                 guard let responseData = response.data else {return}
                 let result = try JSONDecoder().decode(T.self, from: responseData)
-                //print(result)
+                print(result)
                 complition(result)
                 
             }catch let error {
                 complition(nil )
-               // print(error.localizedDescription)
+               print(error.localizedDescription)
                 
             }
         }

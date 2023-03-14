@@ -9,13 +9,10 @@ import UIKit
 import Toast_Swift
 class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var productName: UILabel!
-    
     @IBOutlet weak var ProductPageControl: UIPageControl!
-     
     @IBOutlet weak var productDescription: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var ProductCV: UICollectionView!
-    
     @IBOutlet weak var addToCart: UIBarButtonItem!
     //add to cart
     let orderViewModel = OrderViewModel()
@@ -23,6 +20,8 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     var favProduct : FavoriteProduct?
     var fromFavouriteVC : Bool = false
     var timer : Timer?
+    
+    var productInfoViewModel : ProductInfoViewModel!
     
     var currentCellIndex = 0
     var productId :Int?
@@ -35,6 +34,8 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         super.viewDidLoad()
         ProductCV.dataSource = self
         ProductCV.delegate = self
+        productInfoViewModel = ProductInfoViewModel()
+        
         
         productId = fromFavouriteVC ? favProduct?.productId : product?.id
         productTitle = fromFavouriteVC ? favProduct?.productName : product?.title
@@ -87,11 +88,22 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         self.showToast(message: "Already in bag", font: .boldSystemFont(ofSize: 15))
         }
         if fromFavouriteVC {
-           // orderViewModel.addItemsToCart(product: favProduct)
+            fetchSingleProduct()
+  //orderViewModel.addItemsToCart(product: product!)
         }else{
             orderViewModel.addItemsToCart(product: product!)
         }
 
+    }
+    
+    func fetchSingleProduct(){
+        self.productInfoViewModel.bindProductToProductInfo = {
+                self.product = self.productInfoViewModel.productVal?.product
+                print("dispatch : \(self.product)")
+            
+        }
+         self.productInfoViewModel.getSingleProduct(productId: productId ?? 0)
+        print(productId ?? 0)
     }
     
     

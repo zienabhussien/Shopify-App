@@ -97,6 +97,7 @@ class CatagoryViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        productsCollectionView.reloadData()
         navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
@@ -291,6 +292,9 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 var productsArr = viewModel.productOfbrandsCategoryModel?.products
                 let productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
                 
+                var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
+                cell.favoriteGrid.isSelected =   UserDefaults.standard.bool(forKey: productKey)
+                
                 if UserDefaults.standard.bool(forKey: productKey){
                     cell.favoriteGrid.setImage(UIImage(named: "favoriteRed"), for: .normal)
                         //print("add Fav")
@@ -299,8 +303,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                            // print("not fav")
                     }
                     
-             var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
-             cell.favoriteGrid.isSelected =   UserDefaults.standard.bool(forKey: productKey)
 
                 cell.addToFavList = { [unowned self] in
 
