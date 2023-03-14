@@ -97,6 +97,7 @@ class CatagoryViewController: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        productsCollectionView.reloadData()
         navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
@@ -287,7 +288,43 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 return cell
             }else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridProductCollectionViewCell", for: indexPath) as!GridProductCollectionViewCell
-             
+               // ------- add to wish list -------
+                var productsArr = viewModel.productOfbrandsCategoryModel?.products
+                let productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
+                
+                var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
+                cell.favoriteGrid.isSelected =   UserDefaults.standard.bool(forKey: productKey)
+                
+                if UserDefaults.standard.bool(forKey: productKey){
+                    cell.favoriteGrid.setImage(UIImage(named: "favoriteRed"), for: .normal)
+                        //print("add Fav")
+                      }else{
+                          cell.favoriteGrid.setImage(UIImage(named: "unFavorite"), for: .normal)
+                           // print("not fav")
+                    }
+                    
+
+                cell.addToFavList = { [unowned self] in
+
+                    cell.favoriteGrid.isSelected = !cell.favoriteGrid.isSelected
+                    if  cell.favoriteGrid.isSelected {
+
+                        cell.favoriteGrid.setImage(UIImage(named: "favoriteRed"), for: .normal)
+                         // save to core data
+                        CoreDataManager.saveProductToCoreData(productName:productsArr?[indexPath.row].title ?? "" , productPrice: productsArr?[indexPath.row].variants?.first?.price ?? "", productImage: productsArr?[indexPath.row].image?.src ?? "", productId: productsArr?[indexPath.row].id ?? 0, productDesc: productsArr?[indexPath.row].body_html ?? "")
+                             
+                          UserDefaults.standard.set(true,forKey: "\(productsArr?[indexPath.row].id ?? 0)")
+
+                         }else{
+                             // delete from core data and change state
+                             cell.favoriteGrid.setImage(UIImage(named: "unFavorite"), for: .normal)
+                             CoreDataManager.deleteFromCoreData(productName: productsArr?[indexPath.row].title ?? "" )
+                             UserDefaults.standard.set(false,
+                                                       forKey: "\(productsArr?[indexPath.row].id ?? 0)")
+                         }
+
+               }
+                
 
                 if(isFiltered){
                     

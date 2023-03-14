@@ -88,6 +88,7 @@
 		8CA6A06F29AFB4E4006809E9 /* CouponTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */; };
 		8CA6A07329AFCE87006809E9 /* PaymentOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */; };
 		8CA6A07529AFCED2006809E9 /* PaymentOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */; };
+		8CB02FB929C0D56B0028C52A /* ProductInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB02FB829C0D56B0028C52A /* ProductInfoViewModel.swift */; };
 		CC1E670976A80A8425EAD033 /* Pods_Shopify_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED22B020899511829DE094C /* Pods_Shopify_App.framework */; };
 		D8188C8829BCB366005D6CF2 /* AddressTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8188C8629BCB365005D6CF2 /* AddressTVCell.swift */; };
 		D8188C8929BCB366005D6CF2 /* AddressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8188C8729BCB366005D6CF2 /* AddressTVCell.xib */; };
@@ -218,6 +219,7 @@
 		8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTextField.swift; sourceTree = "<group>"; };
 		8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsVC.swift; sourceTree = "<group>"; };
 		8CA6A07429AFCED1006809E9 /* PaymentOptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsCell.swift; sourceTree = "<group>"; };
+		8CB02FB829C0D56B0028C52A /* ProductInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewModel.swift; sourceTree = "<group>"; };
 		9093B40DFEA4B6BEA0BAF393 /* Pods_Shopify_App_Shopify_AppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopify_App_Shopify_AppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D942107A9CDA19A0AD03FB /* Pods-Shopify AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Shopify AppTests/Pods-Shopify AppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8188C8629BCB365005D6CF2 /* AddressTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTVCell.swift; sourceTree = "<group>"; };
@@ -522,8 +524,8 @@
 		33A2025129B0F6AF00D85E41 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3340090C29BAD1FE00BFE845 /* ProductCollectionViewDataSource.swift */,
 				33A2025229B0F6AF00D85E41 /* ProductOfBrandVC.swift */,
+				3340090C29BAD1FE00BFE845 /* ProductCollectionViewDataSource.swift */,
 				33A2025329B0F6AF00D85E41 /* ProductCell */,
 			);
 			path = View;
@@ -747,6 +749,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8CB02FB629C0D5050028C52A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CB02FB829C0D56B0028C52A /* ProductInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8CB02FB729C0D5310028C52A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8E34D7F29B0DC2400590317 /* ProductVC.swift */,
+				D8E34D7E29B0DC2400590317 /* ProductCVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8CE299FF29AF89E0004BF111 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,8 +855,8 @@
 		D8E34D7D29B0DC0B00590317 /* ProductInfo */ = {
 			isa = PBXGroup;
 			children = (
-				D8E34D7E29B0DC2400590317 /* ProductCVC.swift */,
-				D8E34D7F29B0DC2400590317 /* ProductVC.swift */,
+				8CB02FB729C0D5310028C52A /* View */,
+				8CB02FB629C0D5050028C52A /* ViewModel */,
 			);
 			path = ProductInfo;
 			sourceTree = "<group>";
@@ -1188,6 +1207,7 @@
 				D8784BAF29AF682E00231982 /* TabBarVC.swift in Sources */,
 				336C254429B634A600C78A98 /* ViewController + Extension.swift in Sources */,
 				33A2026029B0F6AF00D85E41 /* BrandsCollectionViewCell.swift in Sources */,
+				8CB02FB929C0D56B0028C52A /* ProductInfoViewModel.swift in Sources */,
 				33714F5329BA3D4D00845B9B /* CoreDataManager.swift in Sources */,
 				336C254729B6654700C78A98 /* AddressVC.swift in Sources */,
 				33D742E229B7B50700535E20 /* Products.swift in Sources */,

@@ -18,6 +18,9 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         self.FavouriteTableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.checkIfTableEmty()
+        }
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     override func viewDidLoad() {
@@ -26,7 +29,7 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         FavouriteTableView.dataSource = self
         FavouriteTableView.separatorStyle = .none
 
-        //checkIfTableEmty()
+        //
         
         
     }
@@ -35,10 +38,7 @@ class FavouriteVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             FavouriteTableView.isHidden = true
             placeholder.isHidden = false
         }
-       else{
-            FavouriteTableView.isHidden = false
-            placeholder.isHidden = true
-        }
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {

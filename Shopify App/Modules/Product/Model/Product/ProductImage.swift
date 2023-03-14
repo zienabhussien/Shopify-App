@@ -15,7 +15,7 @@ struct ProductImage : Codable {
 	let alt : String?
 	let width : Int?
 	let height : Int?
-	let src : String?
+	var src : String?
 	let variant_ids : [String]?
 	let admin_graphql_api_id : String?
 
