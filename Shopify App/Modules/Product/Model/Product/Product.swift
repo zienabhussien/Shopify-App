@@ -7,14 +7,14 @@
 
 import Foundation
 struct Product : Codable {
-	let id : Int?
-	let title : String
-	let body_html : String?
-	let vendor : String?
-	let product_type : String?
-	let variants : [Variants]?
-	let images : [ProductImages]?
-	let image : ProductImage?
+	var id : Int?
+	var title : String
+    var body_html : String?
+    var vendor : String?
+    var product_type : String?
+    var variants : [Variants]?
+    var images : [ProductImages]?
+    var image : ProductImage?
 
 	enum CodingKeys: String, CodingKey {
 

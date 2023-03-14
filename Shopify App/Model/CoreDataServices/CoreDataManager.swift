@@ -31,12 +31,12 @@ class CoreDataManager
             
             let favProduct = NSManagedObject(entity: myEntity, insertInto: myContext)
             
-            favProduct.setValue(productDesc, forKey: "productDesc")
+            
             favProduct.setValue(productId, forKey: "productID")
             favProduct.setValue(productName, forKey: "productName")
             favProduct.setValue(productPrice, forKey: "productPrice")
             favProduct.setValue(productImage, forKey: "productImage")
-            
+            favProduct.setValue(productDesc, forKey: "productDesc")
            // print("Saved Successfully")
             
             try myContext.save()
