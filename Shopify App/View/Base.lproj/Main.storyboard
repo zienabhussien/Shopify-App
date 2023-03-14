@@ -662,7 +662,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaK-nt-q7w">
-                                <rect key="frame" x="251.33333333333337" y="541.33333333333337" width="127" height="29"/>
+                                <rect key="frame" x="250.33333333333337" y="541.33333333333337" width="128" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create your account">
@@ -763,7 +763,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxL-LC-xCT">
-                                <rect key="frame" x="208" y="494" width="161" height="29"/>
+                                <rect key="frame" x="206" y="494" width="163" height="29"/>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
@@ -988,7 +988,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="FWN-hA-kLX" firstAttribute="top" secondItem="uij-Az-tVP" secondAttribute="bottom" constant="8" id="yor-5O-ZTu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Lle-UO-CNw"/>
+                    <navigationItem key="navigationItem" id="Lle-UO-CNw">
+                        <rightBarButtonItems>
+                            <barButtonItem image="favorite" id="fJv-Jo-TJl">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem image="shopping-bag" id="ywP-JB-Y1a">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="gridListButton" destination="EPv-PP-Yeo" id="6ec-lf-43i"/>
                         <outlet property="laoding" destination="efm-o1-Y3l" id="j2W-Fz-YM7"/>
@@ -1840,7 +1849,7 @@ Abdullah Mohamed</string>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="P7p-LW-xlt">
-                                <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333343"/>
+                                <rect key="frame" x="16" y="59.666666666666671" width="361" height="76.333333333333329"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-28-5oj">
                                 <rect key="frame" x="16" y="673" width="361" height="40"/>
