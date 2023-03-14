@@ -88,8 +88,8 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         self.showToast(message: "Already in bag", font: .boldSystemFont(ofSize: 15))
         }
         if fromFavouriteVC {
-            fetchSingleProduct()
-  //orderViewModel.addItemsToCart(product: product!)
+          fetchSingleProduct()
+        
         }else{
             orderViewModel.addItemsToCart(product: product!)
         }
@@ -98,14 +98,12 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
     
     func fetchSingleProduct(){
         self.productInfoViewModel.bindProductToProductInfo = {
-                self.product = self.productInfoViewModel.productVal?.product
-                print("dispatch : \(self.product)")
-            
+            self.product = self.productInfoViewModel.productVal?.product
+            self.orderViewModel.addItemsToCart(product: self.product!)
         }
          self.productInfoViewModel.getSingleProduct(productId: productId ?? 0)
         print(productId ?? 0)
     }
-    
     
     func showToast(message : String, font: UIFont) {
 
