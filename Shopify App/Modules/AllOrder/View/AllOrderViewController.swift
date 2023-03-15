@@ -48,7 +48,7 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderWidth = 1
         cell.createdAt.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
-        cell.addressLabel.text = viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.country
+        cell.addressLabel.text = "\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.address1 ?? "def"),\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.city ?? "def"),\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.country ?? "def")"
         if let firstPrice = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price, let itemPrice = Double(firstPrice) {
             var convertedPrice = itemPrice
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {

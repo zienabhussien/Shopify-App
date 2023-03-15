@@ -80,7 +80,7 @@ class MeVC: UIViewController {
         let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
         let count = (try? context.count(for: request)) ?? 0
         
-        BageButton.showBadge(bagBtn: bagButton, withCount: count - 3)
+        BageButton.showBadge(bagBtn: bagButton, withCount: count )
         
         userNameLabel.text = "Welcome " + (UserDefaults.standard.string(forKey: "userName") ?? "Ali")
         someWishList = CoreDataManager.fetchFromCoreData()
@@ -112,6 +112,7 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
         if(tableView == ordersTable){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as! OrdersTableCell
             cell.createdAtProduct.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
+            cell.addressLabel.text = "\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.address1 ?? "def"),\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.city ?? "def"),\(viewModel.reponseOrsers?.orders[indexPath.row].customer?.default_address?.country ?? "def")"
             if let firstPrice = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price, let itemPrice = Double(firstPrice) {
                 var convertedPrice = itemPrice
                 if UserDefaults.standard.string(forKey: "Currency") == "EGP" {

@@ -110,7 +110,7 @@ class CatagoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
         let count = (try? context.count(for: request)) ?? 0
-        BageButton.showBadge(bagBtn: bagButton, withCount: count - 3)
+        BageButton.showBadge(bagBtn: bagButton, withCount: count )
         productsCollectionView.reloadData()
         navigationController?.setNavigationBarHidden(false, animated: false)
 

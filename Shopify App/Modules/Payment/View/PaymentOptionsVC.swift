@@ -30,6 +30,7 @@ class PaymentOptionsVC: UIViewController {
 //         } else {
 //             request.currencyCode = "USD"
 //         }
+        
         request.currencyCode = "USD"
 
         request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: totalPay)]

@@ -60,7 +60,7 @@ class HomeViewController: UIViewController {
         let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
         let count = (try? context.count(for: request)) ?? 0
         
-        BageButton.showBadge(bagBtn: bagBtn, withCount: count - 3)
+        BageButton.showBadge(bagBtn: bagBtn, withCount: count )
     }
 
     
