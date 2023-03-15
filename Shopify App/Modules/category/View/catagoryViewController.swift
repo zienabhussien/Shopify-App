@@ -14,6 +14,7 @@ class CatagoryViewController: UIViewController {
 
     var viewModel: CategoryViewModel!
     
+    @IBOutlet weak var bagButton: UIButton!
     var productKey = ""
     var productsArr : [Product]?
 
@@ -58,7 +59,13 @@ class CatagoryViewController: UIViewController {
             self.laoding.hidesWhenStopped = true
             self.laoding.startAnimating()
         }
-        //
+        
+        NSLayoutConstraint.activate([
+            bagButton.widthAnchor.constraint(equalToConstant: 34),
+            bagButton.heightAnchor.constraint(equalToConstant: 44),
+        ])
+        
+        BageButton.showBadge(bagBtn: bagButton, withCount: 10)
 
     }
     @IBAction func goToCart(_ sender: Any) {

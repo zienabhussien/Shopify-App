@@ -15,7 +15,7 @@ class MeVC: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var ordersTable: UITableView!
     @IBOutlet weak var wishListTable: UITableView!
-        
+    @IBOutlet weak var bagButton: UIButton!
     var someWishList = [FavoriteProduct]()
 
     
@@ -27,6 +27,14 @@ class MeVC: UIViewController {
             self.navigationController?.pushViewController(loginVC, animated: true)
         }
         viewModel = MeViewModel()
+        
+        
+        NSLayoutConstraint.activate([
+            bagButton.widthAnchor.constraint(equalToConstant: 34),
+            bagButton.heightAnchor.constraint(equalToConstant: 44),
+        ])
+        
+        BageButton.showBadge(bagBtn: bagButton, withCount: 10)
     }
     
     
@@ -89,7 +97,7 @@ class MeVC: UIViewController {
 
 
     @IBAction func moreWishListAction(_ sender: Any) {
-        var favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
+        let favouriteVC = self.storyboard?.instantiateViewController(withIdentifier: "FavouriteVC") as! FavouriteVC
         self.navigationController?.pushViewController(favouriteVC, animated: true)
     }
 }

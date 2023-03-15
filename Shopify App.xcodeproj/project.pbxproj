@@ -85,6 +85,7 @@
 		8C24C20429AE77BD00AE390B /* Shopify_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C20329AE77BD00AE390B /* Shopify_AppTests.swift */; };
 		8C24C20E29AE77BD00AE390B /* Shopify_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C20D29AE77BD00AE390B /* Shopify_AppUITests.swift */; };
 		8C24C21029AE77BD00AE390B /* Shopify_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C24C20F29AE77BD00AE390B /* Shopify_AppUITestsLaunchTests.swift */; };
+		8C661F3C29C22BD8008A0768 /* BageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C661F3B29C22BD8008A0768 /* BageButton.swift */; };
 		8CA6A06D29AFB444006809E9 /* ConfirmPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A06C29AFB444006809E9 /* ConfirmPaymentVC.swift */; };
 		8CA6A06F29AFB4E4006809E9 /* CouponTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */; };
 		8CA6A07329AFCE87006809E9 /* PaymentOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */; };
@@ -217,6 +218,7 @@
 		8C24C20929AE77BD00AE390B /* Shopify AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shopify AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C24C20D29AE77BD00AE390B /* Shopify_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify_AppUITests.swift; sourceTree = "<group>"; };
 		8C24C20F29AE77BD00AE390B /* Shopify_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C661F3B29C22BD8008A0768 /* BageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BageButton.swift; sourceTree = "<group>"; };
 		8CA6A06C29AFB444006809E9 /* ConfirmPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPaymentVC.swift; sourceTree = "<group>"; };
 		8CA6A06E29AFB4E4006809E9 /* CouponTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponTextField.swift; sourceTree = "<group>"; };
 		8CA6A07229AFCE87006809E9 /* PaymentOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsVC.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				33A2023229B0F62200D85E41 /* CardView.swift */,
 				33A2023329B0F62200D85E41 /* Typealias.swift */,
 				336C254329B634A600C78A98 /* ViewController + Extension.swift */,
+				8C661F3B29C22BD8008A0768 /* BageButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1180,6 +1183,7 @@
 				33A2023629B0F62200D85E41 /* Typealias.swift in Sources */,
 				33F3A6D729BAEFB50032FEBA /* CategoryViewModel .swift in Sources */,
 				339159AF29B9365200036033 /* AllOrderViewController.swift in Sources */,
+				8C661F3C29C22BD8008A0768 /* BageButton.swift in Sources */,
 				336C254B29B665AB00C78A98 /* AddressViewModel.swift in Sources */,
 				7BFB960829B0EB29002D5253 /* AboutUsVC.swift in Sources */,
 				33A2024E29B0F69E00D85E41 /* ProductCollectionViewCell.swift in Sources */,

@@ -762,15 +762,21 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <action selector="goToWishList:" destination="amV-e0-Max" id="ZTc-Me-iXb"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="shopping-bag" id="ywP-JB-Y1a">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="goToCart:" destination="amV-e0-Max" id="HVi-ZP-XDM"/>
-                                </connections>
+                            <barButtonItem style="plain" id="Hsx-Ez-Wvn">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="F8I-Db-yin">
+                                    <rect key="frame" x="246" y="2.6666666666666679" width="87" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="shopping-bag"/>
+                                    <connections>
+                                        <action selector="goToCart:" destination="amV-e0-Max" eventType="touchUpInside" id="3D8-Db-VF6"/>
+                                    </connections>
+                                </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="bagButton" destination="F8I-Db-yin" id="238-fP-vYi"/>
                         <outlet property="gridListButton" destination="EPv-PP-Yeo" id="6ec-lf-43i"/>
                         <outlet property="laoding" destination="efm-o1-Y3l" id="j2W-Fz-YM7"/>
                         <outlet property="productsCollectionView" destination="rQu-fO-cQx" id="8Si-Uo-QA9"/>
@@ -874,7 +880,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </barButtonItem>
                             <barButtonItem style="plain" id="Zvq-Em-n6l">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3jB-ZL-0ID">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3jB-ZL-0ID">
                                     <rect key="frame" x="246" y="2.6666666666666679" width="87" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
@@ -1012,16 +1018,22 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <action selector="toWishlistButton:" destination="frX-f1-Kq4" id="XC5-12-8FH"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="shopping-bag" id="BRb-V7-j96">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="toCartButton:" destination="frX-f1-Kq4" id="TSo-Mc-P38"/>
-                                </connections>
+                            <barButtonItem style="plain" id="BDK-W2-meu">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8T4-sw-OPg">
+                                    <rect key="frame" x="246" y="2.6666666666666679" width="87" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="shopping-bag"/>
+                                    <connections>
+                                        <action selector="toCartButton:" destination="frX-f1-Kq4" eventType="touchUpInside" id="f47-2h-A9r"/>
+                                    </connections>
+                                </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="ProductOfBrandsCollection" destination="4mn-Wg-Mmc" id="bRQ-yp-6EB"/>
+                        <outlet property="bagButton" destination="8T4-sw-OPg" id="biD-nm-Wxh"/>
                         <outlet property="maximumPrice" destination="7xx-iF-WQE" id="ei8-jK-F2Q"/>
                         <outlet property="minimumPrice" destination="Upz-RR-t0i" id="foL-eP-Z9X"/>
                         <outlet property="priceSlider" destination="qOw-h0-erf" id="G6Z-Ar-yKJ"/>
@@ -1949,24 +1961,21 @@ Abdullah Mohamed</string>
                                 </button>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="geT-gI-3dt">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="CGZ-jR-t0k">
-                                    <rect key="frame" x="271" y="2.6666666666666679" width="47" height="39"/>
+                            <barButtonItem style="plain" id="zV9-pW-O3i">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DJ0-gY-uGC">
+                                    <rect key="frame" x="231" y="2.6666666666666679" width="87" height="39"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="shopping-bag"/>
                                     <connections>
-                                        <action selector="cartButton:" destination="55X-4v-B8P" eventType="touchUpInside" id="TtU-ev-Ne7"/>
+                                        <action selector="cartButton:" destination="55X-4v-B8P" eventType="touchUpInside" id="WYD-Jn-vFD"/>
                                     </connections>
                                 </button>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="cartButton:" destination="55X-4v-B8P" id="Tsg-cm-cGw"/>
-                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="bagButton" destination="DJ0-gY-uGC" id="wVY-ae-Ztf"/>
                         <outlet property="ordersTable" destination="959-7u-Ek3" id="IMu-x2-9dQ"/>
                         <outlet property="userNameLabel" destination="XRp-ps-WLS" id="u6h-bV-bQd"/>
                         <outlet property="wishListTable" destination="NGT-iZ-v4q" id="q2R-Ay-HIU"/>

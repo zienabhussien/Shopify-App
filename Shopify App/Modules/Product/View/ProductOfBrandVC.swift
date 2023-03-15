@@ -27,6 +27,7 @@ class ProductOfBrandVC: UIViewController {
     var isFiltering : Bool = false
 
 
+    @IBOutlet weak var bagButton: UIButton!
     @IBOutlet weak var productSearchBar: UISearchBar!
     @IBOutlet weak var priceSlider: UISlider!
     @IBOutlet weak var minimumPrice: UILabel!
@@ -48,6 +49,15 @@ class ProductOfBrandVC: UIViewController {
         maximumPrice.isHidden = true
         minimumPrice.isHidden = true
         priceSlider.isHidden = true
+        
+        NSLayoutConstraint.activate([
+            bagButton.widthAnchor.constraint(equalToConstant: 34),
+            bagButton.heightAnchor.constraint(equalToConstant: 44),
+        ])
+        
+        BageButton.showBadge(bagBtn: bagButton, withCount: 10)
+        
+        
     }
     
     private func bindViewModel(){
