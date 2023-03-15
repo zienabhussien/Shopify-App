@@ -26,8 +26,8 @@ class ConfirmPaymentVC: UIViewController {
         setCartItems()
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            subTotalLabel.text = String(totalPrice) + " EGP"
-            shippingFess.text = "30.0 EGP"
+            subTotalLabel.text = String(totalPrice * 30) + " EGP"
+            shippingFess.text = "900.0 EGP"
             discountLabel.text = "-0.0 EGP"
          } else {
              subTotalLabel.text = "$" + String(totalPrice)
@@ -41,8 +41,8 @@ class ConfirmPaymentVC: UIViewController {
         if couponTF.textField.text == "IOS_ITI" {
             self.view.makeToast("Coupon applied")
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                discountLabel.text = "-20.0 EGP"
-                grandTotal.text = String(Total - 20.0) + " EGP"
+                discountLabel.text = "-600.0 EGP"
+                grandTotal.text = String(Total - 600.0) + " EGP"
              } else {
                  discountLabel.text = "$-20.0 "
                  grandTotal.text =  "$" + String(Total - 20.0)
@@ -51,7 +51,7 @@ class ConfirmPaymentVC: UIViewController {
             self.view.makeToast("Coupon not valied")
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
                 discountLabel.text = "-0.0 EGP"
-                grandTotal.text =  String(Total) + " EGP"
+                grandTotal.text =  String(Total * 30) + " EGP"
              } else {
                  discountLabel.text = "$-0.0"
                  grandTotal.text = "$" + String(Total)
@@ -60,10 +60,12 @@ class ConfirmPaymentVC: UIViewController {
     }
     func calcGrandTotal(){
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
-        Total = totalPrice + 30
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            grandTotal.text =  String(Total) + " EGP"
+            Total = totalPrice + 900
+
+            grandTotal.text =  String(Total * 30) + " EGP"
          } else {
+             Total = totalPrice + 30
              grandTotal.text = "$" + String(Total)
          }
     }

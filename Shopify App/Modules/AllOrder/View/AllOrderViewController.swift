@@ -48,12 +48,19 @@ extension AllOrderViewController: UITableViewDelegate, UITableViewDataSource{
         cell.contentView.layer.masksToBounds = true
         cell.contentView.layer.borderWidth = 1
         cell.createdAt.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
-        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            cell.orderPrice.text =
-            "\(viewModel.reponseOrsers?.orders[indexPath.row].current_total_price ?? "") EGP"
+      
+        if let firstPrice = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price, let itemPrice = Double(firstPrice) {
+            var convertedPrice = itemPrice
+            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                convertedPrice *= 30.0
+                cell.orderPrice.text = "\(convertedPrice) EGP"
+            } else {
+                cell.orderPrice.text = "$\(convertedPrice)"
+            }
         } else {
-            cell.orderPrice.text = "$\(viewModel.reponseOrsers?.orders[indexPath.row].current_total_price ?? "")"
-         }
+            cell.orderPrice.text = ""
+        }
+ 
             return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

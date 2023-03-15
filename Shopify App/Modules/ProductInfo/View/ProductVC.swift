@@ -45,12 +45,18 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         
         ProductPageControl.numberOfPages = fromFavouriteVC ? 1 : product?.images?.count ?? 0
         productName.text = productTitle
-        guard let price = productPriceVal else {return}
-        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            productPrice.text = "\(price) EGP"
-         } else {
-        productPrice.text = "$\(price)"
-         }
+        
+        if let price = productPriceVal, let itemPrice = Double(price) {
+            var convertedPrice = itemPrice
+            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                convertedPrice *= 30.0
+                productPrice.text = "\(convertedPrice) EGP"
+            } else {
+                productPrice.text = "$\(convertedPrice)"
+            }
+        } else {
+            productPrice.text = ""
+        }
         
         productDescription.text = productDesc
         startTimer()

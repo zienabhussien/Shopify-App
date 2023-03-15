@@ -39,7 +39,7 @@ class ProductOfBrandVC: UIViewController {
         bindViewModel()
         //slider
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            maximumPrice.text = "300 EGP"
+            maximumPrice.text = "9000 EGP"
             minimumPrice.text = "0 EGP"
          } else {
              maximumPrice.text = "$300"
@@ -58,6 +58,7 @@ class ProductOfBrandVC: UIViewController {
         }
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         self.ProductOfBrandsCollection.reloadData()
     }
@@ -68,7 +69,7 @@ class ProductOfBrandVC: UIViewController {
         isFiltered = true
         let filteredByPrice = self.viewModel.productOBbrandsModel?.products?.filter({ product in
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                maximumPrice.text = String(Int(sender.value)) + " EGP"
+                maximumPrice.text = String(Int(sender.value) * 30) + " EGP"
              } else {
                  maximumPrice.text = "$"+String(Int(sender.value))
              }
@@ -134,6 +135,13 @@ class ProductOfBrandVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+            maximumPrice.text = "9000 EGP"
+            minimumPrice.text = "0 EGP"
+         } else {
+             maximumPrice.text = "$300"
+             minimumPrice.text = "$0"
+         }
         navigationController?.setNavigationBarHidden(false, animated: false)
 
     }
@@ -211,16 +219,20 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
         if isFiltering {   // display from search array
             cell.nameOfProductBrand.text = searchedProducts[indexPath.row].title
             cell.ProductType.text = searchedProducts[indexPath.row].product_type
-            if let firstPrice = searchedProducts[indexPath.row].variants?.first?.price {
+            
+            
+            if let firstPrice = searchedProducts[indexPath.row].variants?.first?.price, let itemPrice = Double(firstPrice) {
+                var convertedPrice = itemPrice
                 if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                    cell.productPrice.text = "\(firstPrice) EGP"
-                 } else {
-                     cell.productPrice.text = "$\(firstPrice)"
-                 }
+                    convertedPrice *= 30.0
+                    cell.productPrice.text = "\(convertedPrice) EGP"
                 } else {
-                    cell.productPrice.text = ""
+                    cell.productPrice.text = "$\(convertedPrice)"
                 }
-                
+            } else {
+                cell.productPrice.text = ""
+            }
+       
             if let imageUrl = URL(string: searchedProducts[indexPath.row].image?.src ?? "") {
                            cell.productImage.kf.setImage(with: imageUrl)
                 }
@@ -228,15 +240,21 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
             if let productOfbrand = viewModel.filteredProducts?[indexPath.row] {
                         cell.nameOfProductBrand.text = productOfbrand.title
                        // cell.ProductType.text = productOfbrand.product_type
-                        if let firstPrice = productOfbrand.variants?.first?.price {
-                            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                                cell.productPrice.text = "\(firstPrice) EGP"
-                             } else {
-                                 cell.productPrice.text = "$\(firstPrice)"
-                             }
-                        } else {
-                            cell.productPrice.text = ""
-                        }
+                
+                
+                
+                if let firstPrice = productOfbrand.variants?.first?.price, let itemPrice = Double(firstPrice) {
+                    var convertedPrice = itemPrice
+                    if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                        convertedPrice *= 30.0
+                        cell.productPrice.text = "\(convertedPrice) EGP"
+                    } else {
+                        cell.productPrice.text = "$\(convertedPrice)"
+                    }
+                } else {
+                    cell.productPrice.text = ""
+                }
+         
                         if let imageUrl = URL(string: productOfbrand.image?.src ?? "") {
                                    cell.productImage.kf.setImage(with: imageUrl)
             

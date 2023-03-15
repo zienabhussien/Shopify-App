@@ -101,11 +101,18 @@ extension MeVC: UITableViewDelegate, UITableViewDataSource{
         if(tableView == ordersTable){
             let cell = tableView.dequeueReusableCell(withIdentifier: "ordersCell", for: indexPath) as! OrdersTableCell
             cell.createdAtProduct.text = viewModel.reponseOrsers?.orders[indexPath.row].created_at
-            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                cell.priceProduct.text = "\(viewModel.reponseOrsers?.orders[indexPath.row].current_total_price ?? "") EGP"
-             } else {
-                 cell.priceProduct.text = "$\(viewModel.reponseOrsers?.orders[indexPath.row].current_total_price ?? "")"
-             }
+            if let firstPrice = viewModel.reponseOrsers?.orders[indexPath.row].current_total_price, let itemPrice = Double(firstPrice) {
+                var convertedPrice = itemPrice
+                if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                    convertedPrice *= 30.0
+                    cell.priceProduct.text = "\(convertedPrice) EGP"
+                } else {
+                    cell.priceProduct.text = "$\(convertedPrice)"
+                }
+            } else {
+                cell.priceProduct.text = ""
+            }
+            
             return cell
         }
         

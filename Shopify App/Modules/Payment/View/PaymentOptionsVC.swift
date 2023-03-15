@@ -11,6 +11,8 @@ class PaymentOptionsVC: UIViewController {
     
     var selectedPaymentOption: String?
     var index: Int?
+    
+    
     var total = Helper.shared.getTotalPrice()
     lazy var totalPay = NSDecimalNumber(string: "\(total ?? 1.1)")
     

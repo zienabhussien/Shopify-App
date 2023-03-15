@@ -250,16 +250,19 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                         print("any thing")
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
-                        if let firstPrice = productOfbrandCategory.variants?.first?.price {
-                            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                                cell.priceList.text = "\(firstPrice) EGP"
-                             } else {
-                                 cell.priceList.text = "$\(firstPrice)"
-                             }
-                        } else {
-                            cell.priceList.text = ""
-                        }
-                        
+               
+                if let firstPrice = productOfbrandCategory.variants?.first?.price, let itemPrice = Double(firstPrice) {
+                    var convertedPrice = itemPrice
+                    if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                        convertedPrice *= 30.0
+                        cell.priceList.text = "\(convertedPrice) EGP"
+                    } else {
+                        cell.priceList.text = "$\(convertedPrice)"
+                    }
+                } else {
+                    cell.priceList.text = ""
+                }
+                  
                         cell.imageList.kf.indicatorType = .activity
                         
                         if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
@@ -273,16 +276,20 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 if let productOfbrandCategory = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row] {
                         cell.nameList.text = productOfbrandCategory.title
                         cell.brandlist.text = productOfbrandCategory.product_type
-                    if let firstPrice = productOfbrandCategory.variants?.first?.price {
+                    
+                    
+                    
+                    if let firstPrice = productOfbrandCategory.variants?.first?.price, let itemPrice = Double(firstPrice) {
+                        var convertedPrice = itemPrice
                         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                            cell.priceList.text = "\(firstPrice) EGP"
-                         } else {
-                             cell.priceList.text = "$\(firstPrice)"
-                         }
+                            convertedPrice *= 30.0
+                            cell.priceList.text = "\(convertedPrice) EGP"
                         } else {
-                            cell.priceList.text = ""
+                            cell.priceList.text = "$\(convertedPrice)"
                         }
-                        
+                    } else {
+                        cell.priceList.text = ""
+                    }
                         cell.imageList.kf.indicatorType = .activity
                         
                     if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
@@ -333,7 +340,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                              UserDefaults.standard.set(false,
                                                        forKey: "\(productsArr?[indexPath.row].id ?? 0)")
                          }
-
                }
                 
 
@@ -342,17 +348,17 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                     if let productOfbrandCategory = viewModel.FilterdArr?[indexPath.row] {
                         cell.nameGrid.text = productOfbrandCategory.title
                         cell.brandGrid.text = productOfbrandCategory.product_type
-                        
-                        if let firstPrice = productOfbrandCategory.variants?.first?.price {
+                        if let firstPrice = productOfbrandCategory.variants?.first?.price, let itemPrice = Double(firstPrice) {
+                            var convertedPrice = itemPrice
                             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                                cell.priceGrid.text = "\(firstPrice) EGP"
-                             } else {
-                                 cell.priceGrid.text = "$\(firstPrice)"
-                             }
+                                convertedPrice *= 30.0
+                                cell.priceGrid.text = "\(convertedPrice) EGP"
+                            } else {
+                                cell.priceGrid.text = "$\(convertedPrice)"
+                            }
                         } else {
                             cell.priceGrid.text = ""
                         }
-                        
                         cell.imageGrid.kf.indicatorType = .activity
                         
                         if let imageUrl = URL(string: productOfbrandCategory.image?.src ?? "") {
@@ -365,12 +371,17 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
                 if let productOfbrandCategory = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row] {
                     cell.nameGrid.text = productOfbrandCategory.title
                     cell.brandGrid.text = productOfbrandCategory.product_type
-                    if let firstPrice = productOfbrandCategory.variants?.first?.price {
+                    
+                    
+                    
+                    if let firstPrice = productOfbrandCategory.variants?.first?.price, let itemPrice = Double(firstPrice) {
+                        var convertedPrice = itemPrice
                         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-                            cell.priceGrid.text = "\(firstPrice) EGP"
-                         } else {
-                             cell.priceGrid.text = "$\(firstPrice)"
-                         }
+                            convertedPrice *= 30.0
+                            cell.priceGrid.text = "\(convertedPrice) EGP"
+                        } else {
+                            cell.priceGrid.text = "$\(convertedPrice)"
+                        }
                     } else {
                         cell.priceGrid.text = ""
                     }
@@ -387,13 +398,6 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
     }
 }
 
-
-
-
-
-
-
-
 extension CatagoryViewController {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -404,11 +408,8 @@ extension CatagoryViewController {
             guard let subcategory = viewModel.subCategoriesNamesModel?.customCollections[indexPath.item] else {
                 return
             }
-
-
             // Update the id variable with the collection ID of the selected subcategory
             viewModel.fetchProduct(id: String(subcategory.id))
-
 
         } else if collectionView == productsCollectionView {
             let product = viewModel.productOfbrandsCategoryModel?.products?[indexPath.row]
@@ -418,8 +419,7 @@ extension CatagoryViewController {
         }
 
     }
-    
-    
+  
 }
 
 
