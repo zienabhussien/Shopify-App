@@ -12,7 +12,9 @@ import Floaty
 class CatagoryViewController: UIViewController {
     var viewModel: CategoryViewModel!
     
-    
+    var productKey = ""
+    var productsArr : [Product]?
+
     @IBOutlet weak var laoding: UIActivityIndicatorView!
     @IBOutlet weak var subCategoriesCollectionViev: UICollectionView!{
         
@@ -200,8 +202,13 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             if isList == true{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as!ProductCollectionViewCell
             
-                var productsArr = viewModel.productOfbrandsCategoryModel?.products
-                let productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
+                if isFiltered{
+                     productsArr = viewModel.FilterdArr
+                }else{
+                     productsArr = viewModel.productOfbrandsCategoryModel?.products
+                }
+                
+                 productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
                 
                 if UserDefaults.standard.bool(forKey: productKey){
                     cell.favoritelist.setImage(UIImage(named: "favoriteRed"), for: .normal)
@@ -289,8 +296,12 @@ extension CatagoryViewController: CollectionView_Delegate_DataSource_FlowLayout{
             }else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridProductCollectionViewCell", for: indexPath) as!GridProductCollectionViewCell
                // ------- add to wish list -------
-                var productsArr = viewModel.productOfbrandsCategoryModel?.products
-                let productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
+                if isFiltered{
+                     productsArr = viewModel.FilterdArr
+                }else{
+                     productsArr = viewModel.productOfbrandsCategoryModel?.products
+                }
+                 productKey = "\((productsArr?[indexPath.row].id) ?? 0)"
                 
                 var favIsSelected =  UserDefaults.standard.bool(forKey: productKey)
                 cell.favoriteGrid.isSelected =   UserDefaults.standard.bool(forKey: productKey)

@@ -697,24 +697,15 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="FWN-hA-kLX">
                                 <rect key="frame" x="16" y="171" width="361" height="30"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4r-lM-t0y">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Filtters" image="filter">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-ke-34t">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
-                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Price: lowest to high" image="priceSort">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
+                                    <searchBar contentMode="redraw" barStyle="blackTranslucent" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="XWs-Hl-U2Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="30"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="amV-e0-Max" id="367-Jh-1A0"/>
+                                        </connections>
+                                    </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPv-PP-Yeo">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="30"/>
+                                        <rect key="frame" x="341" y="0.0" width="20" height="30"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="grid">
@@ -727,6 +718,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="EFJ-xi-xGc"/>
+                                    <constraint firstItem="EPv-PP-Yeo" firstAttribute="top" secondItem="FWN-hA-kLX" secondAttribute="top" id="dgf-VJ-iLF"/>
+                                    <constraint firstAttribute="trailing" secondItem="EPv-PP-Yeo" secondAttribute="trailing" id="eU0-qT-Cn8"/>
+                                    <constraint firstAttribute="bottom" secondItem="EPv-PP-Yeo" secondAttribute="bottom" id="xVi-30-if0"/>
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rQu-fO-cQx">
