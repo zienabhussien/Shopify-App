@@ -23,10 +23,10 @@ class MeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if Helper.shared.getUserID() == 0 {
-            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
-            self.navigationController?.pushViewController(loginVC, animated: true)
-        }
+//        if Helper.shared.getUserID() == 0 {
+//            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+//            self.navigationController?.pushViewController(loginVC, animated: true)
+//        }
         viewModel = MeViewModel()
         
         
@@ -77,6 +77,11 @@ class MeVC: UIViewController {
    
     
     override func viewWillAppear(_ animated: Bool) {
+        if Helper.shared.getUserID() == 0 {
+            let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "loginViewController") as! loginViewController
+            self.navigationController?.pushViewController(loginVC, animated: true)
+        }
+        
         let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
         let count = (try? context.count(for: request)) ?? 0
         
