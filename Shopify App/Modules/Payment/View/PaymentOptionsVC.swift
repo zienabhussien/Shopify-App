@@ -24,11 +24,14 @@ class PaymentOptionsVC: UIViewController {
         request.supportedCountries = ["EG", "US" ]
         request.merchantCapabilities = .capability3DS
         request.countryCode = "EG"
-        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            request.currencyCode = "EGP"
-         } else {
-             request.currencyCode = "USD"
-         }
+        
+//        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+//            request.currencyCode = "EGP"
+//         } else {
+//             request.currencyCode = "USD"
+//         }
+        request.currencyCode = "USD"
+
         request.paymentSummaryItems = [PKPaymentSummaryItem(label: "shopify", amount: totalPay)]
         return request}()
     

@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import CoreData
 
 class ProductOfBrandVC: UIViewController {
     var viewModel: ProductViewModel!
@@ -55,9 +56,7 @@ class ProductOfBrandVC: UIViewController {
             bagButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        BageButton.showBadge(bagBtn: bagButton, withCount: 10)
-        
-        
+       
     }
     
     private func bindViewModel(){
@@ -145,6 +144,10 @@ class ProductOfBrandVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
+        let count = (try? context.count(for: request)) ?? 0
+        
+        BageButton.showBadge(bagBtn: bagButton, withCount: count - 3)
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
             maximumPrice.text = "9000 EGP"
             minimumPrice.text = "0 EGP"

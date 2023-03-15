@@ -94,6 +94,7 @@ extension AddressVC {
         }
     }
 }
+
 extension AddressVC{
     func setAddressDefault(customerId: Int, addressId: Int, row: Int){
         networking.setDefaultAddress(customerId: customerId, addressId: addressId, address: self.arrOfAddress[row]) { data, res, error in
@@ -104,6 +105,7 @@ extension AddressVC{
             }
         }
     }
+    
     func addAddressToOrder(row: Int){
         let myAddress = arrOfAddress[row]
        let selectedAddress = AddressModel(context: context)

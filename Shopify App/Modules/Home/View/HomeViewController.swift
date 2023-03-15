@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 class HomeViewController: UIViewController {
     //adds
     @IBOutlet weak var addsCollection: UICollectionView!{
@@ -52,11 +53,15 @@ class HomeViewController: UIViewController {
             bagBtn.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        BageButton.showBadge(bagBtn: bagBtn, withCount: 12)
+       
 
     }
-    
-  
+    override func viewWillAppear(_ animated: Bool) {
+        let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
+        let count = (try? context.count(for: request)) ?? 0
+        
+        BageButton.showBadge(bagBtn: bagBtn, withCount: count - 3)
+    }
 
     
     //MARK: - adds

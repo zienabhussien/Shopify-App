@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import CoreData
 
 class MeVC: UIViewController {
     var viewModel: MeViewModel!
@@ -34,10 +35,7 @@ class MeVC: UIViewController {
             bagButton.heightAnchor.constraint(equalToConstant: 44),
         ])
         
-        BageButton.showBadge(bagBtn: bagButton, withCount: 10)
     }
-    
-    
     private func bindViewModelgategory(){
         viewModel.didFetchData = {[weak self] in
             guard let self = self else {return}
@@ -79,6 +77,11 @@ class MeVC: UIViewController {
    
     
     override func viewWillAppear(_ animated: Bool) {
+        let request: NSFetchRequest<OrderItemModel> = OrderItemModel.fetchRequest()
+        let count = (try? context.count(for: request)) ?? 0
+        
+        BageButton.showBadge(bagBtn: bagButton, withCount: count - 3)
+        
         userNameLabel.text = "Welcome " + (UserDefaults.standard.string(forKey: "userName") ?? "Ali")
         someWishList = CoreDataManager.fetchFromCoreData()
         viewModel.userID = Helper.shared.getUserID()!
