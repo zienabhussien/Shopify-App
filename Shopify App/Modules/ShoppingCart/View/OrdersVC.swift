@@ -71,11 +71,16 @@ class OrdersVC: UIViewController{
         orderViewModel.calcTotalPrice { totalPrice in
             guard let totalPrice = totalPrice else { return }
             Helper.shared.setTotalPrice(totalPrice:totalPrice)
+            
+            
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
                 self.totalPriceLabel.text = String(totalPrice) + " EGP"
              } else {
                  self.totalPriceLabel.text = "$" + String(totalPrice)
              }
+            
+            
+            
         }
     }
 }

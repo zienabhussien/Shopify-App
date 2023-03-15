@@ -20,11 +20,29 @@ extension OrdersVC : UITableViewDataSource
         cell.addButton.tag = indexPath.row
         cell.imgView.kf.setImage(with: URL(string: cartArray[indexPath.row].itemImage ?? ""))
         cell.titleLabel.text = cartArray[indexPath.row].itemName
-        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            cell.priceLabel.text = "\(cartArray[indexPath.row].itemPrice ?? "") EGP"
-         } else {
-             cell.priceLabel.text = "$\(cartArray[indexPath.row].itemPrice ?? "")"
-         }
+        
+        if let itemPriceStr = cartArray[indexPath.row].itemPrice, let itemPrice = Double(itemPriceStr) {
+            var convertedPrice = itemPrice
+            if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+                convertedPrice *= 30.0 // assuming 1 USD = 30 EGP
+            //if let currencyCode = Locale.current.currency?.identifier {
+                //let formatter = NumberFormatter()
+                //formatter.numberStyle = .currency
+                //formatter.currencyCode = currencyCode
+                cell.priceLabel.text = "\(convertedPrice) EGP"
+                //cell.priceLabel.text = formatter.string(from: NSNumber(value: convertedPrice))
+            } else {
+                cell.priceLabel.text = "$\(convertedPrice)"
+            }
+        } else {
+            cell.priceLabel.text = ""
+        }
+        
+//        if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
+//            cell.priceLabel.text = "\(cartArray[indexPath.row].itemPrice ?? "") EGP"
+//         } else {
+//             cell.priceLabel.text = "$\(cartArray[indexPath.row].itemPrice ?? "")"
+//         }
         
         cell.addItemQuantity = {
             self.orderViewModel.getSelectedItemInCart(productId: self.cartArray[indexPath.row].itemID) { selectedOrder, error in
