@@ -22,7 +22,7 @@ struct Order : Codable{
     var created_at:String?
     var financial_status: String = "paid"
     var current_total_price:String?
-    var billing_address, shipping_address: Address?//Mark
+
 }
 
 struct OrderToAPI : Codable{

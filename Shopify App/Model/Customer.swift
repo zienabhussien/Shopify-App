@@ -21,6 +21,7 @@ struct Customer: Codable {
     let note: String?
     let verified_email: Bool?
     let addresses: [Address]?
+    let default_address: Address?
 }
 
 struct LoginResponse: Codable {
