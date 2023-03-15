@@ -812,27 +812,62 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adds" translatesAutoresizingMaskIntoConstraints="NO" id="vyx-AP-4CP">
-                                <rect key="frame" x="16" y="119" width="361" height="238"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="vBZ-Wt-doN" appends="YES" id="G1S-BG-h4w"/>
-                                </connections>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4Xg-1R-AKX">
+                                <rect key="frame" x="8" y="111" width="377" height="254"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9V9-Z0-8fF">
+                                    <size key="itemSize" width="288" height="164"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="jal-8U-KFG" customClass="HomeCollectionViewCell" customModule="Shopify_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="45" width="288" height="164"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jJB-gP-KEH">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="164"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sx0-ZE-HOw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="164"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sx0-ZE-HOw" firstAttribute="top" secondItem="jJB-gP-KEH" secondAttribute="top" id="JRX-7U-0PJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sx0-ZE-HOw" secondAttribute="bottom" id="UWN-ek-9YG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Sx0-ZE-HOw" secondAttribute="trailing" id="c8a-7v-K0w"/>
+                                                <constraint firstItem="Sx0-ZE-HOw" firstAttribute="leading" secondItem="jJB-gP-KEH" secondAttribute="leading" id="nR8-gH-GaZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="288" height="164"/>
+                                        <connections>
+                                            <outlet property="image" destination="Sx0-ZE-HOw" id="dzA-8t-oDo"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jbb-nC-IWJ">
+                                <rect key="frame" x="138.66666666666666" y="339" width="116" height="26"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" name="mainColor"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ipy-jP-9A6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Jbb-nC-IWJ" firstAttribute="centerX" secondItem="Ipy-jP-9A6" secondAttribute="centerX" id="7zY-1R-KWz"/>
                             <constraint firstItem="z7K-vX-ARx" firstAttribute="centerX" secondItem="Ipy-jP-9A6" secondAttribute="centerX" id="8Pr-Px-UZj"/>
                             <constraint firstItem="Ubj-O9-PRg" firstAttribute="top" secondItem="z7K-vX-ARx" secondAttribute="bottom" constant="8" id="9cQ-Dh-c2H"/>
+                            <constraint firstItem="z7K-vX-ARx" firstAttribute="top" secondItem="4Xg-1R-AKX" secondAttribute="bottom" constant="8" id="Ca1-zz-ZEC"/>
                             <constraint firstItem="Ubj-O9-PRg" firstAttribute="leading" secondItem="Ipy-jP-9A6" secondAttribute="leading" id="LDG-iz-QtF"/>
-                            <constraint firstItem="vyx-AP-4CP" firstAttribute="leading" secondItem="Ipy-jP-9A6" secondAttribute="leading" constant="16" id="TJB-d6-ra1"/>
                             <constraint firstItem="Ipy-jP-9A6" firstAttribute="bottom" secondItem="Ubj-O9-PRg" secondAttribute="bottom" id="X0a-bk-Qxj"/>
-                            <constraint firstItem="Ipy-jP-9A6" firstAttribute="trailing" secondItem="vyx-AP-4CP" secondAttribute="trailing" constant="16" id="Yg9-49-hMi"/>
+                            <constraint firstItem="Jbb-nC-IWJ" firstAttribute="bottom" secondItem="4Xg-1R-AKX" secondAttribute="bottom" id="dzU-qE-nU6"/>
+                            <constraint firstItem="4Xg-1R-AKX" firstAttribute="leading" secondItem="Ipy-jP-9A6" secondAttribute="leading" constant="8" id="ept-i9-vtK"/>
                             <constraint firstItem="z7K-vX-ARx" firstAttribute="top" secondItem="Ipy-jP-9A6" secondAttribute="top" constant="270" id="fQm-9O-Qho"/>
                             <constraint firstItem="Ubj-O9-PRg" firstAttribute="centerX" secondItem="z7K-vX-ARx" secondAttribute="centerX" id="h1j-Rh-Fdj"/>
-                            <constraint firstItem="z7K-vX-ARx" firstAttribute="top" secondItem="vyx-AP-4CP" secondAttribute="bottom" constant="16" id="iuO-C1-ZdF"/>
-                            <constraint firstItem="vyx-AP-4CP" firstAttribute="top" secondItem="Ipy-jP-9A6" secondAttribute="top" constant="16" id="p72-UZ-JNm"/>
+                            <constraint firstItem="4Xg-1R-AKX" firstAttribute="top" secondItem="Ipy-jP-9A6" secondAttribute="top" constant="8" id="lIV-zH-ayF"/>
+                            <constraint firstItem="Ipy-jP-9A6" firstAttribute="trailing" secondItem="4Xg-1R-AKX" secondAttribute="trailing" constant="8" id="mCr-2r-8sM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Y2v-CK-bhz">
@@ -852,8 +887,9 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="AddsImage" destination="vyx-AP-4CP" id="P7z-Gh-XYk"/>
+                        <outlet property="addsCollection" destination="4Xg-1R-AKX" id="0E4-us-vaX"/>
                         <outlet property="brandsCollectionView" destination="Ubj-O9-PRg" id="QCM-sw-g7r"/>
+                        <outlet property="pageControl" destination="Jbb-nC-IWJ" id="8GZ-Zb-Dix"/>
                         <outlet property="searchHome" destination="bmR-7q-wrC" id="s3Z-Nv-6qo"/>
                     </connections>
                 </viewController>
@@ -866,13 +902,8 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <outlet property="delegate" destination="1Py-oG-ejz" id="vp6-pn-VTX"/>
                     </connections>
                 </searchBar>
-                <tapGestureRecognizer id="vBZ-Wt-doN">
-                    <connections>
-                        <action selector="copyCoupon:" destination="1Py-oG-ejz" id="7RY-Rf-VwM"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="934" y="717"/>
+            <point key="canvasLocation" x="933.58778625954199" y="716.90140845070425"/>
         </scene>
         <!--Product Of BrandVC-->
         <scene sceneID="1np-8e-ePS">
@@ -2237,7 +2268,6 @@ Abdullah Mohamed</string>
     </scenes>
     <resources>
         <image name="1" width="1303" height="942"/>
-        <image name="adds" width="696" height="365"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>

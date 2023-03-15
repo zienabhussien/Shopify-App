@@ -8,7 +8,18 @@
 import UIKit
 import Kingfisher
 class HomeViewController: UIViewController {
-    
+    //adds
+    @IBOutlet weak var addsCollection: UICollectionView!{
+        didSet{
+            addsCollection.delegate = self
+            addsCollection.dataSource = self
+        }
+    }
+    @IBOutlet weak var pageControl: UIPageControl!
+    var curentCellIndex = 0
+    var timer : Timer?
+    var arrOfPhotos = [UIImage(named: "33")!,UIImage(named: "44")!,UIImage(named: "55")!]
+//adds
     @IBOutlet var searchHome: UISearchBar!
     var viewModel: HomeViewModel!
     var isFiltering : Bool = false
@@ -32,7 +43,26 @@ class HomeViewController: UIViewController {
         viewModel.viewDidLoad()
         bindViewModel()
         setUpUI()
+        setupTimer()
     }
+    //MARK: - adds
+    func setupTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToIndexAds), userInfo: nil, repeats: true)
+        
+        pageControl.numberOfPages = arrOfPhotos.count
+    }
+    
+    @objc func moveToIndexAds(){
+        if curentCellIndex < arrOfPhotos.count - 1 {
+            curentCellIndex += 1
+        }else{
+            curentCellIndex = 0
+        }
+        
+        addsCollection.scrollToItem(at: IndexPath(row: curentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        pageControl.currentPage = curentCellIndex
+    }
+    
     
     @IBAction func goToCart(_ sender: Any) {
         let userDefaultToken = UserDefaults.standard.integer(forKey: "loginId")
@@ -74,21 +104,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    @IBAction func copyCoupon(_ sender: UITapGestureRecognizer) {
-        let couponCode = "IOS_ITI"
-            UIPasteboard.general.string = couponCode
-        
-        self.view.makeToast("The disscount coupon copied")
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-  
-    
-
-
 }
 //MARK: - SearchDelegate
 extension HomeViewController : UISearchBarDelegate{
@@ -127,51 +142,76 @@ extension HomeViewController: CollectionView_Delegate_DataSource_FlowLayout{
     
     
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "ProductOfBrandVC") as! ProductOfBrandVC
-        storyBoard.viewModel = ProductViewModel()
-        if isFiltering {
-          let brand = viewModel.filteredBrands[indexPath.row]
-                storyBoard.viewModel.SmartCollectionID = String(brand.id)
-            
-         }else {
-            if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
-                storyBoard.viewModel.SmartCollectionID = String(brand.id)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        if collectionView == addsCollection{
+            // Check if the last cell is selected
+            if indexPath.row == arrOfPhotos.count - 1 {
+                        let couponCode = "IOS_ITI"
+                        UIPasteboard.general.string = couponCode
+                        self.view.makeToast("The discount coupon copied")
+                    }
+        }else{
+            let storyBoard = self.storyboard?.instantiateViewController(withIdentifier: "ProductOfBrandVC") as! ProductOfBrandVC
+            storyBoard.viewModel = ProductViewModel()
+            if isFiltering {
+              let brand = viewModel.filteredBrands[indexPath.row]
+                    storyBoard.viewModel.SmartCollectionID = String(brand.id)
+                
+             }else {
+                if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
+                    storyBoard.viewModel.SmartCollectionID = String(brand.id)
+                }
             }
+            navigationController?.pushViewController(storyBoard, animated: true)
         }
-        
-
-        navigationController?.pushViewController(storyBoard, animated: true)
+       
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isFiltering {
-            return viewModel.filteredBrands.count
+        if collectionView == addsCollection{
+            return arrOfPhotos.count
+
+        }else{
+            
+            if isFiltering {
+                return viewModel.filteredBrands.count
+            }
+           
+            return viewModel.brandsModel?.smartCollections.count ?? 0
         }
-       
-        return viewModel.brandsModel?.smartCollections.count ?? 0
+ 
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandsCollectionViewCell", for: indexPath) as! BrandsCollectionViewCell
-        
-        if isFiltering {
-            cell.BrandName.text = viewModel.filteredBrands[indexPath.row].title
-            if let imageUrl = URL(string: viewModel.filteredBrands[indexPath.row].image.src) {
-                cell.BrandImage.kf.setImage(with: imageUrl)
-                
-            }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        if collectionView == addsCollection{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
+            cell.image.image = arrOfPhotos[indexPath.row]
+            return cell
+
         }else{
-            if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
-                cell.BrandName.text = brand.title
-                if let imageUrl = URL(string: brand.image.src) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandsCollectionViewCell", for: indexPath) as! BrandsCollectionViewCell
+            
+            if isFiltering {
+                cell.BrandName.text = viewModel.filteredBrands[indexPath.row].title
+                if let imageUrl = URL(string: viewModel.filteredBrands[indexPath.row].image.src) {
                     cell.BrandImage.kf.setImage(with: imageUrl)
                     
                 }
+            }else{
+                if let brand = viewModel.brandsModel?.smartCollections[indexPath.row] {
+                    cell.BrandName.text = brand.title
+                    if let imageUrl = URL(string: brand.image.src) {
+                        cell.BrandImage.kf.setImage(with: imageUrl)
+                        
+                    }
+                }
             }
+            return cell
+
         }
-        return cell
     }
     
 }
