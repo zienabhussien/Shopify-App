@@ -9,6 +9,7 @@ import UIKit
 
 class AllOrderTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var orderPrice: UILabel!
     override func awakeFromNib() {

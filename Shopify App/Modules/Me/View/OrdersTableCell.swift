@@ -13,6 +13,7 @@ class OrdersTableCell: UITableViewCell {
     
     @IBOutlet weak var priceProduct: UILabel!
     
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var createdAtProduct: UILabel!
     
     override func awakeFromNib() {
