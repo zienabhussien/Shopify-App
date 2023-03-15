@@ -873,16 +873,22 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                     <action selector="goToWishList:" destination="1Py-oG-ejz" id="Xyf-sQ-HRU"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="shopping-bag" id="d3R-Qc-GRy">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="goToCart:" destination="1Py-oG-ejz" id="yMb-iu-U0x"/>
-                                </connections>
+                            <barButtonItem style="plain" id="Zvq-Em-n6l">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3jB-ZL-0ID">
+                                    <rect key="frame" x="246" y="2.6666666666666679" width="87" height="39"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="shopping-bag"/>
+                                    <connections>
+                                        <action selector="goToCart:" destination="1Py-oG-ejz" eventType="touchUpInside" id="MHN-dm-TWy"/>
+                                    </connections>
+                                </button>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addsCollection" destination="4Xg-1R-AKX" id="0E4-us-vaX"/>
+                        <outlet property="bagBtn" destination="3jB-ZL-0ID" id="wb8-ZZ-rnr"/>
                         <outlet property="brandsCollectionView" destination="Ubj-O9-PRg" id="QCM-sw-g7r"/>
                         <outlet property="pageControl" destination="Jbb-nC-IWJ" id="8GZ-Zb-Dix"/>
                         <outlet property="searchHome" destination="bmR-7q-wrC" id="s3Z-Nv-6qo"/>

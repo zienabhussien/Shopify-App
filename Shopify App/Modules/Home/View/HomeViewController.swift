@@ -33,8 +33,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    var searchController = UISearchController(searchResultsController: nil)
-
+   
+    
+    @IBOutlet weak var bagBtn: UIButton!
+    
     override func viewDidLoad() {
         self.navigationItem.titleView = searchHome
         searchHome.placeholder = "Search Brand"
@@ -44,7 +46,45 @@ class HomeViewController: UIViewController {
         bindViewModel()
         setUpUI()
         setupTimer()
+        NSLayoutConstraint.activate([
+            bagBtn.widthAnchor.constraint(equalToConstant: 34),
+            bagBtn.heightAnchor.constraint(equalToConstant: 44),
+        ])
+       showBadge(withCount: 12)
+
     }
+    
+    
+    let badgeSize: CGFloat = 20
+    let badgeTag = 9830384
+
+    func badgeLabel(withCount count: Int) -> UILabel {
+        let badgeCount = UILabel(frame: CGRect(x: 0, y: 0, width: badgeSize, height: badgeSize))
+        badgeCount.translatesAutoresizingMaskIntoConstraints = false
+        badgeCount.tag = badgeTag
+        badgeCount.layer.cornerRadius = badgeCount.bounds.size.height / 2
+        badgeCount.textAlignment = .center
+        badgeCount.layer.masksToBounds = true
+        badgeCount.textColor = .white
+        badgeCount.font = UIFont(name: "SanFranciscoText-Light", size: 13)
+        badgeCount.backgroundColor = .red
+        badgeCount.text = String(count)
+        return badgeCount
+    }
+
+    func showBadge(withCount count: Int) {
+        let badge = badgeLabel(withCount: count)
+        bagBtn.addSubview(badge)
+
+        NSLayoutConstraint.activate([
+            badge.leftAnchor.constraint(equalTo: bagBtn.leftAnchor, constant: 14),
+            badge.topAnchor.constraint(equalTo: bagBtn.topAnchor, constant: 4),
+            badge.widthAnchor.constraint(equalToConstant: badgeSize),
+            badge.heightAnchor.constraint(equalToConstant: badgeSize)
+        ])
+    }
+
+    
     //MARK: - adds
     func setupTimer(){
         timer = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(moveToIndexAds), userInfo: nil, repeats: true)
