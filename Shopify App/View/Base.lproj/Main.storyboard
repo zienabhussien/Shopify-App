@@ -774,6 +774,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <outlet property="gridListButton" destination="EPv-PP-Yeo" id="6ec-lf-43i"/>
                         <outlet property="laoding" destination="efm-o1-Y3l" id="j2W-Fz-YM7"/>
                         <outlet property="productsCollectionView" destination="rQu-fO-cQx" id="8Si-Uo-QA9"/>
+                        <outlet property="searchCategory" destination="XWs-Hl-U2Q" id="pcp-Uf-3KJ"/>
                         <outlet property="subCategoriesCollectionViev" destination="uij-Az-tVP" id="08c-sl-mXH"/>
                     </connections>
                 </viewController>

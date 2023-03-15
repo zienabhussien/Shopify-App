@@ -10,6 +10,8 @@ import Alamofire
 import Floaty
 
 class CatagoryViewController: UIViewController {
+    @IBOutlet var searchCategory: UISearchBar!
+
     var viewModel: CategoryViewModel!
     
     var productKey = ""
