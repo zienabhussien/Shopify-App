@@ -34,7 +34,7 @@ class AddressVC: UIViewController {
         addressViewModel.userID = Helper.shared.getUserID()!
 
         addressViewModel.getAllAddressForCustomer()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3 ) {
             self.checkCartIsEmpty()
         }
     }

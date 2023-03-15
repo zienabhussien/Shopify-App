@@ -44,6 +44,9 @@ class OrderViewModel{
                 //print("Already in cart")
                 self.showAlreadyExist()
             }else{
+                
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+
                 //make object from core data
                 let orderItem = OrderItemModel(context: context)
                 // set value from data to core data

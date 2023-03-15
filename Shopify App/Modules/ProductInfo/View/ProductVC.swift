@@ -93,10 +93,13 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
                 }else{
                     orderViewModel.addItemsToCart(product: product!)
                 }
-                
-                if flag {
+        
+                let retrievedValue = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
+        
+                if retrievedValue {
                     self.showToast(message: "Thank you!", font: .boldSystemFont(ofSize: 15))
                     flag.toggle()
+                    UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
                 }
     }
     
