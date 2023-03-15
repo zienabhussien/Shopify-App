@@ -8,6 +8,7 @@
 import UIKit
 import Toast_Swift
 class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
+    var flag :Bool = true
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var ProductPageControl: UIPageControl!
     @IBOutlet weak var productDescription: UILabel!
@@ -83,18 +84,22 @@ class ProductVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataS
         }
     }
     @IBAction func addToCart(_ sender: UIButton) {
-        
         orderViewModel.bindingAlreadyInCartToView = {
-        self.showToast(message: "Already in bag", font: .boldSystemFont(ofSize: 15))
-        }
-        if fromFavouriteVC {
-          fetchSingleProduct()
-        
-        }else{
-            orderViewModel.addItemsToCart(product: product!)
-        }
-
+                self.showToast(message: "Already in bag", font: .boldSystemFont(ofSize: 15))
+                }
+                
+                if fromFavouriteVC {
+                    fetchSingleProduct()
+                }else{
+                    orderViewModel.addItemsToCart(product: product!)
+                }
+                
+                if flag {
+                    self.showToast(message: "Thank you!", font: .boldSystemFont(ofSize: 15))
+                    flag.toggle()
+                }
     }
+    
     
     func fetchSingleProduct(){
         self.productInfoViewModel.bindProductToProductInfo = {
