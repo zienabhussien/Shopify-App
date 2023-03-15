@@ -34,7 +34,9 @@ class ConfirmPaymentVC: UIViewController {
              shippingFess.text = "$30.0"
              discountLabel.text = "$-0.0"
          }
+        
         calcGrandTotal()
+        
     }
     
     @IBAction func validateCoupon(_ sender: Any) {
@@ -51,7 +53,7 @@ class ConfirmPaymentVC: UIViewController {
             self.view.makeToast("Coupon not valied")
             if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
                 discountLabel.text = "-0.0 EGP"
-                grandTotal.text =  String(Total * 30) + " EGP"
+                grandTotal.text =  String(Total) + " EGP"
              } else {
                  discountLabel.text = "$-0.0"
                  grandTotal.text = "$" + String(Total)
@@ -61,9 +63,8 @@ class ConfirmPaymentVC: UIViewController {
     func calcGrandTotal(){
         guard let totalPrice = Helper.shared.getTotalPrice() else{return}
         if UserDefaults.standard.string(forKey: "Currency") == "EGP" {
-            Total = totalPrice + 900
-
-            grandTotal.text =  String(Total * 30) + " EGP"
+            Total = (totalPrice * 30) + 900
+            grandTotal.text =  String(Total) + " EGP"
          } else {
              Total = totalPrice + 30
              grandTotal.text = "$" + String(Total)
