@@ -231,7 +231,7 @@ extension ProductOfBrandVC: CollectionView_Delegate_DataSource_FlowLayout{
     }
         if isFiltering {   // display from search array
             cell.nameOfProductBrand.text = searchedProducts[indexPath.row].title
-            cell.ProductType.text = searchedProducts[indexPath.row].product_type
+//            cell.ProductType.text = searchedProducts[indexPath.row].product_type
             
             
             if let firstPrice = searchedProducts[indexPath.row].variants?.first?.price, let itemPrice = Double(firstPrice) {
