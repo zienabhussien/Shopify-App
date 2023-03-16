@@ -76,6 +76,27 @@ class CoreDataManager
         }
     }
     
+    
+    static func deleteAllData(){
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        context = appDelegate?.persistentContainer.viewContext
+        do{
+            let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "WishListModel")
+            let favProducts  = try context?.fetch(fetchReq)
+            
+            for i in 0..<(favProducts?.count)!{
+                context?.delete((favProducts?[i])! )
+                
+                try context?.save()
+                print(" data cleared scuccessfully! ")
+            }
+        }catch let error{
+            print(error.localizedDescription)
+        }
+        
+    }
+    
     static func fetchFromCoreData() ->[FavoriteProduct]
     {
         appDelegate = UIApplication.shared.delegate as? AppDelegate

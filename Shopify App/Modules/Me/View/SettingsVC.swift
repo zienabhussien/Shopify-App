@@ -40,5 +40,7 @@ class SettingsVC: UIViewController {
         UserDefaults.standard.set(0, forKey: "loginId")
         self.navigationController?.popToRootViewController(animated: true)
         UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+        
+        CoreDataManager.deleteAllData()
     }
 }
