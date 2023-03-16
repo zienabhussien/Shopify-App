@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "no-location-home-icon-ban-260nw-1847813278.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

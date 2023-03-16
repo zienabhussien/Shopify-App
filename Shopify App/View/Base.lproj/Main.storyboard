@@ -368,7 +368,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cst-qK-BW1">
-                                <rect key="frame" x="281" y="269" width="92" height="36"/>
+                                <rect key="frame" x="279" y="269" width="92" height="36"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Validate">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="19"/>
@@ -378,7 +378,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oj2-pb-eMi" customClass="CouponTextField" customModule="Shopify_App">
-                                <rect key="frame" x="20" y="269" width="231" height="36"/>
+                                <rect key="frame" x="20" y="269" width="229" height="36"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MWX-sX-twX">
                                 <rect key="frame" x="19.999999999999993" y="405" width="108.33333333333331" height="60"/>
@@ -444,8 +444,6 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="HkL-ik-ts2" firstAttribute="trailing" secondItem="CvM-bf-3vk" secondAttribute="trailing" constant="20" id="5hA-1U-Ia9"/>
                             <constraint firstItem="cst-qK-BW1" firstAttribute="width" secondItem="9CZ-iZ-hg2" secondAttribute="height" multiplier="23:213" id="9Ku-sy-vvu"/>
                             <constraint firstItem="CvM-bf-3vk" firstAttribute="top" secondItem="cst-qK-BW1" secondAttribute="bottom" constant="30" id="Cr2-ik-XaI"/>
-                            <constraint firstItem="oj2-pb-eMi" firstAttribute="width" secondItem="9CZ-iZ-hg2" secondAttribute="height" multiplier="77:284" id="Has-oZ-xJx"/>
-                            <constraint firstItem="HkL-ik-ts2" firstAttribute="trailing" secondItem="cst-qK-BW1" secondAttribute="trailing" constant="20" id="Hbs-We-0lP"/>
                             <constraint firstItem="oj2-pb-eMi" firstAttribute="leading" secondItem="HkL-ik-ts2" secondAttribute="leading" constant="20" id="Ls0-Vh-qO2"/>
                             <constraint firstItem="HkL-ik-ts2" firstAttribute="trailing" secondItem="3nG-sz-hED" secondAttribute="trailing" constant="20" id="Q6Y-tN-jeX"/>
                             <constraint firstItem="CvM-bf-3vk" firstAttribute="top" secondItem="oj2-pb-eMi" secondAttribute="bottom" constant="30" id="TKf-sx-HzO"/>
@@ -459,6 +457,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                             <constraint firstItem="3nG-sz-hED" firstAttribute="width" secondItem="9CZ-iZ-hg2" secondAttribute="height" multiplier="353:852" id="bJM-fY-Dtw"/>
                             <constraint firstItem="LTc-tv-0Sp" firstAttribute="leading" secondItem="HkL-ik-ts2" secondAttribute="leading" constant="20" id="d46-Ni-bWp"/>
                             <constraint firstItem="3nG-sz-hED" firstAttribute="top" secondItem="MWX-sX-twX" secondAttribute="bottom" constant="50" id="dJH-TA-N2G"/>
+                            <constraint firstItem="HkL-ik-ts2" firstAttribute="trailing" secondItem="cst-qK-BW1" secondAttribute="trailing" constant="21.999999999999943" id="gli-4f-Wn4"/>
                             <constraint firstItem="cst-qK-BW1" firstAttribute="top" secondItem="LTc-tv-0Sp" secondAttribute="bottom" constant="30" id="hg0-Wi-Nd0"/>
                             <constraint firstItem="10D-CW-mLG" firstAttribute="top" secondItem="HkL-ik-ts2" secondAttribute="top" constant="80" id="kPc-N7-Bzt"/>
                             <constraint firstItem="MWX-sX-twX" firstAttribute="top" secondItem="CvM-bf-3vk" secondAttribute="bottom" constant="35" id="kob-nC-V7e"/>
@@ -595,13 +594,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5r2-PR-FbZ">
                                                     <rect key="frame" x="10" y="14.999999999999998" width="373" height="20.333333333333329"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Order Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfc-rP-dc7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Price :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfc-rP-dc7">
                                                             <rect key="frame" x="0.0" y="0.0" width="95.666666666666671" height="20.333333333333332"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="95.666666666666671" id="S4Q-sC-ZB7"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Order Price:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkk-Cb-Lap">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Price:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkk-Cb-Lap">
                                                             <rect key="frame" x="103.66666666666666" y="0.0" width="269.33333333333337" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -612,13 +614,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-FI-a1J">
                                                     <rect key="frame" x="10" y="85.666666666666671" width="373" height="20.333333333333329"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Shipped to :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-7F-Hzl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipped to :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYI-7F-Hzl">
                                                             <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="20.333333333333332"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="91.666666666666671" id="J5G-Sb-5Nb"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9w-1g-9vy">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9w-1g-9vy">
                                                             <rect key="frame" x="99.666666666666657" y="0.0" width="273.33333333333337" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -629,13 +634,16 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-kL-ga6">
                                                     <rect key="frame" x="10" y="50.333333333333336" width="373" height="20.333333333333336"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Created at :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-rH-PNa">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Zf-rH-PNa">
                                                             <rect key="frame" x="0.0" y="0.0" width="89" height="20.333333333333332"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="89" id="fsw-hu-U2t"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-nV-e8M">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bT-nV-e8M">
                                                             <rect key="frame" x="102" y="0.0" width="271" height="20.333333333333332"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -1100,7 +1108,7 @@ Just 3 reviews will be displayed, follow a view more button that will navigate h
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="Qsa-hb-p7T">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add" translatesAutoresizingMaskIntoConstraints="NO" id="Qsa-hb-p7T">
                                 <rect key="frame" x="0.0" y="188" width="393" height="392"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="392" id="P61-pW-dQB"/>
@@ -2349,6 +2357,7 @@ Abdullah Mohamed</string>
     </scenes>
     <resources>
         <image name="1" width="1303" height="942"/>
+        <image name="add" width="507" height="662"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="arrow.down" catalog="system" width="118" height="128"/>
         <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
