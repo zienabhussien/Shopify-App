@@ -84,6 +84,7 @@ class CreateAddressVC: UIViewController {
             NetworkService.updateApi(adrressID: address?.id ?? 0, params: params) { (data: Address?, error) in
                 
             }
+            self.navigationController?.popViewController(animated: true)
         }else{
             // Make Alert
             checkData()
